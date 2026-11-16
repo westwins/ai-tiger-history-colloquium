@@ -1,0 +1,13 @@
+{
+  "url": "http://43archives.or.kr/main.do",
+  "fetched_at": "2026-11-06T08:27:50+00:00",
+  "robots_status": "fetched",
+  "status": 200,
+  "final_url": "http://43archives.or.kr/main.do",
+  "content_type": "text/html;charset=UTF-8",
+  "etag": null,
+  "last_modified": null,
+  "sha256": "22be27aac37da3a0968c41556d0284e389ed86fbe95bad3a6d6e94c2fe5eac2d",
+  "byte_count": 59158,
+  "local_path": "raw\\snapshots\\22be27aac37da3a0968c41556d0284e389ed86fbe95bad3a6d6e94c2fe5eac2d.bin"
+}

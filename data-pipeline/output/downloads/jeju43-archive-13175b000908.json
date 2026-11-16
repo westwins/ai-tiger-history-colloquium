@@ -1,0 +1,13 @@
+{
+  "url": "http://43archives.or.kr/data/getRecord.do?record_no=5813",
+  "fetched_at": "2026-11-06T08:29:43+00:00",
+  "robots_status": "fetched",
+  "status": 200,
+  "final_url": "http://43archives.or.kr/data/getRecord.do?record_no=5813",
+  "content_type": "text/html;charset=UTF-8",
+  "etag": null,
+  "last_modified": null,
+  "sha256": "1d19c0b74c5f04a85190aa489e7505fd82db38749672bc142fe1541faab9b2e1",
+  "byte_count": 26786,
+  "local_path": "raw\\snapshots\\1d19c0b74c5f04a85190aa489e7505fd82db38749672bc142fe1541faab9b2e1.bin"
+}

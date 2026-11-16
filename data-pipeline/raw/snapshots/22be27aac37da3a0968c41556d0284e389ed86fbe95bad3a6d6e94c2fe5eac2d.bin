@@ -1,0 +1,1243 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+	<title>제주4&middot;3 - 메인</title>
+
+
+
+
+
+
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+	<meta name="format-detection" content="telephone=no" />
+	<title>제주 4·3 아카이브</title>
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+
+	<link rel="shortcut icon" type="image/x-icon" href="/resource/portal/images/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/resource/portal/css/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="/resource/portal/css/common.css">
+
+	<script type="text/javascript" src="/resource/portal/js/jquery-1.12.4.js"></script>
+	<script type="text/javascript" src="/resource/portal/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="/resource/portal/js/common.js"></script>
+
+	<!-- slick-slider -->
+	<script type="text/javascript" src="/resource/portal/dist/slick.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/resource/portal/dist/slick.css">
+
+	<script src="/resource/portal/dist/jquery.mCustomScrollbar.concat.min.js"></script>
+	<link rel="stylesheet" href="/resource/portal/dist/jquery.mCustomScrollbar.css" />
+
+	<!-- 카카오 공유하기 -->
+	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+	
+
+    
+
+    <link rel="stylesheet" href="/resource/timeline/css/fonts/font.default.css?v1">
+    <link rel="stylesheet" href="/resource/timeline/css/timeline.css?v1">
+
+    
+    
+    <script src="/resource/timeline/js/timeline.js"></script>
+
+    <style type="text/css">
+        /*.tab_box {display: none;}*/
+        /*.tab_box.on {display: block;}*/
+
+        #timeline { height: 600px; }
+        /*#timeline a:link {text-decoration: none; color: #333333;}*/
+
+        #timeline h3.tl-headline-date {
+            color: #452c81;
+            font-size: 21px;
+            margin-bottom: 20px;
+        }
+
+        #timeline h2 {
+            margin-bottom: 0px;
+            line-height: 1.5em;
+        }
+
+        #timeline div.tl-slidenav-title div.tl-slidenav-description {
+            color: #090a40;
+            font-size: 12px;
+        }
+
+        #timeline div.tl-timenav {
+            background-color: rgb(124 124 124);
+        }
+
+        #timeline div.tl-media-content-container div.tl-media-content img.tl-media-item {
+            box-shadow: 2px 20px 20px 7px rgba(0, 0, 0, 0.4);
+        }
+
+        .ui-datepicker-year {
+            border: none;
+            border-bottom: 2px solid black;
+            width: 75%;
+        }
+
+        /* mo */
+        @media screen and (max-width:768px) {
+            #timeline div.tl-text-content-container h3.tl-headline-date {
+                color: #452c81;
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
+            #timeline div.tl-text-content-container  h2.tl-headline {
+                color: #452c81;
+                font-size: 24px;
+                margin-bottom: 15px;
+                font-weight: 600;
+            }
+
+            #timeline h2 {
+                margin-bottom: 0px;
+                line-height: 1em;
+            }
+
+            #timeline div.tl-slidenav-title div.tl-slidenav-description {
+                color: #090a40;
+                font-size: 11px;
+            }
+        }
+    </style>
+
+	
+</head>
+<body>
+<div id="skip">
+	<a href="#menu"><span>메뉴 바로가기</span></a>
+	<a href="#contents"><span>본문 바로가기</span></a>
+</div>
+<div id="main">
+
+	
+
+
+
+
+<div class="header">
+	<div class="inner">
+		<h1 class="logo"><a href="/main.do"><img src="/resource/portal/images/logo.png" alt="제주 4·3 아카이브"/></a></h1>
+		<ul id="menu" class="menu">
+			<li>
+				<a href="/search/archive/detailSearch.do">통합검색</a>
+				<div class="depth2">
+					<ul>
+						<li><a href="/search/archive/detailSearch.do">아카이브 검색</a></li>
+						<li><a href="/search/collection/list.do">기념관 전시품</a></li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<a href="/data/getDatas.do">4·3 자료</a>
+				<div class="depth2">
+					<ul>
+						<li><a href="/data/document/list.do">문서</a></li>
+						<li><a href="/data/news/list.do">신문</a></li>
+						<li><a href="/data/photo/list.do">사진</a></li>
+						<li><a href="/data/audio/list.do">시청각</a></li>
+						
+						<li><a href="/data/publication/list.do">재단 간행물</a></li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<a href="/theme/getThemes.do">주제별 자료</a>
+				<div class="depth2">
+					<ul>
+						
+							<li><a href="/theme/getTheme.do?theme_no=20">4·3 진상규명의 긴 여정</a></li>
+						
+					</ul>
+				</div>
+			</li>
+			<li>
+				<a href="/events/contents/manage.do">4·3 이란</a>
+				<div class="depth2">
+					<ul>
+						<li><a href="/events/timeline/timeline.do">시대별 기록</a></li>
+						<li><a href="/events/history/history.do">지역별 4·3</a></li>
+						<li><a href="/events/victims/victims.do">피해현황(통계)</a></li>
+						<li><a href="/events/peacehall/peacehall.do">4·3 평화기념관</a></li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<a href="/archive/introduce.do">4·3 아카이브 안내</a>
+				<div class="depth2">
+					<ul>
+						<li><a href="/archive/introduce.do">아카이브 소개</a></li>
+						<li><a href="/archive/useGuide.do">이용안내</a></li>
+						<li><a href="/archive/notices.do">공지사항</a></li>
+						<li><a href="/archive/dataStatistics.do">자료현황</a></li>
+						<li><a href="/archive/donation.do">기증안내</a></li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+		<a href="#" class="btn-menu">전체메뉴</a>
+	</div>
+	<div class="allmenu">
+		<div class="dim"></div>
+		<div class="allmenu_form">
+			<div class="inner">
+				<a href="#"><img src="/resource/portal/images/logo.png" alt="제주 4·3 아카이브"/></a>
+				<a href="#" class="close"><img src="/resource/portal/images/btn_close.png" alt="닫기"/></a>
+			</div>
+			<div class="menu">
+				<ul>
+					<li>
+						<span><a href="/search/archive/keywordSearch.do">통합검색</a></span>
+						<ul>
+							<li><a href="/search/archive/keywordSearch.do">아카이브 검색</a></li>
+							<li><a href="/search/collection/list.do">기념관 전시품</a></li>
+						</ul>
+					</li>
+					<li>
+						<span><a href="/data/getDatas.do">4·3 자료</a></span>
+						<ul>
+							<li><a href="/data/document/list.do">문서</a></li>
+							<li><a href="/data/news/list.do">신문</a></li>
+							<li><a href="/data/photo/list.do">사진</a></li>
+							<li><a href="/data/audio/list.do">시청각</a></li>
+							
+							<li><a href="/data/publication/list.do">재단 간행물</a></li>
+						</ul>
+					</li>
+					<li>
+						<span><a href="/theme/getThemes.do">주제별 자료</a></span>
+						<ul>
+							
+								<li><a href="/theme/getTheme.do?theme_no=20">4·3 진상규명의 긴 여정</a></li>
+							
+						</ul>
+					</li>
+					<li>
+						<span><a href="/events/contents/manage.do">4·3 이란</a></span>
+						<ul>
+							<li><a href="/events/timeline/timeline.do">시대별 기록</a></li>
+							<li><a href="/events/history/history.do">지역별 4·3</a></li>
+							<li><a href="/events/victims/victims.do">피해현황(통계)</a></li>
+							<li><a href="/events/peacehall/peacehall.do">4·3 평화기념관</a></li>
+						</ul>
+					</li>
+					<li>
+						<span><a href="/archive/introduce.do">4·3 아카이브 안내</a></span>
+						<ul>
+							<li><a href="/archive/introduce.do">아카이브 소개</a></li>
+							<li><a href="/archive/useGuide.do">이용안내</a></li>
+							<li><a href="/archive/notices.do">공지사항</a></li>
+							<li><a href="/archive/dataStatistics.do">자료현황</a></li>
+							<li><a href="/archive/donation.do">기증안내</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="dimm"></div>
+	
+	
+    <div id="skip">
+        <a href="#menu"><span>메뉴 바로가기</span></a>
+        <a href="#contents"><span>본문 바로가기</span></a>
+    </div>
+    <div id="contents">
+        <div class="search_container">
+            <div class="text_form">
+                <div class="center">
+                    <p>제주 4·3 아카이브 검색</p>
+
+                    <form name="searchForm" id="searchForm" method="post">
+                        <input type="hidden" name="searchCondition" />
+                        <input type="hidden" name="isOpen" value="Y" />
+                        <input type="hidden" name="searchType" value="01" />
+                        <input type="hidden" name="title" />
+                        <input type="hidden" name="producerName" />
+                        <input type="hidden" name="collectorName" />
+                        <input type="hidden" name="parentCategoryTypeCl" />
+                        <input type="hidden" name="filterTypeClassificationCl" />
+                        <input type="hidden" name="rangeProduceYearStart" />
+                        <input type="hidden" name="rangeProduceYearEnd" />
+                        <input type="hidden" name="operator1" />
+                        <input type="hidden" name="operator2" />
+                        <input type="hidden" name="siteCode" />
+                        <div class="search_form">
+                            <div class="select_input">
+                                <div class="select searchCondition">
+                                    <p>전체검색</p>
+                                    <ul>
+                                        <li><a href="javascript:void(0);" data-condition="" data-name="전체검색">전체검색</a></li>
+                                        <li><a href="javascript:void(0);" data-condition="title" data-name="제목">제목</a></li>
+                                        <li><a href="javascript:void(0);" data-condition="producer_name" data-name="생산자">생산자</a></li>
+                                        
+                                        <li><a href="javascript:void(0);" data-condition="collector_name" data-name="수집처">수집처</a></li>
+                                    </ul>
+                                </div>
+                                    <input type="text" placeholder="검색어를 입력하세요." title="검색어" name="searchKeyword" />
+                                    <a href="javascript:void(0);" class="searchButton" ><img src="/resource/portal/images/img_search.png" alt="검색"/></a>
+                            </div>
+                            <a href="#pop-search" class="btn pop"><span>상세 검색</span></a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="slider">
+                
+                    <img src="/carousel/file/9/image/download.do"
+                         alt=""
+                         onerror="this.src='/resource/portal/images/default_img.png'"/>
+                
+                    <img src="/carousel/file/10/image/download.do"
+                         alt=""
+                         onerror="this.src='/resource/portal/images/default_img.png'"/>
+                
+                    <img src="/carousel/file/11/image/download.do"
+                         alt=""
+                         onerror="this.src='/resource/portal/images/default_img.png'"/>
+                
+            </div>
+        </div>
+        <div class="contents_container">
+            <div class="inner">
+                <ul class="list_form">
+                    <li><a href="/data/document/list.do"><span>문서</span></a></li>
+                    <li><a href="/data/news/list.do"><span>신문</span></a></li>
+                    <li><a href="/data/photo/list.do"><span>사진</span></a></li>
+                    <li><a href="/data/audio/list.do"><span>시청각</span></a></li>
+                    
+                    <li><a href="/data/publication/list.do"><span>재단 간행물</span></a></li>
+                    <li class="mo"><a href="/data/getDatas.do"><img src="/resource/portal/images/img_main_plus.png" alt="자료메인" class="img-center"/></a></li>
+                </ul>
+
+                <ul class="tab5 two __timeline__history__tab">
+                    <li class="on"><a href="javascript:void(0);" data-target="__timeline">4·3 시대별 기록</a></li>
+                    <li><a href="javascript:void(0);" data-target="__historical__site">4·3 유적지</a></li>
+                </ul>
+
+                <div class="__timeline">
+                    <h2><em>4·3 시대별 기록</em><span>4·3 시대별 기록을 만나보세요</span></h2>
+                    <div class="timeline">
+                        <div id="timeline"></div>
+                    </div>
+                </div>
+
+                <div class="__historical__site" style="display: none;">
+                    <h2><em>4·3 유적지</em><span>지역별 4·3유적지를 지도로 확인해보세요</span></h2>
+                    <div class="map_container">
+                        <div class="map">
+                            <img src="/resource/portal/images/img_map.png" alt="">
+                            <div class="map_list __site__list">
+                                <div class="map01"><a href="javascript:void(0);" data-target="CO-ADR-NTH-A03">제주시</a></div>
+                                <div class="map02"><a href="javascript:void(0);" data-target="CO-ADR-NTH-A02">애월</a></div>
+                                <div class="map03"><a href="javascript:void(0);" data-target="CO-ADR-NTH-A06">한림</a></div>
+                                <div class="map04"><a href="javascript:void(0);" data-target="CO-ADR-NTH-A05">한경</a></div>
+                                <div class="map05"><a href="javascript:void(0);" data-target="CO-ADR-STH-A02">대정</a></div>
+                                <div class="map06"><a href="javascript:void(0);" data-target="CO-ADR-STH-A05">안덕</a></div>
+                                <div class="map07"><a href="javascript:void(0);" data-target="CO-ADR-STH-A06">중문</a></div>
+                                <div class="map08"><a href="javascript:void(0);" data-target="CO-ADR-STH-A03">서귀포시</a></div>
+                                <div class="map09"><a href="javascript:void(0);" data-target="CO-ADR-STH-A01">남원</a></div>
+                                <div class="map10"><a href="javascript:void(0);" data-target="CO-ADR-STH-A07">표선</a></div>
+                                <div class="map11"><a href="javascript:void(0);" data-target="CO-ADR-STH-A04">성산</a></div>
+                                <div class="map12"><a href="javascript:void(0);" data-target="CO-ADR-NTH-A01">구좌</a></div>
+                                <div class="map13"><a href="javascript:void(0);" data-target="CO-ADR-NTH-A04">조천</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="img_container">
+            <div class="inner">
+                <h2><em>추천 기록물</em><span>4·3사건 추천 기록물을 살펴보세요</span></h2>
+                <div class="item_list">
+                    
+                        
+                            
+                            
+                                
+                            
+                        
+                        <div class="item">
+                            <a href="/data/getRecord.do?record_no=9173">
+                                <div class="img">
+                                    <img src="/record/file/9173/thumbnail/image/download.do"
+                                         alt="4·3과 평화-63호"
+                                         onerror="this.src='/resource/portal/images/default_img.png'" />
+                                </div>
+                                <div class="text">
+                                    <p class="color-orange">
+                                            재단간행물
+                                    </p>
+                                    <p class="ellipsis">4·3과 평화-63호</p>
+                                    <p>2026-06-05</p>
+                                </div>
+                            </a>
+                        </div>
+                    
+                        
+                            
+                            
+                                
+                            
+                        
+                        <div class="item">
+                            <a href="/data/getRecord.do?record_no=5813">
+                                <div class="img">
+                                    <img src="/record/file/5813/thumbnail/image/download.do"
+                                         alt="제주4·3사건진상조사보고서"
+                                         onerror="this.src='/resource/portal/images/default_img.png'" />
+                                </div>
+                                <div class="text">
+                                    <p class="color-pink">
+                                            문서/도서류
+                                    </p>
+                                    <p class="ellipsis">제주4·3사건진상조사보고서</p>
+                                    <p>2003-10-15</p>
+                                </div>
+                            </a>
+                        </div>
+                    
+                        
+                            
+                            
+                                
+                            
+                        
+                        <div class="item">
+                            <a href="/data/getRecord.do?record_no=5814">
+                                <div class="img">
+                                    <img src="/record/file/5814/thumbnail/image/download.do"
+                                         alt="제주4·3사건추가진상조사보고서 I"
+                                         onerror="this.src='/resource/portal/images/default_img.png'" />
+                                </div>
+                                <div class="text">
+                                    <p class="color-mint">
+                                            재단간행물
+                                    </p>
+                                    <p class="ellipsis">제주4·3사건추가진상조사보고서 I</p>
+                                    <p>2019-12-30</p>
+                                </div>
+                            </a>
+                        </div>
+                    
+                        
+                            
+                            
+                                
+                            
+                        
+                        <div class="item">
+                            <a href="/data/getRecord.do?record_no=5908">
+                                <div class="img">
+                                    <img src="/record/file/5908/thumbnail/image/download.do"
+                                         alt="한눈에 보는 4·3"
+                                         onerror="this.src='/resource/portal/images/default_img.png'" />
+                                </div>
+                                <div class="text">
+                                    <p class="color-brown">
+                                            재단간행물
+                                    </p>
+                                    <p class="ellipsis">한눈에 보는 4·3</p>
+                                    <p>2021-11-24</p>
+                                </div>
+                            </a>
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="board_container">
+            <div class="inner">
+                <h2><em>공지사항</em> <a href="/archive/notices.do">전체보기 <img src="/resource/portal/images/btn_more.png" alt=""/></a></h2>
+                <ul>
+                    
+                        
+                            
+                                <li>
+                                    <a href="/archive/getNotice.do?notice_no=19">
+                                        <em class="ellipsis">제주4·3아카이브 개편 안내</em>
+                                        <span>2022-01-12</span>
+                                    </a>
+                                </li>
+                            
+                        
+                        
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+        <!-- 상세검색 팝업 -->
+        <div class="popup" id="pop-search">
+            <div class="dim"></div>
+            <div class="popup_container">
+                <div class="popup_header">
+                    <h3>상세검색</h3>
+                    <a href="#" class="pop_close"><img src="/resource/portal/images/btn_close.png" alt="닫기"/></a>
+                </div>
+                <div class="popup_body">
+                    <div class="input_list">
+                        <div class="input_label">검색어</div>
+                        <div class="input_group">
+                            <input type="text" class="wc100 inline-block" title="검색어" name="_title" placeholder="입력해주세요. (제목, 소제목 검색)"/>
+                            <input type="hidden" name="_operator1" value="AND" />
+                            <div class="select w100 inline-block __title">
+                                <p>AND</p>
+                                <ul>
+                                    <li><a href="javascript:void(0);">AND</a></li>
+                                    <li><a href="javascript:void(0);">OR</a></li>
+                                    <li><a href="javascript:void(0);">NOT</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input_list">
+                        <div class="input_label">생산자(저자)</div>
+                        <div class="input_group">
+                            <input type="text" class="wc100 inline-block" title="생산자(저자)" name="_producerName" placeholder="입력해주세요."/>
+                            <input type="hidden" name="_operator2" value="AND" />
+                            <div class="select w100 inline-block __producer__name">
+                                <p>AND</p>
+                                <ul>
+                                    <li><a href="javascript:void(0);">AND</a></li>
+                                    <li><a href="javascript:void(0);">OR</a></li>
+                                    <li><a href="javascript:void(0);">NOT</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="input_list">
+                        <div class="input_label">수집처</div>
+                        <div class="input_group">
+                            <input type="text" class="wc100 inline-block" title="수집처" name="_collectorName" placeholder="입력해주세요."/>
+                            
+                        </div>
+                    </div>
+
+                    <div class="input_list">
+                        <div class="input_label">유형분류</div>
+                        <div class="input_group">
+                            <input type="hidden" name="_parentCategoryTypeCl" />
+                            <input type="hidden" name="_filterTypeClassificationCl" />
+                            <div class="select inline-block w50p __type__one__depth">
+                                <p>1수준 - 선택</p>
+                                <ul>
+                                    <li><a href="#">1수준 - 선택</a></li>
+                                </ul>
+                            </div>
+                            <div class="select inline-block w50p __type__two__depth">
+                                <p>2수준 - 선택</p>
+                                <ul>
+                                    <li><a href="#">2수준 - 선택</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div class="input_list">
+                        <div class="input_label">생산년도</div>
+                        <div class="input_group">
+                            
+                            <input type="text" class="datepickerCustom w50p" name="_rangeProduceYearStart" title="생산년도 시작일" autocomplete="off" value="" />
+                            <input type="text" class="datepickerCustom w50p" name="_rangeProduceYearEnd" title="생산년도 종료일" autocomplete="off" value="" />
+                        </div>
+                    </div>
+
+                </div>
+                <div class="popup_footer text-center">
+                    <button type="button" class="btn-default bg-gray resetButton">초기화</button>
+                    <button type="button" class="btn-default bg-black detailSearchButton">검색</button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="popup pop_notice" style="display: none;">
+        <div class="dim"></div>
+        <div class="popup_container">
+            <div class="slider">
+                <div>
+                    <a href="/archive/useGuide.do" title="자료 이용 안내 페이지로 이동"><img src="/resource/portal/images/popup_usage_guide.png" alt=""/></a>
+                </div>
+            </div>
+            <div class="overflow-h">
+                <div class="float-left">
+                    <p class="today_check"><input type="checkbox" id="today_check"><label for="today_check">오늘 하루 열지 않기</label></p>
+                </div>
+                <div class="float-right">
+                    <a href="javascript:void(0);" class="__pop__notice__close">닫기 <img src="/resource/portal/images/popup_close.png" alt="닫기"/></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    </script>
+
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+
+
+
+        /*
+            Enterkey 이벤트 막기
+         */
+        // ---------------------------------------------------------------------------------
+        document.addEventListener("keypress", function (e) {
+        	if(e.keyCode == 13) e.preventDefault();
+        });
+        // ---------------------------------------------------------------------------------
+
+
+        /*
+            Selector 선언
+         */
+        // ---------------------------------------------------------------------------------
+        let form;
+
+        let searchButton;
+        let resetButton;
+        let detailSearchButton;
+
+        let searchConditaionSelector;
+
+        let typeCodeCombotree;										// 분류정보 - 셀렉트박스 - 유형별 분류(2중)
+        let operatorSelectorToTitle;
+        let operatorSelectorToProduce;
+        let operatorSelectorToPublish;
+        let operatorSelectorToCollect;
+
+        let timelineAndHistoricalSiteSelector;
+
+        let mapAnchorSelector;
+        // ---------------------------------------------------------------------------------
+
+
+        /*
+            timeline Options 설정
+         */
+        // ---------------------------------------------------------------------------------
+        const options = {
+            // timenav_height : 225,
+            slide_padding_lr : 100,
+            duration : 1000,
+            scale_factor : 20,
+            zoom_sequence : [10, 15, 20, 25]
+            /*start_at_slide : 20*/
+            /*hash_bookmark: true*/
+        };
+        // ---------------------------------------------------------------------------------
+
+
+
+        /*
+            timeline 호출
+         */
+        // ---------------------------------------------------------------------------------
+        const timeline = new TL.Timeline('timeline', {"events":[{"unique_id":"marker136","media":{"thumbnail":"/record/file/6038/thumbnail/image/download.do","url":"/record/file/6038/thumbnail/image/download.do"},"text":{"text":"","headline":"<a href=\"javascript:;\" class=\"__timeline__anchor\" onclick=\"handleMoveToRecordDetail(6038)\">미군 상륙에 즈음한 미군사령관의 포고1(U.S. Military Commander's Declaration at the Landing)<\/a>","subheadline":""},"start_date":{"month":"9","display_date":"1945년 9월 ","year":"1945","day":"9"}},{"unique_id":"marker181","media":{"thumbnail":"/record/file/5824/thumbnail/image/download.do","url":"/record/file/5824/thumbnail/image/download.do"},"text":{"text":"","headline":"<a href=\"javascript:;\" class=\"__timeline__anchor\" onclick=\"handleMoveToRecordDetail(5824)\">메이데이(May Day in Cheju-Do)<\/a>","subheadline":"메이데이"},"start_date":{"month":"5","display_date":"1948년 5월 ","year":"1948","day":"1"}},{"unique_id":"marker328","media":{"thumbnail":"/record/file/6016/thumbnail/image/download.do","url":"/record/file/6016/thumbnail/image/download.do"},"text":{"text":"","headline":"<a href=\"javascript:;\" class=\"__timeline__anchor\" onclick=\"handleMoveToRecordDetail(6016)\">제주비행장에 도착한 미군정 수뇌부<\/a>","subheadline":""},"start_date":{"month":"5","display_date":"1948년 5월 ","year":"1948","day":"5"}},{"unique_id":"marker295","media":{"thumbnail":"/record/file/6013/thumbnail/image/download.do","url":"/record/file/6013/thumbnail/image/download.do"},"text":{"text":"","headline":"<a href=\"javascript:;\" class=\"__timeline__anchor\" onclick=\"handleMoveToRecordDetail(6013)\">41주기 4·3추모제 포스터<\/a>","subheadline":""},"start_date":{"month":"4","display_date":"1989년 4월 ","year":"1989","day":"1"}},{"unique_id":"marker292","media":{"thumbnail":"/record/file/5877/thumbnail/image/download.do","url":"/record/file/5877/thumbnail/image/download.do"},"text":{"text":"","headline":"<a href=\"javascript:;\" class=\"__timeline__anchor\" onclick=\"handleMoveToRecordDetail(5877)\">4·3의 증언 제주신문 취재수첩(88~89)<\/a>","subheadline":""},"start_date":{"month":"6","display_date":"1990년 6월 ","year":"1990","day":"2"}},{"unique_id":"marker300","media":{"thumbnail":"/record/file/5823/thumbnail/image/download.do","url":"/record/file/5823/thumbnail/image/download.do"},"text":{"text":"","headline":"<a href=\"javascript:;\" class=\"__timeline__anchor\" onclick=\"handleMoveToRecordDetail(5823)\">제주4·3 제50주년 기념식 및 명예회복 촉구대회 포스터<\/a>","subheadline":""},"start_date":{"month":"4","display_date":"1998년 4월 ","year":"1998","day":"4"}},{"unique_id":"marker305","media":{"thumbnail":"/record/file/5885/thumbnail/image/download.do","url":"/record/file/5885/thumbnail/image/download.do"},"text":{"text":"","headline":"<a href=\"javascript:;\" class=\"__timeline__anchor\" onclick=\"handleMoveToRecordDetail(5885)\">제주4·3사건진상규명 및 희생자명예회복 위원회' (위원장 국무총리) 발족<\/a>","subheadline":""},"start_date":{"month":"8","display_date":"2000년 8월 ","year":"2000","day":"28"}},{"unique_id":"marker309","media":{"thumbnail":"/record/file/1/thumbnail/image/download.do","url":"/record/file/1/thumbnail/image/download.do"},"text":{"text":"","headline":"<a href=\"javascript:;\" class=\"__timeline__anchor\" onclick=\"handleMoveToRecordDetail(1)\">제주4·3사건자료집4 (정부문서·국회속기록·잡지편)<\/a>","subheadline":""},"start_date":{"month":"1","display_date":"2003년 1월 ","year":"2003","day":"1"}},{"unique_id":"marker311","media":{"thumbnail":"/record/file/5813/thumbnail/image/download.do","url":"/record/file/5813/thumbnail/image/download.do"},"text":{"text":"","headline":"<a href=\"javascript:;\" class=\"__timeline__anchor\" onclick=\"handleMoveToRecordDetail(5813)\">제주4·3사건진상조사보고서<\/a>","subheadline":""},"start_date":{"month":"10","display_date":"2003년 10월 ","year":"2003","day":"15"}},{"unique_id":"marker316","media":{"thumbnail":"/record/file/5884/thumbnail/image/download.do","url":"/record/file/5884/thumbnail/image/download.do"},"text":{"text":" ","headline":"<a href=\"javascript:;\" class=\"__timeline__anchor\" onclick=\"handleMoveToRecordDetail(5884)\">제주4·3평화재단 현판식(2008년11월10일)<\/a>","subheadline":" "},"start_date":{"month":"11","display_date":"2008년 11월 ","year":"2008","day":"10"}},{"unique_id":"marker321","media":{"thumbnail":"/record/file/5814/thumbnail/image/download.do","url":"/record/file/5814/thumbnail/image/download.do"},"text":{"text":"","headline":"<a href=\"javascript:;\" class=\"__timeline__anchor\" onclick=\"handleMoveToRecordDetail(5814)\">제주4·3사건추가진상조사보고서 I<\/a>","subheadline":""},"start_date":{"month":"12","display_date":"2019년 12월 ","year":"2019","day":"30"}},{"unique_id":"marker268","media":{"thumbnail":"/record/file/9173/thumbnail/image/download.do","url":"/record/file/9173/thumbnail/image/download.do"},"text":{"text":"","headline":"<a href=\"javascript:;\" class=\"__timeline__anchor\" onclick=\"handleMoveToRecordDetail(9173)\">4·3과 평화-63호<\/a>","subheadline":""},"start_date":{"month":"2","display_date":"2021년 2월 ","year":"2021","day":"26"}}]}, options);
+        $('.tl-slide-content').css('padding', '0 0');
+        // ---------------------------------------------------------------------------------
+
+
+
+        /*
+            Onload 이벤트
+         */
+        // ---------------------------------------------------------------------------------
+        $(function() {
+            openNoticePopup();
+
+            // 팝업닫기
+            $(".pop_notice .__pop__notice__close").on('click', function(e) {
+
+                if(getCookie("notice_popup") != "Y" && document.querySelector("#today_check").checked){
+                    var todayDate = new Date();
+                    todayDate.setDate( todayDate.getDate() + 1 );
+                    document.cookie = "pop_notice" + '=' + escape( 'Y' ) + '; path=/; expires=' + todayDate.toGMTString() + ';'
+                }
+
+                $(".pop_notice").hide();
+            });
+
+            // datepicker 설정
+            $('.datepickerCustom').datepicker({
+                yearRange: "c-100:c",
+                changeMonth: false,
+                changeYear: true,
+                showButtonPanel: true,
+                closeText:'Select',
+                currentText: 'This year',
+                onClose: function(dateText, inst) {
+                    var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
+                    $(this).val($.datepicker.formatDate('yy', new Date(year, 1, 1)));
+                }
+            }).focus(function () {
+                $(".ui-datepicker-month").hide();
+                $(".ui-datepicker-calendar").hide();
+                // $(".ui-datepicker-current").hide();
+                $(".ui-datepicker-prev").hide();
+                $(".ui-datepicker-next").hide();
+                $("#ui-datepicker-div").position({
+                    my: "left top",
+                    at: "left bottom",
+                    of: $(this)
+                });
+            }).attr("readonly", false);
+
+            // 타임라인 설정
+            let window_width = window.outerWidth;
+            if(window_width < 768){
+                $('.tl-slide-content-container').css('padding', '0 0 0 0');
+                $('.tl-timenav').css('background-color', 'rgb(124 124 124)');
+            }else{
+                $('.tl-slide-content-container').css('padding', '0 100px 0 100px');
+                $('.tl-timenav').css('background-color', 'rgb(124 124 124)');
+            }
+
+            $(window).resize(function(){
+                var nav_height = $('.tl-timenav-slider-background').height();
+                var axis_height = $('.tl-timeaxis').height();
+                $('.tl-timenav-line').height(nav_height - axis_height);
+            });
+
+            // $("ul.tab5 li").click(function(){
+            //     $("ul.tab5 li, .tab_box").removeClass('on');
+            //     $(this).addClass('on');
+            //     $("#"+$(this).data('id')).addClass('on');
+            // });
+            // $("ul.tab5 li:first-child").click();
+
+
+            // 유형별분류 코드 - 분류정보
+            $.post('/classification/getClassListForCombobox.do;jsessionid=A96619142FFD091D7DCA8B1AEEF119EC', {id: 'CL-FRM'}, function(data) {
+                // 전체 또는 선택값 넣는 방법
+                const addDatas = {parent_code_cd: 'CL-FRM', level: 1, id: '', title: '1수준 - 선택'};
+                data.codeList.unshift(addDatas);
+                typeCodeCombotree = data.codeList.map(function (item) {
+                    return item;
+                });
+
+                document.querySelector(".__type__one__depth ul").innerHTML = "";
+                typeCodeCombotree.forEach(function (item) {
+                    const createLi = document.createElement("li");
+                    const createAnchor = document.createElement("a");
+                    createAnchor.href = "javascript:void(0);";
+                    createAnchor.dataset.code = item.id;
+                    createAnchor.dataset.name = item.title;
+                    createAnchor.textContent = item.title;
+                    createAnchor.addEventListener("click", handleSelectToTypeOneDepth);
+                    createLi.appendChild(createAnchor);
+                    document.querySelector(".__type__one__depth ul").appendChild(createLi);
+                });
+            });
+
+
+            // 이벤트 설정
+            handleAddEvent();
+        });
+        // ---------------------------------------------------------------------------------
+
+
+
+        /*
+            쿠키 설정
+         */
+        // ---------------------------------------------------------------------------------
+        function getCookie(name) {
+            var obj = name + "=";
+            var x = 0;
+            while (x <= document.cookie.length) {
+                var y = (x+obj.length);
+                if ( document.cookie.substring( x, y ) == obj ) {
+                    if ((endOfCookie=document.cookie.indexOf( ";", y )) == -1 )
+                        endOfCookie = document.cookie.length;
+                    return unescape( document.cookie.substring( y, endOfCookie ) );
+                }
+                x = document.cookie.indexOf( " ", x ) + 1;
+
+                if ( x == 0 ) break;
+            }
+            return "";
+        }
+        // ---------------------------------------------------------------------------------
+
+
+
+        /*
+            메인 공지팝업 열기
+         */
+        // ---------------------------------------------------------------------------------
+        function openNoticePopup() {
+            if(getCookie("pop_notice") != "Y" && $(".pop_notice").length > 0 ) {
+
+                // 팝업
+                $('.popup_container .slider').slick({
+	                slidesToShow: 1,
+	                slidesToScroll: 1,
+	                infinite: false,
+	                arrows: true,
+	                dots: false,
+	                variableWidth: true
+                });
+
+                $(".pop_notice").show();
+            } else {
+                $(".pop_notice").hide();
+            }
+        }
+        // ---------------------------------------------------------------------------------
+
+
+
+        /*
+            Selector 초기화 및 이벤트 설정
+         */
+
+        // ---------------------------------------------------------------------------------
+        function handleAddEvent() {
+            form = document.searchForm;
+
+            searchButton = document.querySelector(".searchButton");
+            searchButton.addEventListener("click", handleSearch);
+
+            detailSearchButton = document.querySelector(".detailSearchButton");
+            detailSearchButton.addEventListener("click", handleSearchToDetail);
+
+            resetButton = document.querySelector(".resetButton");
+            resetButton.addEventListener("click", handleResetToDetailContent);
+
+
+            searchConditaionSelector = document.querySelectorAll(".searchCondition li a");
+            Array.prototype.slice.call(searchConditaionSelector).forEach(function (item) {
+                item.addEventListener("click", handleChangeToSearchCondition);
+            });
+
+            operatorSelectorToTitle = document.querySelectorAll(".__title li a");
+            Array.prototype.slice.call(operatorSelectorToTitle).forEach(function (item) {
+                item.addEventListener("click", handleSelectToOperator);
+            })
+
+            operatorSelectorToProduce = document.querySelectorAll(".__producer__name li a");
+            Array.prototype.slice.call(operatorSelectorToProduce).forEach(function (item) {
+                item.addEventListener("click", handleSelectToOperator);
+            });
+
+            operatorSelectorToPublish = document.querySelectorAll(".__form__publication__issue li a");
+            Array.prototype.slice.call(operatorSelectorToPublish).forEach(function (item) {
+                item.addEventListener("click", handleSelectToOperator);
+            });
+
+            operatorSelectorToCollect = document.querySelectorAll(".__collector__name li a");
+            Array.prototype.slice.call(operatorSelectorToCollect).forEach(function (item) {
+                item.addEventListener("click", handleSelectToOperator);
+            });
+
+            timelineAndHistoricalSiteSelector = document.querySelectorAll(".__timeline__history__tab li a");
+            Array.prototype.slice.call(timelineAndHistoricalSiteSelector).forEach(function (item) {
+                item.addEventListener("click", handleSwitchToMainTab);
+            });
+
+            mapAnchorSelector = document.querySelectorAll(".__historical__site .map_container a");
+            Array.prototype.slice.call(mapAnchorSelector).forEach(function (item) {
+                item.addEventListener("click", handleGoToHistoricalSite);
+            })
+
+        }
+        // ---------------------------------------------------------------------------------
+
+
+
+        /*
+            4·3유적지 지도 클릭 이벤트
+         */
+        // ---------------------------------------------------------------------------------
+        function handleGoToHistoricalSite() {
+            const target = this;
+            const targetCode = target.dataset.target;
+            document.querySelector("input[name=siteCode]").value = targetCode;
+
+            form.action = "/events/history/history.do";
+            form.submit();
+        }
+        // ---------------------------------------------------------------------------------
+
+
+
+        /*
+            메인화면 시대별기록 / 유적지 탭 스위칭 -> 다 제거했다가 선택한 것만 넣어주는 방법으로..
+         */
+        // ---------------------------------------------------------------------------------
+        function handleSwitchToMainTab() {
+            const target = this;
+            const targetDiv = target.dataset.target;
+            Array.prototype.slice.call(timelineAndHistoricalSiteSelector).forEach(function (item) {
+                item.parentNode.classList.remove("on");
+                document.querySelector("." + item.dataset.target).style.display = "none";
+            });
+            target.parentNode.classList.add("on");
+            document.querySelector("." + targetDiv).style.display = "block";
+        }
+        // ---------------------------------------------------------------------------------
+        
+
+
+        /*
+            AND / OR / NOT 연산자 처리 이벤트
+         */
+        // ---------------------------------------------------------------------------------
+        function handleSelectToOperator() {
+            const target = this;
+            console.log(target.parentNode.parentNode.parentNode.classList.value);
+            target.parentNode.parentNode.parentNode.querySelector("p").textContent = target.textContent;
+            target.parentNode.parentNode.parentNode.parentNode.querySelector("input[type=hidden]").value = target.textContent;
+        }
+        // ---------------------------------------------------------------------------------
+
+
+
+        /*
+            유형분류 - One depth 이벤트
+         */
+        // ---------------------------------------------------------------------------------
+        function handleSelectToTypeOneDepth() {
+            const target = this;
+            const selectedCode = target.dataset.code;
+            document.querySelector(".__type__one__depth p").textContent = target.dataset.name;
+            document.querySelector("input[name=_parentCategoryTypeCl]").value = target.dataset.code;
+
+            // document.querySelector(".__type__one__depth").classList.remove("on");
+            // document.querySelector(".__type__one__depth ul").style.display = "none";
+            $(".__type__one__depth").removeClass("on");
+            $(".__type__one__depth > ul").slideUp(500);
+
+            handleDrawToTypeTwoDepth(selectedCode);
+        }
+        // ---------------------------------------------------------------------------------
+
+
+
+        /*
+            유형분류 - Two depth 이벤트
+         */
+        // ---------------------------------------------------------------------------------
+        function handleSelectToTypeTwoDepth() {
+            const target = this;
+            document.querySelector(".__type__two__depth p").textContent = target.dataset.name;
+            document.querySelector("input[name=_filterTypeClassificationCl]").value = target.dataset.code;
+
+            // document.querySelector(".__type__two__depth").classList.remove("on");
+            // document.querySelector(".__type__two__depth ul").style.display = "none";
+            $(".__type__two__depth").removeClass("on");
+            $(".__type__two__depth > ul").slideUp(500);
+        }
+        // ---------------------------------------------------------------------------------
+
+
+
+        /*
+            유형분류 - Two depth 그리기
+         */
+        // ---------------------------------------------------------------------------------
+        function handleDrawToTypeTwoDepth(selectedCode) {
+            let targetDataset = typeCodeCombotree;
+
+            // 선택한 항목 추출
+            const oneDepthArray = targetDataset.filter(function (item) {
+                if(selectedCode == item.id || (selectedCode.indexOf(item.id) > -1 && item.id !== '')) {
+                    return item;
+                }
+            });
+
+            // 두번째 콤보박스 li 태그 제거
+            document.querySelector(".__type__two__depth ul").innerHTML = '';
+
+            if(!oneDepthArray[0].subs) {
+                const createLi = document.createElement("li");
+                const createAnchor = document.createElement("a");
+                createAnchor.href = "javascript:void(0);";
+                createAnchor.dataset.code = "";
+                createAnchor.dataset.name = "2수준 - 선택";
+                createAnchor.textContent = "2수준 - 선택";
+                createAnchor.addEventListener("click", handleSelectToTypeTwoDepth);
+                createLi.appendChild(createAnchor);
+
+                document.querySelector(".__type__two__depth ul").appendChild(createLi);
+            } else {
+                let tempArray = oneDepthArray[0].subs.slice(oneDepthArray[0].subs);
+
+                // 선택항목 추가
+                if(tempArray[0].title !== '2수준 - 선택') {
+                    const addDatas = {parent_class_cd: tempArray[0].parent_class_cd, level: 2, id: '', title: '2수준 - 선택'};
+                    tempArray.unshift(addDatas);
+                }
+
+                tempArray.forEach(function (item) {
+                    const createLi = document.createElement("li");
+                    const createAnchor = document.createElement("a");
+                    createAnchor.href = "javascript:void(0);";
+                    createAnchor.dataset.code = item.id;
+                    createAnchor.dataset.name = item.title;
+                    createAnchor.textContent = item.title;
+                    createAnchor.addEventListener("click", handleSelectToTypeTwoDepth);
+                    createLi.appendChild(createAnchor);
+
+                    document.querySelector(".__type__two__depth ul").appendChild(createLi);
+                });
+            }
+            document.querySelectorAll(".__type__two__depth ul li a").item(0).click();
+        }
+        // ---------------------------------------------------------------------------------
+
+
+
+        /*
+            검색조건 변경 이벤트
+         */
+        // ---------------------------------------------------------------------------------
+        function handleChangeToSearchCondition() {
+            const target = this;
+            document.querySelector("input[name=searchCondition]").value = target.dataset.condition;
+            document.querySelector(".searchCondition p").textContent = target.dataset.name;
+        }
+        // ---------------------------------------------------------------------------------
+
+
+
+        /*
+            검색
+         */
+        // ---------------------------------------------------------------------------------
+        function handleSearch() {
+            const searchKeyword = document.querySelector("input[name=searchKeyword]").value;
+            if(searchKeyword == '') {
+                alert("키워드를 입력해주세요.");
+                return;
+            }
+
+            if(document.querySelector("input[name=_rangeProduceYearStart]").value == "") {
+                document.querySelector("input[name=rangeProduceYearStart]").value = -1;
+            } else {
+                document.querySelector("input[name=rangeProduceYearStart]").value = -document.querySelector("input[name=_rangeProduceYearStart]").value;
+            }
+            if(document.querySelector("input[name=_rangeProduceYearEnd]").value == "") {
+                document.querySelector("input[name=rangeProduceYearEnd]").value = -1;
+            } else {
+                document.querySelector("input[name=rangeProduceYearEnd]").value = -document.querySelector("input[name=_rangeProduceYearEnd]").value;
+            }
+
+            document.querySelector("input[name=searchType]").value = "01";
+            form.action = "/search/archive/keywordSearch.do";
+            form.submit();
+        }
+        // ---------------------------------------------------------------------------------
+
+
+
+        /*
+            상세 검색
+         */
+        // ---------------------------------------------------------------------------------
+        function handleSearchToDetail() {
+
+            document.querySelector("input[name=searchKeyword]").value = "";
+
+            if(document.querySelector("input[name=_title]").value != "") {
+                document.querySelector("input[name=title]").value = document.querySelector("input[name=_title]").value;
+            }
+
+            if(document.querySelector("input[name=_producerName]").value != "") {
+                document.querySelector("input[name=producerName]").value = document.querySelector("input[name=_producerName]").value;
+            }
+
+            if(document.querySelector("input[name=_collectorName]").value != "") {
+                document.querySelector("input[name=collectorName]").value = document.querySelector("input[name=_collectorName]").value;
+            }
+
+            if(document.querySelector("input[name=_parentCategoryTypeCl]").value != "") {
+                document.querySelector("input[name=parentCategoryTypeCl]").value = document.querySelector("input[name=_parentCategoryTypeCl]").value;
+            }
+
+            if(document.querySelector("input[name=_filterTypeClassificationCl]").value != "") {
+                document.querySelector("input[name=filterTypeClassificationCl]").value = document.querySelector("input[name=_filterTypeClassificationCl]").value;
+            }
+
+            if(document.querySelector("input[name=_rangeProduceYearStart]").value == "") {
+                document.querySelector("input[name=rangeProduceYearStart]").value = -1;
+            } else {
+                document.querySelector("input[name=rangeProduceYearStart]").value = -document.querySelector("input[name=_rangeProduceYearStart]").value;
+            }
+            if(document.querySelector("input[name=_rangeProduceYearEnd]").value == "") {
+                document.querySelector("input[name=rangeProduceYearEnd]").value = -1;
+            } else {
+                document.querySelector("input[name=rangeProduceYearEnd]").value = -document.querySelector("input[name=_rangeProduceYearEnd]").value;
+            }
+
+            if(document.querySelector("input[name=_operator1]").value != "") {
+                document.querySelector("input[name=operator1]").value = document.querySelector("input[name=_operator1]").value;
+            }
+
+            if(document.querySelector("input[name=_operator2]").value != "") {
+                document.querySelector("input[name=operator2]").value = document.querySelector("input[name=_operator2]").value;
+            }
+
+            document.querySelector("input[name=searchType]").value = "02";
+            form.action = "/search/archive/detailSearch.do";
+            form.submit();
+        }
+        // ---------------------------------------------------------------------------------
+
+
+
+        /*
+            상세 조건 초기화
+         */
+        // ---------------------------------------------------------------------------------
+        function handleResetToDetailContent() {
+            document.querySelector("input[name=_title]").value = "";
+            document.querySelector("input[name=_producerName]").value = "";
+            document.querySelector("input[name=_collectorName]").value = "";
+            document.querySelector("input[name=_filterTypeClassificationCl]").value = document.querySelectorAll(".__type__one__depth ul li a").item(0).click();
+            document.querySelector("input[name=_rangeProduceYearStart]").value = "";
+            document.querySelector("input[name=_rangeProduceYearEnd]").value = "";
+            document.querySelector("input[name=_operator1]").value = operatorSelectorToTitle.item(0).click();
+            document.querySelector("input[name=_operator2]").value = operatorSelectorToProduce.item(0).click();
+            // typeCodeCombotree
+        }
+        // ---------------------------------------------------------------------------------
+
+
+
+        /*
+            타임라인 타이틀 클릭 이벤트
+         */
+        // ---------------------------------------------------------------------------------
+        function handleMoveToRecordDetail(recordNo) {
+            const newWindow = window.open("about:blank");
+            newWindow.location.href = "/data/getRecord.do?record_no=" + recordNo;
+        }
+        // ---------------------------------------------------------------------------------
+
+
+    </script>
+
+
+	
+
+<div class="footer">
+	<div class="inner">
+
+		<a href="#skip" class="btn-top"><img src="/resource/portal/images/btn_top.png" alt="상단으로"/></a>
+		<div class="footer_right">
+			<div class="select">
+				<p>관련 사이트 바로가기</p>
+				<div class="select_form">
+					<div><a href="http://www.nogunri.net" target="_blank">노근리국제평화재단</a></div>
+					<div><a href="https://518.org" target="_blank">5·18기념재단</a></div>
+					<div><a href="http://www.pcf.city.hiroshima.jp" target="_blank">히로시마 평화기념공원</a></div>
+					<div><a href="http://www.hiro-tsuitokinenkan.go.jp" target="_blank">국립 히로시마 원폭사망자추도 평화기념관</a></div>
+					<div><a href="http://www.peace-museum.pref.okinawa.jp/" target="_blank">오키나와평화기념자료관</a></div>
+					<div><a href="https://www.228.org.tw/" target="_blank">대만2·28사건기념관</a></div>
+					<div><a href="http://www.demopark.or.kr" target="_blank">부산민주항쟁기념사업회</a></div>
+					<div><a href="http://www.kdemo.or.kr" target="_blank">민주화운동기념사업회</a></div>
+				</div>
+			</div>
+		</div>
+		<div class="logo"><img src="/resource/portal/images/logo_footer.png" alt="제주 4·3 아카이브"/></div>
+		<div class="footer_left">
+			<div class="address">
+				제주특별자치도 제주시 명림로 430 제주 4·3 평화기념관 4층 Tel 064-723-4354,4301 Fax  064-723-4303
+			</div>
+			<p class="copyright">Copyright @ 2021. Jeju 4·3 Archives. All rights reserved.</p>
+		</div>
+	</div>
+</div>
+
+</div>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.search_container .slider').slick({
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				infinite: true,
+				arrows: true,
+				dots: true,
+				autoplay : true,
+				autoplaySpeed : 3000
+			});
+		});
+	</script>
+
+	<!-- 개발 -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	
+
+	<!-- 운영 -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-221415181-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-221415181-1');
+	</script>
+
+	<!-- 복사할 url 설정 및 포커스할 곳 -->
+	<input type="text" id="copyUril" style="display:block; position:absolute; left:-10000px">
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "url": "https://interactivos.museodelamemoria.cl/victims/?page_id=7836&exportar_entradas_to=true",
+  "fetched_at": "2026-11-06T08:21:24+00:00",
+  "robots_status": "http_404_no_rules",
+  "status": 200,
+  "final_url": "https://interactivos.museodelamemoria.cl/victims/?page_id=7836&exportar_entradas_to=true",
+  "content_type": "application/vnd.ms-excel; charset=UTF-8",
+  "etag": null,
+  "last_modified": null,
+  "sha256": "65ae72f9477cae7354774625ec2b5c3b08e885b7baf456daf76a6a3534b17175",
+  "byte_count": 751889,
+  "local_path": "raw\\snapshots\\65ae72f9477cae7354774625ec2b5c3b08e885b7baf456daf76a6a3534b17175.bin"
+}

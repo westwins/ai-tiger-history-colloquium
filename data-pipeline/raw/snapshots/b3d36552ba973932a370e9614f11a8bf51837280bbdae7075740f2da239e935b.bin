@@ -1,0 +1,816 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+	<title>제주4&middot;3 - 지역별 4·3</title>
+
+
+
+
+
+
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+	<meta name="format-detection" content="telephone=no" />
+	<title>제주 4·3 아카이브</title>
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+
+	<link rel="shortcut icon" type="image/x-icon" href="/resource/portal/images/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/resource/portal/css/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="/resource/portal/css/common.css">
+
+	<script type="text/javascript" src="/resource/portal/js/jquery-1.12.4.js"></script>
+	<script type="text/javascript" src="/resource/portal/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="/resource/portal/js/common.js"></script>
+
+	<!-- slick-slider -->
+	<script type="text/javascript" src="/resource/portal/dist/slick.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/resource/portal/dist/slick.css">
+
+	<script src="/resource/portal/dist/jquery.mCustomScrollbar.concat.min.js"></script>
+	<link rel="stylesheet" href="/resource/portal/dist/jquery.mCustomScrollbar.css" />
+
+	<!-- 카카오 공유하기 -->
+	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+	
+    
+
+	
+</head>
+<body>
+<div id="skip">
+	<a href="#menu"><span>메뉴 바로가기</span></a>
+	<a href="#contents"><span>본문 바로가기</span></a>
+</div>
+<div id="main">
+
+	
+
+
+
+
+<div class="header">
+	<div class="inner">
+		<h1 class="logo"><a href="/main.do"><img src="/resource/portal/images/logo.png" alt="제주 4·3 아카이브"/></a></h1>
+		<ul id="menu" class="menu">
+			<li>
+				<a href="/search/archive/detailSearch.do">통합검색</a>
+				<div class="depth2">
+					<ul>
+						<li><a href="/search/archive/detailSearch.do">아카이브 검색</a></li>
+						<li><a href="/search/collection/list.do">기념관 전시품</a></li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<a href="/data/getDatas.do">4·3 자료</a>
+				<div class="depth2">
+					<ul>
+						<li><a href="/data/document/list.do">문서</a></li>
+						<li><a href="/data/news/list.do">신문</a></li>
+						<li><a href="/data/photo/list.do">사진</a></li>
+						<li><a href="/data/audio/list.do">시청각</a></li>
+						
+						<li><a href="/data/publication/list.do">재단 간행물</a></li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<a href="/theme/getThemes.do">주제별 자료</a>
+				<div class="depth2">
+					<ul>
+						
+							<li><a href="/theme/getTheme.do?theme_no=20">4·3 진상규명의 긴 여정</a></li>
+						
+					</ul>
+				</div>
+			</li>
+			<li>
+				<a href="/events/contents/manage.do">4·3 이란</a>
+				<div class="depth2">
+					<ul>
+						<li><a href="/events/timeline/timeline.do">시대별 기록</a></li>
+						<li><a href="/events/history/history.do">지역별 4·3</a></li>
+						<li><a href="/events/victims/victims.do">피해현황(통계)</a></li>
+						<li><a href="/events/peacehall/peacehall.do">4·3 평화기념관</a></li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<a href="/archive/introduce.do">4·3 아카이브 안내</a>
+				<div class="depth2">
+					<ul>
+						<li><a href="/archive/introduce.do">아카이브 소개</a></li>
+						<li><a href="/archive/useGuide.do">이용안내</a></li>
+						<li><a href="/archive/notices.do">공지사항</a></li>
+						<li><a href="/archive/dataStatistics.do">자료현황</a></li>
+						<li><a href="/archive/donation.do">기증안내</a></li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+		<a href="#" class="btn-menu">전체메뉴</a>
+	</div>
+	<div class="allmenu">
+		<div class="dim"></div>
+		<div class="allmenu_form">
+			<div class="inner">
+				<a href="#"><img src="/resource/portal/images/logo.png" alt="제주 4·3 아카이브"/></a>
+				<a href="#" class="close"><img src="/resource/portal/images/btn_close.png" alt="닫기"/></a>
+			</div>
+			<div class="menu">
+				<ul>
+					<li>
+						<span><a href="/search/archive/keywordSearch.do">통합검색</a></span>
+						<ul>
+							<li><a href="/search/archive/keywordSearch.do">아카이브 검색</a></li>
+							<li><a href="/search/collection/list.do">기념관 전시품</a></li>
+						</ul>
+					</li>
+					<li>
+						<span><a href="/data/getDatas.do">4·3 자료</a></span>
+						<ul>
+							<li><a href="/data/document/list.do">문서</a></li>
+							<li><a href="/data/news/list.do">신문</a></li>
+							<li><a href="/data/photo/list.do">사진</a></li>
+							<li><a href="/data/audio/list.do">시청각</a></li>
+							
+							<li><a href="/data/publication/list.do">재단 간행물</a></li>
+						</ul>
+					</li>
+					<li>
+						<span><a href="/theme/getThemes.do">주제별 자료</a></span>
+						<ul>
+							
+								<li><a href="/theme/getTheme.do?theme_no=20">4·3 진상규명의 긴 여정</a></li>
+							
+						</ul>
+					</li>
+					<li>
+						<span><a href="/events/contents/manage.do">4·3 이란</a></span>
+						<ul>
+							<li><a href="/events/timeline/timeline.do">시대별 기록</a></li>
+							<li><a href="/events/history/history.do">지역별 4·3</a></li>
+							<li><a href="/events/victims/victims.do">피해현황(통계)</a></li>
+							<li><a href="/events/peacehall/peacehall.do">4·3 평화기념관</a></li>
+						</ul>
+					</li>
+					<li>
+						<span><a href="/archive/introduce.do">4·3 아카이브 안내</a></span>
+						<ul>
+							<li><a href="/archive/introduce.do">아카이브 소개</a></li>
+							<li><a href="/archive/useGuide.do">이용안내</a></li>
+							<li><a href="/archive/notices.do">공지사항</a></li>
+							<li><a href="/archive/dataStatistics.do">자료현황</a></li>
+							<li><a href="/archive/donation.do">기증안내</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="dimm"></div>
+	
+	
+    <div id="skip"> 
+        <a href="#menu"><span>메뉴 바로가기</span></a> 
+        <a href="#contents"><span>본문 바로가기</span></a>
+    </div>  
+    <div id="wrap">
+
+        <div id="contents" class="sub_container">
+            <div class="title_container">
+                <div class="inner relative">
+                    <h2>4·3 이란</h2>
+                    <ol class="location">
+                        <li><img src="/resource/portal/images/ico_home.png" alt="홈"/></li>
+                        <li><a href="/events/contents/manage.do">4·3 이란</a></li>
+                        <li><a href="/events/history/history.do">지역별 4·3</a></li>
+                    </ol>
+                </div>
+            </div>
+            <div class="tab_container">
+                <div class="mo_select">
+                    <p>지역별 4·3</p>
+                    <ul class="tab four">
+                        <li class="mo"><a href="/events/contents/manage.do">4·3 이란</a></li>
+                        <li><a href="/events/timeline/timeline.do">시대별 기록</a></li>
+                        <li class="on"><a href="/events/history/history.do">지역별 4·3</a></li>
+                        <li><a href="/events/victims/victims.do">피해현황(통계)</a></li>
+                        <li><a href="/events/peacehall/peacehall.do">4·3 평화기념관</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="inner">
+                <div class="search_container center">
+                    <form name="searchForm" id="searchForm" method="post">
+                        <input type="hidden" name="orderKey" id="orderKey" value="" />
+                        <input type="hidden" name="orderMethod" id="orderMethod" value="" />
+                        <input type="hidden" name="orderByName" id="orderByName" value="" />
+                        <input type="hidden" name="currPage" id="currPage" value="" />
+                        <input type="hidden" name="viewRowCnt" id="viewRowCnt" value="" />
+                        <input type="hidden" name="viewRowCountName" id="viewRowCountName" value="" />
+                        <input type="hidden" name="siteCode" id="siteCode" value="" />
+                    
+                    </form>
+	                <p class="color-666 text-center">각 지역을 클릭하여 지역별 4·3 유적지를 확인하세요.</p>
+                </div>
+                <div class="map_container">
+                    <div class="map">
+                        <img src="/resource/portal/images/img_map.png" alt=""/>
+                        <div class="map_list">
+                            <div class="map01"><a href="javascript:void(0);" data-target="CO-ADR-NTH-A03">제주시</a></div>
+                            <div class="map02"><a href="javascript:void(0);" data-target="CO-ADR-NTH-A02">애월</a></div>
+                            <div class="map03"><a href="javascript:void(0);" data-target="CO-ADR-NTH-A06">한림</a></div>
+                            <div class="map04"><a href="javascript:void(0);" data-target="CO-ADR-NTH-A05">한경</a></div>
+                            <div class="map05"><a href="javascript:void(0);" data-target="CO-ADR-STH-A02">대정</a></div>
+                            <div class="map06"><a href="javascript:void(0);" data-target="CO-ADR-STH-A05">안덕</a></div>
+                            <div class="map07"><a href="javascript:void(0);" data-target="CO-ADR-STH-A06">중문</a></div>
+                            <div class="map08"><a href="javascript:void(0);" data-target="CO-ADR-STH-A03">서귀포시</a></div>
+                            <div class="map09"><a href="javascript:void(0);" data-target="CO-ADR-STH-A01">남원</a></div>
+                            <div class="map10"><a href="javascript:void(0);" data-target="CO-ADR-STH-A07">표선</a></div>
+                            <div class="map11"><a href="javascript:void(0);" data-target="CO-ADR-STH-A04">성산</a></div>
+                            <div class="map12"><a href="javascript:void(0);" data-target="CO-ADR-NTH-A01">구좌</a></div>
+                            <div class="map13"><a href="javascript:void(0);" data-target="CO-ADR-NTH-A04">조천</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="total">
+                    <p>총 <b class="color-mint __total__count"></b>개 검색되었습니다.</p>
+                    
+                    <div class="select_form">
+                        <div class="select w130 viewRowCnt">
+                            <p>10개씩 보기</p>
+                            <ul>
+                                <li><a href="javascript:void(0);" data-viewrowcnt="10" data-name="10개씩 보기">10개씩 보기</a></li>
+                                <li><a href="javascript:void(0);" data-viewrowcnt="20" data-name="20개씩 보기">20개씩 보기</a></li>
+                                <li><a href="javascript:void(0);" data-viewrowcnt="40" data-name="40개씩 보기">40개씩 보기</a></li>
+                                <li><a href="javascript:void(0);" data-viewrowcnt="80" data-name="80개씩 보기">80개씩 보기</a></li>
+                            </ul>
+                        </div>
+                        <div class="select w150 orderKey">
+                            <p>최신순</p>
+                            <ul>
+                                <li><a href="javascript:void(0);" data-orderkey="HISTORY_NO" data-ordermethod="DESC" data-name="최신순">최신순</a></li>
+                                <li><a href="javascript:void(0);" data-orderkey="HISTORY_NO" data-ordermethod="ASC" data-name="최신순(역순)">최신순(역순)</a></li>
+                                <li><a href="javascript:void(0);" data-orderkey="HISTORY_SITE_NAME" data-ordermethod="DESC" data-name="제목순">제목순</a></li>
+                                <li><a href="javascript:void(0);" data-orderkey="HISTORY_SITE_NAME" data-ordermethod="ASC" data-name="제목순(역순)">제목순(역순)</a></li>
+                            </ul>
+                        </div>
+                        <button type="button" class="btn-gray conditionSearchButton">이동</button>
+                    </div>
+                </div>
+
+                <div class="table_container">
+                    <table>
+                        <caption>지역별정보/No,유적지명,유적지유형,지역,주소로 구성</caption>
+                        <colgroup>
+                            <col width="10%;"/>
+                            <col width="15%"/>
+                            <col width="15%"/>
+                            <col width="15%"/>
+                            <col width="auto;"/>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">No</th>
+                                <th scope="col">유적지 명</th>
+                                <th scope="col">유적지 유형</th>
+                                <th scope="col">지역</th>
+                                <th scope="col">주소</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- pagination -->
+                <div style="margin-top: 20px;">
+                    <div class="pagination_container text-center ta">
+                    </div>
+
+
+                    <div class="pagination_container text-center mo">
+                    </div>
+                </div>
+                <!-- //pagination -->
+
+                
+                <div class="type_info __none__selected__hide__area">
+                    <p>만벵듸 공동장지</p>
+                    <ul class="three">
+                        <li><em class="color-mint">유형</em><span>잃어버린 마을</span></li>
+                        <li><em class="color-mint">지역</em><span>제주시</span></li>
+                        <li><em class="color-mint">주소</em><span>제주특별자치도 제주시 조천읍 와산리 464번지 일대</span></li>
+                    </ul>
+                </div>
+
+                <div class="board_list __none__selected__hide__area">
+                    <div class="slider">
+                    </div>
+                </div>
+
+                <div class="board_text __none__selected__hide__area">
+                    <p>내용</p>
+                    <div class="text"></div>
+                    <button type="button" class="bg-black btn-round" onclick="text_more();">내용 더보기<i class="i-b"></i></button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script type="text/javascript">
+
+
+        /*
+            Selector 선언 및 전거 중복체크 변수 선언
+         */
+        // ---------------------------------------------------------------------------------
+        let hideAreaSelector;
+        let total;
+        let tableContainer;
+        let typeInfo;
+        let boardList;
+        let boardText;
+        let mapAnchorSelector;
+
+        let viewRowCntSelector;
+        let orderKeySelector;
+        let conditionSearchButton;
+        // ---------------------------------------------------------------------------------
+
+
+
+        /*
+            Onload 이벤트
+         */
+        // ---------------------------------------------------------------------------------
+        window.onload = function () {
+
+            // 초기화 및 이벤트 설정
+            handleInitAndAddEvent();
+
+            // 화면 접근 후 ajax 로직인데... 갑자기 메인에서 넘어올 수 있게 해달라니..
+            const siteCode = document.querySelector("input[name=siteCode]").value;
+            if(siteCode == '' || siteCode == null) {
+                mapAnchorSelector.item(0).parentNode.classList.add("on");
+            } else {
+                Array.prototype.slice.call(mapAnchorSelector).forEach(function (item) {
+                    if(siteCode == item.dataset.target) {
+                        item.parentNode.classList.add("on");
+                    }
+                });
+            }
+
+            handleSearch(1);
+        }
+        // ---------------------------------------------------------------------------------
+
+
+
+        /*
+            Slick Slider 초기화
+         */
+        // ---------------------------------------------------------------------------------
+        function handleEventToSlickSlider() {
+            // jQuery 라이브러리
+            $('.board_list .slider').slick({
+                dots: false,
+                infinite: true,
+                arrows: true,
+                slidesToShow: 5,
+                slidesToScroll: 1,
+                responsive: [ // 반응형 웹 구현 옵션
+                    {
+                        breakpoint: 799,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+        }
+        // ---------------------------------------------------------------------------------
+
+
+
+        /*
+            초기화 및 이벤트 설정
+         */
+        // ---------------------------------------------------------------------------------
+        function handleInitAndAddEvent() {
+            viewRowCntSelector = document.querySelectorAll(".total .viewRowCnt li a");
+            Array.prototype.slice.call(viewRowCntSelector).forEach(function (item) {
+                item.addEventListener("click", handleChangeToViewRowCnt);
+            });
+
+            orderKeySelector = document.querySelectorAll(".total .orderKey li a");
+            Array.prototype.slice.call(orderKeySelector).forEach(function (item) {
+                item.addEventListener("click", handleChangeToOrderKey);
+            });
+
+            mapAnchorSelector = document.querySelectorAll(".map_container a");
+            Array.prototype.slice.call(mapAnchorSelector).forEach(function (item) {
+                item.addEventListener("click", handleChangeToMapDisplay);
+            });
+
+
+            hideAreaSelector = document.querySelectorAll(".__none__selected__hide__area");
+            Array.prototype.slice.call(hideAreaSelector).forEach(function (item) {
+                item.style.display = "none";
+            });
+
+            conditionSearchButton = document.querySelector("button.conditionSearchButton");
+            conditionSearchButton.addEventListener("click", handleSearchToCondition);
+
+
+            total = document.querySelector(".total");
+            total.style.display = "none";
+
+            tableContainer = document.querySelector(".table_container");
+            tableContainer.style.display = "none";
+
+            typeInfo = document.querySelectorAll(".type_info");
+            boardList = document.querySelectorAll(".board_list");
+            boardText = document.querySelectorAll(".board_text");
+
+            // handleSearch();
+        }
+        // ---------------------------------------------------------------------------------
+
+
+
+        /*
+            Order by 설정 -> 이동 버튼 클릭 이벤트
+         */
+        // ---------------------------------------------------------------------------------
+        function handleSearchToCondition() {
+            handleSearch(1);
+        }
+        // ---------------------------------------------------------------------------------
+
+
+
+        /*
+            View Row Count 설정
+         */
+        // ---------------------------------------------------------------------------------
+        function handleChangeToViewRowCnt() {
+            const target = this;
+            document.querySelector("input[name=viewRowCnt]").value = target.dataset.viewrowcnt;
+            document.querySelector("input[name=viewRowCountName]").value = target.dataset.name;
+            target.parentNode.parentNode.parentNode.querySelector("p").textContent = target.textContent;
+        }
+        // ---------------------------------------------------------------------------------
+
+
+
+        /*
+            Order by 설정
+         */
+        // ---------------------------------------------------------------------------------
+        function handleChangeToOrderKey() {
+            const target = this;
+            document.querySelector("input[name=orderKey]").value = target.dataset.orderkey;
+            document.querySelector("input[name=orderMethod]").value = target.dataset.ordermethod;
+            document.querySelector("input[name=orderByName]").value = target.dataset.name;
+            target.parentNode.parentNode.parentNode.querySelector("p").textContent = target.dataset.name;
+        }
+        // ---------------------------------------------------------------------------------
+
+
+
+        /*
+            지도 클릭 이벤트
+         */
+        // ---------------------------------------------------------------------------------
+        function handleChangeToMapDisplay() {
+            const target = this;
+            Array.prototype.slice.call(mapAnchorSelector).forEach(function (item) {
+                if(item.dataset.target == target.dataset.target) {
+                    item.parentNode.classList.add("on");
+                } else {
+                    item.parentNode.classList.remove("on");
+                }
+            });
+
+            handleSearch(1);
+        }
+        // ---------------------------------------------------------------------------------
+
+
+
+        /*
+            웹서비스 컨텐츠 관리 지역별 43 유적지 정보 검색
+         */
+        // ---------------------------------------------------------------------------------
+        function handleSearch(currPage) {
+
+            // 선택한 지도 내 지역코드
+            const targetArray = Array.prototype.slice.call(mapAnchorSelector).filter(function (item) {
+                if(item.parentNode.classList.contains("on")) {
+                    return item;
+                }
+            });
+
+            // console.log(targetArray);
+            const past_address2 = targetArray[0].dataset.target;
+
+            const orderKey = document.querySelector("input[name=orderKey]").value;
+            const orderMethod = document.querySelector("input[name=orderMethod]").value;
+            const orderByName = document.querySelector("input[name=orderByName]").value;
+            const viewRowCnt = document.querySelector("input[name=viewRowCnt]").value;
+            const viewRowCountName = document.querySelector("input[name=viewRowCountName]").value;
+
+
+            const searchDatas = {
+                "past_address2": past_address2,
+                "orderKey": orderKey,
+                "orderMethod": orderMethod,
+                "orderByName": orderByName,
+                "viewRowCnt": viewRowCnt,
+                "viewRowCountName": viewRowCountName,
+                "currPage": currPage
+            }
+
+            const searchUrl = "/events/history/getHistoricalSites.do";
+
+            total.style.display = "none";
+            tableContainer.style.display = "none";
+            Array.prototype.slice.call(hideAreaSelector).forEach(function (item) {
+                item.style.display = "none";
+            });
+
+            $.ajax({
+                type: 'POST',
+                url: searchUrl,
+                dataType: 'json',
+                data: JSON.stringify(searchDatas),
+                async: false,
+                contentType: "application/json",
+                traditional: true,
+                success: function(data) {
+                    handleDrawTableToHistoricalSite(data);
+                }, error: function(err) {
+                    console.log(err);
+                }
+            });
+        }
+        // ---------------------------------------------------------------------------------
+
+
+
+        /*
+            웹서비스 컨텐츠 관리 지역별 43 유적지 정보 테이블 목록 그리기
+         */
+        // ---------------------------------------------------------------------------------
+        function handleDrawTableToHistoricalSite(data) {
+
+            total.querySelector(".__total__count").textContent = data.result.count;
+            total.style.display = "block";
+
+            tableContainer.querySelector("tbody").innerHTML = "";
+
+            data.result.list.forEach(function (item) {
+                const createTr = document.createElement("tr");
+                const createTd1 = document.createElement("td");
+                createTd1.textContent = item.rnum;
+                const createTd2 = document.createElement("td");
+
+                const createTd2Anchor = document.createElement("a");
+                createTd2Anchor.href = "javascript:void(0);";
+                createTd2Anchor.classList = "color-pink bold";
+                createTd2Anchor.textContent = item.history_site_name;
+
+                const datasetKeysArray = Object.keys(item);
+                datasetKeysArray.forEach(function (tempKey) {
+                    if(tempKey !== "history_site_description") {
+                        createTd2Anchor.dataset[tempKey] = item[tempKey] != undefined || item[tempKey] != null ? item[tempKey] : "";
+                    }
+                });
+                createTd2Anchor.addEventListener("click", handleSearchToSelectedHistoricalSite);
+                createTd2.appendChild(createTd2Anchor);
+
+                const createTd3 = document.createElement("td");
+                createTd3.textContent = item.history_site_type_name;
+                const createTd4 = document.createElement("td");
+                createTd4.textContent = item.past_address1_name;
+                const createTd5 = document.createElement("td");
+                createTd5.textContent = item.current_address;
+
+                createTr.appendChild(createTd1);
+                createTr.appendChild(createTd2);
+                createTr.appendChild(createTd3);
+                createTr.appendChild(createTd4);
+                createTr.appendChild(createTd5);
+
+                tableContainer.querySelector("tbody").appendChild(createTr);
+            });
+
+            tableContainer.style.display = "block";
+
+            if(data.result.list.length > 0) {
+                document.querySelector(".pagination_container.text-center.ta").innerHTML = data.pageToTa;
+                document.querySelector(".pagination_container.text-center.mo").innerHTML = data.pageToMo;
+            }
+        }
+        // ---------------------------------------------------------------------------------
+
+
+
+        /*
+            웹서비스 컨텐츠 관리 지역별 43 유적지 정보 테이블 선택한 로우 정보로 재검색
+         */
+        // ---------------------------------------------------------------------------------
+        function handleSearchToSelectedHistoricalSite() {
+            // console.log(this);
+            const history_no = this.dataset.history_no;
+
+            let searchDatas = {
+                "history_no": history_no
+            }
+
+            const searchUrl = "/events/history/getHistoricalSite.do";
+
+
+            if ($('.slider').hasClass('slick-initialized')) {
+                $('.slider').slick('destroy');
+            }
+
+            // if(document.querySelector(".slick-slider")) {
+            //     $('.slider').slick('unslick');
+            // }
+            document.querySelector(".board_list.__none__selected__hide__area").querySelector(".slider").innerHTML = "";
+
+            $.ajax({
+                type: 'POST',
+                url: searchUrl,
+                dataType: 'json',
+                data: JSON.stringify(searchDatas),
+                async: false,
+                contentType: "application/json",
+                traditional: true,
+                success: function(data) {
+                    handleDrawToSelectedHistoricalSite(data.result);
+                }, error: function(err) {
+                    console.log(err);
+                }
+            });
+        }
+        // ---------------------------------------------------------------------------------
+
+
+
+        /*
+            웹서비스 컨텐츠 관리 지역별 43 유적지 정보 테이블 선택한 로우 정보로 재검색한 결과 그리기
+         */
+        // ---------------------------------------------------------------------------------
+        function handleDrawToSelectedHistoricalSite(data) {
+
+            // board_list
+            const boardList = document.querySelector(".board_list.__none__selected__hide__area");
+            // boardList.querySelector(".slider").innerHTML = "";
+            data.historicalSiteFileList.forEach(function (item, index) {
+                // let fileOrder = 1 + index;
+                const createImageOuterDiv = document.createElement("div");
+                // createImageOuterDiv.classList = "slick-slide slick-cloned";
+
+                const createImageAnchor = document.createElement("a");
+                createImageAnchor.href = "javascript:void(0);";
+                const createImageInnerDiv = document.createElement("div");
+                createImageInnerDiv.classList = "img";
+                const createImageTag = document.createElement("img");
+                createImageTag.src = "/history/file/" + item.history_no + "/" + item.file_order + "/thumbnail/download.do";
+                createImageTag.alt = item.original_file_name;
+
+                createImageInnerDiv.appendChild(createImageTag);
+                createImageAnchor.appendChild(createImageInnerDiv);
+                createImageOuterDiv.appendChild(createImageAnchor);
+
+                // console.log(createImageOuterDiv);
+
+                boardList.querySelector(".slider").appendChild(createImageOuterDiv);
+            });
+            setTimeout(function () {
+                handleEventToSlickSlider();
+            }, 100);
+
+            // type_info
+            const typeInfo = document.querySelector(".type_info.__none__selected__hide__area");
+            typeInfo.querySelector("p").textContent = data.historicalSite.historicalSiteInfo.history_site_name;
+            typeInfo.querySelectorAll("span").item(0).textContent = data.historicalSite.historicalSiteInfo.history_site_type_name;
+            typeInfo.querySelectorAll("span").item(1).textContent = data.historicalSite.historicalSiteInfo.past_address2_name;
+            typeInfo.querySelectorAll("span").item(2).textContent = data.historicalSite.historicalSiteInfo.current_address;
+
+
+            // board_text
+            const boardText = document.querySelector(".board_text.__none__selected__hide__area");
+            boardText.querySelector(".text").textContent = "";
+            boardText.querySelector(".text").innerHTML = data.historicalSite.historicalSiteInfo.history_site_description;
+
+
+            Array.prototype.slice.call(hideAreaSelector).forEach(function (item) {
+                item.style.display = "block";
+            });
+        }
+
+
+
+        /*
+            페이징 이벤트
+         */
+        // ---------------------------------------------------------------------------------
+        function handleMovePage(pages) {
+            let currPage = pages < 1 ? 1 : pages;
+
+            handleSearch(currPage);
+        }
+        // ---------------------------------------------------------------------------------
+
+
+    </script>
+
+
+
+	
+
+<div class="footer">
+	<div class="inner">
+
+		<a href="#skip" class="btn-top"><img src="/resource/portal/images/btn_top.png" alt="상단으로"/></a>
+		<div class="footer_right">
+			<div class="select">
+				<p>관련 사이트 바로가기</p>
+				<div class="select_form">
+					<div><a href="http://www.nogunri.net" target="_blank">노근리국제평화재단</a></div>
+					<div><a href="https://518.org" target="_blank">5·18기념재단</a></div>
+					<div><a href="http://www.pcf.city.hiroshima.jp" target="_blank">히로시마 평화기념공원</a></div>
+					<div><a href="http://www.hiro-tsuitokinenkan.go.jp" target="_blank">국립 히로시마 원폭사망자추도 평화기념관</a></div>
+					<div><a href="http://www.peace-museum.pref.okinawa.jp/" target="_blank">오키나와평화기념자료관</a></div>
+					<div><a href="https://www.228.org.tw/" target="_blank">대만2·28사건기념관</a></div>
+					<div><a href="http://www.demopark.or.kr" target="_blank">부산민주항쟁기념사업회</a></div>
+					<div><a href="http://www.kdemo.or.kr" target="_blank">민주화운동기념사업회</a></div>
+				</div>
+			</div>
+		</div>
+		<div class="logo"><img src="/resource/portal/images/logo_footer.png" alt="제주 4·3 아카이브"/></div>
+		<div class="footer_left">
+			<div class="address">
+				제주특별자치도 제주시 명림로 430 제주 4·3 평화기념관 4층 Tel 064-723-4354,4301 Fax  064-723-4303
+			</div>
+			<p class="copyright">Copyright @ 2021. Jeju 4·3 Archives. All rights reserved.</p>
+		</div>
+	</div>
+</div>
+
+</div>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.search_container .slider').slick({
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				infinite: true,
+				arrows: true,
+				dots: true,
+				autoplay : true,
+				autoplaySpeed : 3000
+			});
+		});
+	</script>
+
+	<!-- 개발 -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	
+
+	<!-- 운영 -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-221415181-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-221415181-1');
+	</script>
+
+	<!-- 복사할 url 설정 및 포커스할 곳 -->
+	<input type="text" id="copyUril" style="display:block; position:absolute; left:-10000px">
+
+</body>
+</html>

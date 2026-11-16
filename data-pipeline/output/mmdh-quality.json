@@ -1,0 +1,69 @@
+{
+  "source_id": "chile-mmdh-victims",
+  "source_records": 3216,
+  "sha256": "65ae72f9477cae7354774625ec2b5c3b08e885b7baf456daf76a6a3534b17175",
+  "record_unit": "source person catalog record; no cross-source deduplication performed",
+  "date_precision": {
+    "day": 3123,
+    "month": 89,
+    "year": 3,
+    "unknown": 1
+  },
+  "dates_requiring_review": {
+    "-1982": 1
+  },
+  "identical_export_rows": 0,
+  "source_region_labels": {
+    "Región de Arica y Parinacota": 1,
+    "unknown": 1,
+    "RM Metropolitana": 1921,
+    "X Los Lagos": 200,
+    "II Antofagasta": 97,
+    "V Valparaíso": 163,
+    "Extranjero": 57,
+    "VIII Biobío": 308,
+    "VII Maule": 99,
+    "IX Araucanía": 175,
+    "VI O`Higgins": 26,
+    "IV Coquimbo": 35,
+    "I Tarapacá": 55,
+    "XI Aysén": 13,
+    "III Atacama": 36,
+    "XII Magallanes": 10,
+    "RM METROPOLITANA": 16,
+    "XV Los Lagos": 1,
+    "XIV Arica-Parinacota": 2
+  },
+  "source_type_labels": {
+    "Detenido Desaparecido": 1093,
+    "Ejecutado Político": 2123
+  },
+  "coordinate_count": 0,
+  "annual": {
+    "1973": 1829,
+    "1974": 422,
+    "1975": 158,
+    "1976": 167,
+    "1977": 46,
+    "1978": 18,
+    "1979": 22,
+    "1980": 28,
+    "1981": 45,
+    "1982": 14,
+    "1983": 93,
+    "1984": 89,
+    "1985": 78,
+    "1986": 69,
+    "1987": 51,
+    "1988": 48,
+    "1989": 33,
+    "1990": 4,
+    "1991": 1
+  },
+  "database_rows": {
+    "hist_source": 2,
+    "hist_snapshot": 2,
+    "hist_record": 5614,
+    "hist_place": 7370
+  }
+}

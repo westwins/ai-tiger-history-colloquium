@@ -1,0 +1,137 @@
+{
+  "checked_on": "2026-11-06",
+  "sources": [
+    {
+      "id": "chile-pinochet-2019",
+      "country": "CHL",
+      "priority": 1,
+      "kind": "person_record",
+      "title": "Freire 외 (2019), Pinochet 연구 데이터",
+      "url": "https://github.com/danilofreire/pinochet",
+      "seed": "https://raw.githubusercontent.com/danilofreire/pinochet/master/data/pinochet.csv",
+      "adapter": "pinochet_csv",
+      "scope": "레티그 보고서를 재부호화한 2,398명, 59개 변수. 현재 칠레 전체 공식 인정자 명부와 동일하지 않음.",
+      "rights": "연구 데이터 공개. 배포 전 저장소·논문 이용조건 재확인."
+    },
+    {
+      "id": "chile-mmdh-victims",
+      "country": "CHL",
+      "priority": 1,
+      "kind": "person_catalog",
+      "title": "기억과 인권 박물관(MMDH) 희생자 아카이브",
+      "url": "https://interactivos.museodelamemoria.cl/victims/",
+      "seed": "https://interactivos.museodelamemoria.cl/victims/?page_id=7836",
+      "adapter": "mmdh_catalog",
+      "scope": "진실위원회의 사망·강제실종 인정자와 후속 사법자료를 반영한 서술. 생존 고문 피해자와 모집단 구분.",
+      "rights": "공개 목록·링크 우선 수집. 원문·사진 재배포 조건 별도 확인."
+    },
+    {
+      "id": "chile-indh-rettig",
+      "country": "CHL",
+      "priority": 2,
+      "kind": "document_catalog",
+      "title": "INDH 레티그 보고서 원문",
+      "url": "https://www.indh.cl/recordamos-los-32-anos-del-informe-rettig-primer-reporte-oficial-sobre-violaciones-a-los-derechos-humanos-en-dictadura/",
+      "seed": "https://www.indh.cl/recordamos-los-32-anos-del-informe-rettig-primer-reporte-oficial-sobre-violaciones-a-los-derechos-humanos-en-dictadura/",
+      "adapter": "probe",
+      "scope": "보고서 판본·권·쪽의 근거 확인. 다른 위원회·후속 인정과 분리.",
+      "rights": "공개 보고서 링크와 서지정보 우선."
+    },
+    {
+      "id": "chile-mmdh-documents",
+      "country": "CHL",
+      "priority": 2,
+      "kind": "document_catalog",
+      "title": "MMDH 문서 아카이브",
+      "url": "https://www.cedocmmdh.cl/",
+      "seed": "https://archivommdh.cl/index.php/?sf_culture=es",
+      "adapter": "probe",
+      "scope": "문서·증언·사진을 인물/사건 근거에 연결. 웹 열람 도구에서 403을 확인했으며 자동 접근 가능 여부 점검 필요.",
+      "rights": "기탁자·소장기관별 열람 및 재이용 조건 확인."
+    },
+    {
+      "id": "chile-memoriaviva",
+      "country": "CHL",
+      "priority": 3,
+      "kind": "person_catalog",
+      "title": "Memoria Viva",
+      "url": "https://memoriaviva.com/",
+      "seed": "https://memoriaviva.com/",
+      "adapter": "probe",
+      "scope": "개별 인물·억압 장소의 교차검증. 국가 인정자 수와 동일시하지 않음.",
+      "rights": "공개 링크·서지정보 우선. 사진·서술의 재배포 별도 확인."
+    },
+    {
+      "id": "jeju43-archive",
+      "country": "KOR",
+      "priority": 1,
+      "kind": "document_catalog",
+      "title": "제주4·3아카이브",
+      "url": "http://43archives.or.kr/main.do",
+      "seed": "http://43archives.or.kr/main.do",
+      "adapter": "probe",
+      "scope": "기록물 기술정보·보고서·증언·사진의 우선 수집원. HTTPS는 시간초과였으나 재단에서 안내한 HTTP 원문은 200 응답 확인. 공개 목록 구조 확인 후 증분 수집.",
+      "rights": "공개 메타데이터와 원문 이용범위를 구분."
+    },
+    {
+      "id": "jeju43-reports",
+      "country": "KOR",
+      "priority": 1,
+      "kind": "document_catalog",
+      "title": "제주4·3평화재단 진상조사·추가진상조사",
+      "url": "https://jeju43peace.or.kr/kor/sub03_01_06.do",
+      "seed": "https://jeju43peace.or.kr/kor/sub03_01_06.do",
+      "adapter": "probe",
+      "scope": "2003 진상조사보고서와 추가진상조사, 특히 12개면 165개리 조사·읍면별 13권 보고서. 공개 파일 확보 후 쪽 단위 추출·표 검수.",
+      "rights": "공개 파일·발간물과 비공개 조사기록을 구분."
+    },
+    {
+      "id": "jeju43-sites",
+      "country": "KOR",
+      "priority": 1,
+      "kind": "site_catalog",
+      "title": "제주4·3평화재단 4·3 유적",
+      "url": "https://jeju43peace.or.kr/kor/ruins/list.do",
+      "seed": "https://jeju43peace.or.kr/kor/ruins/list.do",
+      "adapter": "probe",
+      "scope": "유적·잃어버린 마을의 공간 레이어. 유적 한 곳을 희생자 한 명으로 계산하지 않음.",
+      "rights": "설명·사진·좌표 출처 및 재이용 조건 확인."
+    },
+    {
+      "id": "jeju43-tablets",
+      "country": "KOR",
+      "priority": 2,
+      "kind": "person_catalog",
+      "title": "제주4·3 온라인 추모관 위패 검색",
+      "url": "https://online.jeju43peace.or.kr/memorial/tablet.do",
+      "seed": "https://online.jeju43peace.or.kr/memorial/tablet.do",
+      "adapter": "probe",
+      "scope": "공개 검색은 성명으로 위패 위치를 찾는 기능. 사건일·사망지 데이터베이스라고 간주하지 않음. 이름 전수 대입 대신 제공기관의 공개 명부·일괄 제공 협의 우선.",
+      "rights": "비공개 신청·보상·유족 정보 제외."
+    },
+    {
+      "id": "jeju43-national-archives",
+      "country": "KOR",
+      "priority": 2,
+      "kind": "document_catalog",
+      "title": "국가기록원 제주4·3 기록",
+      "url": "https://www.archives.go.kr/next/newarchive/popArchiveEventList.do?archiveId=0001336813",
+      "seed": "https://www.archives.go.kr/next/newarchive/popArchiveEventList.do?archiveId=0001336813",
+      "adapter": "probe",
+      "scope": "기록물 관리번호·철/건·생산기관·생산연도·공개 여부. 생산일과 사건일을 구분.",
+      "rights": "목록 공개와 원문 열람 가능 여부 별도 기록."
+    },
+    {
+      "id": "jeju43-history",
+      "country": "KOR",
+      "priority": 1,
+      "kind": "site_catalog",
+      "title": "제주4·3아카이브 지역별 유적",
+      "url": "http://43archives.or.kr/events/history/history.do",
+      "seed": "http://43archives.or.kr/events/history/history.do",
+      "adapter": "jeju_history",
+      "scope": "공식 지역별 공개 목록 13개 지역을 페이지 끝까지 수집. 유적 건수이며 희생자 수가 아님.",
+      "rights": "공개 목록의 제목·유형·주소·원문 링크를 사용."
+    }
+  ]
+}

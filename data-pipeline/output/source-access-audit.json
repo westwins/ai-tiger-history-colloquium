@@ -1,0 +1,16 @@
+[
+  {
+    "source_id": "jeju43-archive",
+    "url": "http://43archives.or.kr/main.do",
+    "fetched_at": "2026-11-06T08:28:53+00:00",
+    "robots_status": "fetched",
+    "status": 200,
+    "final_url": "http://43archives.or.kr/main.do",
+    "content_type": "text/html;charset=UTF-8",
+    "etag": null,
+    "last_modified": null,
+    "sha256": "ab814aca555dad0ccdff4df7155ad43dee89103bd3d54d4f059fb1b2a77d5698",
+    "byte_count": 59158,
+    "title": "제주4·3 - 메인"
+  }
+]

@@ -1,0 +1,62 @@
+{
+  "version": "2.1.0",
+  "url": "https://trc.soohwalee.com/#step-4",
+  "sources": {
+    "chile-mmdh-victims": {
+      "count": 3216,
+      "coverage": {
+        "first_location_mappable": 0,
+        "any_location_mappable": 0,
+        "osm_site_references": 0,
+        "region_assigned": 3155,
+        "date_precision": {
+          "unknown": 1,
+          "day": 3123,
+          "month": 89,
+          "year": 3
+        }
+      }
+    },
+    "chile-pinochet-2019": {
+      "count": 2398,
+      "coverage": {
+        "first_location_mappable": 2109,
+        "any_location_mappable": 2226,
+        "osm_site_references": 0,
+        "region_assigned": 0,
+        "date_precision": {
+          "unknown": 109,
+          "day": 2232,
+          "month": 57
+        }
+      }
+    },
+    "jeju43-history": {
+      "count": 47,
+      "coverage": {
+        "first_location_mappable": 0,
+        "any_location_mappable": 0,
+        "osm_site_references": 5,
+        "region_assigned": 47,
+        "date_precision": {
+          "unknown": 47
+        }
+      }
+    },
+    "jeju43-sites": {
+      "count": 25,
+      "coverage": {
+        "first_location_mappable": 0,
+        "any_location_mappable": 0,
+        "osm_site_references": 5,
+        "region_assigned": 25,
+        "date_precision": {
+          "unknown": 25
+        }
+      }
+    }
+  },
+  "legacy_incidents_preserved": 2116,
+  "database_recreated": false,
+  "backup": "/home/ubuntu/trc-backups/map-v21-20261106"
+}

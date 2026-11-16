@@ -1,0 +1,13 @@
+{
+  "url": "http://43archives.or.kr/archive/dataStatistics.do",
+  "fetched_at": "2026-11-06T08:29:48+00:00",
+  "robots_status": "fetched",
+  "status": 200,
+  "final_url": "http://43archives.or.kr/archive/dataStatistics.do",
+  "content_type": "text/html;charset=UTF-8",
+  "etag": null,
+  "last_modified": null,
+  "sha256": "3933b5ae8a5da4c9c3f9e91d328e785dc8b90b67e327f340f5aa6b835b50dde1",
+  "byte_count": 17216,
+  "local_path": "raw\\snapshots\\3933b5ae8a5da4c9c3f9e91d328e785dc8b90b67e327f340f5aa6b835b50dde1.bin"
+}

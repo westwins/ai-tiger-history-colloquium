@@ -1,0 +1,15 @@
+{
+  "database": "trc_research_staging",
+  "grouped_rows": [
+    "chile-mmdh-victims\tperson_catalog\t3216",
+    "chile-pinochet-2019\tperson_record\t2398",
+    "jeju43-sites\tsite_catalog\t25"
+  ],
+  "total_source_records": 5639,
+  "not_distinct_people": true,
+  "place_observations": 7395,
+  "snapshots": 3,
+  "repeat_import_idempotent": true,
+  "application_incidents_before": 2116,
+  "application_incidents_after": 2116
+}

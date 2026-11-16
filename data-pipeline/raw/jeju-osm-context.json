@@ -1,0 +1,1868 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-11-06T08:45:20Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 358015303,
+  "lat": 33.4998289,
+  "lon": 126.5313902,
+  "tags": {
+    "admin_level": "7",
+    "capital": "4",
+    "int_name": "Jeju",
+    "name": "제주시",
+    "name:ar": "جيجو",
+    "name:az": "Çeju",
+    "name:ca": "Jeju",
+    "name:cs": "Čedžu",
+    "name:de": "Jeju",
+    "name:el": "Τζέτζου",
+    "name:en": "Jeju",
+    "name:eo": "Ĉeĝu (urbo)",
+    "name:es": "Jeju",
+    "name:et": "Jeju",
+    "name:eu": "Jeju",
+    "name:fa": "ججو",
+    "name:fi": "Jeju",
+    "name:fr": "Jeju",
+    "name:he": "צ'ג'ו",
+    "name:hu": "Csedzsu",
+    "name:hy": "Ջեջու",
+    "name:id": "Jeju",
+    "name:io": "Jeju",
+    "name:it": "Jeju",
+    "name:ja": "済州市",
+    "name:ka": "ჩეჯუ",
+    "name:ko": "제주시",
+    "name:ko-Hani": "濟州市",
+    "name:ko-Latn": "Jeju-si",
+    "name:lt": "Čedžu (miestas)",
+    "name:mn": "Чэжү",
+    "name:nb": "Jeju",
+    "name:nl": "Jeju",
+    "name:os": "Чеджу",
+    "name:pl": "Czedżu (miasto)",
+    "name:pt": "Jeju",
+    "name:ru": "Чеджу",
+    "name:sl": "Čedžu",
+    "name:sr": "Чеџу (град)",
+    "name:sv": "Jeju",
+    "name:th": "เชจู",
+    "name:tl": "Jeju",
+    "name:tr": "Jeju",
+    "name:tt": "Чеҗу",
+    "name:uk": "Чеджу",
+    "name:ur": "جیجو شہر",
+    "name:vi": "Jeju",
+    "name:zh": "濟州市",
+    "name:zh-Hans": "济州市",
+    "name:zh-Hant": "濟州市",
+    "official_name:en": "Jeju City",
+    "place": "city",
+    "population": "469279",
+    "population:date": "2015",
+    "source:population": "https://ko.wikipedia.org/wiki/%EC%A0%9C%EC%A3%BC%EC%8B%9C",
+    "wikidata": "Q42142",
+    "wikipedia": "ko:제주시"
+  }
+},
+{
+  "type": "node",
+  "id": 368633501,
+  "lat": 33.2441230,
+  "lon": 126.5649200,
+  "tags": {
+    "name": "정방폭포관광안내소",
+    "name:en": "Jeongbangpokpo Tourist Information Center",
+    "name:ko": "정방폭포관광안내소",
+    "name:ko-Latn": "Jeongbangpokpogwangwangannaeso",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 415164442,
+  "lat": 33.3305000,
+  "lon": 126.2106600,
+  "tags": {
+    "name": "한경면",
+    "name:el": "Χάνγκιονγκ-μιον",
+    "name:en": "Hangyeong",
+    "name:ja": "翰京面",
+    "name:ko": "한경면",
+    "name:ko-Hani": "翰京面",
+    "name:ko-Latn": "Hangyeong-myeon",
+    "name:zh": "翰京面",
+    "name:zh-Hans": "翰京面",
+    "name:zh-Hant": "翰京面",
+    "official_name:en": "Hangyeong-myeon",
+    "place": "town",
+    "wikidata": "Q12622689"
+  }
+},
+{
+  "type": "node",
+  "id": 415164452,
+  "lat": 33.2330247,
+  "lon": 126.2495988,
+  "tags": {
+    "name": "대정읍",
+    "name:el": "Ντέτζονγκ-ουπ",
+    "name:en": "Daejeong",
+    "name:ja": "大静邑",
+    "name:ko": "대정읍",
+    "name:ko-Hani": "大靜邑",
+    "name:ko-Latn": "Daejeong-eup",
+    "name:zh": "大靜邑",
+    "name:zh-Hans": "大静邑",
+    "name:zh-Hant": "大靜邑",
+    "official_name:en": "Daejeong-eup",
+    "place": "town"
+  }
+},
+{
+  "type": "node",
+  "id": 415164458,
+  "lat": 33.3934400,
+  "lon": 126.2668400,
+  "tags": {
+    "name": "한림읍",
+    "name:el": "Χάλιμ-ουπ",
+    "name:en": "Hallim",
+    "name:ja": "翰林邑",
+    "name:ko": "한림읍",
+    "name:ko-Hani": "翰林邑",
+    "name:ko-Latn": "Hallim-eup",
+    "name:zh": "翰林邑",
+    "name:zh-Hans": "翰林邑",
+    "name:zh-Hant": "翰林邑",
+    "official_name:en": "Hallim-eup",
+    "place": "town",
+    "wikidata": "Q12623979"
+  }
+},
+{
+  "type": "node",
+  "id": 415164470,
+  "lat": 33.2768800,
+  "lon": 126.3492500,
+  "tags": {
+    "name": "안덕면",
+    "name:el": "Άντοκ-μιον",
+    "name:en": "Andeok",
+    "name:ja": "安徳面",
+    "name:ko": "안덕면",
+    "name:ko-Hani": "安德面",
+    "name:ko-Latn": "Andeok-myeon",
+    "name:zh": "安德面",
+    "name:zh-Hans": "安德面",
+    "name:zh-Hant": "安德面",
+    "official_name:en": "Andeok-myeon",
+    "place": "town"
+  }
+},
+{
+  "type": "node",
+  "id": 415164507,
+  "lat": 33.2620020,
+  "lon": 126.4288617,
+  "tags": {
+    "name": "중문동",
+    "name:el": "Τζούνγκμουν-ντονγκ",
+    "name:en": "Jungmun-dong",
+    "name:ja": "中文洞",
+    "name:ko": "중문동",
+    "name:ko-Hani": "中文洞",
+    "name:ko-Latn": "Jungmun-dong",
+    "name:zh": "中文洞",
+    "name:zh-Hans": "中文洞",
+    "name:zh-Hant": "中文洞",
+    "place": "quarter",
+    "wikidata": "Q12617592",
+    "wikipedia": "ko:중문동"
+  }
+},
+{
+  "type": "node",
+  "id": 415164576,
+  "lat": 33.4507900,
+  "lon": 126.3752000,
+  "tags": {
+    "name": "애월읍",
+    "name:el": "Έουολ-ουπ",
+    "name:en": "Aewol",
+    "name:ja": "涯月邑",
+    "name:ko": "애월읍",
+    "name:ko-Hani": "涯月邑",
+    "name:ko-Latn": "Aewol-eup",
+    "name:zh": "涯月邑",
+    "name:zh-Hans": "涯月邑",
+    "name:zh-Hant": "涯月邑",
+    "official_name:en": "Aewol-myeon",
+    "place": "town",
+    "wikidata": "Q16171330"
+  }
+},
+{
+  "type": "node",
+  "id": 415164631,
+  "lat": 33.5088800,
+  "lon": 126.6630500,
+  "tags": {
+    "name": "조천읍",
+    "name:el": "Τζότσον-ουπ",
+    "name:en": "Jocheon",
+    "name:ja": "朝天邑",
+    "name:ko": "조천읍",
+    "name:ko-Hani": "朝天邑",
+    "name:ko-Latn": "Jocheon-eup",
+    "name:zh": "朝天邑",
+    "name:zh-Hans": "朝天邑",
+    "name:zh-Hant": "朝天邑",
+    "official_name:en": "Jocheon-eup",
+    "place": "town",
+    "wikidata": "Q12617105"
+  }
+},
+{
+  "type": "node",
+  "id": 415164643,
+  "lat": 33.3076683,
+  "lon": 126.6907475,
+  "tags": {
+    "name": "남원읍",
+    "name:el": "Νάμουον-ουπ",
+    "name:en": "Namwon",
+    "name:ja": "南元邑",
+    "name:ko": "남원읍",
+    "name:ko-Hani": "南元邑",
+    "name:ko-Latn": "Namwon-eup",
+    "name:zh": "南元邑",
+    "name:zh-Hans": "南元邑",
+    "name:zh-Hant": "南元邑",
+    "official_name:en": "Namwon-eup",
+    "place": "town",
+    "wikidata": "Q12589975"
+  }
+},
+{
+  "type": "node",
+  "id": 415164654,
+  "lat": 33.5166200,
+  "lon": 126.8105500,
+  "tags": {
+    "name": "구좌읍",
+    "name:el": "Γκούτζουα-ουπ",
+    "name:en": "Gujwa",
+    "name:ja": "旧左邑",
+    "name:ko": "구좌읍",
+    "name:ko-Hani": "舊左邑",
+    "name:ko-Latn": "Gujwa-eup",
+    "name:zh": "舊左邑",
+    "name:zh-Hans": "旧左邑",
+    "name:zh-Hant": "舊左邑",
+    "official_name:en": "Gujwa-eup",
+    "place": "town",
+    "wikidata": "Q12585543"
+  }
+},
+{
+  "type": "node",
+  "id": 415164659,
+  "lat": 33.3504543,
+  "lon": 126.7940490,
+  "tags": {
+    "name": "표선면",
+    "name:el": "Πιόσον-μιον",
+    "name:en": "Pyoseon",
+    "name:ja": "表善面",
+    "name:ko": "표선면",
+    "name:ko-Hani": "表善面",
+    "name:ko-Latn": "Pyoseon-myeon",
+    "name:zh": "表善面",
+    "name:zh-Hans": "表善面",
+    "name:zh-Hant": "表善面",
+    "official_name:en": "Pyoseon-myeon",
+    "place": "town",
+    "wikidata": "Q16185079"
+  }
+},
+{
+  "type": "node",
+  "id": 415164667,
+  "lat": 33.4180500,
+  "lon": 126.8814700,
+  "tags": {
+    "name": "성산읍",
+    "name:el": "Σόνγκσαν-ουπ",
+    "name:en": "Seongsan",
+    "name:ja": "城山邑",
+    "name:ko": "성산읍",
+    "name:ko-Hani": "城山邑",
+    "name:ko-Latn": "Seongsan-eup",
+    "name:zh": "城山邑",
+    "name:zh-Hans": "城山邑",
+    "name:zh-Hant": "城山邑",
+    "official_name:en": "Seongsan-eup",
+    "place": "town",
+    "wikidata": "Q12601997"
+  }
+},
+{
+  "type": "node",
+  "id": 3730314988,
+  "lat": 33.2451574,
+  "lon": 126.5775210,
+  "tags": {
+    "name": "소정방폭포",
+    "name:ar": "شلال",
+    "name:en": "SoJeongBang Falls",
+    "name:ko": "소정방폭포",
+    "waterway": "waterfall"
+  }
+},
+{
+  "type": "node",
+  "id": 3739756346,
+  "lat": 33.2448578,
+  "lon": 126.5715451,
+  "tags": {
+    "name": "정방폭포",
+    "name:en": "JeongBang Waterfall",
+    "name:ko": "정방폭포",
+    "waterway": "waterfall",
+    "wikidata": "Q625993"
+  }
+},
+{
+  "type": "node",
+  "id": 3774739708,
+  "lat": 33.2064905,
+  "lon": 126.2812203,
+  "tags": {
+    "ele": "41",
+    "name": "섯알오름",
+    "name:en": "Seosar Oreum",
+    "name:ko": "섯알오름",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3774739709,
+  "lat": 33.2056368,
+  "lon": 126.2807302,
+  "tags": {
+    "historic": "monument",
+    "inscription": "한국전쟁 발발 후 전국적으로 보도연맹원을 학살할 때, 모슬포를 중심으로 한 제주도 서부 지역의 예비 검속자 210명이 이곳에서 학살되었던 곳",
+    "name": "섯알오름위령탑",
+    "name:en": "Seosaroreum Monastery",
+    "name:ko": "섯알오름위령탑"
+  }
+},
+{
+  "type": "node",
+  "id": 4826763028,
+  "lat": 33.2447868,
+  "lon": 126.5698231,
+  "tags": {
+    "junction": "yes",
+    "name": "정방폭포입구교차로",
+    "name:en": "Jeongbang Falls Entrance Crossroad",
+    "name:ko": "정방폭포입구교차로"
+  }
+},
+{
+  "type": "node",
+  "id": 4826763030,
+  "lat": 33.2450195,
+  "lon": 126.5761191,
+  "tags": {
+    "name": "소정방폭포",
+    "name:ko": "소정방폭포",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 5424418659,
+  "lat": 33.2528450,
+  "lon": 126.5610278,
+  "tags": {
+    "int_name": "Seogwipo",
+    "name": "서귀포시",
+    "name:ar": "سوغ-ويبو",
+    "name:ca": "Seogwipo",
+    "name:cs": "Sogüpcho",
+    "name:de": "Seogwipo",
+    "name:el": "Σόγκουιπο",
+    "name:en": "Seogwipo",
+    "name:eo": "Sogvipo",
+    "name:es": "Seogwipo",
+    "name:et": "Seogwipo",
+    "name:fa": "سوگویپو",
+    "name:fi": "Seogwipo",
+    "name:fr": "Seogwipo",
+    "name:id": "Seogwipo",
+    "name:io": "Seogwipo",
+    "name:it": "Seogwipo",
+    "name:ja": "西帰浦市",
+    "name:ko": "서귀포시",
+    "name:ko-Hani": "西歸浦市",
+    "name:ko-Latn": "Seogwipo-si",
+    "name:lt": "Sogvipas",
+    "name:mr": "सिओग्विपू",
+    "name:nb": "Seogwipo",
+    "name:nl": "Seogwipo",
+    "name:pl": "Seogwipo",
+    "name:pt": "Seogwipo",
+    "name:ro": "Seogwipo",
+    "name:ru": "Согвипхо",
+    "name:sv": "Seogwipo",
+    "name:th": "ซอกวีโพ",
+    "name:tr": "Seogwipo",
+    "name:tt": "Согвипо",
+    "name:uk": "Соґвіпхо",
+    "name:ur": "سیوگویپو",
+    "name:vi": "Seogwipo",
+    "name:zh": "西歸浦市",
+    "name:zh-Hans": "西归浦市",
+    "name:zh-Hant": "西歸浦市",
+    "official_name:en": "Seogwipo City",
+    "place": "city",
+    "population": "155641",
+    "population:date": "2013",
+    "source:population": "https://ko.wikipedia.org/wiki/%EC%84%9C%EA%B7%80%ED%8F%AC%EC%8B%9C",
+    "wikidata": "Q42103",
+    "wikipedia": "ko:서귀포시"
+  }
+},
+{
+  "type": "node",
+  "id": 5573053150,
+  "lat": 33.4777119,
+  "lon": 126.8215284,
+  "tags": {
+    "name": "다랑쉬오름",
+    "name:el": "Ντάρανγκσουιορουμ",
+    "name:en": "Darangswi-Oreum",
+    "name:ko": "다랑쉬오름",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 5573053151,
+  "lat": 33.4746453,
+  "lon": 126.8314944,
+  "tags": {
+    "ele": "186.1",
+    "name": "아끈다랑쉬",
+    "name:en": "Akkeun-Darangswi",
+    "name:ko": "아끈다랑쉬",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 8441491805,
+  "lat": 33.3233974,
+  "lon": 126.8445033,
+  "tags": {
+    "addr:city": "서귀포시",
+    "addr:housenumber": "537",
+    "addr:postcode": "63629",
+    "addr:province": "제주특별자치도",
+    "addr:street": "민속해안로",
+    "addr:subdistrict": "표선리",
+    "addr:town": "표선면",
+    "amenity": "restaurant",
+    "name": "해비치 다랑쉬",
+    "source": "공공데이터포털",
+    "source:date": "2018-02-23"
+  }
+},
+{
+  "type": "node",
+  "id": 10694705332,
+  "lat": 33.4514768,
+  "lon": 126.6172799,
+  "tags": {
+    "addr:city": "제주시",
+    "addr:housenumber": "430",
+    "addr:postcode": "63313",
+    "addr:province": "제주특별자치도",
+    "addr:street": "명림로",
+    "addr:subdistrict": "봉개동",
+    "amenity": "toilets",
+    "changing_table": "no",
+    "name": "봉안관화장실(제주4·3평화공원)",
+    "opening_hours": "24/7",
+    "operator": "제주4.3평화재단",
+    "phone": "+82 64 723 4354",
+    "surveillance": "no",
+    "toilets:disposal": "flush",
+    "toilets:position": "seated;urinal",
+    "unisex": "no",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10694705408,
+  "lat": 33.5485655,
+  "lon": 126.6857580,
+  "tags": {
+    "addr:city": "제주시",
+    "addr:housenumber": "3",
+    "addr:postcode": "63339",
+    "addr:province": "제주특별자치도",
+    "addr:street": "북촌3길",
+    "addr:subdistrict": "북촌리",
+    "addr:town": "조천읍",
+    "amenity": "toilets",
+    "changing_table": "no",
+    "name": "너븐숭이 4.3기념관",
+    "opening_hours": "Mo-Su 09:00-17:30",
+    "operator": "제주4·3희생자유족회",
+    "phone": "+82 64 724 4343",
+    "surveillance": "outdoor",
+    "toilets:disposal": "flush",
+    "toilets:position": "seated;urinal",
+    "unisex": "no",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10694705419,
+  "lat": 33.5155257,
+  "lon": 126.6940989,
+  "tags": {
+    "addr:city": "제주시",
+    "addr:housenumber": "7",
+    "addr:postcode": "63340",
+    "addr:province": "제주특별자치도",
+    "addr:street": "선흘서5길",
+    "addr:subdistrict": "선흘리",
+    "addr:town": "조천읍",
+    "amenity": "toilets",
+    "changing_table": "no",
+    "name": "낙선동 4.3성",
+    "opening_hours": "Mo-Su 09:00-17:30",
+    "operator": "제주4·3희생자유족회",
+    "phone": "+82 64 724 4343",
+    "surveillance": "no",
+    "toilets:disposal": "flush",
+    "toilets:position": "seated;urinal",
+    "unisex": "no",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10694705427,
+  "lat": 33.4511177,
+  "lon": 126.6207405,
+  "tags": {
+    "addr:city": "제주시",
+    "addr:housenumber": "430",
+    "addr:postcode": "63313",
+    "addr:province": "제주특별자치도",
+    "addr:street": "명림로",
+    "addr:subdistrict": "봉개동",
+    "amenity": "toilets",
+    "changing_table": "no",
+    "name": "기념관 지하층(제주4·3평화공원)",
+    "opening_hours": "24/7",
+    "operator": "제주4.3평화재단",
+    "operator:ko": "제주4.3평화재단",
+    "operator:wikidata": "Q12616401",
+    "phone": "+82 64 723 4354",
+    "surveillance": "no",
+    "toilets:disposal": "flush",
+    "toilets:position": "seated",
+    "unisex": "no",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10694705428,
+  "lat": 33.4510841,
+  "lon": 126.6208907,
+  "tags": {
+    "addr:city": "제주시",
+    "addr:housenumber": "430",
+    "addr:postcode": "63313",
+    "addr:province": "제주특별자치도",
+    "addr:street": "명림로",
+    "addr:subdistrict": "봉개동",
+    "amenity": "toilets",
+    "changing_table": "no",
+    "name": "기념관 4층(제주4·3평화공원)",
+    "opening_hours": "24/7",
+    "operator": "제주4.3평화재단",
+    "operator:ko": "제주4.3평화재단",
+    "operator:wikidata": "Q12616401",
+    "phone": "+82 64 723 4354",
+    "surveillance": "no",
+    "toilets:disposal": "flush",
+    "toilets:position": "seated;urinal",
+    "unisex": "no",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10694705429,
+  "lat": 33.4509655,
+  "lon": 126.6204857,
+  "tags": {
+    "addr:city": "제주시",
+    "addr:housenumber": "430",
+    "addr:postcode": "63313",
+    "addr:province": "제주특별자치도",
+    "addr:street": "명림로",
+    "addr:subdistrict": "봉개동",
+    "amenity": "toilets",
+    "changing_table": "no",
+    "name": "기념관 3층(제주4·3평화공원)",
+    "opening_hours": "24/7",
+    "operator": "제주4.3평화재단",
+    "operator:ko": "제주4.3평화재단",
+    "operator:wikidata": "Q12616401",
+    "phone": "+82 64 723 4354",
+    "surveillance": "no",
+    "toilets:disposal": "flush",
+    "toilets:position": "seated;urinal",
+    "unisex": "no",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10694705430,
+  "lat": 33.4509566,
+  "lon": 126.6208504,
+  "tags": {
+    "addr:city": "제주시",
+    "addr:housenumber": "430",
+    "addr:postcode": "63313",
+    "addr:province": "제주특별자치도",
+    "addr:street": "명림로",
+    "addr:subdistrict": "봉개동",
+    "amenity": "toilets",
+    "changing_table": "yes",
+    "name": "기념관 2층(제주4·3평화공원)",
+    "opening_hours": "24/7",
+    "operator": "제주4.3평화재단",
+    "operator:ko": "제주4.3평화재단",
+    "operator:wikidata": "Q12616401",
+    "phone": "+82 64 723 4354",
+    "surveillance": "no",
+    "toilets:disposal": "flush",
+    "toilets:position": "seated;urinal",
+    "unisex": "no",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10694705431,
+  "lat": 33.4507663,
+  "lon": 126.6207485,
+  "tags": {
+    "addr:city": "제주시",
+    "addr:housenumber": "430",
+    "addr:postcode": "63313",
+    "addr:province": "제주특별자치도",
+    "addr:street": "명림로",
+    "addr:subdistrict": "봉개동",
+    "amenity": "toilets",
+    "changing_table": "yes",
+    "name": "기념관 1층(제주4·3평화공원)",
+    "opening_hours": "24/7",
+    "operator": "제주4.3평화재단",
+    "operator:ko": "제주4.3평화재단",
+    "operator:wikidata": "Q12616401",
+    "phone": "+82 64 723 4354",
+    "surveillance": "no",
+    "toilets:disposal": "flush",
+    "toilets:position": "seated;urinal",
+    "unisex": "no",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10694705445,
+  "lat": 33.4530911,
+  "lon": 126.6187226,
+  "tags": {
+    "addr:city": "제주시",
+    "addr:housenumber": "430",
+    "addr:postcode": "63313",
+    "addr:province": "제주특별자치도",
+    "addr:street": "명림로",
+    "addr:subdistrict": "봉개동",
+    "amenity": "toilets",
+    "changing_table": "no",
+    "description": "어린이용/남녀공용",
+    "name": "교육센터 2층(제주4·3평화공원)",
+    "opening_hours": "24/7",
+    "operator": "제주4.3평화재단",
+    "operator:ko": "제주4.3평화재단",
+    "operator:wikidata": "Q12616401",
+    "phone": "+82 64 723 4354",
+    "surveillance": "no",
+    "toilets:disposal": "flush",
+    "toilets:position": "seated",
+    "unisex": "yes",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 10694705446,
+  "lat": 33.4531146,
+  "lon": 126.6187749,
+  "tags": {
+    "addr:city": "제주시",
+    "addr:housenumber": "430",
+    "addr:postcode": "63313",
+    "addr:province": "제주특별자치도",
+    "addr:street": "명림로",
+    "addr:subdistrict": "봉개동",
+    "amenity": "toilets",
+    "changing_table": "no",
+    "description": "여화장실 3칸 창고로 이용중",
+    "name": "교육센터 1층(제주4·3평화공원)",
+    "opening_hours": "24/7",
+    "operator": "제주4.3평화재단",
+    "operator:ko": "제주4.3평화재단",
+    "operator:wikidata": "Q12616401",
+    "phone": "+82 64 723 4354",
+    "surveillance": "outdoor",
+    "toilets:disposal": "flush",
+    "toilets:position": "seated;urinal",
+    "unisex": "no",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10694705473,
+  "lat": 33.4498087,
+  "lon": 126.6182481,
+  "tags": {
+    "addr:city": "제주시",
+    "addr:housenumber": "430",
+    "addr:postcode": "63313",
+    "addr:province": "제주특별자치도",
+    "addr:street": "명림로",
+    "addr:subdistrict": "봉개동",
+    "amenity": "toilets",
+    "changing_table": "no",
+    "name": "1번 주차장 화장실(제주4·3평화공원)",
+    "opening_hours": "24/7",
+    "operator": "제주4.3평화재단",
+    "phone": "+82 64 723 4354",
+    "surveillance": "no",
+    "toilets:disposal": "flush",
+    "toilets:position": "seated;urinal",
+    "unisex": "no",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11338571631,
+  "lat": 33.3109980,
+  "lon": 126.7072100,
+  "tags": {
+    "highway": "bus_stop",
+    "name": "송령이골",
+    "name:ko": "송령이골",
+    "public_transport": "platform",
+    "ref": "406001879"
+  }
+},
+{
+  "type": "node",
+  "id": 11338571632,
+  "lat": 33.3112860,
+  "lon": 126.7068910,
+  "tags": {
+    "highway": "bus_stop",
+    "name": "송령이골",
+    "name:ko": "송령이골",
+    "public_transport": "platform",
+    "ref": "406001878"
+  }
+},
+{
+  "type": "node",
+  "id": 11338572945,
+  "lat": 33.4859490,
+  "lon": 126.8296320,
+  "tags": {
+    "highway": "bus_stop",
+    "name": "다랑쉬오름 입구(북)",
+    "name:ko": "다랑쉬오름 입구(북)",
+    "public_transport": "platform",
+    "ref": "405002013"
+  }
+},
+{
+  "type": "node",
+  "id": 11338572946,
+  "lat": 33.4860790,
+  "lon": 126.8298870,
+  "tags": {
+    "highway": "bus_stop",
+    "name": "다랑쉬오름 입구(북)",
+    "name:ko": "다랑쉬오름 입구(북)",
+    "public_transport": "platform",
+    "ref": "405002012"
+  }
+},
+{
+  "type": "node",
+  "id": 11338572947,
+  "lat": 33.4602390,
+  "lon": 126.8171280,
+  "tags": {
+    "highway": "bus_stop",
+    "name": "다랑쉬오름 입구(남),손지오름",
+    "name:ko": "다랑쉬오름 입구(남),손지오름",
+    "public_transport": "platform",
+    "ref": "405001714"
+  }
+},
+{
+  "type": "node",
+  "id": 11338572948,
+  "lat": 33.4603070,
+  "lon": 126.8171200,
+  "tags": {
+    "highway": "bus_stop",
+    "name": "다랑쉬오름 입구(남),손지오름",
+    "name:ko": "다랑쉬오름 입구(남),손지오름",
+    "public_transport": "platform",
+    "ref": "405001713"
+  }
+},
+{
+  "type": "node",
+  "id": 11338573085,
+  "lat": 33.5146340,
+  "lon": 126.6934920,
+  "tags": {
+    "highway": "bus_stop",
+    "name": "낙선동",
+    "name:ko": "낙선동",
+    "public_transport": "platform",
+    "ref": "405001136"
+  }
+},
+{
+  "type": "node",
+  "id": 11338573086,
+  "lat": 33.5145380,
+  "lon": 126.6934090,
+  "tags": {
+    "highway": "bus_stop",
+    "name": "낙선동",
+    "name:ko": "낙선동",
+    "public_transport": "platform",
+    "ref": "405001135"
+  }
+},
+{
+  "type": "node",
+  "id": 11338573322,
+  "lat": 33.5129421,
+  "lon": 126.5210078,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "관덕정",
+    "name:ko": "관덕정",
+    "public_transport": "platform",
+    "ref": "405000334"
+  }
+},
+{
+  "type": "node",
+  "id": 11338573323,
+  "lat": 33.5131867,
+  "lon": 126.5210318,
+  "tags": {
+    "bench": "yes",
+    "bin": "no",
+    "bus": "yes",
+    "departures_board": "realtime",
+    "highway": "bus_stop",
+    "lit": "yes",
+    "name": "관덕정",
+    "name:ko": "관덕정",
+    "public_transport": "platform",
+    "ref": "405000335",
+    "shelter": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11338573387,
+  "lat": 33.4960070,
+  "lon": 126.5322870,
+  "tags": {
+    "highway": "bus_stop",
+    "name": "고산동산(아라방면) / 제주4.3 트라우마센터",
+    "name:ko": "고산동산(아라방면) / 제주4.3 트라우마센터",
+    "public_transport": "platform",
+    "ref": "405002037"
+  }
+},
+{
+  "type": "node",
+  "id": 11338573388,
+  "lat": 33.4955400,
+  "lon": 126.5329070,
+  "tags": {
+    "highway": "bus_stop",
+    "name": "고산동산(광양방면) / 제주4.3 트라우마센터",
+    "name:ko": "고산동산(광양방면) / 제주4.3 트라우마센터",
+    "public_transport": "platform",
+    "ref": "405002038"
+  }
+},
+{
+  "type": "node",
+  "id": 11338573550,
+  "lat": 33.4531170,
+  "lon": 126.6200930,
+  "tags": {
+    "highway": "bus_stop",
+    "name": "4.3 평화공원 입구",
+    "name:ko": "4.3 평화공원 입구",
+    "public_transport": "platform",
+    "ref": "405001703"
+  }
+},
+{
+  "type": "node",
+  "id": 11338573551,
+  "lat": 33.4510250,
+  "lon": 126.6219000,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "4.3 평화공원",
+    "name:ko": "4.3 평화공원",
+    "public_transport": "platform",
+    "ref": "405001701"
+  }
+},
+{
+  "type": "node",
+  "id": 11338573552,
+  "lat": 33.4511920,
+  "lon": 126.6216200,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "4.3 평화공원",
+    "name:ko": "4.3 평화공원",
+    "public_transport": "platform",
+    "ref": "405001700"
+  }
+},
+{
+  "type": "node",
+  "id": 12462017392,
+  "lat": 33.5129359,
+  "lon": 126.5212972,
+  "tags": {
+    "addr:city": "제주시",
+    "addr:housenumber": "18",
+    "addr:postcode": "63168",
+    "addr:province": "제주특별자치도",
+    "addr:street": "관덕로",
+    "addr:subdistrict": "삼도이동",
+    "amenity": "pharmacy",
+    "healthcare": "pharmacy",
+    "name": "관덕정약국",
+    "name:ko": "관덕정약국",
+    "phone": "+82 64 727 8558"
+  }
+},
+{
+  "type": "node",
+  "id": 13653919688,
+  "lat": 33.4891332,
+  "lon": 126.5257585,
+  "tags": {
+    "historic": "memorial",
+    "name": "도남동 4.3희생자 위령비",
+    "name:ko": "도남동 4.3희생자 위령비"
+  }
+},
+{
+  "type": "node",
+  "id": 13993899134,
+  "lat": 33.5147664,
+  "lon": 126.5206592,
+  "tags": {
+    "addr:housenumber": "23",
+    "amenity": "restaurant",
+    "name": "관덕정쌀국수"
+  }
+},
+{
+  "type": "way",
+  "id": 153127182,
+  "center": {
+    "lat": 33.2238623,
+    "lon": 126.2775481
+  },
+  "tags": {
+    "highway": "tertiary",
+    "lanes": "2",
+    "name": "송악관광로143번길",
+    "name:en": "Songakgwangwang-ro 143beon-gil",
+    "name:ko": "송악관광로143번길",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 243282399,
+  "center": {
+    "lat": 33.2446573,
+    "lon": 126.5737705
+  },
+  "tags": {
+    "access": "yes",
+    "amenity": "parking",
+    "fee": "no",
+    "name": "정방폭포 주차장",
+    "name:ko": "정방폭포 주차장",
+    "parking": "surface"
+  }
+},
+{
+  "type": "way",
+  "id": 249441200,
+  "center": {
+    "lat": 33.2808238,
+    "lon": 126.5974134
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "516로436번길",
+    "name:en": "516-ro 436beon-gil",
+    "name:ko": "516로436번길"
+  }
+},
+{
+  "type": "way",
+  "id": 255199884,
+  "center": {
+    "lat": 33.2469966,
+    "lon": 126.5660533
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "태평로431번길",
+    "name:ko": "태평로431번길"
+  }
+},
+{
+  "type": "way",
+  "id": 258247949,
+  "center": {
+    "lat": 33.2464985,
+    "lon": 126.5639302
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "태평로439길",
+    "name:ko": "태평로439길"
+  }
+},
+{
+  "type": "way",
+  "id": 258247953,
+  "center": {
+    "lat": 33.2466694,
+    "lon": 126.5665187
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "태평로439번길",
+    "name:en": "Taepyeong-ro 439beon-gil",
+    "name:ko": "태평로439번길"
+  }
+},
+{
+  "type": "way",
+  "id": 274909013,
+  "center": {
+    "lat": 33.3286467,
+    "lon": 126.8343222
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "표선중앙로43번길",
+    "name:en": "Pyoseonjungang-ro 43beon-gil",
+    "name:ko": "표선중앙로43번길",
+    "source:highway": "bing"
+  }
+},
+{
+  "type": "way",
+  "id": 274909018,
+  "center": {
+    "lat": 33.3287216,
+    "lon": 126.8322624
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "표선중앙로43번길",
+    "name:en": "Pyoseonjungang-ro 43beon-gil",
+    "name:ko": "표선중앙로43번길",
+    "source:highway": "bing"
+  }
+},
+{
+  "type": "way",
+  "id": 281781968,
+  "center": {
+    "lat": 33.2531220,
+    "lon": 126.5562544
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "솜반천로43번길",
+    "name:ko": "솜반천로43번길"
+  }
+},
+{
+  "type": "way",
+  "id": 281987480,
+  "center": {
+    "lat": 33.3172987,
+    "lon": 126.7057442
+  },
+  "tags": {
+    "highway": "tertiary",
+    "name": "한신로143번길",
+    "name:en": "Hansin-ro 143beon-gil",
+    "name:ko": "한신로143번길",
+    "source:highway": "bing"
+  }
+},
+{
+  "type": "way",
+  "id": 284942890,
+  "center": {
+    "lat": 33.2748753,
+    "lon": 126.6519076
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "태위로43번길",
+    "name:en": "Taewi-ro 43beon-gil",
+    "name:ko": "태위로43번길"
+  }
+},
+{
+  "type": "way",
+  "id": 288746175,
+  "center": {
+    "lat": 33.5133477,
+    "lon": 126.5214893
+  },
+  "tags": {
+    "addr:housenumber": "19",
+    "building": "roof",
+    "historic": "heritage_building",
+    "name": "제주목관아 관덕정",
+    "name:en": "Gwandeokjeong",
+    "name:ko": "제주목관아 관덕정",
+    "name:ko-Latn": "Gwandeokjeong",
+    "name:zh": "觀德亭",
+    "source:building": "bing"
+  }
+},
+{
+  "type": "way",
+  "id": 370103182,
+  "center": {
+    "lat": 33.2438390,
+    "lon": 126.4565091
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "이어도로343번길",
+    "name:ko": "이어도로343번길"
+  }
+},
+{
+  "type": "way",
+  "id": 370104522,
+  "center": {
+    "lat": 33.2466379,
+    "lon": 126.4495086
+  },
+  "tags": {
+    "highway": "service",
+    "name": "이어도로343번길",
+    "name:en": "Ieodoro343beon-gil",
+    "name:ko": "이어도로343번길",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 370329624,
+  "center": {
+    "lat": 33.4517456,
+    "lon": 126.6181717
+  },
+  "tags": {
+    "leisure": "park",
+    "name": "제주 4 3 평화공원",
+    "name:en": "Jeju 4.3 Peace Park",
+    "name:ja": "済州 4.3 平和公園",
+    "name:ko": "제주 4 3 평화공원",
+    "wikidata": "Q12616407"
+  }
+},
+{
+  "type": "way",
+  "id": 370369930,
+  "center": {
+    "lat": 33.2483926,
+    "lon": 126.5049795
+  },
+  "tags": {
+    "highway": "service",
+    "name": "일주서로43번길",
+    "name:en": "Iljuseoro43beon-gil",
+    "name:ko": "일주서로43번길"
+  }
+},
+{
+  "type": "way",
+  "id": 371433258,
+  "center": {
+    "lat": 33.2884539,
+    "lon": 126.7328634
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "태수로143번길",
+    "name:en": "Taesu-ro 143beon-gil",
+    "name:ko": "태수로143번길"
+  }
+},
+{
+  "type": "way",
+  "id": 371433259,
+  "center": {
+    "lat": 33.2853971,
+    "lon": 126.7241504
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "태수로143번길",
+    "name:en": "Taesu-ro 143beon-gil",
+    "name:ko": "태수로143번길"
+  }
+},
+{
+  "type": "way",
+  "id": 371515523,
+  "center": {
+    "lat": 33.4836331,
+    "lon": 126.8331351
+  },
+  "tags": {
+    "highway": "tertiary",
+    "name": "다랑쉬북로",
+    "name:en": "Darangswibuk-ro",
+    "name:ko": "다랑쉬북로"
+  }
+},
+{
+  "type": "way",
+  "id": 371515554,
+  "center": {
+    "lat": 33.4911316,
+    "lon": 126.8163273
+  },
+  "tags": {
+    "highway": "tertiary",
+    "name": "다랑쉬북로",
+    "name:en": "Darangswibuk-ro",
+    "name:ko": "다랑쉬북로"
+  }
+},
+{
+  "type": "way",
+  "id": 375480027,
+  "center": {
+    "lat": 33.4508969,
+    "lon": 126.6205798
+  },
+  "tags": {
+    "building": "yes",
+    "building:levels": "3",
+    "name": "제주 4.3 평화기념관",
+    "name:en": "Jeju 4.3 peace memorial hall",
+    "name:ja": "済州 4.3 平和記念館",
+    "name:ko": "제주 4.3 평화기념관",
+    "source:building": "mapbox",
+    "tourism": "museum"
+  }
+},
+{
+  "type": "way",
+  "id": 375505979,
+  "center": {
+    "lat": 33.5460404,
+    "lon": 126.6886892
+  },
+  "tags": {
+    "building": "commercial",
+    "name": "너븐숭이4.3기념관",
+    "name:ko": "너븐숭이4.3기념관"
+  }
+},
+{
+  "type": "way",
+  "id": 391471597,
+  "center": {
+    "lat": 33.2467732,
+    "lon": 126.4507942
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "이어도로343번길",
+    "name:en": "Ieodoro343beon-gil",
+    "name:ko": "이어도로343번길"
+  }
+},
+{
+  "type": "way",
+  "id": 392322742,
+  "center": {
+    "lat": 33.4824941,
+    "lon": 126.8279536
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "다랑쉬로",
+    "name:en": "Darangswi-ro",
+    "name:ko": "다랑쉬로"
+  }
+},
+{
+  "type": "way",
+  "id": 392322745,
+  "center": {
+    "lat": 33.4945029,
+    "lon": 126.8352902
+  },
+  "tags": {
+    "highway": "tertiary",
+    "name": "다랑쉬로",
+    "name:en": "Darangswi-ro",
+    "name:ko": "다랑쉬로"
+  }
+},
+{
+  "type": "way",
+  "id": 592649226,
+  "center": {
+    "lat": 33.4938233,
+    "lon": 126.8091511
+  },
+  "tags": {
+    "highway": "tertiary",
+    "name": "다랑쉬북로",
+    "name:en": "Darangswibuk-ro",
+    "name:ko": "다랑쉬북로"
+  }
+},
+{
+  "type": "way",
+  "id": 686634386,
+  "center": {
+    "lat": 33.2751667,
+    "lon": 126.5988694
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "516로436번길"
+  }
+},
+{
+  "type": "way",
+  "id": 846280652,
+  "center": {
+    "lat": 33.2736849,
+    "lon": 126.6521711
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "태위로43번길",
+    "name:en": "Taewi-ro 43beon-gil",
+    "name:ko": "태위로43번길",
+    "source:highway": "bing"
+  }
+},
+{
+  "type": "way",
+  "id": 846325646,
+  "center": {
+    "lat": 33.3283942,
+    "lon": 126.8333645
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "표선중앙로43번길",
+    "name:en": "Pyoseonjungang-ro 43beon-gil",
+    "name:ko": "표선중앙로43번길",
+    "source:highway": "bing"
+  }
+},
+{
+  "type": "way",
+  "id": 846625739,
+  "center": {
+    "lat": 33.2846394,
+    "lon": 126.7235495
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "태수로143번길",
+    "name:en": "Taesu-ro 143beon-gil",
+    "name:ko": "태수로143번길"
+  }
+},
+{
+  "type": "way",
+  "id": 847020325,
+  "center": {
+    "lat": 33.2862439,
+    "lon": 126.5962413
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "516로436번길",
+    "name:en": "516-ro 436beon-gil",
+    "name:ko": "516로436번길"
+  }
+},
+{
+  "type": "way",
+  "id": 847020326,
+  "center": {
+    "lat": 33.2856438,
+    "lon": 126.5963474
+  },
+  "tags": {
+    "bridge": "yes",
+    "bridge:structure": "beam",
+    "highway": "residential",
+    "layer": "1",
+    "name": "516로436번길",
+    "name:ko": "516로436번길"
+  }
+},
+{
+  "type": "way",
+  "id": 1349244439,
+  "center": {
+    "lat": 33.3290372,
+    "lon": 126.8309801
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "residential",
+    "name": "표선중앙로43번길",
+    "name:en": "Pyoseonjungang-ro 43beon-gil",
+    "name:ko": "표선중앙로43번길",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1349244440,
+  "center": {
+    "lat": 33.3287988,
+    "lon": 126.8310827
+  },
+  "tags": {
+    "foot": "no",
+    "highway": "residential",
+    "name": "표선중앙로43번길",
+    "name:en": "Pyoseonjungang-ro 43beon-gil",
+    "name:ko": "표선중앙로43번길",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1374961486,
+  "center": {
+    "lat": 33.2887814,
+    "lon": 126.5949515
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "516로436번길",
+    "name:en": "516-ro 436beon-gil",
+    "name:ko": "516로436번길"
+  }
+},
+{
+  "type": "way",
+  "id": 1374961487,
+  "center": {
+    "lat": 33.2868923,
+    "lon": 126.5960958
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "516로436번길",
+    "name:en": "516-ro 436beon-gil",
+    "name:ko": "516로436번길"
+  }
+},
+{
+  "type": "way",
+  "id": 1437044338,
+  "center": {
+    "lat": 33.2055409,
+    "lon": 126.2809163
+  },
+  "tags": {
+    "name": "4.3유적지섯말오름학살터",
+    "tourism": "museum"
+  }
+},
+{
+  "type": "way",
+  "id": 1530052733,
+  "center": {
+    "lat": 33.5134898,
+    "lon": 126.5206167
+  },
+  "tags": {
+    "access": "customers",
+    "amenity": "parking",
+    "fee": "yes",
+    "name": "관덕정 서측 노외공영주차장"
+  }
+},
+{
+  "type": "relation",
+  "id": 5523589,
+  "center": {
+    "lat": 33.6858085,
+    "lon": 126.5046645
+  },
+  "tags": {
+    "admin_level": "6",
+    "boundary": "administrative",
+    "name": "제주시",
+    "name:cs": "Čedžu",
+    "name:en": "Jeju",
+    "name:ja": "済州市",
+    "name:ko": "제주시",
+    "name:ko-Hani": "濟州市",
+    "name:zh": "濟州市",
+    "name:zh-Hans": "济州市",
+    "name:zh-Hant": "濟州市",
+    "ref:KR:mods:kadc": "39010",
+    "ref:KR:mois:admin": "5011000000",
+    "ref:KR:mois:legal": "5011000000",
+    "type": "boundary",
+    "wikidata": "Q42142",
+    "wikipedia": "ko:제주시"
+  }
+},
+{
+  "type": "relation",
+  "id": 5524156,
+  "center": {
+    "lat": 33.1972888,
+    "lon": 126.5680228
+  },
+  "tags": {
+    "admin_level": "6",
+    "boundary": "administrative",
+    "name": "서귀포시",
+    "name:cs": "Sogüpcho",
+    "name:el": "Σόγκουιπο",
+    "name:en": "Seogwipo-si",
+    "name:ja": "西帰浦市",
+    "name:ko": "서귀포시",
+    "name:ko-Hani": "西歸浦市",
+    "name:zh": "西歸浦市",
+    "name:zh-Hans": "西归浦市",
+    "name:zh-Hant": "西歸浦市",
+    "ref:KR:mods:kadc": "39020",
+    "ref:KR:mois:admin": "5013000000",
+    "ref:KR:mois:legal": "5013000000",
+    "type": "boundary",
+    "wikidata": "Q42103",
+    "wikipedia": "ko:서귀포시"
+  }
+},
+{
+  "type": "relation",
+  "id": 18381975,
+  "center": {
+    "lat": 33.3291326,
+    "lon": 126.2112362
+  },
+  "tags": {
+    "admin_level": "8",
+    "boundary": "administrative",
+    "name": "한경면",
+    "name:en": "Hangyeong",
+    "name:ja": "翰京面",
+    "name:ko": "한경면",
+    "name:ko-Hani": "翰京面",
+    "name:zh": "翰京面",
+    "name:zh-Hans": "翰京面",
+    "name:zh-Hant": "翰京面",
+    "type": "boundary"
+  }
+},
+{
+  "type": "relation",
+  "id": 18381976,
+  "center": {
+    "lat": 33.4050614,
+    "lon": 126.8818621
+  },
+  "tags": {
+    "admin_level": "8",
+    "boundary": "administrative",
+    "name": "성산읍",
+    "name:en": "Seongsan",
+    "name:ja": "城山邑",
+    "name:ko": "성산읍",
+    "name:ko-Hani": "城山邑",
+    "name:zh": "城山邑",
+    "name:zh-Hans": "城山邑",
+    "name:zh-Hant": "城山邑",
+    "type": "boundary"
+  }
+},
+{
+  "type": "relation",
+  "id": 18381977,
+  "center": {
+    "lat": 33.3661856,
+    "lon": 126.7591177
+  },
+  "tags": {
+    "admin_level": "8",
+    "boundary": "administrative",
+    "name": "표선면",
+    "name:en": "Pyoseon",
+    "name:ja": "表善面",
+    "name:ko": "표선면",
+    "name:ko-Hani": "表善面",
+    "name:zh": "表善面",
+    "name:zh-Hans": "表善面",
+    "name:zh-Hant": "表善面",
+    "type": "boundary"
+  }
+},
+{
+  "type": "relation",
+  "id": 18381978,
+  "center": {
+    "lat": 33.2697602,
+    "lon": 126.3585346
+  },
+  "tags": {
+    "admin_level": "8",
+    "boundary": "administrative",
+    "name": "안덕면",
+    "name:en": "Andeok",
+    "name:ja": "安徳面",
+    "name:ko": "안덕면",
+    "name:ko-Hani": "安德面",
+    "name:zh": "安德面",
+    "name:zh-Hans": "安德面",
+    "name:zh-Hant": "安德面",
+    "type": "boundary"
+  }
+},
+{
+  "type": "relation",
+  "id": 18381979,
+  "center": {
+    "lat": 33.3021436,
+    "lon": 126.6619534
+  },
+  "tags": {
+    "admin_level": "8",
+    "boundary": "administrative",
+    "name": "남원읍",
+    "name:en": "Namwon",
+    "name:ja": "南元邑",
+    "name:ko": "남원읍",
+    "name:ko-Hani": "南元邑",
+    "name:zh": "南元邑",
+    "name:zh-Hans": "南元邑",
+    "name:zh-Hant": "南元邑",
+    "type": "boundary"
+  }
+},
+{
+  "type": "relation",
+  "id": 18381980,
+  "center": {
+    "lat": 33.4230927,
+    "lon": 126.4070986
+  },
+  "tags": {
+    "admin_level": "8",
+    "boundary": "administrative",
+    "name": "애월읍",
+    "name:en": "Aewol",
+    "name:ja": "涯月邑",
+    "name:ko": "애월읍",
+    "name:ko-Hani": "涯月邑",
+    "name:zh": "涯月邑",
+    "name:zh-Hans": "涯月邑",
+    "name:zh-Hant": "涯月邑",
+    "type": "boundary"
+  }
+},
+{
+  "type": "relation",
+  "id": 18381982,
+  "center": {
+    "lat": 33.4710490,
+    "lon": 126.6469580
+  },
+  "tags": {
+    "admin_level": "8",
+    "boundary": "administrative",
+    "name": "조천읍",
+    "name:en": "Jocheon",
+    "name:ja": "朝天邑",
+    "name:ko": "조천읍",
+    "name:ko-Hani": "朝天邑",
+    "name:zh": "朝天邑",
+    "name:zh-Hans": "朝天邑",
+    "name:zh-Hant": "朝天邑",
+    "type": "boundary"
+  }
+},
+{
+  "type": "relation",
+  "id": 18381984,
+  "center": {
+    "lat": 33.2009476,
+    "lon": 126.2311945
+  },
+  "tags": {
+    "admin_level": "8",
+    "boundary": "administrative",
+    "name": "대정읍",
+    "name:en": "Daejeong",
+    "name:ja": "大静邑",
+    "name:ko": "대정읍",
+    "name:ko-Hani": "大靜邑",
+    "name:zh": "大靜邑",
+    "name:zh-Hans": "大静邑",
+    "name:zh-Hant": "大靜邑",
+    "type": "boundary"
+  }
+},
+{
+  "type": "relation",
+  "id": 18381985,
+  "center": {
+    "lat": 33.5000573,
+    "lon": 126.8141018
+  },
+  "tags": {
+    "admin_level": "8",
+    "boundary": "administrative",
+    "name": "구좌읍",
+    "name:en": "Gujwa",
+    "name:ja": "旧左邑",
+    "name:ko": "구좌읍",
+    "name:ko-Hani": "舊左邑",
+    "name:zh": "舊左邑",
+    "name:zh-Hans": "旧左邑",
+    "name:zh-Hant": "舊左邑",
+    "type": "boundary"
+  }
+},
+{
+  "type": "relation",
+  "id": 18381986,
+  "center": {
+    "lat": 33.3908291,
+    "lon": 126.2863632
+  },
+  "tags": {
+    "admin_level": "8",
+    "boundary": "administrative",
+    "name": "한림읍",
+    "name:en": "Hallim",
+    "name:ja": "翰林邑",
+    "name:ko": "한림읍",
+    "name:ko-Hani": "翰林邑",
+    "name:zh": "翰林邑",
+    "name:zh-Hans": "翰林邑",
+    "name:zh-Hant": "翰林邑",
+    "type": "boundary"
+  }
+},
+{
+  "type": "relation",
+  "id": 18384268,
+  "center": {
+    "lat": 33.2895170,
+    "lon": 126.4581273
+  },
+  "tags": {
+    "admin_level": "8",
+    "boundary": "administrative",
+    "name": "중문동",
+    "name:en": "Jungmun-dong",
+    "name:ja": "中文洞",
+    "name:ko": "중문동",
+    "name:ko-Hani": "中文洞",
+    "name:zh": "中文洞",
+    "name:zh-Hans": "中文洞",
+    "name:zh-Hant": "中文洞",
+    "note": "행정동",
+    "type": "boundary"
+  }
+}
+
+  ]
+}

@@ -1,0 +1,1133 @@
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	
+
+	<meta http-equiv='X-UA-Compatible' content='IE=Edge' />
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=2.0,user-scalable=yes, target-densitydpi=device-dpi">
+
+	<meta name="format-detection" content="telephone=no,email=no,address=no" />
+
+	<meta charset="utf-8" />
+
+	<meta name="description" content="제주4.3 관련자료, 4.3 평화공원, 재단소개, 주요사업, 어린이 체험관" />
+
+	<meta name="keywords" content="제주43, 제주4.3, 제주4.3 평화공원, 제주4.3 평화기념관, 어린이체험관, 제주4.3 평화재단, 주요사업" />
+
+
+
+
+
+
+
+	
+
+	<!-- 네이버 or 페이스북 :: s :: -->
+
+	<meta property="og:type" content="website" />
+
+	<meta property="og:title" content="주요사업| 추가진상 조사| 추가진상조사(2012-2021)|" />
+
+	<meta property="og:image" content="/images/kor/layout/logo.png" />
+
+	<meta name="naver-site-verification" content="naverc555a1a10ab2aa1a4d9f35cb46da8847" />
+
+	<!-- 네이버 or 페이스북 :: e :: -->
+
+	
+
+	<!-- 트위터 :: e :: -->
+
+	<meta name="twitter:image" content="/images/kor/common/logo.png" />
+
+	<!-- 트위터 :: e :: -->
+
+
+
+	<title>제주4&middot;3평화재단</title>
+
+	<link rel="shortcut icon" type="image/x-icon" href="/images/kor/common/favicon.ico" />
+
+	<link rel="apple-touch-icon" href="/images/kor/common/favicon.png" />
+
+	<link rel="stylesheet" type="text/css" href="/css/core/core.css" media="all" />
+
+	<link rel="stylesheet" type="text/css" href="/css/kor/skin.css" media="all" />
+
+	<link rel="stylesheet" type="text/css" href="/css/kor/layout.css" media="all" />
+
+	<link rel="stylesheet" type="text/css" href="/css/kor/content.css?v=20260113_02" media="all" />
+
+	<link rel="stylesheet" type="text/css" href="/css/kor/media.css" media="all" />
+
+	<link rel="stylesheet" type="text/css" href="/css/kor/program.css" media="all" />
+
+
+
+	<!-- <script type="text/javascript">/* js의 contextpath 적용 */var contextPath ="/B_team/openflatform";</script> -->
+
+	<script type="text/javascript">/* js의 contextpath 적용 */var contextPath ="";</script>
+
+	<script type="text/javascript" src="/js/kor/js.js"></script>	
+
+	<script src="/js/core/html5.js"></script>	
+
+	<script src="/js/core/respond.min.js"></script>
+
+	<script type="text/javascript" src="/js/kor/jquery.rwdImageMaps.min.js"></script>
+
+	
+</head>
+<body id="sub" class="user">
+
+<div id="wrap">
+	<div class="js_mobile_check"></div>
+	
+	<!-- header :: s :: -->
+	<div id="header">
+		
+
+
+
+
+
+
+
+
+
+		<h1><a href="/"><img src="/images/kor/layout/logo.png" class="logo" alt="제주4&middot;3평화재단" /></a></h1>
+		
+		<!-- skip :: s :: -->
+		<div id="skip">
+			<strong class="hidden">반복영역 건너뛰기</strong>
+			<ul>
+				<li><a href="#content">본문 바로가기</a></li>
+				<li><a href="#gnb">상단메뉴 바로가기</a></li>
+			</ul>
+		</div>
+		<!-- skip :: e :: -->
+		
+		<strong class="hidden">부가기능 및 사이트</strong>
+		<div id="global">
+			<ul class="site_link">
+				<li><a href="/kor/sub14_02.do">SITEMAP</a></li>
+				<li><a href="http://jeju43peace.org/" target="_blank" title="새창이동, 영문홈페이지">ENGLISH</a></li>
+				
+			</ul>	
+			<a href="#" class="search_btn"><span>검색열기</span></a>		
+			<div class="search_datail">
+				<div class="inner">
+					<p class="title">SEARCH</p>
+					<div class="search_input">
+						<form action="/mecsearch/search.do" method="post" id="totalform" name="totalsearch" target="_blank">
+						<label for="totaltext" class="hidden">통합검색</label>
+						<input type="text" name="kw" id="totaltext" placeholder="검색어를 입력하세요" />
+						<input type="submit" value="검색" />
+						</form>
+					</div>
+					<a href="#" class="close_btn">검색닫기</a>
+				</div>	
+			</div>
+			<a href="#" class="allmenu_btn"><span>전체메뉴</span></a>
+		</div>
+	
+	
+	
+	
+
+		<strong class="hidden">상단메뉴</strong>
+		<div class="js_menu" id="gnb">
+			<div id="blind"><span></span></div>
+			<ul>
+			
+			<li class="sub01"><a href='/kor/sub01_01_01.do' target='_self' class='' ><span>제주4&middot;3</span></a>
+<ul>
+<li class="sub01_01"><a href='/kor/sub01_01_01.do' target='_self'>제주4‧3의 역사</a>
+<ul>
+<li class="sub01_01_01"><a href='/kor/sub01_01_01.do' target='_self' >제주4·3이란</a></li>
+<li class="sub01_01_02"><a href='/kor/sub01_01_02.do' target='_self' >피해실태</a></li>
+<li class="sub01_01_03"><a href='/kor/sub01_01_03.do' target='_self' >주요사건</a></li>
+<li class="sub01_01_04"><a href='/kor/sub01_01_04.do' target='_self' >사건일지/경과개요</a></li>
+</ul>
+</li>
+<li class="sub01_02"><a href='/kor/sub01_02_01.do' target='_self'>4&middot;3의 진실찾기</a>
+<ul>
+<li class="sub01_02_01"><a href='/kor/sub01_02_01.do' target='_self' >진상규명운동사</a></li>
+<li class="sub01_02_02"><a href='/kor/sub01_02_02.do' target='_self' >문화예술언론의 노력</a></li>
+<li class="sub01_02_03"><a href='/kor/sub01_02_03.do' target='_self' >추모‧화해‧상생</a></li>
+<li class="sub01_02_04"><a href='/kor/sub01_02_04.do' target='_self' >4‧3특별법 제정</a></li>
+</ul>
+</li>
+<li class="sub01_03"><a href='/kor/sub01_03_01_01.do' target='_self'>홍보영상</a>
+<ul>
+<li class="sub01_03_01"><a href='/kor/sub01_03_01_01.do' target='_self' >재단 제작 4·3홍보영상</a>
+<ul>
+<li class="sub01_03_01_01"><a href='/kor/sub01_03_01_01.do' target='_self'>4·3홍보영상 - 국문판</a></li>
+<li class="sub01_03_01_02"><a href='/kor/sub01_03_01_02.do' target='_self'>4·3홍보영상 - 영문판</a></li>
+<li class="sub01_03_01_03"><a href='/kor/sub01_03_01_03.do' target='_self'>평화와 인권</a></li>
+<li class="sub01_03_01_04"><a href='/kor/sub01_03_01_04.do' target='_self'>애니메이션</a></li>
+</ul>
+</li>
+<li class="sub01_03_03"><a href='/kor/sub01_03_03.do' target='_self' >창작오페라 '순이삼촌'</a></li>
+<li class="sub01_03_05"><a href='/kor/sub01_03_05_02.do' target='_self' >4·3 70주년 홍보영상</a>
+<ul>
+<li class="sub01_03_05_02"><a href='/kor/sub01_03_05_02.do' target='_self'>단편영화 '식게'</a></li>
+<li class="sub01_03_05_03"><a href='/kor/sub01_03_05_03.do' target='_self'>4·3방송광고</a></li>
+<li class="sub01_03_05_04"><a href='/kor/sub01_03_05_04.do' target='_self'>4·3릴레이캠페인</a></li>
+</ul>
+</li>
+<li class="sub01_03_06"><a href='/kor/sub01_03_06_01.do' target='_self' >제1회 4·3과 평화 영상공모</a>
+<ul>
+<li class="sub01_03_06_01"><a href='/kor/sub01_03_06_01.do' target='_self'>대상작 - 동백꽃</a></li>
+<li class="sub01_03_06_02"><a href='/kor/sub01_03_06_02.do' target='_self'>최우수상 - 동백꽃</a></li>
+<li class="sub01_03_06_03"><a href='/kor/sub01_03_06_03.do' target='_self'>최우수상 - 이추룩 살았쥬</a></li>
+<li class="sub01_03_06_04"><a href='/kor/sub01_03_06_04.do' target='_self'>최우수상 - 평화를 찾는 여정</a></li>
+<li class="sub01_03_06_06"><a href='/kor/sub01_03_06_06.do' target='_self'>우수상 - 4·3발표대회</a></li>
+<li class="sub01_03_06_07"><a href='/kor/sub01_03_06_07.do' target='_self'>우수상 - 4·3의 아픔과 앞으로..</a></li>
+<li class="sub01_03_06_08"><a href='/kor/sub01_03_06_08.do' target='_self'>우수상 - 그날의 아픔을 연주..</a></li>
+<li class="sub01_03_06_09"><a href='/kor/sub01_03_06_09.do' target='_self'>우수상 - 동백</a></li>
+<li class="sub01_03_06_10"><a href='/kor/sub01_03_06_10.do' target='_self'>우수상 - 제주 고등학생이 들려..</a></li>
+<li class="sub01_03_06_11"><a href='/kor/sub01_03_06_11.do' target='_self'>우수상 - 한라산의편지</a></li>
+<li class="sub01_03_06_12"><a href='/kor/sub01_03_06_12.do' target='_self'>장려상 - 4·3은 되풀이되고 있다</a></li>
+<li class="sub01_03_06_13"><a href='/kor/sub01_03_06_13.do' target='_self'>장려상 - 4월달</a></li>
+<li class="sub01_03_06_14"><a href='/kor/sub01_03_06_14.do' target='_self'>장려상 - 당신은 알고 계신가요</a></li>
+<li class="sub01_03_06_15"><a href='/kor/sub01_03_06_15.do' target='_self'>장려상 - 아픈 일기</a></li>
+<li class="sub01_03_06_16"><a href='/kor/sub01_03_06_16.do' target='_self'>장려상 - 잃어버린 마을</a></li>
+<li class="sub01_03_06_17"><a href='/kor/sub01_03_06_17.do' target='_self'>장려상 - 있어요 없어요</a></li>
+<li class="sub01_03_06_18"><a href='/kor/sub01_03_06_18.do' target='_self'>장려상 - 기억속에 잊혀진 그날의 진실</a></li>
+<li class="sub01_03_06_19"><a href='/kor/sub01_03_06_19.do' target='_self'>장려상 - 제주4·3이야기</a></li>
+<li class="sub01_03_06_20"><a href='/kor/sub01_03_06_20.do' target='_self'>장려상 - 제주도의 아픈 기억</a></li>
+</ul>
+</li>
+<li class="sub01_03_07"><a href='/kor/sub01_03_07_02.do' target='_self' >제2회 4·3과 평화 영상공모</a>
+<ul>
+<li class="sub01_03_07_02"><a href='/kor/sub01_03_07_02.do' target='_self'>최우수상 - 뉴스타임 4·3의 현장으로</a></li>
+<li class="sub01_03_07_03"><a href='/kor/sub01_03_07_03.do' target='_self'>최우수상 - 꽃이 피지 않는 나무</a></li>
+<li class="sub01_03_07_04"><a href='/kor/sub01_03_07_04.do' target='_self'>우수상 - 동백꽃과 평화...</a></li>
+<li class="sub01_03_07_05"><a href='/kor/sub01_03_07_05.do' target='_self'>우수상 - 평화를 찾는 기록 4·3</a></li>
+<li class="sub01_03_07_06"><a href='/kor/sub01_03_07_06.do' target='_self'>우수상 - 만약</a></li>
+<li class="sub01_03_07_07"><a href='/kor/sub01_03_07_07.do' target='_self'>우수상 - 섬에 살던 이들</a></li>
+<li class="sub01_03_07_08"><a href='/kor/sub01_03_07_08.do' target='_self'>장려상 - 4·3 길을 걷다</a></li>
+<li class="sub01_03_07_09"><a href='/kor/sub01_03_07_09.do' target='_self'>장려상 - 제주의 또다른 계절</a></li>
+<li class="sub01_03_07_10"><a href='/kor/sub01_03_07_10.do' target='_self'>장려상 - 그날 제주를 듣다</a></li>
+<li class="sub01_03_07_11"><a href='/kor/sub01_03_07_11.do' target='_self'>장려상 - 결코 잊지 말아야 할...</a></li>
+<li class="sub01_03_07_12"><a href='/kor/sub01_03_07_12.do' target='_self'>장려상 - 이름을 새겨주세요</a></li>
+<li class="sub01_03_07_13"><a href='/kor/sub01_03_07_13.do' target='_self'>장려상 - 제주4·3 여행</a></li>
+<li class="sub01_03_07_14"><a href='/kor/sub01_03_07_14.do' target='_self'>장려상 - 기억의 산책</a></li>
+<li class="sub01_03_07_15"><a href='/kor/sub01_03_07_15.do' target='_self'>장려상 - 성산일출봉에 얽힌...</a></li>
+<li class="sub01_03_07_16"><a href='/kor/sub01_03_07_16.do' target='_self'>장려상 - 방구석 역사 나들이...</a></li>
+<li class="sub01_03_07_17"><a href='/kor/sub01_03_07_17.do' target='_self'>장려상 - 그해 다시 봄</a></li>
+</ul>
+</li>
+<li class="sub01_03_10"><a href='/kor/sub01_03_10_01.do' target='_self' >제3회 4·3과 평화 영상공모</a>
+<ul>
+<li class="sub01_03_10_01"><a href='/kor/sub01_03_10_01.do' target='_self'>대상 - ‘제주 4.3’ 그날의 새빨간  기록</a></li>
+<li class="sub01_03_10_02"><a href='/kor/sub01_03_10_02.do' target='_self'>최우수상 - 제주4·3, 얼마나 알고 계신가요?</a></li>
+<li class="sub01_03_10_03"><a href='/kor/sub01_03_10_03.do' target='_self'>최우수상 - 무명천 할머니와 4.3</a></li>
+<li class="sub01_03_10_04"><a href='/kor/sub01_03_10_04.do' target='_self'>우수상 - 제주도에서 외치는 평화</a></li>
+<li class="sub01_03_10_05"><a href='/kor/sub01_03_10_05.do' target='_self'>우수상 - 제주의 일기</a></li>
+<li class="sub01_03_10_06"><a href='/kor/sub01_03_10_06.do' target='_self'>우수상 - 누가 제주의 4월을 붉게 물들였는가?</a></li>
+<li class="sub01_03_10_07"><a href='/kor/sub01_03_10_07.do' target='_self'>우수상 - 이름을 빼앗긴 사람들</a></li>
+<li class="sub01_03_10_08"><a href='/kor/sub01_03_10_08.do' target='_self'>장려상 - 오해의 씨앗</a></li>
+<li class="sub01_03_10_09"><a href='/kor/sub01_03_10_09.do' target='_self'>장려상 - 떨어진 꽃잎</a></li>
+<li class="sub01_03_10_10"><a href='/kor/sub01_03_10_10.do' target='_self'>장려상 - 그날의 기억</a></li>
+<li class="sub01_03_10_12"><a href='/kor/sub01_03_10_12.do' target='_self'>장려상 - 우리 할아버지</a></li>
+<li class="sub01_03_10_13"><a href='/kor/sub01_03_10_13.do' target='_self'>장려상 - 그날을 알리고 싶다</a></li>
+<li class="sub01_03_10_14"><a href='/kor/sub01_03_10_14.do' target='_self'>장려상 - 중학생이 바라본 4.3사건</a></li>
+<li class="sub01_03_10_15"><a href='/kor/sub01_03_10_15.do' target='_self'>장려상 - 그날의 이야기를 듣다</a></li>
+<li class="sub01_03_10_16"><a href='/kor/sub01_03_10_16.do' target='_self'>장려상 - remember 제주 4.3사건</a></li>
+<li class="sub01_03_10_17"><a href='/kor/sub01_03_10_17.do' target='_self'>장려상 - ‘제주4.3'을 그리다</a></li>
+</ul>
+</li>
+<li class="sub01_03_11"><a href='/kor/sub01_03_11_01.do' target='_self' >제4회 4·3과 평화 영상공모</a>
+<ul>
+<li class="sub01_03_11_01"><a href='/kor/sub01_03_11_01.do' target='_self'>대상 - 당신에게도 또 다른 제주 4·3이 있지 않을까요</a></li>
+<li class="sub01_03_11_02"><a href='/kor/sub01_03_11_02.do' target='_self'>최우수상 - 알고 계신가요?</a></li>
+<li class="sub01_03_11_03"><a href='/kor/sub01_03_11_03.do' target='_self'>최우수상 - 너븐숭이</a></li>
+<li class="sub01_03_11_04"><a href='/kor/sub01_03_11_04.do' target='_self'>우수상 - 이름없는 4월 3일</a></li>
+<li class="sub01_03_11_05"><a href='/kor/sub01_03_11_05.do' target='_self'>우수상 - 잃어버린 마을 곤을동과 동백의 발자취</a></li>
+<li class="sub01_03_11_06"><a href='/kor/sub01_03_11_06.do' target='_self'>우수상 - 불의</a></li>
+<li class="sub01_03_11_07"><a href='/kor/sub01_03_11_07.do' target='_self'>우수상 - 잃어버린 마을에 피어난 동백꽃</a></li>
+<li class="sub01_03_11_08"><a href='/kor/sub01_03_11_08.do' target='_self'>장려상 - 4․3과 평화, 그리고 현재(現在)</a></li>
+<li class="sub01_03_11_09"><a href='/kor/sub01_03_11_09.do' target='_self'>장려상 - 방백위령제 제주4·3(끝나지 않은 이야기)</a></li>
+<li class="sub01_03_11_10"><a href='/kor/sub01_03_11_10.do' target='_self'>장려상 - 제주의 아픈 4월</a></li>
+<li class="sub01_03_11_11"><a href='/kor/sub01_03_11_11.do' target='_self'>장려상 - 붉은 책</a></li>
+<li class="sub01_03_11_12"><a href='/kor/sub01_03_11_12.do' target='_self'>장려상 - 그들의 차가웠던 봄, 뜨거웠던 겨울</a></li>
+<li class="sub01_03_11_13"><a href='/kor/sub01_03_11_13.do' target='_self'>장려상 - 아름다움속 감춰진 아픔</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="sub01_04"><a href='http://43archives.or.kr/main.do' target='_blank'>4·3아카이브</a>
+</li>
+<li class="sub01_06"><a href='/kor/sub01_06_01_01.do' target='_self'>4&middot;3 길</a>
+<ul>
+<li class="sub01_06_01"><a href='/kor/sub01_06_01_01.do' target='_self' >4&middot;3길과 올레</a>
+<ul>
+<li class="sub01_06_01_01"><a href='/kor/sub01_06_01_01.do' target='_self'>4·3길 소개</a></li>
+<li class="sub01_06_01_02"><a href='/kor/sub01_06_01_02.do' target='_self'>제주안덕 동광마을</a></li>
+<li class="sub01_06_01_03"><a href='/kor/sub01_06_01_03.do' target='_self'>제주남원 의귀마을</a></li>
+<li class="sub01_06_01_04"><a href='/kor/sub01_06_01_04.do' target='_self'>제주조천 북촌마을</a></li>
+<li class="sub01_06_01_05"><a href='/kor/sub01_06_01_05.do' target='_self'>제주한림 금악마을</a></li>
+<li class="sub01_06_01_06"><a href='/kor/sub01_06_01_06.do' target='_self'>제주표선 가시마을</a></li>
+<li class="sub01_06_01_07"><a href='/kor/sub01_06_01_07.do' target='_self'>제주 오라동</a></li>
+<li class="sub01_06_01_08"><a href='/kor/sub01_06_01_08.do' target='_self'>제주애월 소길마을</a></li>
+<li class="sub01_06_01_09"><a href='/kor/sub01_06_01_09.do' target='_self'>제주 아라동</a></li>
+</ul>
+</li>
+<li class="sub01_06_02"><a href='/kor/ruins/list.do' target='_self'>4·3유적</a></li>
+</ul>
+</li>
+<li class="sub01_07"><a href='/kor/sub01_07.do' target='_self'>4·3관련법령</a>
+</li>
+<li class="sub01_08"><a href='/kor/sub01_08.do' target='_self'>관련단체</a>
+</li>
+</ul>
+</li>
+<li class="sub02"><a href='/kor/bbs/BBSMSTR_000000000001/lst.do' target='_self'><span>알림/소식</span></a>
+<ul>
+<li class="sub02_01"><a href='/kor/bbs/BBSMSTR_000000000001/lst.do' target='_self'>공지사항</a>
+</li>
+<li class="sub02_02"><a href='/kor/bbs/BBSMSTR_000000000032/lst.do' target='_self'>보도자료</a>
+</li>
+<li class="sub02_03"><a href='/kor/bodonews/list.do' target='_self'>언론보도</a>
+</li>
+<li class="sub02_04"><a href='/kor/bbs/BBSMSTR_000000000202/lst.do' target='_self'>4·3 역사 왜곡 신고센터</a>
+</li>
+<li class="sub02_05"><a href='/kor/schedule/list.do' target='_self'>행사일정</a>
+</li>
+<li class="sub02_06"><a href='/kor/organ/list.do' target='_self'>기관지 [4·3과 평화]</a>
+<ul>
+<li class="sub02_06_01"><a href='/kor/organ/list.do' target='_self'>4·3과 평화</a></li>
+<li class="sub02_06_02"><a href='/kor/paperMember/content.do' target='_self'>구독 신청/취소</a></li>
+</ul>
+</li>
+<li class="sub02_07"><a href='/kor/newsletter/list.do' target='_self'>뉴스레터</a>
+<ul>
+<li class="sub02_07_01"><a href='/kor/newsletter/list.do' target='_self'>뉴스레터</a></li>
+<li class="sub02_07_02"><a href='/kor/newsletterMember/content.do' target='_self'>구독 신청/취소</a></li>
+</ul>
+</li>
+<li class="sub02_08"><a href='/kor/bbs/BBSMSTR_000000000034/lst.do' target='_self'>묻고 답하기</a>
+</li>
+<li class="sub02_09"><a href='/kor/bbs/BBSMSTR_000000000035/lst.do' target='_self'>클린신고센터</a>
+</li>
+<li class="sub02_10"><a href='/kor/bbs/BBSMSTR_000000000113/lst.do' target='_self'>성희롱·성폭력 신고센터</a>
+</li>
+<li class="sub02_11"><a href='https://www.clean.go.kr/index.do' target='_blank'>청렴포털서비스</a>
+</li>
+</ul>
+</li>
+<li class="sub03"><a href='/kor/sub03_01_05.do' target='_self' class='' ><span>주요사업</span></a>
+<ul>
+<li class="sub03_01"><a href='/kor/sub03_01_05.do' target='_self'>추가진상 조사</a>
+<ul>
+<li class="sub03_01_05"><a href='/kor/sub03_01_05.do' target='_self' >추가진상조사(2022-현재)</a></li>
+<li class="sub03_01_06"><a href='/kor/sub03_01_06.do' target='_self' >추가진상조사(2012-2021)</a></li>
+</ul>
+</li>
+<li class="sub03_02"><a href='/kor/sub03_02_01.do' target='_self'>추모&middot;유족복지</a>
+<ul>
+<li class="sub03_02_01"><a href='/kor/sub03_02_01.do' target='_self' >4·3희생자추념일전야제</a></li>
+<li class="sub03_02_02"><a href='/kor/sub03_02_02.do' target='_self' >4·3유족진료비 지원</a></li>
+<li class="sub03_02_03"><a href='/kor/sub03_02_03.do' target='_self' >4·3희생자며느리진료비 지원</a></li>
+<li class="sub03_02_04"><a href='/kor/sub03_02_04.do' target='_self' >4·3생존희생자지원사업</a></li>
+<li class="sub03_02_05"><a href='/kor/sub03_02_05.do' target='_self' >찾아가는 4·3문화체험교실</a></li>
+<li class="sub03_02_06"><a href='/kor/sub03_02_06.do' target='_self' >4·3생존희생자위로사업</a></li>
+<li class="sub03_02_07"><a href='/kor/sub03_02_07.do' target='_self' >4·3어버이상</a></li>
+<li class="sub03_02_08"><a href='/kor/sub03_02_08.do' target='_self' >장학사업</a></li>
+<li class="sub03_02_09"><a href='/kor/sub03_02_09_01.do' target='_self' >4·3희생자추념식</a>
+<ul>
+<li class="sub03_02_09_01"><a href='/kor/sub03_02_09_01.do' target='_self'>2018년 70주년 추념식</a></li>
+<li class="sub03_02_09_02"><a href='/kor/sub03_02_09_02.do' target='_self'>2019년 71주년 추념식</a></li>
+<li class="sub03_02_09_03"><a href='/kor/sub03_02_09_03.do' target='_self'>2020년 72주년 추념식</a></li>
+<li class="sub03_02_09_04"><a href='/kor/sub03_02_09_04.do' target='_self'>2021년 73주년 추념식</a></li>
+<li class="sub03_02_09_05"><a href='/kor/sub03_02_09_05.do' target='_self'>2022년 74주년 추념식</a></li>
+</ul>
+</li>
+<li class="sub03_02_10"><a href='/kor/bbs/BBSMSTR_000000000141/lst.do' target='_self'>자료실1</a></li>
+<li class="sub03_02_11"><a href='/kor/sub03_02_11.do' target='_self' >4·3유해발굴 및 신원확인</a></li>
+<li class="sub03_02_12"><a href='/kor/sub03_02_12.do' target='_self' >4·3기록물 유네스코 세계기록유산 등재</a></li>
+</ul>
+</li>
+<li class="sub03_03"><a href='/kor/sub03_03_01.do' target='_self'>문화‧학술연구</a>
+<ul>
+<li class="sub03_03_01"><a href='/kor/sub03_03_01.do' target='_self' >제주4·3 평화포럼</a></li>
+<li class="sub03_03_02"><a href='/kor/sub03_03_02.do' target='_self' >4·3평화문학상</a></li>
+<li class="sub03_03_03"><a href='/kor/sub03_03_03.do' target='_self' >전국청소년4·3문예공모</a></li>
+<li class="sub03_03_04"><a href='/kor/sub03_03_04.do' target='_self' >학생4·3문예대회</a></li>
+<li class="sub03_03_05"><a href='/kor/sub03_03_05.do' target='_self' >4·3 학술연구사업 공모</a></li>
+<li class="sub03_03_06"><a href='/kor/sub03_03_06.do' target='_self' >제주4&middot;3의 노래</a></li>
+<li class="sub03_03_07"><a href='/kor/sub03_03_07.do' target='_self' >「4·3 70년, 어둠에서 빛으로」</a></li>
+<li class="sub03_03_08"><a href='/kor/sub03_03_08.do' target='_self' >4·3영화제</a></li>
+<li class="sub03_03_09"><a href='/kor/sub03_03_09.do' target='_self' >4·3언론상</a></li>
+<li class="sub03_03_10"><a href='/kor/bbs/BBSMSTR_000000000142/lst.do' target='_self'>자료실2</a></li>
+</ul>
+</li>
+<li class="sub03_04"><a href='/kor/sub03_04_01.do' target='_self'>평화교육</a>
+<ul>
+<li class="sub03_04_01"><a href='/kor/sub03_04_01.do' target='_self' >전국교원4·3직무연수</a></li>
+<li class="sub03_04_03"><a href='/kor/sub03_04_03.do' target='_self' >시민4·3역사문화아카데미</a></li>
+<li class="sub03_04_04"><a href='/kor/sub03_04_04_01.do' target='_self' >전국청소년4·3영어스피치대회</a>
+<ul>
+<li class="sub03_04_04_01"><a href='/kor/sub03_04_04_01.do' target='_self'>대회소개</a></li>
+<li class="sub03_04_04_02"><a href='/kor/sub03_04_04_02.do' target='_self'>제1회 대회</a></li>
+<li class="sub03_04_04_03"><a href='/kor/sub03_04_04_03.do' target='_self'>제2회 대회 - 스케치</a></li>
+<li class="sub03_04_04_04"><a href='/kor/sub03_04_04_04.do' target='_self'>제2회 대회 - 방송촬영</a></li>
+<li class="sub03_04_04_05"><a href='/kor/sub03_04_04_05.do' target='_self'>제3회 대회 - 방송촬영</a></li>
+</ul>
+</li>
+<li class="sub03_04_05"><a href='/kor/sub03_04_05.do' target='_self' >전국청소년4·3평화캠프</a></li>
+<li class="sub03_04_08"><a href='/kor/sub03_04_08.do' target='_self' >국내외대학생 4·3평화캠프</a></li>
+<li class="sub03_04_10"><a href='/kor/sub03_04_10.do' target='_self' >4·3동백서포터즈</a></li>
+<li class="sub03_04_11"><a href='/kor/bbs/BBSMSTR_000000000143/lst.do' target='_self'>자료실3</a></li>
+</ul>
+</li>
+<li class="sub03_05"><a href='/kor/sub03_05_01.do' target='_self'>평화교류</a>
+<ul>
+<li class="sub03_05_01"><a href='/kor/sub03_05_01.do' target='_self' >제주4·3평화상</a></li>
+<li class="sub03_05_02"><a href='/kor/sub03_05_02.do' target='_self' >국내외 평화교류</a></li>
+<li class="sub03_05_03"><a href='/kor/sub03_05_03.do' target='_self' >2026 제10회 전국민주시민합창축전 in 제주</a></li>
+<li class="sub03_05_04"><a href='/kor/bbs/BBSMSTR_000000000144/lst.do' target='_self'>자료실4</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="sub04"><a href='/kor/sub04_01.do' target='_self'><span>4&middot;3평화공원</span></a>
+<ul>
+<li class="sub04_01"><a href='/kor/sub04_01.do' target='_self'>공원소개</a>
+</li>
+<li class="sub04_02"><a href='/kor/sub04_02_01.do' target='_self'>시설안내</a>
+<ul>
+<li class="sub04_02_01"><a href='/kor/sub04_02_01.do' target='_self' >시설현황</a></li>
+<li class="sub04_02_02"><a href='/kor/sub04_02_02.do' target='_self' >상징조형물</a></li>
+</ul>
+</li>
+<li class="sub04_03"><a href='/kor/sub04_03.do' target='_self'>해설영상</a>
+</li>
+<li class="sub04_04"><a href='/kor/bbs/BBSMSTR_000000000051/lst.do' target='_self'>온라인 추모관</a>
+<ul>
+<li class="sub04_04_01"><a href='/kor/bbs/BBSMSTR_000000000051/lst.do' target='_self'>주요 참배객</a></li>
+<li class="sub04_04_02"><a href='/kor/memorial/list.do' target='_self'>온라인 참배</a></li>
+<li class="sub04_04_03"><a href='https://online.jeju43peace.or.kr/memorial/tablet.do' target='_self' >희생자 검색-위패 찾기</a></li>
+<li class="sub04_04_04"><a href='https://online.jeju43peace.or.kr/lost/tablet.do' target='_self' >희생자 검색-행불인표석 찾기</a></li>
+<li class="sub04_04_06"><a href='https://peace43.jeju.go.kr/' target='_blank' >4·3종합정보시스템</a></li>
+</ul>
+</li>
+<li class="sub04_05"><a href='/kor/sub04_05.do' target='_self'>찾아오시는 길</a>
+</li>
+<li class="sub04_06"><a href='/kor/bbs/BBSMSTR_000000000191/lst.do' target='_self'>방문후기</a>
+</li>
+</ul>
+</li>
+<li class="sub05"><a href='/kor/sub05_01.do' target='_self'><span>4&middot;3평화기념관</span></a>
+<ul>
+<li class="sub05_01"><a href='/kor/sub05_01.do' target='_self'>기념관 소개</a>
+</li>
+<li class="sub05_02"><a href='/kor/sub05_02_01_01.do' target='_self'>상설전시</a>
+<ul>
+<li class="sub05_02_01"><a href='/kor/sub05_02_01_01.do' target='_self' >상설전시실 해설영상</a>
+<ul>
+<li class="sub05_02_01_01"><a href='/kor/sub05_02_01_01.do' target='_self'>한국어 영상</a></li>
+<li class="sub05_02_01_04"><a href='/kor/sub05_02_01_04.do' target='_self'>영어 영상</a></li>
+<li class="sub05_02_01_05"><a href='/kor/sub05_02_01_05.do' target='_self'>중국어 영상</a></li>
+<li class="sub05_02_01_06"><a href='/kor/sub05_02_01_06.do' target='_self'>일본어 영상</a></li>
+<li class="sub05_02_01_07"><a href='/kor/sub05_02_01_07.do' target='_self'>수어 영상</a></li>
+</ul>
+</li>
+<li class="sub05_02_02"><a href='/kor/sub05_02_02.do' target='_self' >상설전시실 안내도</a></li>
+<li class="sub05_02_03"><a href='/kor/sub05_02_03.do' target='_self' >상설전시실 핸드북</a></li>
+</ul>
+</li>
+<li class="sub05_03"><a href='/kor/display/list.do' target='_self'>기획전시</a>
+</li>
+<li class="sub05_04"><a href='/kor/sub05_04_01.do' target='_self'>이용안내</a>
+<ul>
+<li class="sub05_04_01"><a href='/kor/sub05_04_01.do' target='_self' >관람안내</a></li>
+<li class="sub05_04_02"><a href='/kor/sub05_04_02.do' target='_self' >대관안내</a></li>
+<li class="sub05_04_04"><a href='/kor/sub05_04_04.do' target='_self' >전시해설안내</a></li>
+<li class="sub05_04_05"><a href='/kor/exhibitexplan/select.do' target='_self'>전시해설예약</a>
+<ul>
+<li class="sub05_04_05_01"><a href='/kor/exhibitexplan/select.do' target='_self'>해설예약</a></li>
+<li class="sub05_04_05_02"><a href='/kor/exhibitexplan/select.do' target='_self'>예약 조회 및 취소</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="sub06"><a href='/kor/sub06_01.do' target='_self'><span>4&middot;3어린이체험관</span></a>
+<ul>
+<li class="sub06_01"><a href='/kor/sub06_01.do' target='_self'>체험관 소개</a>
+</li>
+<li class="sub06_02"><a href='/kor/sub06_02_01.do' target='_self'>체험 프로그램</a>
+<ul>
+<li class="sub06_02_01"><a href='/kor/sub06_02_01.do' target='_self' >상설 체험 프로그램</a></li>
+<li class="sub06_02_02"><a href='/kor/sub06_02_02.do' target='_self' >특별 체험 프로그램</a></li>
+</ul>
+</li>
+<li class="sub06_03"><a href='/kor/kidexperience/1/selectGubun.do' target='_self'>인터넷 사전예약</a>
+<ul>
+<li class="sub06_03_01"><a href='/kor/kidexperience/1/selectGubun.do' target='_self'>사전예약</a>
+<ul>
+<li class="sub06_03_01_01"><a href='/kor/kidexperience/1/selectGubun.do' target='_self'>사전예약</a></li>
+<li class="sub06_03_01_02"><a href='/kor/kidexperience/1/selectGubun.do' target='_self'>예약조회 및 취소</a></li>
+</ul>
+</li>
+<li class="sub06_03_02"><a href='/kor/onlineEdu/list.do' target='_self'>여름방학 4·3어린이 독서 교실</a>
+<ul>
+<li class="sub06_03_02_01"><a href='/kor/onlineEdu/list.do' target='_self'>프로그램예약</a></li>
+<li class="sub06_03_02_02"><a href='/kor/onlineEdu/list.do' target='_self'>예약조회 및 취소</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="sub06_05"><a href='/kor/bbs/BBSMSTR_000000000041/lst.do' target='_self'>체험후기</a>
+</li>
+<li class="sub06_06"><a href='/kor/sub06_06.do' target='_self'>이용안내</a>
+</li>
+</ul>
+</li>
+<li class="sub07"><a href='/kor/sub07_08.do' target='_self'><span>제주4·3영화제</span></a>
+<ul>
+<li class="sub07_08"><a href='/kor/sub07_08.do' target='_self'>제4회 제주 4·3영화제</a>
+</li>
+<li class="sub07_09"><a href='/kor/sub07_09.do' target='_self'>제주4·3영화제 소개</a>
+</li>
+<li class="sub07_10"><a href='/kor/bbs/BBSMSTR_000000000211/lst.do' target='_self'>영화제 소식</a>
+</li>
+<li class="sub07_11"><a href='/kor/sub07_11_01.do' target='_self'>영화제 아카이브</a>
+<ul>
+<li class="sub07_11_01"><a href='/kor/sub07_11_01.do' target='_self' >제3회 제주 4·3영화제</a></li>
+<li class="sub07_11_02"><a href='/kor/sub07_11_02.do' target='_self' >제2회 제주 4·3영화제</a></li>
+<li class="sub07_11_03"><a href='/kor/sub07_11_03.do' target='_self' >제1회 제주 4·3영화제</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="sub09"><a href='/kor/sub09_01_01.do' target='_self' class='' ><span>재단소개</span></a>
+<ul>
+<li class="sub09_01"><a href='/kor/sub09_01_01.do' target='_self'>이사장소개</a>
+<ul>
+<li class="sub09_01_01"><a href='/kor/sub09_01_01.do' target='_self' >인사말</a></li>
+<li class="sub09_01_02"><a href='/kor/sub09_01_02.do' target='_self' >이사장 소개</a></li>
+<li class="sub09_01_03"><a href='/kor/sub09_01_03.do' target='_self' >역대 이사장</a></li>
+</ul>
+</li>
+<li class="sub09_02"><a href='/kor/sub09_02_01.do' target='_self'>재단소개</a>
+<ul>
+<li class="sub09_02_01"><a href='/kor/sub09_02_01.do' target='_self' >소개</a></li>
+<li class="sub09_02_02"><a href='/kor/sub09_02_02.do' target='_self' >설립목적‧비전</a></li>
+<li class="sub09_02_03"><a href='/kor/sub09_02_03.do' target='_self' >고객과의 약속</a></li>
+<li class="sub09_02_04"><a href='/kor/sub09_02_04.do' target='_self' >연혁</a></li>
+<li class="sub09_02_05"><a href='/kor/sub09_02_05.do' target='_self' >정관</a></li>
+<li class="sub09_02_06"><a href='/kor/sub09_02_06.do' target='_self' >CI</a></li>
+<li class="sub09_02_07"><a href='/kor/sub09_02_07_01.do' target='_self' >인권경영</a>
+<ul>
+<li class="sub09_02_07_01"><a href='/kor/sub09_02_07_01.do' target='_self'>인권경영헌장</a></li>
+<li class="sub09_02_07_02"><a href='/kor/sub09_02_07_02.do' target='_self'>인권경영규정</a></li>
+<li class="sub09_02_07_03"><a href='/kor/sub09_02_07_03.do' target='_self'>인권경영 추진체계</a></li>
+<li class="sub09_02_07_04"><a href='/kor/sub09_02_07_04.do' target='_self'>인권침해 구제절차</a></li>
+<li class="sub09_02_07_05"><a href='https://www.humanrights.go.kr/base/main/view' target='_self' >국가인권위원회 바로가기</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="sub09_03"><a href='/kor/department/ORGNZT_0000000000001/list.do' target='_self'>조직도</a>
+</li>
+<li class="sub09_04"><a href='/kor/donation/info.do' target='_self'>기탁안내</a>
+<ul>
+<li class="sub09_04_02"><a href='/kor/donation/info.do' target='_self'>기탁안내 및 지정기탁서 온라인 접수</a></li>
+<li class="sub09_04_03"><a href='/kor/bbs/BBSMSTR_000000000062/lst.do' target='_self'>기탁금 사용내역</a></li>
+<li class="sub09_04_04"><a href='/kor/sub09_04_04.do' target='_self' >자료기증</a></li>
+</ul>
+</li>
+<li class="sub09_06"><a href='https://www.open.go.kr/' target='_blank'>정보공개/공시</a>
+<ul>
+<li class="sub09_06_01"><a href='https://www.open.go.kr/' target='_blank' >정보공개</a>
+<ul>
+<li class="sub09_06_01_01"><a href='https://www.open.go.kr/' target='_blank' >정보공개청구</a></li>
+<li class="sub09_06_01_02"><a href='/kor/sub09_06_01_02.do' target='_self'>공공데이터개방</a></li>
+</ul>
+</li>
+<li class="sub09_06_02"><a href='/kor/sub09_06_02.do' target='_self' >정보공개안내</a></li>
+<li class="sub09_06_04"><a href='/kor/bbs/BBSMSTR_000000000043/lst.do' target='_self'>경영공시</a>
+<ul>
+<li class="sub09_06_04_01"><a href='/kor/bbs/BBSMSTR_000000000043/lst.do' target='_self'>재정현황</a></li>
+<li class="sub09_06_04_02"><a href='/kor/bbs/BBSMSTR_000000000044/lst.do' target='_self'>수의계약내역</a></li>
+<li class="sub09_06_04_03"><a href='/kor/bbs/BBSMSTR_000000000045/lst.do' target='_self'>업무추진비내역</a></li>
+<li class="sub09_06_04_04"><a href='/kor/bbs/BBSMSTR_000000000047/lst.do' target='_self'>경영실적 결과 및 감사 결과</a></li>
+<li class="sub09_06_04_05"><a href='/kor/bbs/BBSMSTR_000000000111/lst.do' target='_self'>공무국외여행 결과보고서</a></li>
+<li class="sub09_06_04_06"><a href='/kor/bbs/BBSMSTR_000000000121/lst.do' target='_self'>공공기관 임직원 친인척 채용 현황</a></li>
+<li class="sub09_06_04_07"><a href='/kor/bbs/BBSMSTR_000000000112/lst.do' target='_self'>일자리 목표 공시</a></li>
+<li class="sub09_06_04_08"><a href='/kor/bbs/BBSMSTR_000000000145/lst.do' target='_self'>경영목표 및 운영계획</a></li>
+<li class="sub09_06_04_09"><a href='/kor/bbs/BBSMSTR_000000000181/lst.do' target='_self'>전년도 임원 및 인력현황</a></li>
+<li class="sub09_06_04_10"><a href='/kor/bbs/BBSMSTR_000000000201/lst.do' target='_self'>인권영향평가</a></li>
+<li class="sub09_06_04_11"><a href='/kor/bbs/BBSMSTR_000000000221/lst.do' target='_self'>기관장 직무성과계약</a></li>
+<li class="sub09_06_04_12"><a href='/kor/bbs/BBSMSTR_000000000231/lst.do' target='_self'>상품권구매 및 사용내역</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="sub14"><a href='/kor/auth/content.do' target='_self'><span>홈페이지 가이드</span></a>
+<ul>
+<li class="sub14_01"><a href='/kor/auth/content.do' target='_self'>본인인증</a>
+</li>
+<li class="sub14_02"><a href='/kor/sub14_02.do' target='_self'>사이트맵</a>
+</li>
+<li class="sub14_03"><a href='/kor/sub14_03.do' target='_self'>개인정보취급방침</a>
+</li>
+<li class="sub14_04"><a href='/kor/sub14_04.do' target='_self'>영상정보처리기기 운영·관리방침</a>
+</li>
+<li class="sub14_05"><a href='/kor/sub14_05.do' target='_self'>이메일무단수집거부</a>
+</li>
+<li class="sub14_06"><a href='/kor/sub14_06.do' target='_self'>저작권정책</a>
+   
+					
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<script type="text/javascript">
+				Tmenu_setting("030106");
+// 				var mno = '030106';
+// 				Tmenu.li.eq(mno).find(">a").addClass("on");
+// 				$("#gnb>ul>li").last().hide();
+			</script>
+			
+
+	</div>
+
+	<hr />
+	<!-- header :: e :: -->
+	
+	<!-- visual :: s :: -->
+	<div id="visual" class="vi03"> <!-- 메뉴별 배경 변경 class="vi01, vi02, vi03..." -->
+		<div class="layout">
+			<h2><span>주요사업</span></h2>
+		</div>	
+	</div>
+	<!-- visual :: e :: -->
+
+	<!-- container :: s :: -->
+	<strong class="hidden">본문</strong>
+	<div id="container">
+		<div id="remote">
+			<!-- remote :: s :: -->
+			
+
+
+
+
+
+
+
+
+
+		<h2>주요사업</h2>
+			<div class="js_menu" id="lnb">
+
+				<ul>
+		<li class="sub03_01">
+<a href='/kor/sub03_01_05.do' target='_self' >추가진상 조사</a>
+<ul class='lm_3th'>
+<li class="sub03_01_05"><a href='/kor/sub03_01_05.do' target='_self' >추가진상조사(2022-현재)</a></li>
+<li class="sub03_01_06"><a href='/kor/sub03_01_06.do' target='_self' >추가진상조사(2012-2021)</a></li>
+</ul>
+</li>
+<li class="sub03_02"><a href='/kor/sub03_02.do' target='_self' >추모&middot;유족복지</a>
+<ul>
+<li class="sub03_02_01"><a href='/kor/sub03_02_01.do' target='_self' >4·3희생자추념일전야제</a></li>
+<li class="sub03_02_02"><a href='/kor/sub03_02_02.do' target='_self' >4·3유족진료비 지원</a></li>
+<li class="sub03_02_03"><a href='/kor/sub03_02_03.do' target='_self' >4·3희생자며느리진료비 지원</a></li>
+<li class="sub03_02_04"><a href='/kor/sub03_02_04.do' target='_self' >4·3생존희생자지원사업</a></li>
+<li class="sub03_02_05"><a href='/kor/sub03_02_05.do' target='_self' >찾아가는 4·3문화체험교실</a></li>
+<li class="sub03_02_06"><a href='/kor/sub03_02_06.do' target='_self' >4·3생존희생자위로사업</a></li>
+<li class="sub03_02_07"><a href='/kor/sub03_02_07.do' target='_self' >4·3어버이상</a></li>
+<li class="sub03_02_08"><a href='/kor/sub03_02_08.do' target='_self' >장학사업</a></li>
+<li class="sub03_02_09"><a href='/kor/sub03_02_09_01.do' target='_self' >4·3희생자추념식</a></li>
+<li class="sub03_02_10"><a href='/kor/bbs/BBSMSTR_000000000141/lst.do' target='_self'  >자료실1</a></li>
+<li class="sub03_02_11"><a href='/kor/sub03_02_11.do' target='_self' >4·3유해발굴 및 신원확인</a></li>
+<li class="sub03_02_12"><a href='/kor/sub03_02_12.do' target='_self' >4·3기록물 유네스코 세계기록유산 등재</a></li>
+</ul>
+</li>
+<li class="sub03_03"><a href='/kor/sub03_03.do' target='_self' >문화‧학술연구</a>
+<ul>
+<li class="sub03_03_01"><a href='/kor/sub03_03_01.do' target='_self' >제주4·3 평화포럼</a></li>
+<li class="sub03_03_02"><a href='/kor/sub03_03_02.do' target='_self' >4·3평화문학상</a></li>
+<li class="sub03_03_03"><a href='/kor/sub03_03_03.do' target='_self' >전국청소년4·3문예공모</a></li>
+<li class="sub03_03_04"><a href='/kor/sub03_03_04.do' target='_self' >학생4·3문예대회</a></li>
+<li class="sub03_03_05"><a href='/kor/sub03_03_05.do' target='_self' >4·3 학술연구사업 공모</a></li>
+<li class="sub03_03_06"><a href='/kor/sub03_03_06.do' target='_self' >제주4&middot;3의 노래</a></li>
+<li class="sub03_03_07"><a href='/kor/sub03_03_07.do' target='_self' >「4·3 70년, 어둠에서 빛으로」</a></li>
+<li class="sub03_03_08"><a href='/kor/sub03_03_08.do' target='_self' >4·3영화제</a></li>
+<li class="sub03_03_09"><a href='/kor/sub03_03_09.do' target='_self' >4·3언론상</a></li>
+<li class="sub03_03_10"><a href='/kor/bbs/BBSMSTR_000000000142/lst.do' target='_self'  >자료실2</a></li>
+</ul>
+</li>
+<li class="sub03_04"><a href='/kor/sub03_04.do' target='_self' >평화교육</a>
+<ul>
+<li class="sub03_04_01"><a href='/kor/sub03_04_01.do' target='_self' >전국교원4·3직무연수</a></li>
+<li class="sub03_04_03"><a href='/kor/sub03_04_03.do' target='_self' >시민4·3역사문화아카데미</a></li>
+<li class="sub03_04_04"><a href='/kor/sub03_04_04_01.do' target='_self' >전국청소년4·3영어스피치대회</a></li>
+<li class="sub03_04_05"><a href='/kor/sub03_04_05.do' target='_self' >전국청소년4·3평화캠프</a></li>
+<li class="sub03_04_08"><a href='/kor/sub03_04_08.do' target='_self' >국내외대학생 4·3평화캠프</a></li>
+<li class="sub03_04_10"><a href='/kor/sub03_04_10.do' target='_self' >4·3동백서포터즈</a></li>
+<li class="sub03_04_11"><a href='/kor/bbs/BBSMSTR_000000000143/lst.do' target='_self'  >자료실3</a></li>
+</ul>
+</li>
+<li class="sub03_05"><a href='/kor/sub03_05.do' target='_self' >평화교류</a>
+<ul>
+<li class="sub03_05_01"><a href='/kor/sub03_05_01.do' target='_self' >제주4·3평화상</a></li>
+<li class="sub03_05_02"><a href='/kor/sub03_05_02.do' target='_self' >국내외 평화교류</a></li>
+<li class="sub03_05_03"><a href='/kor/sub03_05_03.do' target='_self' >2026 제10회 전국민주시민합창축전 in 제주</a></li>
+<li class="sub03_05_04"><a href='/kor/bbs/BBSMSTR_000000000144/lst.do' target='_self'  >자료실4</a></li>
+</ul>
+</li>
+
+				</ul>
+</div>
+<script type="text/javascript">
+Lmenu_setting("030106");
+</script>	
+			<!-- remote :: e :: -->
+		</div>
+	
+			<!-- content :: s :: -->
+			<div id="content">
+				<div id="path">
+				
+					<!-- navi :: s :: -->
+					<div class="navi">
+						
+
+
+
+
+
+
+
+
+  <span class="home"><a href="/">홈</a></span>
+ <span><a href=/kor/sub03_01_05.do >주요사업</a></span>
+<span><a href=/kor/sub03_01_05.do > 추가진상 조사</a></span>
+<span><a href=/kor/sub03_01_06.do > 추가진상조사(2012-2021)</a></span>
+
+  
+
+					</div>
+					<!-- navi :: e :: -->
+					
+					<div class="gong_u">
+						<a href="#" class="toggle_btn">공유열기</a> 
+						<div class="list">
+							<div class="inner">
+								<p>SNS 공유하기</p>
+								<ul>
+									<li><a href="#" class="fb" onclick="facebookOpen();return false;" target="_blank" title="새창이동, 페이스북 공유">페이스북</a></li>
+									<li><a href="#" class="tw" onclick="twitterOpen();return false;" target="_blank" title="새창이동, 트위터 공유">트위터</a></li>
+									<li><a href="#" class="bl" onclick="blogOpen();return false;" target="_blank" title="새창이동, 블로그 공유">블로그</a></li>
+								</ul>
+								<a href="#" class="close_btn">닫기</a>
+							</div>
+						</div>
+					</div>
+					<a href="#" class="print" target="_blank" title="새창이동, 프린트">print</a>
+					
+				</div>
+				
+			    <!-- Txt :: s :: -->
+			    <div id="txt">
+				<!-- 서브페이지 내용:: s -->
+				<h3 class="title">추가진상조사(2012-2021)</h3>
+				<!-- 텝메뉴 ::s:: -->
+				
+
+
+
+
+
+
+
+
+				<!-- 텝메뉴 ::e:: -->
+				
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="business_summery">
+<h5>제주4&middot;3사건 추가진상조사는</h5>
+<p>2003년 확정된 &lt;제주4&middot;3진상조사보고서&gt;는 제주4&middot;3사건의 진실과 포괄적인 피해 실태 등을 밝혀낸 중요한 성과에도 불구하고 제주4&middot;3에 대한 역사적 평가, 행방불명 희생실태, 마을별 피해실태, 진압작전에 대한 지휘체계를 명확히 규명하지 못한 부분 등 미진한 분야에 대한 보완 요구와 그동안 새로운 자료의 발굴로 재조사의 필요성이 제기되어, 구체적인 희생자 피해실태 규명을 통해 유가족들의 진정한 명예회복의 근거를 확보하고 4&middot;3정책 및 4&middot;3의 미해결 과제의 해결 방안을 모색하는 자료로 활용하기 위한 사업입니다.</p>
+</div>
+<ul class="cont_photo">
+<li><img src="/cmm/fms/getImage.do?atchFileId=FILE_000000000000891vgPJk&amp;fileSn=0/business_img1_1.png" alt="추가진상조사 [이미지 1]" /></li>
+<li><img src="/cmm/fms/getImage.do?atchFileId=FILE_000000000000892DLAwF&amp;fileSn=0/business_img1_2.jpg" alt="추가진상조사 [이미지 2]" /></li>
+<li><img src="/cmm/fms/getImage.do?atchFileId=FILE_000000000000893Bssqb&amp;fileSn=0/business_img1_3.jpg" alt="추가진상조사 [이미지 3]" /></li>
+</ul>
+<h4>조사근거</h4>
+<ul class="list_01 mt0">
+<li>제주4&middot;3특별법 제8조의 2 및 동법시행령 제12조의 2 제2항</li>
+<li>4&middot;3특별법 제3조 2항 10호<br />※ 2007년 1월 24일 개정&middot;공포된 4&middot;3특별법을 통해 미흡한 부분의 추가진상조사는4&middot;3재단에서 맡는 것으로 조정됨으로써, 4&middot;3추가진상조사의 법적 근거 마련</li>
+</ul>
+<h4>조사의 필요성</h4>
+<ul class="list_01 mt0">
+<li>2003년 정부의 &lt;제주4&middot;3사건진상조사보고서&gt; 확정 이후, 미진한 분야에 대한 보완적인 진상조사 필요성 제기<br /> ※4&middot;3위원회가 제시한 향후 과제 : 행방불명 희생 실태, 마을별 피해 실태, 진압작전 지휘체계</li>
+<li>희생자 신고&middot;결정 이후 신고서의 사실 자료에 입각한 보완조사 필요</li>
+<li>2003년 보고서 발간 이후 새로운 자료의 발굴 등 추가조사 필요</li>
+<li>구체적인 희생자 피해실태 규명을 통해 유가족들의 진정한 명예회복의 근거 확보</li>
+</ul>
+<h4>조사 방향</h4>
+<ul class="list_01 mt0 mb20">
+<li>2003년 발간된 진상조사보고서를 근간으로 추가진상조사의 성과가 축적될 수 있도록 함</li>
+<li>2003년 진상조사보고서 이후 추가 확보된 자료(문헌, 증언, 보고서 등)의 철저한 분석</li>
+<li>단계별 목표를 설정하여 종합적&middot;체계적으로 추진</li>
+</ul>
+<div class="js_tab onepage size_3">
+<ul>
+<li class="on" style="width: 33.3%;"><a href="#tab01">1단계 추가진상조사</a></li>
+<li style="width: 33.3%;"><a href="#tab02">2단계 추가진상조사</a></li>
+<li style="width: 33.3%;"><a href="#tab03">3단계 추가진상조사</a></li>
+</ul>
+</div>
+<div class="tab_onepage on" id="tab01">
+<h4>제1단계 추가진상조사</h4>
+<ul class="list_01 mt0">
+<li>조사기간 : 2012. 3 ~ 2016. 12</li>
+<li>조사주제 : 마을별 4&middot;3피해실태 조사, 분야별 4&middot;3피해실태 조사</li>
+</ul>
+<h5>마을별 피해실태 조사</h5>
+<ul class="list_01">
+<li>조사기간 : 2012. 3. ~ 2016. 12.</li>
+<li>조사방법 : 4&middot;3추가진상조사단 구성</li>
+<li>조사결과 : 12개면(165개리) 조사 완료, 읍면단위 보고서 13권 작성(한림읍과 한경면 분리 작성)</li>
+<li>주요 조사내용
+<ul class="list_02">
+<li>1. 마을별 피해실태 전수 조사(1명 이상 희생사건 모두 포함)</li>
+<li>2. 2003년 정부 보고서 확정 이후 수집된 자료 교차 확인</li>
+<li>3. 마을별 주요 증언자에 대한 증언조사</li>
+<li>4. 주요 집단희생사건 및 마을 단위 피해실태의 구체적 확인</li>
+<li>5. 마을별 미신고자 확인 등</li>
+</ul>
+</li>
+</ul>
+<h5>분야별 4&middot;3피해실태조사</h5>
+<ul class="list_01">
+<li>조사기간 : 2014. 1. ~ 2015.12.</li>
+<li>주요 조사내용</li>
+</ul>
+<div class="table_scroll">
+<div class="move">
+<table class="table mt10"><caption>제공대상 공공데이터 정보표로 구분, 일시, 주최 및 주관, 주제 정보제공</caption><col style="width:auto;" /> <col style="width:20%;" /> <col style="width:13%;" /> <col style="width:41%;" />
+<thead>
+<tr>
+<th scope="col">구분</th>
+<th scope="col">조사범위</th>
+<th scope="col">조사방법</th>
+<th scope="col">조사결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>재일제주인 4&middot;3피해실태</td>
+<td>일본 거주 제주인 4&middot;3경험자</td>
+<td class="left">증언 조사</td>
+<td class="left">오사카, 도쿄 등 일본 거주 제주인 118명 조사</td>
+</tr>
+<tr>
+<td>교육계 4&middot;3피해실태</td>
+<td>도내 교육계, <br />물적&middot;인적 피해</td>
+<td class="left">
+<ul class="list_02">
+<li>현장 조사</li>
+<li>증언 조사</li>
+<li>문헌 조사</li>
+</ul>
+</td>
+<td class="left">교사 및 학생 총 116명에 대한 인적피해 조사 - 학교별 물적피해 조사</td>
+</tr>
+<tr>
+<td>종교계 4&middot;3피해실태</td>
+<td>도내 종교계,<br /> 물적&middot;인적 피해</td>
+<td class="left">
+<ul class="list_02">
+<li>현장 조사</li>
+<li>증언 조사</li>
+<li>문헌 조사</li>
+</ul>
+</td>
+<td class="left">불교계 17인, 기독교계 2인에 대한 인적피해 조사 - 불교 사찰 29곳, 기독교 교회 5곳에 대한 물적피해 조사</td>
+</tr>
+<tr>
+<td>4&middot;3 국가유공자 실태</td>
+<td>국가유공자<br />(군인, 경찰, 우익단체원) 실태</td>
+<td class="left">
+<ul class="list_02">
+<li>증언 조사</li>
+<li>문헌 조사</li>
+</ul>
+</td>
+<td class="left">군인 162명, 경찰 289명, 우익단체 640명에 대한 실태 조사</td>
+</tr>
+<tr>
+<td>4&middot;3행방불명 희생자 피해실태</td>
+<td>행방불명 희생자 피해실태</td>
+<td class="left">
+<ul class="list_02">
+<li>증언 조사</li>
+<li>문헌 조사</li>
+</ul>
+</td>
+<td class="left">4&middot;3행방불명 희생자 실태 조사</td>
+</tr>
+<tr>
+<td>4&middot;3 해외사료 수집</td>
+<td>4&middot;3 해외사료 수집</td>
+<td class="left">문헌 조사</td>
+<td class="left">미국 자료 87건 조사 및 수집, 영국자료 36건 조사 및 수집, 호주자료 11건 조사 및 수집</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="tab_onepage" id="tab02">
+<h4>제2단계 추가진상조사</h4>
+<ul class="list_01 mt0">
+<li>조사기간 : 2017. 7. ~ 2018. 12.</li>
+<li>조사주제 : ,행형기록, 경찰기록 등 4&middot;3관련 수집자료 해제 및 DB화 작업</li>
+</ul>
+<h5>4&middot;3 관련 행형기록 조사</h5>
+<ul class="list_01 ">
+<li>조사기간 : 2017. 7. ~ 2018. 12.</li>
+<li>조사내용 : 4&middot;3관련 판결문 해제, 분석, 정리(비공개)</li>
+</ul>
+<h5>4&middot;3관련 경찰기록 조사</h5>
+<ul class="list_01">
+<li>조사기간 : 2017. 7. ~ 2018. 12.</li>
+<li>조사내용 : 4&middot;3관련 경찰기록 해제, 분석, 정리(비공개)</li>
+</ul>
+</div>
+<!-- 제2관 :E --> <!-- 제3관 :S -->
+<div class="tab_onepage" id="tab03">
+<h4>제3단계 추가진상조사</h4>
+<ul class="list_01 mt0">
+<li>조사기간 : 2019. 1. ~ 2020. 12.</li>
+<li>조사주제 : <a href="/cmm/fms/FileDown.do?atchFileId=FILE_000000000001744ZFo9W&amp;fileSn=0
+        " style="text-decoration: underline;" class="red">추가진상조사보고서</a> 발간 및 4&middot;3국외자료 조사, 봉기주도세력 조사, 재경4&middot;3생존희생자 및 유족조사</li>
+</ul>
+<h5>추가진상조사보고서 발간</h5>
+<ul class="list_01">
+<li>조사기간 : 2019. 1. ~ 2019. 12.</li>
+<li>조사내용 : 제1단계 조사결과(마을별&middot;분야별 4&middot;3피해실태조사)에 대한 종합보고 서 작성</li>
+</ul>
+<h5>4&middot;3국외자료 조사</h5>
+<ul class="list_01">
+<li>조사기간 : 2019. 1. ~ 2020. 12.</li>
+<li>조사내용 : 미국 국립문서기록관리청(National Archives and Records Administration, NARA) 등 4&middot;3관련 미국자료 조사, 수집</li>
+</ul>
+<h5>4&middot;3봉기주도세력 조사</h5>
+<ul class="list_01">
+<li>조사기간 : 2019. 1. ~ 2020. 12.</li>
+<li>조사내용 : 4&middot;3봉기 주도세력에 대한 문헌자료 및 증언조사</li>
+</ul>
+<h5>재경4&middot;3생존희생자 및 유족조사</h5>
+<ul class="list_01">
+<li>조사기간 : 2019. 1. ~ 2020. 12.</li>
+<li>조사내용 : 재경4&middot;3생존희생자 및 유족에 대한 생애사 증언조사</li>
+</ul>
+</div>
+
+
+
+	
+				<!-- 서브페이지 내용:: e -->
+			    </div>  
+			    <!-- Txt :: e :: -->
+			</div>
+			<!-- content :: e :: -->
+		</div>
+	</div>
+	<!-- container :: e :: -->
+	
+	<!-- banner :: s :: -->
+	<div id="banner">
+		<div class="layout">
+			<strong class="hidden">배너링크</strong>
+			<ul>
+				<li><a href="/kor/sub01_01_01.do">제주4&middot;3</a></li>
+				<li><a href="/kor/organ/list.do"><span>재단기관지<img src="/images/kor/layout/banner_peace_logo.png" alt="4&middot;3과 평화" /></span></a></li>
+				<li><a href="/kor/newsletter/list.do">뉴스레터</a></li>
+				<li><a href="/kor/victimSearch/list.do">온라인추모관</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- banner :: e :: -->
+	
+
+
+
+	<!-- footer :: s :: -->
+	<div id="footer">
+		
+
+
+
+
+
+
+
+
+
+
+
+		<div class="layout">
+
+			<strong class="hidden">홈페이지 이용안내</strong>
+
+			<ul class="menu">
+
+				<li><a href="/kor/sub14_03.do">개인정보처리방침</a></li>
+				<li><a href="/kor/sub14_04.do">영상정보처리기기 운영&middot;관리방침</a></li>
+
+
+
+				<li><a href="/kor/sub04_05.do">찾아오시는길</a></li>
+
+			</ul>
+
+			<div class="relate_site">
+
+				<a href="#">관련사이트</a>
+
+				<ul>				
+
+					<li><a href="http://www.jeju43.com/" target="_blank" title="새창이동, 제주4&middot;3희생자유족회 홈페이지">제주4&middot;3희생자유족회</a></li>
+
+					<li><a href="http://www.jeju43.org/" target="_blank" title="새창이동, 4&middot;3연구소 홈페이지">4&middot;3연구소</a></li>
+
+					<li><a href="http://medi.jeju43peace.or.kr/" target="_blank" title="새창이동, 제주4&middot;3진료비지원시스템 홈페이지">제주4&middot;3진료비지원시스템</a></li>
+
+					<li><a href="http://43archives.or.kr/main.do" target="_blank" title="새창이동, 제주4&middot;3아카이브 홈페이지">제주4&middot;3아카이브</a></li>
+
+					<li><a href="https://www.mois.go.kr/frt/a01/frtMain.do" target="_blank" title="새창이동, 행정안전부 홈페이지">행정안전부</a></li>
+
+					<li><a href="http://www.jeju.go.kr/index.htm" target="_blank" title="새창이동, 제주특별자치도 홈페이지">제주특별자치도</a></li>
+
+					<li><a href="http://www.council.jeju.kr/index.do" target="_blank" title="새창이동, 제주특별자치도의회 홈페이지">제주특별자치도의회</a></li>
+
+					<li><a href="http://www.jje.go.kr/index.jje" target="_blank" title="새창이동, 제주특별자치도교육청 홈페이지">제주특별자치도교육청</a></li>
+
+					<li><a href="http://www.kdemo.or.kr/" target="_blank" title="새창이동, 민주화운동기념사업회 홈페이지">민주화운동기념사업회</a></li>
+
+					<li><a href="http://www.518.org/" target="_blank" title="새창이동, 5&middot;18기념재단 홈페이지">5&middot;18기념재단</a></li>
+
+					<li><a href="http://www.ohminju.or.kr/" target="_blank" title="새창이동, 부산민주항쟁기념사업회 홈페이지">부산민주항쟁기념사업회</a></li>
+
+					<li><a href="http://yd21.go.kr/nogunri/" target="_blank" title="새창이동, 노근리국제평화재단 홈페이지">노근리국제평화재단</a></li>
+
+					<li><a href="http://www.228.org.tw/" target="_blank" title="새창이동, 228사건기념기금회 홈페이지">228사건기념기금회</a></li>
+
+					<li><a href="https://www.nhrm.gov.tw/" target="_blank" title="새창이동, 국가인권박물관주비처 홈페이지">국가인권박물관주비처</a></li>
+
+					<li><a href="http://www.peace-museum.okinawa.jp/" target="_blank" title="새창이동, 오키나와평화기념자료관 홈페이지">오키나와평화기념자료관</a></li>
+
+					<li><a href="http://hpmmuseum.jp/" target="_blank" title="새창이동, 히로시마평화기념자료관 홈페이지">히로시마평화기념자료관</a></li>
+
+					<li><a href="https://www.tamna.or.kr/" target="_blank" title="새창이동, 제주도 탐라교육원 홈페이지">제주도 탐라교육원</a></li>
+
+					<li><a href="http://www.jewfri.kr/" target="_blank" title="새창이동, 제주여성가족연구원 홈페이지">제주여성가족연구원</a></li>
+
+					<li><a href="http://ymca.jejuymca.kr/" target="_blank" title="새창이동, 제주YMCA 홈페이지">제주YMCA</a></li>
+
+					<li><a href="http://www.much.go.kr/" target="_blank" title="새창이동, 대한민국역사박물관 홈페이지">대한민국역사박물관</a></li> 
+
+					<li><a href="http://www.kncc.or.kr/" target="_blank" title="새창이동, 한국기독교교회협의회 홈페이지">한국기독교교회협의회</a></li>
+          <li><a href="https://www.jinsil.go.kr/" target="_blank" title="새창이동">진실·화해를위한과거사 정리위원회</a></li>
+
+				</ul>
+
+			</div>
+
+			<address><span>우) 63313 제주특별자치도 제주시 명림로 430 제주4&middot;3평화기념관 4층</span><span>TEL : <a href="tel:064-723-4301">064-723-4301~2, 4344</a></span><span>FAX : <a href="tel:064-723-4303">064-723-4303</a></span></address>
+
+			<p class="copy">Copyright ⓒ 2018 JEJU 4&middot;3 PEACE FOUNDATION. All Right Reserved.</p>
+
+		</div>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131537580-1"></script>
+
+<script>
+
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('js', new Date());
+
+
+
+  gtag('config', 'UA-131537580-1');
+
+</script>
+
+		
+
+
+
+<!-- Google tag (gtag.js) -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9R070X3E93"></script>
+
+<script>
+
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('js', new Date());
+
+
+
+  gtag('config', 'G-9R070X3E93');
+
+</script>		
+	</div>
+	<!-- footer :: e :: -->
+
+
+	
+<!-- </div> -->
+
+</body>
+</html>

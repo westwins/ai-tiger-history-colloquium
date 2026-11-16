@@ -1,0 +1,658 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+	<title>제주4&middot;3 - 4·3 자료</title>
+
+
+
+
+
+
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+	<meta name="format-detection" content="telephone=no" />
+	<title>제주 4·3 아카이브</title>
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+
+	<link rel="shortcut icon" type="image/x-icon" href="/resource/portal/images/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/resource/portal/css/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="/resource/portal/css/common.css">
+
+	<script type="text/javascript" src="/resource/portal/js/jquery-1.12.4.js"></script>
+	<script type="text/javascript" src="/resource/portal/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="/resource/portal/js/common.js"></script>
+
+	<!-- slick-slider -->
+	<script type="text/javascript" src="/resource/portal/dist/slick.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/resource/portal/dist/slick.css">
+
+	<script src="/resource/portal/dist/jquery.mCustomScrollbar.concat.min.js"></script>
+	<link rel="stylesheet" href="/resource/portal/dist/jquery.mCustomScrollbar.css" />
+
+	<!-- 카카오 공유하기 -->
+	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+	
+    
+
+	
+</head>
+<body>
+<div id="skip">
+	<a href="#menu"><span>메뉴 바로가기</span></a>
+	<a href="#contents"><span>본문 바로가기</span></a>
+</div>
+<div id="main">
+
+	
+
+
+
+
+<div class="header">
+	<div class="inner">
+		<h1 class="logo"><a href="/main.do"><img src="/resource/portal/images/logo.png" alt="제주 4·3 아카이브"/></a></h1>
+		<ul id="menu" class="menu">
+			<li>
+				<a href="/search/archive/detailSearch.do">통합검색</a>
+				<div class="depth2">
+					<ul>
+						<li><a href="/search/archive/detailSearch.do">아카이브 검색</a></li>
+						<li><a href="/search/collection/list.do">기념관 전시품</a></li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<a href="/data/getDatas.do">4·3 자료</a>
+				<div class="depth2">
+					<ul>
+						<li><a href="/data/document/list.do">문서</a></li>
+						<li><a href="/data/news/list.do">신문</a></li>
+						<li><a href="/data/photo/list.do">사진</a></li>
+						<li><a href="/data/audio/list.do">시청각</a></li>
+						
+						<li><a href="/data/publication/list.do">재단 간행물</a></li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<a href="/theme/getThemes.do">주제별 자료</a>
+				<div class="depth2">
+					<ul>
+						
+							<li><a href="/theme/getTheme.do?theme_no=20">4·3 진상규명의 긴 여정</a></li>
+						
+					</ul>
+				</div>
+			</li>
+			<li>
+				<a href="/events/contents/manage.do">4·3 이란</a>
+				<div class="depth2">
+					<ul>
+						<li><a href="/events/timeline/timeline.do">시대별 기록</a></li>
+						<li><a href="/events/history/history.do">지역별 4·3</a></li>
+						<li><a href="/events/victims/victims.do">피해현황(통계)</a></li>
+						<li><a href="/events/peacehall/peacehall.do">4·3 평화기념관</a></li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<a href="/archive/introduce.do">4·3 아카이브 안내</a>
+				<div class="depth2">
+					<ul>
+						<li><a href="/archive/introduce.do">아카이브 소개</a></li>
+						<li><a href="/archive/useGuide.do">이용안내</a></li>
+						<li><a href="/archive/notices.do">공지사항</a></li>
+						<li><a href="/archive/dataStatistics.do">자료현황</a></li>
+						<li><a href="/archive/donation.do">기증안내</a></li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+		<a href="#" class="btn-menu">전체메뉴</a>
+	</div>
+	<div class="allmenu">
+		<div class="dim"></div>
+		<div class="allmenu_form">
+			<div class="inner">
+				<a href="#"><img src="/resource/portal/images/logo.png" alt="제주 4·3 아카이브"/></a>
+				<a href="#" class="close"><img src="/resource/portal/images/btn_close.png" alt="닫기"/></a>
+			</div>
+			<div class="menu">
+				<ul>
+					<li>
+						<span><a href="/search/archive/keywordSearch.do">통합검색</a></span>
+						<ul>
+							<li><a href="/search/archive/keywordSearch.do">아카이브 검색</a></li>
+							<li><a href="/search/collection/list.do">기념관 전시품</a></li>
+						</ul>
+					</li>
+					<li>
+						<span><a href="/data/getDatas.do">4·3 자료</a></span>
+						<ul>
+							<li><a href="/data/document/list.do">문서</a></li>
+							<li><a href="/data/news/list.do">신문</a></li>
+							<li><a href="/data/photo/list.do">사진</a></li>
+							<li><a href="/data/audio/list.do">시청각</a></li>
+							
+							<li><a href="/data/publication/list.do">재단 간행물</a></li>
+						</ul>
+					</li>
+					<li>
+						<span><a href="/theme/getThemes.do">주제별 자료</a></span>
+						<ul>
+							
+								<li><a href="/theme/getTheme.do?theme_no=20">4·3 진상규명의 긴 여정</a></li>
+							
+						</ul>
+					</li>
+					<li>
+						<span><a href="/events/contents/manage.do">4·3 이란</a></span>
+						<ul>
+							<li><a href="/events/timeline/timeline.do">시대별 기록</a></li>
+							<li><a href="/events/history/history.do">지역별 4·3</a></li>
+							<li><a href="/events/victims/victims.do">피해현황(통계)</a></li>
+							<li><a href="/events/peacehall/peacehall.do">4·3 평화기념관</a></li>
+						</ul>
+					</li>
+					<li>
+						<span><a href="/archive/introduce.do">4·3 아카이브 안내</a></span>
+						<ul>
+							<li><a href="/archive/introduce.do">아카이브 소개</a></li>
+							<li><a href="/archive/useGuide.do">이용안내</a></li>
+							<li><a href="/archive/notices.do">공지사항</a></li>
+							<li><a href="/archive/dataStatistics.do">자료현황</a></li>
+							<li><a href="/archive/donation.do">기증안내</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="dimm"></div>
+	
+	
+
+    <div id="skip">
+        <a href="#menu"><span>메뉴 바로가기</span></a>
+        <a href="#contents"><span>본문 바로가기</span></a>
+    </div>
+
+    <div id="wrap">
+        <div id="contents" class="sub_container">
+            <div class="title_container">
+                <div class="inner relative">
+                    <h2>4·3 자료</h2>
+                    <ol class="location">
+                        <li><img src="/resource/portal/images/ico_home.png" alt="홈"/></li>
+                        <li><a href="/data/getDatas.do">4·3 자료</a></li>
+                        <li>
+                            
+                                
+                                    <a href="/data/document/list.do">문서</a>
+                                
+                                
+                                
+                                
+                                
+                                
+                            
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="tab_container">
+                <div class="mo_select">
+                    <p>4·3 자료</p>
+                    <ul class="tab five">
+                        <li class="mo"><a href="/data/getDatas.do">4·3 자료</a></li>
+                        <li class="doc on"><a href="/data/document/list.do">문서</a></li>
+                        <li class="new "><a href="/data/news/list.do">신문</a></li>
+                        <li class="pho "><a href="/data/photo/list.do">사진</a></li>
+                        <li class="aud "><a href="/data/audio/list.do">시청각</a></li>
+                        
+                        <li class="bok "><a href="/data/publication/list.do">재단 간행물</a></li>
+                    </ul>
+                </div>
+            </div>
+			<input type="hidden" name="type" id="type" >
+            <div class="board_info">
+                <div class="left text-center">
+                    <div class="img">
+                        <img src="/record/file/5813/thumbnail/image/download.do"
+                             alt=""
+                             onerror="this.src='/resource/portal/images/default_img.png'"/>
+                    </div>
+                    
+                        <button type="button" class="btn-default bg-black __contents"
+                                data-recordno="5813"
+                                data-recordtype="DOCUMENT"
+                                data-streamingurl=""
+                                data-fileyn="Y"
+                                data-thumbnailyn="Y"
+                                data-oralyn="N"
+                                data-fileextension="pdf">내용보기</button>
+                    
+                </div>
+                <div class="text">
+                    <p class="sub_title"><em class="color-blue">보고서</em><span>2003-10-15</span></p>
+                    <p class="title">제주4·3사건진상조사보고서</p>
+                    <div class="two">
+                        <ul class="info">
+                            <li><em>기록물 명</em><span>제주4·3사건진상조사보고서</span></li>
+                            <li><em>수집처</em><span>제주4·3사건 진상규명및희생자명예회복위원회</span></li>
+                            <li><em>생산자</em><span>제주4·3사건 진상규명및희생자명예회복위원회</span></li>
+                            
+                            <li><em>기록물 유형</em><span>문서/도서류 - 보고서</span></li>
+                        </ul>
+                        <ul class="info">
+                            <li>
+                                <em>형태 (전자/비전자)</em>
+                                <span>
+                                    전자-pdf
+                                </span>
+                            </li>
+                            <li><em>언어</em><span>한국어</span></li>
+                            
+                            
+                            <li><em>식별번호</em><span>B553380-FODR-04763</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="share">
+                        <a href="#" class="btn_sns_open"><img src="/resource/portal/images/btn_share.png" alt="공유"></a>
+                        <div class="share-list">
+                            <ul>
+                                <li><a href="javascript:void(0);" onclick="handleShareToSNS('f');"><img src="/resource/portal/images/ic-share-facebook.png" alt="페이스북 공유"></a></li>
+                                <li><a href="javascript:void(0);" onclick="handleShareToSNS('k', '4·3자료');"><img src="/resource/portal/images/ic-share-kakao.png" alt="카카오톡 공유"></a></li>
+                                <li><a href="javascript:void(0);" onclick="handleCopyToLink()"><img src="/resource/portal/images/ic-share-url.png" alt="URL 복사"></a></li>
+                            </ul>
+                            <a href="#" class="btn_sns_close">sns 공유 닫기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="inner">
+
+                
+
+                
+
+
+                <div class="type_info two" id="__archive__type__area">
+                    <input type="hidden" name="source_classification_cl" value="CL-SOU-PUB-COM" />
+                    <input type="hidden" name="type_classification_cl" value="CL-FRM-DOC-REP" />
+                    <ul>
+                        <li><em class="color-mint">유형</em><span>문서/도서류-보고서</span></li>
+                    </ul>
+                    <ul>
+                        <li><em class="color-mint">출처</em><span>제주 4·3 위원회</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt60">
+                <button type="button" class="btn-default bg-black __go__list">목록</button>
+            </div>
+
+            <div class="popup" id="pop-image-viewer">
+                <div class="dim"></div>
+                <div class="popup_container">
+                    <div class="popup_header">
+                        <h3>이미지뷰어</h3>
+                        <a href="javascript:void(0);" class="pop_close" onclick="handleCloseToPop();"><img src="/resource/portal/images/btn_close.png" alt="닫기"/></a>
+                    </div>
+                    <div class="popup_body text-center">
+                        <div class="__image__box" style="width: 700px; height:500px; margin: 0 auto;">
+                        </div>
+                        <div style="" class="zoom-btns">
+                            <button class="btn-img-zoom-plus" onclick="fnZoomIn();">확대</button>
+                            <button class="btn-img-zoom-minus" onclick="fnZoomOut();">축소</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <script src="/resource/portal/js/jeju.panzoom.js"></script>
+    <script src="/resource/portal/js/jeju.image.zoom.js"></script>
+    <script>
+
+
+        /*
+            Selector 선언
+         */
+        // ---------------------------------------------------------------------------------
+        let sourceTypeClCombotree;										// 분류정보 - 셀렉트박스 - 출처별 분류(2중)
+        let eventTypeClCombotree;										// 분류정보 - 셀렉트박스 - 사건별(시대별) 분류(2중)
+        let placeTypeClCombotree;										// 분류정보 - 셀렉트박스 - 장소별 분류(2중)
+        let formTypeClCombotree;										// 분류정보 - 셀렉트박스 - 유형별 분류(2중)
+        let contentsButton;
+        let goListButton;
+        let snsOpenButton;
+        let snsCloseButton;
+        // ---------------------------------------------------------------------------------
+
+
+
+        /*
+            Onload 이벤트
+         */
+        // ---------------------------------------------------------------------------------
+        window.onload = function () {
+
+            // Selector 초기화 및 이벤트 설정
+            handleInitAndAddEvent();
+
+            // 유형 분류체계 및 출처 분류체계 정보 설정
+            handleWriteToClassificationInfo();
+        }
+        // ---------------------------------------------------------------------------------
+
+
+
+        /*
+            Selector 초기화 및 이벤트 설정
+         */
+        // ---------------------------------------------------------------------------------
+        function handleInitAndAddEvent() {
+            goListButton = document.querySelector(".__go__list");
+            goListButton.addEventListener("click", handleMoveToPage);
+
+            contentsButton = document.querySelector(".__contents");
+            contentsButton.addEventListener("click", handleShowToTypeItem);
+
+            snsOpenButton = document.querySelector(".btn_sns_open");
+            snsOpenButton.addEventListener("click", handleChangeToSnsStatus);
+            snsCloseButton = document.querySelector(".btn_sns_close");
+            snsCloseButton.addEventListener("click", handleChangeToSnsStatus);
+        }
+        // ---------------------------------------------------------------------------------
+
+
+
+        /*
+            유형 분류체계 및 출처 분류체계 정보 설정
+            -> 출처 분류체계가 2개 이상 가능하기 때문에 코드로 처리
+         */
+        // ---------------------------------------------------------------------------------
+        function handleWriteToClassificationInfo() {
+
+            // 출처별분류 코드 - 분류정보
+            $.post('/classification/getClassListForCombobox.do;jsessionid=7693DEA169C9752FC2E852731F4D70B0', {id: 'CL-SOU'}, function(data) {
+                sourceTypeClCombotree = data.codeList.map(function (item) {
+                    return item;
+                });
+                const sourceStr = document.querySelector("input[name=source_classification_cl]").value;
+                if(sourceStr != "") {
+                    let sourceStrArray = sourceStr.split(",");
+                    let sourceArray = [];
+                    console.log(sourceStrArray);
+                    sourceStrArray.forEach(function (arrayItem) {
+                        let sourceObject = {};
+                        sourceTypeClCombotree.forEach(function (item) {
+                            if(arrayItem === item.id) {
+                                sourceObject.upper_class_cd_name = item.title;
+                            } else {
+                                if(arrayItem.indexOf(item.id) > -1) {
+                                    sourceObject.upper_class_cd_name = item.title;
+                                    item.subs.forEach(function (subItem) {
+                                        if(arrayItem === subItem.id) {
+                                            sourceObject.class_cd_name = subItem.title;
+                                        }
+                                    });
+                                }
+                            }
+                        });
+                        sourceArray.push(sourceObject);
+                    });
+
+                    const targetUl = document.querySelectorAll("#__archive__type__area ul").item(1);
+                    const targetLi = targetUl.querySelector('li');
+                    sourceArray.forEach(function (item, index) {
+                        if(index == 0) {
+                            targetLi.querySelector('span').textContent = item.upper_class_cd_name + (item.class_cd_name === undefined ? '' : '-' + item.class_cd_name);
+                        } else {
+                            const cloneLi = targetLi.cloneNode(true);
+                            cloneLi.querySelector('em').textContent = '';
+                            cloneLi.querySelector('span').textContent = item.upper_class_cd_name + (item.class_cd_name === undefined ? '' : '-' + item.class_cd_name);
+                            targetUl.appendChild(cloneLi);
+                        }
+                    });
+                } else {
+                    document.querySelectorAll("#__archive__type__area ul").item(1).querySelector('li span').textContent = "정보없음";
+                }
+            });
+
+            // 유형별분류 코드 - 분류정보 -> 유형별 분류 체계는 기록물 당 1개로 변경하여 실제로 아래 코드를 사용하지 않아도 가능함.
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        }
+        // ---------------------------------------------------------------------------------
+
+
+
+        /*
+            SNS 버튼 이벤트
+         */
+        // ---------------------------------------------------------------------------------
+        function handleChangeToSnsStatus() {
+            const target = this;
+            if(target.classList.value.indexOf("open") > -1) {
+                snsOpenButton.classList.add("on");
+            } else {
+                snsOpenButton.classList.remove("on");
+            }
+        }
+        // ---------------------------------------------------------------------------------
+
+
+
+        /*
+            내용보기 버튼 이벤트
+         */
+        // ---------------------------------------------------------------------------------
+        function handleShowToTypeItem() {
+            const target = this;
+            const record_no = target.dataset.recordno;
+            const record_type = target.dataset.recordtype;
+            const record_streaming_url = target.dataset.streamingurl;
+            const file_yn = target.dataset.fileyn;
+            const file_extension = target.dataset.fileextension;
+            const thumbnail_yn = target.dataset.thumbnailyn;
+
+            // 고객 요청. > 메이데이(May Day in Cheju-Do) 는 유튜브로 노출될 수 있도록..
+            if(record_no == 5824) {
+                const newWindow = window.open("about:blank");
+                newWindow.location.href = "https://www.youtube.com/watch?v=wH7kBkr0Ok4";
+
+            } else if(record_no == 5880) {
+                const newWindow = window.open("about:blank");
+                newWindow.location.href = "https://www.youtube.com/watch?v=SjXaJpKLL7c";
+
+            } else {
+                if(record_streaming_url != null && record_streaming_url != "") {        // 시청각 -> 유튜브 URL
+                    const newWindow = window.open("about:blank");
+                    newWindow.location.href = record_streaming_url;
+
+                } else if(file_yn == "Y" && file_extension == "pdf") {                  // 문서 -> PDF 다운로드
+                    location.href = "/record/file/" + record_no + "/1/download.do";
+
+                } else if(file_yn == "Y" && "JPG,JFIF,JPEG,GIF,BMP,PNG".indexOf(file_extension.toUpperCase()) > -1) {        // 사진 -> html5 뷰어
+                    document.querySelector(".__image__box").innerHTML = "";
+
+                    const createImg = document.createElement("img");
+                    createImg.src = "/record/file/" + record_no + "/image/download.do";
+                    createImg.classList.add("img_zoom");
+                    createImg.style.width = "auto";
+                    createImg.style.height = "100%";
+                    document.querySelector(".__image__box").appendChild(createImg);
+
+                    fnInitZoom();
+
+                    document.querySelector("#pop-image-viewer").style.display = "block";
+
+                } else {
+                    alert("제주4·3평화기념관에 문의 후 열람 하시기 바랍니다.");
+                }
+            }
+        }
+        // ---------------------------------------------------------------------------------
+
+
+
+        /*
+            이미지뷰어 닫기 버튼
+         */
+        // ---------------------------------------------------------------------------------
+        function handleCloseToPop() {
+            document.querySelector('#pop-image-viewer').style.display = "none";
+        }
+        // ---------------------------------------------------------------------------------
+
+
+        /*
+            뒤로가기 버튼 이벤트
+         */
+        // ---------------------------------------------------------------------------------
+        function handleMoveToPage() {
+        	//urlSearch = new URLSearchParams(location.search);
+        	//const url = urlSearch.get('type')
+        	var url = $('.on')
+        	console.log(url);
+        	if(url.hasClass('doc')){
+        		location.href="/data/document/list.do";
+        	}else if(url.hasClass('new')){
+        		location.href="/data/news/list.do";
+        	}else if(url.hasClass('pho')){
+        		location.href="/data/photo/list.do";
+        	}else if(url.hasClass('aud')){
+        		location.href="/data/audio/list.do";
+        	}else if(url.hasClass('bok')){
+        		location.href="/data/publication/list.do";
+        	}
+           
+        }
+        // ---------------------------------------------------------------------------------
+    </script>
+
+
+	
+
+<div class="footer">
+	<div class="inner">
+
+		<a href="#skip" class="btn-top"><img src="/resource/portal/images/btn_top.png" alt="상단으로"/></a>
+		<div class="footer_right">
+			<div class="select">
+				<p>관련 사이트 바로가기</p>
+				<div class="select_form">
+					<div><a href="http://www.nogunri.net" target="_blank">노근리국제평화재단</a></div>
+					<div><a href="https://518.org" target="_blank">5·18기념재단</a></div>
+					<div><a href="http://www.pcf.city.hiroshima.jp" target="_blank">히로시마 평화기념공원</a></div>
+					<div><a href="http://www.hiro-tsuitokinenkan.go.jp" target="_blank">국립 히로시마 원폭사망자추도 평화기념관</a></div>
+					<div><a href="http://www.peace-museum.pref.okinawa.jp/" target="_blank">오키나와평화기념자료관</a></div>
+					<div><a href="https://www.228.org.tw/" target="_blank">대만2·28사건기념관</a></div>
+					<div><a href="http://www.demopark.or.kr" target="_blank">부산민주항쟁기념사업회</a></div>
+					<div><a href="http://www.kdemo.or.kr" target="_blank">민주화운동기념사업회</a></div>
+				</div>
+			</div>
+		</div>
+		<div class="logo"><img src="/resource/portal/images/logo_footer.png" alt="제주 4·3 아카이브"/></div>
+		<div class="footer_left">
+			<div class="address">
+				제주특별자치도 제주시 명림로 430 제주 4·3 평화기념관 4층 Tel 064-723-4354,4301 Fax  064-723-4303
+			</div>
+			<p class="copyright">Copyright @ 2021. Jeju 4·3 Archives. All rights reserved.</p>
+		</div>
+	</div>
+</div>
+
+</div>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.search_container .slider').slick({
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				infinite: true,
+				arrows: true,
+				dots: true,
+				autoplay : true,
+				autoplaySpeed : 3000
+			});
+		});
+	</script>
+
+	<!-- 개발 -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	
+
+	<!-- 운영 -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-221415181-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-221415181-1');
+	</script>
+
+	<!-- 복사할 url 설정 및 포커스할 곳 -->
+	<input type="text" id="copyUril" style="display:block; position:absolute; left:-10000px">
+
+</body>
+</html>

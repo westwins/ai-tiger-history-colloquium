@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="하나의 강연 기록을 사료비판, 증거망, 계산, 지도, 실험과 공공역사 제작으로 연결하는 디지털 역사학 워크벤치">
+  <meta name="theme-color" content="#0c1b2a">
+  <title>AI라는 호랑이 등에 올라타기 · 역사연구의 심화·확대·산학화</title>
+  <link rel="stylesheet" href="assets/leaflet.css?v=20261106.8">
+  <link rel="stylesheet" href="workbench.css?v=20261106.8">
+  <link rel="stylesheet" href="archive-map.css?v=20261106.8">
+  <script defer src="assets/leaflet.js?v=20261106.8"></script>
+  <script type="module" src="workbench.js?v=20261106.8"></script>
+</head>
+<body>
+  <a class="skip" href="#main">본문으로 바로가기</a>
+  <header class="masthead">
+    <button class="brand" data-step="0" aria-label="시작 화면"><span class="brand-mark">虎</span><span><strong>AI라는 호랑이 등에 올라타기</strong><small>소프트웨어를 매개로 한 역사연구의 심화·확대·산학화</small></span></button>
+    <div class="header-actions"><button class="quiet" id="about-button">집담회 안내</button><button class="presentation-button" id="presentation-button" aria-pressed="false">⛶ 발표 모드</button></div>
+  </header>
+  <nav class="journey-nav" aria-label="연구 단계">
+    <div class="nav-group deepen"><span>심화 <small>사료와 판단을 다루다</small></span><div><button data-step="1"><b>01</b> 사료비판</button><button data-step="2"><b>02</b> 증거 연결</button></div></div>
+    <div class="nav-group widen"><span>확대 <small>패턴과 가설을 시험하다</small></span><div><button data-step="3"><b>03</b> 멀리읽기</button><button data-step="4"><b>04</b> 시공간 지도</button><button data-step="5"><b>05</b> 조사 실험</button></div></div>
+    <div class="nav-group share"><span>산학화 <small>연구를 다시 쓰다</small></span><div><button data-step="6"><b>06</b> 공공역사 제작</button></div></div>
+  </nav>
+  <main id="main" tabindex="-1"><div class="loading">공개 강연 기록을 불러오고 있습니다…</div></main>
+  <footer class="app-footer"><span id="data-status"><i class="status-dot"></i> 자료 연결 확인 중</span><button id="method-button">자료와 방법</button><span>서울대 역사연구소 제136차 월례집담회 <span class="footer-date">2026.11.18</span></span></footer>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <dialog id="detail-dialog" aria-labelledby="dialog-title"><div class="dialog-top"><h2 id="dialog-title"></h2><button id="dialog-close" aria-label="닫기">×</button></div><div id="dialog-body"></div></dialog>
+</body>
+</html>

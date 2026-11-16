@@ -1,0 +1,357 @@
+{
+  "source_id": "jeju43-archive",
+  "url": "http://43archives.or.kr/main.do",
+  "fetched_at": "2026-11-06T08:28:53+00:00",
+  "robots_status": "fetched",
+  "status": 200,
+  "final_url": "http://43archives.or.kr/main.do",
+  "content_type": "text/html;charset=UTF-8",
+  "etag": null,
+  "last_modified": null,
+  "sha256": "ab814aca555dad0ccdff4df7155ad43dee89103bd3d54d4f059fb1b2a77d5698",
+  "byte_count": 59158,
+  "local_path": "raw\\snapshots\\ab814aca555dad0ccdff4df7155ad43dee89103bd3d54d4f059fb1b2a77d5698.bin",
+  "title": "제주4·3 - 메인",
+  "links": [
+    {
+      "url": "http://43archives.or.kr/resource/portal/images/favicon.ico",
+      "label": "shortcut icon"
+    },
+    {
+      "url": "http://43archives.or.kr/resource/portal/css/jquery-ui.css",
+      "label": "stylesheet"
+    },
+    {
+      "url": "http://43archives.or.kr/resource/portal/css/common.css",
+      "label": "stylesheet"
+    },
+    {
+      "url": "http://43archives.or.kr/resource/portal/dist/slick.css",
+      "label": "stylesheet"
+    },
+    {
+      "url": "http://43archives.or.kr/resource/portal/dist/jquery.mCustomScrollbar.css",
+      "label": "stylesheet"
+    },
+    {
+      "url": "http://43archives.or.kr/resource/timeline/css/fonts/font.default.css?v1",
+      "label": "stylesheet"
+    },
+    {
+      "url": "http://43archives.or.kr/resource/timeline/css/timeline.css?v1",
+      "label": "stylesheet"
+    },
+    {
+      "url": "http://43archives.or.kr/main.do#menu",
+      "label": "메뉴 바로가기"
+    },
+    {
+      "url": "http://43archives.or.kr/main.do#contents",
+      "label": "본문 바로가기"
+    },
+    {
+      "url": "http://43archives.or.kr/main.do",
+      "label": ""
+    },
+    {
+      "url": "http://43archives.or.kr/search/archive/detailSearch.do",
+      "label": "통합검색"
+    },
+    {
+      "url": "http://43archives.or.kr/search/archive/detailSearch.do",
+      "label": "아카이브 검색"
+    },
+    {
+      "url": "http://43archives.or.kr/search/collection/list.do",
+      "label": "기념관 전시품"
+    },
+    {
+      "url": "http://43archives.or.kr/data/getDatas.do",
+      "label": "4·3 자료"
+    },
+    {
+      "url": "http://43archives.or.kr/data/document/list.do",
+      "label": "문서"
+    },
+    {
+      "url": "http://43archives.or.kr/data/news/list.do",
+      "label": "신문"
+    },
+    {
+      "url": "http://43archives.or.kr/data/photo/list.do",
+      "label": "사진"
+    },
+    {
+      "url": "http://43archives.or.kr/data/audio/list.do",
+      "label": "시청각"
+    },
+    {
+      "url": "http://43archives.or.kr/data/publication/list.do",
+      "label": "재단 간행물"
+    },
+    {
+      "url": "http://43archives.or.kr/theme/getThemes.do",
+      "label": "주제별 자료"
+    },
+    {
+      "url": "http://43archives.or.kr/theme/getTheme.do?theme_no=20",
+      "label": "4·3 진상규명의 긴 여정"
+    },
+    {
+      "url": "http://43archives.or.kr/events/contents/manage.do",
+      "label": "4·3 이란"
+    },
+    {
+      "url": "http://43archives.or.kr/events/timeline/timeline.do",
+      "label": "시대별 기록"
+    },
+    {
+      "url": "http://43archives.or.kr/events/history/history.do",
+      "label": "지역별 4·3"
+    },
+    {
+      "url": "http://43archives.or.kr/events/victims/victims.do",
+      "label": "피해현황(통계)"
+    },
+    {
+      "url": "http://43archives.or.kr/events/peacehall/peacehall.do",
+      "label": "4·3 평화기념관"
+    },
+    {
+      "url": "http://43archives.or.kr/archive/introduce.do",
+      "label": "4·3 아카이브 안내"
+    },
+    {
+      "url": "http://43archives.or.kr/archive/introduce.do",
+      "label": "아카이브 소개"
+    },
+    {
+      "url": "http://43archives.or.kr/archive/useGuide.do",
+      "label": "이용안내"
+    },
+    {
+      "url": "http://43archives.or.kr/archive/notices.do",
+      "label": "공지사항"
+    },
+    {
+      "url": "http://43archives.or.kr/archive/dataStatistics.do",
+      "label": "자료현황"
+    },
+    {
+      "url": "http://43archives.or.kr/archive/donation.do",
+      "label": "기증안내"
+    },
+    {
+      "url": "http://43archives.or.kr/main.do",
+      "label": "전체메뉴"
+    },
+    {
+      "url": "http://43archives.or.kr/main.do",
+      "label": ""
+    },
+    {
+      "url": "http://43archives.or.kr/main.do",
+      "label": ""
+    },
+    {
+      "url": "http://43archives.or.kr/search/archive/keywordSearch.do",
+      "label": "통합검색"
+    },
+    {
+      "url": "http://43archives.or.kr/search/archive/keywordSearch.do",
+      "label": "아카이브 검색"
+    },
+    {
+      "url": "http://43archives.or.kr/search/collection/list.do",
+      "label": "기념관 전시품"
+    },
+    {
+      "url": "http://43archives.or.kr/data/getDatas.do",
+      "label": "4·3 자료"
+    },
+    {
+      "url": "http://43archives.or.kr/data/document/list.do",
+      "label": "문서"
+    },
+    {
+      "url": "http://43archives.or.kr/data/news/list.do",
+      "label": "신문"
+    },
+    {
+      "url": "http://43archives.or.kr/data/photo/list.do",
+      "label": "사진"
+    },
+    {
+      "url": "http://43archives.or.kr/data/audio/list.do",
+      "label": "시청각"
+    },
+    {
+      "url": "http://43archives.or.kr/data/publication/list.do",
+      "label": "재단 간행물"
+    },
+    {
+      "url": "http://43archives.or.kr/theme/getThemes.do",
+      "label": "주제별 자료"
+    },
+    {
+      "url": "http://43archives.or.kr/theme/getTheme.do?theme_no=20",
+      "label": "4·3 진상규명의 긴 여정"
+    },
+    {
+      "url": "http://43archives.or.kr/events/contents/manage.do",
+      "label": "4·3 이란"
+    },
+    {
+      "url": "http://43archives.or.kr/events/timeline/timeline.do",
+      "label": "시대별 기록"
+    },
+    {
+      "url": "http://43archives.or.kr/events/history/history.do",
+      "label": "지역별 4·3"
+    },
+    {
+      "url": "http://43archives.or.kr/events/victims/victims.do",
+      "label": "피해현황(통계)"
+    },
+    {
+      "url": "http://43archives.or.kr/events/peacehall/peacehall.do",
+      "label": "4·3 평화기념관"
+    },
+    {
+      "url": "http://43archives.or.kr/archive/introduce.do",
+      "label": "4·3 아카이브 안내"
+    },
+    {
+      "url": "http://43archives.or.kr/archive/introduce.do",
+      "label": "아카이브 소개"
+    },
+    {
+      "url": "http://43archives.or.kr/archive/useGuide.do",
+      "label": "이용안내"
+    },
+    {
+      "url": "http://43archives.or.kr/archive/notices.do",
+      "label": "공지사항"
+    },
+    {
+      "url": "http://43archives.or.kr/archive/dataStatistics.do",
+      "label": "자료현황"
+    },
+    {
+      "url": "http://43archives.or.kr/archive/donation.do",
+      "label": "기증안내"
+    },
+    {
+      "url": "http://43archives.or.kr/main.do#menu",
+      "label": "메뉴 바로가기"
+    },
+    {
+      "url": "http://43archives.or.kr/main.do#contents",
+      "label": "본문 바로가기"
+    },
+    {
+      "url": "http://43archives.or.kr/main.do#pop-search",
+      "label": "상세 검색"
+    },
+    {
+      "url": "http://43archives.or.kr/data/document/list.do",
+      "label": "문서"
+    },
+    {
+      "url": "http://43archives.or.kr/data/news/list.do",
+      "label": "신문"
+    },
+    {
+      "url": "http://43archives.or.kr/data/photo/list.do",
+      "label": "사진"
+    },
+    {
+      "url": "http://43archives.or.kr/data/audio/list.do",
+      "label": "시청각"
+    },
+    {
+      "url": "http://43archives.or.kr/data/publication/list.do",
+      "label": "재단 간행물"
+    },
+    {
+      "url": "http://43archives.or.kr/data/getDatas.do",
+      "label": ""
+    },
+    {
+      "url": "http://43archives.or.kr/data/getRecord.do?record_no=9173",
+      "label": "재단간행물 4·3과 평화-63호 2026-06-05"
+    },
+    {
+      "url": "http://43archives.or.kr/data/getRecord.do?record_no=5813",
+      "label": "문서/도서류 제주4·3사건진상조사보고서 2003-10-15"
+    },
+    {
+      "url": "http://43archives.or.kr/data/getRecord.do?record_no=5814",
+      "label": "재단간행물 제주4·3사건추가진상조사보고서 I 2019-12-30"
+    },
+    {
+      "url": "http://43archives.or.kr/data/getRecord.do?record_no=5908",
+      "label": "재단간행물 한눈에 보는 4·3 2021-11-24"
+    },
+    {
+      "url": "http://43archives.or.kr/archive/notices.do",
+      "label": "전체보기"
+    },
+    {
+      "url": "http://43archives.or.kr/archive/getNotice.do?notice_no=19",
+      "label": "제주4·3아카이브 개편 안내 2022-01-12"
+    },
+    {
+      "url": "http://43archives.or.kr/main.do",
+      "label": ""
+    },
+    {
+      "url": "http://43archives.or.kr/main.do",
+      "label": "1수준 - 선택"
+    },
+    {
+      "url": "http://43archives.or.kr/main.do",
+      "label": "2수준 - 선택"
+    },
+    {
+      "url": "http://43archives.or.kr/archive/useGuide.do",
+      "label": ""
+    },
+    {
+      "url": "http://43archives.or.kr/main.do#skip",
+      "label": ""
+    },
+    {
+      "url": "http://www.nogunri.net",
+      "label": "노근리국제평화재단"
+    },
+    {
+      "url": "https://518.org",
+      "label": "5·18기념재단"
+    },
+    {
+      "url": "http://www.pcf.city.hiroshima.jp",
+      "label": "히로시마 평화기념공원"
+    },
+    {
+      "url": "http://www.hiro-tsuitokinenkan.go.jp",
+      "label": "국립 히로시마 원폭사망자추도 평화기념관"
+    },
+    {
+      "url": "http://www.peace-museum.pref.okinawa.jp/",
+      "label": "오키나와평화기념자료관"
+    },
+    {
+      "url": "https://www.228.org.tw/",
+      "label": "대만2·28사건기념관"
+    },
+    {
+      "url": "http://www.demopark.or.kr",
+      "label": "부산민주항쟁기념사업회"
+    },
+    {
+      "url": "http://www.kdemo.or.kr",
+      "label": "민주화운동기념사업회"
+    }
+  ]
+}

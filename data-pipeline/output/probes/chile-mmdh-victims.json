@@ -1,0 +1,389 @@
+{
+  "source_id": "chile-mmdh-victims",
+  "url": "https://interactivos.museodelamemoria.cl/victims/?page_id=7836",
+  "fetched_at": "2026-11-06T08:19:51+00:00",
+  "robots_status": "http_404_no_rules",
+  "status": 200,
+  "final_url": "https://interactivos.museodelamemoria.cl/victims/?page_id=7836",
+  "content_type": "text/html; charset=UTF-8",
+  "etag": null,
+  "last_modified": null,
+  "sha256": "c9c9946580e4dd22a545571f57f9eb37893be893e7bf247158f47fc5e48f165d",
+  "byte_count": 127993,
+  "local_path": "raw\\snapshots\\c9c9946580e4dd22a545571f57f9eb37893be893e7bf247158f47fc5e48f165d.bin",
+  "title": "Listado todas las Víctimas – MMDH – VíctimasAccesibilidadAumentar textoDisminuir textoEscala de grisesAlto contrasteContraste negativoFondo claroSubrayar enlacesFuente legibleRestablecerMapa del sitio",
+  "links": [
+    {
+      "url": "http://gmpg.org/xfn/11",
+      "label": "profile"
+    },
+    {
+      "url": "https://www.googletagmanager.com",
+      "label": "dns-prefetch"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?feed=rss2",
+      "label": "alternate"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?feed=comments-rss2",
+      "label": "alternate"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/wp-includes/css/dist/block-library/style.min.css?ver=6.6.11",
+      "label": "stylesheet"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=6.0",
+      "label": "stylesheet"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/wp-content/plugins/pojo-accessibility/modules/legacy/assets/css/style.min.css?ver=1.0.0",
+      "label": "stylesheet"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/wp-content/fonts/61858f4bcfa59e111f3a22bcd7d73f91.css",
+      "label": "stylesheet"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/wp-content/themes/photofocus/style.css?ver=20250908-130411",
+      "label": "stylesheet"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/wp-content/themes/photofocus/assets/css/blocks.css?ver=1.0",
+      "label": "stylesheet"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/index.php?rest_route=/",
+      "label": "https://api.w.org/"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/index.php?rest_route=/wp/v2/pages/7836",
+      "label": "alternate"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/xmlrpc.php?rsd",
+      "label": "EditURI"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?page_id=7836",
+      "label": "canonical"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=7836",
+      "label": "shortlink"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/index.php?rest_route=%2Foembed%2F1.0%2Fembed&url=https%3A%2F%2Finteractivos.museodelamemoria.cl%2Fvictims%2F%3Fpage_id%3D7836",
+      "label": "alternate"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/index.php?rest_route=%2Foembed%2F1.0%2Fembed&url=https%3A%2F%2Finteractivos.museodelamemoria.cl%2Fvictims%2F%3Fpage_id%3D7836&format=xml",
+      "label": "alternate"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/wp-content/uploads/2024/10/cropped-logo_mmdh-32x32.png",
+      "label": "icon"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/wp-content/uploads/2024/10/cropped-logo_mmdh-192x192.png",
+      "label": "icon"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/wp-content/uploads/2024/10/cropped-logo_mmdh-180x180.png",
+      "label": "apple-touch-icon"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?page_id=7836#content",
+      "label": "Saltar al contenido"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/",
+      "label": ""
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/",
+      "label": "MMDH – Víctimas"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/",
+      "label": ""
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/",
+      "label": "Víctimas"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?cat=14",
+      "label": "Actualización de Relatos"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?cat=6",
+      "label": "Detenidos Desaparecidos"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?cat=5",
+      "label": "Ejecutados Políticos"
+    },
+    {
+      "url": "https://www.plannacionaldebusqueda.cl",
+      "label": "Plan Nacional de Busqueda"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?page_id=7336",
+      "label": "Contacto"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?paged=2&page_id=7836",
+      "label": "2"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?paged=3&page_id=7836",
+      "label": "3"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?paged=81&page_id=7836",
+      "label": "81"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?paged=2&page_id=7836",
+      "label": "Siguiente »"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?page_id=7836&exportar_entradas_to=true",
+      "label": "Descargar Excel"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=2900",
+      "label": "ABARCA ALARCON RAMON ALFONSO"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=2857",
+      "label": "ABARCA CASTILLO SERGIO ANTONIO"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=2901",
+      "label": "ABARCA LEIVA GUILLERMO ENRIQUE"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=859",
+      "label": "ABARCA SANCHEZ LUIS ANTONIO"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=2902",
+      "label": "ABARZUA ZAMORANO CARLOS"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=1189",
+      "label": "ABURTO GALLARDO EVALDO SEGUNDO"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=2887",
+      "label": "ACEVEDO ANDRADE LUIS BERNARDO"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=862",
+      "label": "ACEVEDO BECERRA SEBASTIAN"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=145",
+      "label": "ACEVEDO CISTERNAS EDUARDO BERNABE"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=2889",
+      "label": "ACEVEDO ESPINOZA RENE"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=2814",
+      "label": "ACEVEDO FARIÑA GERMAN"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=2890",
+      "label": "ACEVEDO GALLARDO PEDRO GABRIEL"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=2903",
+      "label": "ACEVEDO GUTIERREZ RUBEN ANTONIO"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=2904",
+      "label": "ACEVEDO ISAMIT CARLOS ISMAEL"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=1193",
+      "label": "ACEVEDO MORENO JOSE GUILLERMO"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=149",
+      "label": "ACEVEDO PEREIRA ALFREDO"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=2196",
+      "label": "ACHU LIENDO RIGOBERTO DEL CARMEN"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=2891",
+      "label": "ACOSTA CASTRO PATRICIO RICARDO"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=1073",
+      "label": "ACOSTA VELASCO MARIA ELIANA"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=2905",
+      "label": "ACUÑA ALVAREZ CARLOS PATRICIO"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=154",
+      "label": "ACUÑA BALLESTEROS REINALDO ENRIQUE"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=2537",
+      "label": "ACUÑA CASTILLO MIGUEL ANGEL"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=153",
+      "label": "ACUÑA CONCHA JUAN ANTONIO"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=1378",
+      "label": "ACUÑA INOSTROZA CARLOS MAXIMILIANO"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=1137",
+      "label": "ACUÑA PACHECO EJIDIO ROESPIER"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=2538",
+      "label": "ACUÑA REYES RENE ROBERTO"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=2892",
+      "label": "ACUÑA SEPULVEDA DANIEL"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=2906",
+      "label": "ACUÑA TORRES ALVARO JAVIER"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=2893",
+      "label": "ACUÑA YAÑEZ JOSE SALVADOR"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=160",
+      "label": "ADASME MORA JOSE ABRAHAM"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=1215",
+      "label": "ADASME NUÑEZ JOSE DOMINGO"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=161",
+      "label": "ADLER ZULUETA CARLOS RODOLFO"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=1925",
+      "label": "AEDO ARIAS LUCIANO HUMBERTO"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=2540",
+      "label": "AEDO CARRASCO FRANCISCO EDUARDO"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=162",
+      "label": "AEDO GUERRERO SERGIO"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=2894",
+      "label": "AEDO HERRERA OSCAR GASTON"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=2541",
+      "label": "AEDO HIDALGO LUCIANO"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=1021",
+      "label": "AEDO LANDEROS MANUEL JESUS"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=2895",
+      "label": "AGUAD PEREZ FARUC JIMMI"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?p=1129",
+      "label": "AGUAYO FERNANDEZ LUIS EVANGELISTA"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?page_id=7836&exportar_entradas_to=true",
+      "label": "Descargar Excel"
+    },
+    {
+      "url": "https://mmdh.cl/",
+      "label": ""
+    },
+    {
+      "url": "https://www.uach.cl/",
+      "label": ""
+    },
+    {
+      "url": "https://expedientesdelarepresion.cl/",
+      "label": ""
+    },
+    {
+      "url": "https://filosofiahumanidades.uahurtado.cl/",
+      "label": ""
+    },
+    {
+      "url": "https://www.plannacionaldebusqueda.cl",
+      "label": ""
+    },
+    {
+      "url": "https://mmdh.cl/",
+      "label": "Interactivos MMDH"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?page_id=7836#content",
+      "label": "Ir al contenido"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?page_id=7836",
+      "label": "Aumentar textoAumentar texto"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?page_id=7836",
+      "label": "Disminuir textoDisminuir texto"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?page_id=7836",
+      "label": "Escala de grisesEscala de grises"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?page_id=7836",
+      "label": "Alto contrasteAlto contraste"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?page_id=7836",
+      "label": "Contraste negativoContraste negativo"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?page_id=7836",
+      "label": "Fondo claroFondo claro"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?page_id=7836",
+      "label": "Subrayar enlacesSubrayar enlaces"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?page_id=7836",
+      "label": "Fuente legibleFuente legible"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?page_id=7836",
+      "label": "Restablecer Restablecer"
+    },
+    {
+      "url": "https://interactivos.museodelamemoria.cl/victims/?page_id=7867",
+      "label": "Mapa del sitioMapa del sitio"
+    }
+  ]
+}

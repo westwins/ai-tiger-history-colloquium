@@ -1,0 +1,304 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"> 	
+	<title>43추모관 - 제주특별자치도 4·3 VR 추모관</title>
+	<meta name="author" content="제주특별자치도 4·3지원과">
+	<meta name="description" content="제주특별자치도 4·3기념관 4·3 3D VR 추모관 및 위패봉헌관 ">
+	<meta name="keywords" content="43추념관, 4·3기념관, 4·3방명록, 위패봉헌관,4·3기념재단">	
+	<!-- Open Graph general-->
+	<meta property="og:title" content="4·3추모관 - 제주특별자치도 4·3 VR 추모관">
+	<meta property="og:description" content="제주특별자치도 43기념관 4·3 3D VR 추모관 및 위패봉헌관 ">
+	<meta property="og:url" content="https://online.jeju43peace.or.kr/memorial/tablet.do">
+	<meta property="og:site_name" content="online.jeju43peace.or.kr">
+	<meta property="og:type" content="website">
+	<link rel="icon" href="/images/client/favicon.png">
+	<!--  script -->	
+	<script src="/js/plugins/bootstrap-v5.2/bootstrap.bundle.min.js"></script> 	
+	<script src="/js/jquery-3.5.1.min.js"></script> 
+ 	<script src="/js/plugins/gsap.min.js"></script>
+	<script src="/js/plugins/ScrollTrigger.min.js"></script>
+	<script src="/js/plugins/TextPlugin.min.js"></script> 
+	<script src="https://www.google.com/recaptcha/api.js"></script>
+	<!--  CSS -->
+	<link rel="stylesheet" href="/css/client/common.css" />
+	<link rel="stylesheet" href="/css/client/memorial.css" />				
+	<link rel="stylesheet" href="/css/font/pretendard/pretendard.css" />					
+	<link rel="stylesheet" href="/css/font/nanum/nanummyeongjo.css" />				
+</head>
+<body >
+	<div class="wrap memorial-hall">
+		<div class="justify">
+			<div class="search-box">
+				<h4 class="title">4·3 희생자 검색</h4>
+				<p class="sub-text">희생자 성명을 검색하여 위패 위치를 확인하세요. </p>
+				<div class="input-box">
+					<div class="inline-label">
+						<label>희생자 성명</label>
+					</div>
+					<input type="text" class="inline-input" maxlength="10" id="keyword" placeholder="이름을 입력해주세요." />
+					<button type="button" class="inline-button" onclick="fnSearchTablet();">검색</button>
+				</div>
+				<div class="result-count" id="search-result-count" ></div>
+				<div class="result-box" id="search-result">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="map-layer"  id="sector-view">
+		<div class="location-layer">
+			<div class="headline">위패 위치 안내<span class="close-layer" onclick="closeView()"></span></div>
+			<div class="dierction-map">
+				<img class="map-image" />
+			</div>
+			<div class="direction-text">
+				<h4>위패 세부 위치 : <span class="sectorId">-</span>구역 <span class="sub row-no">-</span><span class="comma">, </span><span class="sub col-no">-</span>(<span style="color:#1F579F;">행↓</span> <span style="color:#2D640E;">열→</span>)</h4>
+				
+				<div class="grid-table-container">
+					<div class="grid-table">
+					</div>
+				</div>
+			</div>
+		</div>	
+	</div>
+	<script src="/js/scroll.js"></script> 	
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('#keyword').focus();
+	});
+
+	$("#keyword").bind('keydown', function(e) {
+	    if (e.keyCode === 13){
+	    	fnSearchTablet();
+	    }
+	});
+	
+	fnSearchTablet = function(){
+		let n = $('#keyword').val();
+		if (n.length>1){
+			$.ajax({
+				url:"/memorial/tablet/search?keyword="+n,
+				method:'GET',
+				dataType: 'json',
+				success:function(result){
+					$('#search-result').empty();
+					let flexResult = false;				
+					if(result.list === undefined || result.list === null || result.list.length === 0){
+						flexResult = true;
+						let item = '<div class="item-box">';
+							item += '<div class="name">' + n + '</div>';
+							item += '<div class="village">검색결과가 없습니다.</div>';
+							item += '</div>';
+						$('#search-result').append(item);
+						$('#search-result-count').hide();
+					}else{
+						var msg = '검색결과가 '+result.list.length+'건 있습니다.';
+						
+						if(result.list.length > 2 ){
+							msg += '\n하단의 검색결과가 더 있습니다.';
+						}
+						
+						$('#search-result-count').show().text( msg );
+						
+						
+						if (window.innerWidth > 1080) {
+							if (result.list.length < 4) { flexResult = true; }
+						} else if (window.innerWidth > 768) { 
+							if (result.list.length < 3) { flexResult = true; } 
+						} else if (window.innerWidth > 480) { 
+							if (result.list.length < 2) { flexResult = true; } 
+						}					
+						
+						for(let i=0; i < result.list.length; i++){
+							//console.log(result.list[i]);
+	                        let item = '';
+								item += '<div class="item-box" ' 									
+		                        	item += 'data-id="' + result.list[i].sectorId + '" data-row="' + result.list[i].rowNo + '" data-col="' + result.list[i].colNo + '" data-colsize="' + result.list[i].colSize + '" data-rowsize="' + result.list[i].rowSize + '" data-image="' + result.list[i].imageUrl;
+		                        item += '">';
+								item += '<div class="village">' + result.list[i].state + ' ' + result.list[i].village + '</div>';
+								item += '<div class="name">' + result.list[i].tablet + '</div>';
+								item += '<div class="find" onclick="viewLocation(this)">위치 확인</div>';
+								item += '</div>';
+							$('#search-result').append(item);
+						}
+					}
+					
+					if(flexResult){
+						$('#search-result').addClass('few');
+					}else{
+						$('#search-result').removeClass('few');
+					}
+				},
+				error: function(){
+					alert("데이터를 불러오는데 문제가 생겼어요.");
+				}
+			})
+		} else{
+			alert("두글자 이상 입력해주세요.");
+			$('#keyword').focus();
+		}
+	}
+	
+	fnDrawSector = function(id, row, col){
+		$.ajax({
+			url:"/memorial/tablet/grid?id="+id+"&row="+row+"&col="+col,
+			method:'GET',
+			dataType: 'json',
+			success:function(result){
+				let merge = [];
+				for(let i=0; i<result.list.length; i++){
+					let cell = $('.grid-table').find('.tablet-rows').eq(result.list[i].rowNo).find('.tablet-cols').eq(result.list[i].colNo);
+					$(cell).html(wordBroken(result.list[i].tablet));
+					$(cell).css('font-size', Number(Math.max($(cell).width() / 2 - result.list[i].tablet.length, 14))+'px');
+					$(cell).css('line-height', Number(Math.max(1, 2 - (result.list[i].tablet.length+1) * 0.1)));
+					
+					if(result.list[i].colSpan > 1){					
+						merge.push(result.list[i]);
+					}						
+				}
+				
+				if(merge.length > 0){
+					let spans = merge.reverse();
+					for(let i=0; i<spans.length; i++){
+						let cell = $('.grid-table').find('.tablet-rows').eq(spans[i].rowNo).find('.tablet-cols').eq(spans[i].colNo);
+						$(cell).css('width', $(cell).outerWidth() * spans[i].colSpan);						
+						$(cell).css('font-size', '20px');						
+						$(cell).css('word-break', 'keep-all');						
+						$(cell).css('aspect-ratio', 'unset');						
+						for(j=1; j<spans[i].colSpan; j++){
+							$('.grid-table').find('.tablet-rows').eq(spans[i].rowNo).find('.tablet-cols').eq(spans[i].colNo+1).remove();
+						} 
+						$(cell).html(spans[i].tablet); 
+					}
+				}
+			},
+			error: function(){}
+		})
+	}
+	
+	viewLocation = function(e){
+		let view = $('#sector-view');
+		let id    = $(e).closest('.item-box').data('id');
+		let rowNo = $(e).closest('.item-box').data('row');
+		let colNo = $(e).closest('.item-box').data('col');
+		
+		console.log(id, rowNo, colNo);
+		
+		$(view).find('.map-image').attr('src', '/cmm/fms/getImage.do?fileSize=t&atchFileId='+$(e).closest('.item-box').data('image'));
+		$(view).find('.sectorId').text(id);
+		$(view).find('.row-no').text(rowNo);
+		$(view).find('.col-no').text(colNo);
+		
+		let rowSize = Number($(e).closest('.item-box').data('rowsize'));
+		let colSize = Number($(e).closest('.item-box').data('colsize'));
+		let colWidth = Math.max((Math.min($(window).width()*0.9, 756) - 50) / colSize, 40);
+		for (let i=0; i<=rowSize; i++){
+			let row = '';
+				if(i == 0){
+					row += '<div class="tablet-rows sticky-header" style="width:'+Number(colWidth*colSize+24)+'px;">';
+					for(let j=0; j<=colSize; j++){
+						if(j == 0){
+							row += '<div class="tablet-cols empty"></div>';
+						}else{	
+							row += '<div class="tablet-cols head" style="width:'+colWidth+'px;">';
+							row += j;
+							row += '</div>';
+						}
+					}
+				}else{					
+					row += '<div class="tablet-rows" style="width:'+Number(colWidth*colSize+24)+'px;">';
+					for(let j=0; j<=colSize; j++){
+						if(j == 0){
+							row += '<div class="tablet-cols first">'+i+'</div>';
+						}else{						
+							if(i == rowNo){
+								if(j == colNo){
+									let tabletName = $(e).closest('.item-box').find('.name').text();
+									row += '<div class="tablet-cols target" style="width:'+colWidth+'px;' + getFontSizeByStringAndWidth(tabletName, colWidth) + '">';
+									row += wordBroken(tabletName);
+									row += '</div>';
+								}else{									
+									row += '<div class="tablet-cols focus" style="width:'+colWidth+'px;"></div>';
+								}
+							}else{
+								if(j == colNo){								
+									row += '<div class="tablet-cols focus" style="width:'+colWidth+'px;"></div>';									
+								}else{									
+									row += '<div class="tablet-cols" style="width:'+colWidth+'px;"></div>';									
+								}							
+							}
+						}
+					}
+				}
+				
+				row += '</div>';
+			$(view).find('.grid-table').append(row);
+		}
+		fnDrawSector($(e).closest('.item-box').data('id'), rowNo, colNo);
+		$(view).show();
+		setTimeout(moveLocation(), 300);
+	}
+	
+	closeView = function(){
+		let view = $('#sector-view');
+		$(view).find('.map-image').attr('src', '');
+		$(view).find('.row-no').text('-');
+		$(view).find('.col-no').text('-');
+		$(view).find('.grid-table').empty();		
+		$(view).hide();
+	}
+	
+	wordBroken = function(str){
+	    return str.split('').join('<br />');
+	}
+	
+	getFontSizeByStringAndWidth = function(str, width){
+		let css = 'font-size:' + Number(Math.max(width / 2 - str.length, 14)) + 'px;';
+			css += 'line-height:' + Number(Math.max(1, 2 - (str.length+1) * 0.1)) +';';		
+		return css;
+	}
+	
+	moveLocation = function(){
+		if( $('.tablet-cols.target').length != 0 ){
+			// 타겟 요소와 컨테이너 요소 선택
+			  const $target = $('.tablet-cols.target');
+			  const $container = $('.grid-table');
+			  
+			  if ($target.length === 0 || $container.length === 0) return;
+			  
+			  // 컨테이너의 위치와 크기 정보
+			  const containerRect = $container[0].getBoundingClientRect();
+			  const containerHeight = $container.height();
+			  const containerWidth = $container.width();
+			  
+			  // 타겟의 위치와 크기 정보
+			  const targetRect = $target[0].getBoundingClientRect();
+			  const targetHeight = $target.outerHeight();
+			  const targetWidth = $target.outerWidth();
+			  
+			  // 수직 중앙 위치 계산
+			  const verticalCenter = $target.offset().top - $container.offset().top - 
+			                        (containerHeight / 2) + (targetHeight / 2);
+			  
+			  // 수평 중앙 위치 계산
+			  const horizontalCenter = $target.offset().left - $container.offset().left - 
+			                          (containerWidth / 2) + (targetWidth / 2);
+			  
+			  // 스크롤 적용
+			  $container.scrollTop($container.scrollTop() + verticalCenter);
+			  $container.scrollLeft($container.scrollLeft() + horizontalCenter);
+		}
+	}
+	
+	</script>		
+</body>
+</html>

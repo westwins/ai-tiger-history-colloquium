@@ -1,0 +1,13 @@
+{
+  "url": "http://43archives.or.kr/events/history/history.do",
+  "fetched_at": "2026-11-06T08:41:55+00:00",
+  "robots_status": "fetched",
+  "status": 200,
+  "final_url": "http://43archives.or.kr/events/history/history.do",
+  "content_type": "text/html;charset=UTF-8",
+  "etag": null,
+  "last_modified": null,
+  "sha256": "b3d36552ba973932a370e9614f11a8bf51837280bbdae7075740f2da239e935b",
+  "byte_count": 34721,
+  "local_path": "raw/snapshots/b3d36552ba973932a370e9614f11a8bf51837280bbdae7075740f2da239e935b.bin"
+}

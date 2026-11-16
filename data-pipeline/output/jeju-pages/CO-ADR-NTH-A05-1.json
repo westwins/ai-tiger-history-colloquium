@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "url": "http://43archives.or.kr/events/history/getHistoricalSites.do",
+    "fetched_at": "2026-11-06T08:46:10+00:00",
+    "request_method": "POST",
+    "search_parameters": {
+      "past_address2": "CO-ADR-NTH-A05",
+      "orderKey": "HISTORY_NO",
+      "orderMethod": "DESC",
+      "orderByName": "최신순",
+      "viewRowCnt": "80",
+      "viewRowCountName": "80개씩 보기",
+      "currPage": 1
+    },
+    "robots_status": "fetched",
+    "status": 200,
+    "final_url": "http://43archives.or.kr/events/history/getHistoricalSites.do",
+    "content_type": "application/json;charset=UTF-8",
+    "etag": null,
+    "last_modified": null,
+    "sha256": "6b8b8e0191fde183ca789854e7ccfc2c78a08c024b7e505e8551a289bcd82949",
+    "byte_count": 357,
+    "local_path": "raw/snapshots/6b8b8e0191fde183ca789854e7ccfc2c78a08c024b7e505e8551a289bcd82949.bin"
+  },
+  "data": {
+    "result": {
+      "count": 0,
+      "list": []
+    },
+    "paramMap": {
+      "orderKey": "HISTORY_NO",
+      "currPage": 1,
+      "orderByName": "최신순",
+      "startIdx": 0,
+      "startNum": 0,
+      "past_address2": "CO-ADR-NTH-A05",
+      "viewRowCnt": 80,
+      "viewRowCountName": "80개씩 보기",
+      "viewPageCnt": 3,
+      "endNum": 80,
+      "orderMethod": "DESC"
+    },
+    "pageToTa": "<ul class=\"pagination\"></ul>",
+    "pageToMo": "<ul class=\"pagination\"></ul>"
+  }
+}

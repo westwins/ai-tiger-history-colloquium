@@ -1,0 +1,493 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+	<title>제주4&middot;3 - 자료현황</title>
+
+
+
+
+
+
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+	<meta name="format-detection" content="telephone=no" />
+	<title>제주 4·3 아카이브</title>
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+
+	<link rel="shortcut icon" type="image/x-icon" href="/resource/portal/images/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/resource/portal/css/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="/resource/portal/css/common.css">
+
+	<script type="text/javascript" src="/resource/portal/js/jquery-1.12.4.js"></script>
+	<script type="text/javascript" src="/resource/portal/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="/resource/portal/js/common.js"></script>
+
+	<!-- slick-slider -->
+	<script type="text/javascript" src="/resource/portal/dist/slick.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/resource/portal/dist/slick.css">
+
+	<script src="/resource/portal/dist/jquery.mCustomScrollbar.concat.min.js"></script>
+	<link rel="stylesheet" href="/resource/portal/dist/jquery.mCustomScrollbar.css" />
+
+	<!-- 카카오 공유하기 -->
+	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+	
+    
+
+
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+
+	
+</head>
+<body>
+<div id="skip">
+	<a href="#menu"><span>메뉴 바로가기</span></a>
+	<a href="#contents"><span>본문 바로가기</span></a>
+</div>
+<div id="main">
+
+	
+
+
+
+
+<div class="header">
+	<div class="inner">
+		<h1 class="logo"><a href="/main.do"><img src="/resource/portal/images/logo.png" alt="제주 4·3 아카이브"/></a></h1>
+		<ul id="menu" class="menu">
+			<li>
+				<a href="/search/archive/detailSearch.do">통합검색</a>
+				<div class="depth2">
+					<ul>
+						<li><a href="/search/archive/detailSearch.do">아카이브 검색</a></li>
+						<li><a href="/search/collection/list.do">기념관 전시품</a></li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<a href="/data/getDatas.do">4·3 자료</a>
+				<div class="depth2">
+					<ul>
+						<li><a href="/data/document/list.do">문서</a></li>
+						<li><a href="/data/news/list.do">신문</a></li>
+						<li><a href="/data/photo/list.do">사진</a></li>
+						<li><a href="/data/audio/list.do">시청각</a></li>
+						
+						<li><a href="/data/publication/list.do">재단 간행물</a></li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<a href="/theme/getThemes.do">주제별 자료</a>
+				<div class="depth2">
+					<ul>
+						
+							<li><a href="/theme/getTheme.do?theme_no=20">4·3 진상규명의 긴 여정</a></li>
+						
+					</ul>
+				</div>
+			</li>
+			<li>
+				<a href="/events/contents/manage.do">4·3 이란</a>
+				<div class="depth2">
+					<ul>
+						<li><a href="/events/timeline/timeline.do">시대별 기록</a></li>
+						<li><a href="/events/history/history.do">지역별 4·3</a></li>
+						<li><a href="/events/victims/victims.do">피해현황(통계)</a></li>
+						<li><a href="/events/peacehall/peacehall.do">4·3 평화기념관</a></li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<a href="/archive/introduce.do">4·3 아카이브 안내</a>
+				<div class="depth2">
+					<ul>
+						<li><a href="/archive/introduce.do">아카이브 소개</a></li>
+						<li><a href="/archive/useGuide.do">이용안내</a></li>
+						<li><a href="/archive/notices.do">공지사항</a></li>
+						<li><a href="/archive/dataStatistics.do">자료현황</a></li>
+						<li><a href="/archive/donation.do">기증안내</a></li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+		<a href="#" class="btn-menu">전체메뉴</a>
+	</div>
+	<div class="allmenu">
+		<div class="dim"></div>
+		<div class="allmenu_form">
+			<div class="inner">
+				<a href="#"><img src="/resource/portal/images/logo.png" alt="제주 4·3 아카이브"/></a>
+				<a href="#" class="close"><img src="/resource/portal/images/btn_close.png" alt="닫기"/></a>
+			</div>
+			<div class="menu">
+				<ul>
+					<li>
+						<span><a href="/search/archive/keywordSearch.do">통합검색</a></span>
+						<ul>
+							<li><a href="/search/archive/keywordSearch.do">아카이브 검색</a></li>
+							<li><a href="/search/collection/list.do">기념관 전시품</a></li>
+						</ul>
+					</li>
+					<li>
+						<span><a href="/data/getDatas.do">4·3 자료</a></span>
+						<ul>
+							<li><a href="/data/document/list.do">문서</a></li>
+							<li><a href="/data/news/list.do">신문</a></li>
+							<li><a href="/data/photo/list.do">사진</a></li>
+							<li><a href="/data/audio/list.do">시청각</a></li>
+							
+							<li><a href="/data/publication/list.do">재단 간행물</a></li>
+						</ul>
+					</li>
+					<li>
+						<span><a href="/theme/getThemes.do">주제별 자료</a></span>
+						<ul>
+							
+								<li><a href="/theme/getTheme.do?theme_no=20">4·3 진상규명의 긴 여정</a></li>
+							
+						</ul>
+					</li>
+					<li>
+						<span><a href="/events/contents/manage.do">4·3 이란</a></span>
+						<ul>
+							<li><a href="/events/timeline/timeline.do">시대별 기록</a></li>
+							<li><a href="/events/history/history.do">지역별 4·3</a></li>
+							<li><a href="/events/victims/victims.do">피해현황(통계)</a></li>
+							<li><a href="/events/peacehall/peacehall.do">4·3 평화기념관</a></li>
+						</ul>
+					</li>
+					<li>
+						<span><a href="/archive/introduce.do">4·3 아카이브 안내</a></span>
+						<ul>
+							<li><a href="/archive/introduce.do">아카이브 소개</a></li>
+							<li><a href="/archive/useGuide.do">이용안내</a></li>
+							<li><a href="/archive/notices.do">공지사항</a></li>
+							<li><a href="/archive/dataStatistics.do">자료현황</a></li>
+							<li><a href="/archive/donation.do">기증안내</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="dimm"></div>
+	
+	
+    <div id="skip">
+        <a href="#menu"><span>메뉴 바로가기</span></a>
+        <a href="#contents"><span>본문 바로가기</span></a>
+    </div>
+    <div id="wrap">
+
+        <div id="contents" class="sub_container">
+            <div class="title_container">
+                <div class="inner relative">
+                    <h2>4·3 아카이브 안내</h2>
+                    <ol class="location">
+                        <li><img src="/resource/portal/images/ico_home.png" alt="홈"/></li>
+                        <li><a href="/archive/introduce.do">4·3 아카이브 안내</a></li>
+                        <li><a href="/archive/dataStatistics.do">자료현황</a></li>
+                    </ol>
+                </div>
+            </div>
+            <div class="tab_container">
+                <div class="mo_select">
+                    <p>자료현황</p>
+                    <ul class="tab five">
+                        <li><a href="/archive/introduce.do">아카이브 소개</a></li>
+                        <li><a href="/archive/useGuide.do">이용안내</a></li>
+                        <li><a href="/archive/notices.do">공지사항</a></li>
+                        <li class="on"><a href="/archive/dataStatistics.do">자료현황</a></li>
+                        <li><a href="/archive/donation.do">기증안내</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="inner">
+                <div class="overflow-x">
+	                <p class="bul_title">유형별 자료현황</p>
+	                <div id="_pieContainer" style="width: 650px; margin: 0 auto;"></div>
+                </div>
+                <hr class="hr-ccc mt50"/>
+                <div class="overflow-x">
+                	<p class="bul_title">세부 유형별 자료현황</p>
+                	<div id="_columnContainer" style="width: 500px; margin: 0 auto;"></div>
+                </div>                
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        let tempArray;
+
+
+        /*
+            Onload 이벤트
+         */
+        // ---------------------------------------------------------------------------------
+        $(document).ready(function() {
+            // const dataArray = [
+            //     { name: 'Chrome', y: 61.41, cnt: 1500, color: '#5749ad'},
+            //     { name: 'Internet Explorer', y: 11.84, cnt: 600 },
+            //     { name: 'Firefox', y: 10.85, cnt: 500 },
+            //     { name: 'Edge', y: 4.67, cnt: 250 },
+            //     { name: 'Safari', y: 4.18, cnt: 240 },
+            //     { name: 'Other', y: 7.05, cnt: 340 }
+            // ];
+
+            handleSearchToStaticsData();
+
+        })
+        // ---------------------------------------------------------------------------------
+
+
+
+        /*
+            통계 데이터 조회
+         */
+        // ---------------------------------------------------------------------------------
+        function handleSearchToStaticsData() {
+            const searchUrl = "/archive/getDataStatistics.do";
+
+            let searchDatas = {};
+
+            $.ajax({
+                type: 'POST',
+                url: searchUrl,
+                dataType: 'json',
+                data: JSON.stringify(searchDatas),
+                async: false,
+                contentType: "application/json",
+                traditional: true,
+                success: function(data) {
+                    // console.log(data.columnStaticsList);
+
+                    if(data.pieStaticsList.length > 0) {
+                        handleDrawToPie(data.pieStaticsList);
+                    }
+
+                    if(data.columnStaticsList.length > 0) {
+                        handleDrawToColumn(data.columnStaticsList);
+                    }
+
+                }, error: function(err) {
+                    console.log(err);
+                }
+            });
+        }
+        // ---------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+        /*
+            파이 그래프 그리기
+            http://www.w3big.com/try/try.php?filename=highcharts_pie_gradient
+         */
+        // ---------------------------------------------------------------------------------
+        function handleDrawToPie(dataArray) {
+            const chart = {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false
+            };
+            const title = {
+                text: ''
+            };
+            const tooltip = {
+                pointFormat: '{series.data.name}: <b>{point.y:.1f}% / {point.type_cnt} 건</b>'
+            };
+            const plotOptions = {
+                pie: {
+                	size: 355,
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}%</b>: {point.y:.1f} %',
+                        style: {
+                            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                        }
+                    }
+                }
+            };
+            let series= [{
+                type: 'pie',
+                name: '',
+                data: dataArray
+            }];
+            colors: Highcharts.getOptions().colors.map(function(color) {
+                return {
+                  linearGradient: {
+                    cx: 0.5,
+                    cy: 0.5,
+                    r: 0.7
+                  },
+                }
+              })
+
+            // highchart 색상 데이터 생성.
+            const pieColorList = ['#0EB3B6', '#5AACE5', '#154071', '#007FD0', '#BAEDFE', '#2066AA'];
+            const json = {};
+            json.chart = chart;
+            json.title = title;
+            json.tooltip = tooltip;
+            json.series = series;
+            json.plotOptions = plotOptions;
+            json.colors = pieColorList;
+            $('#_pieContainer').highcharts(json);
+        }
+        // ---------------------------------------------------------------------------------
+
+
+
+        /*
+            막대 그래프 그리기
+         */
+        // ---------------------------------------------------------------------------------
+        function handleDrawToColumn(dataArray) {
+            const chart = {
+                type: 'column'
+            };
+            const title = {
+                text: ''
+            };
+            const xAxis = {
+                categories: ['문서/도서류', '사진', '시청각', '재단간행물', '박물', '신문']
+            };
+            const yAxis ={
+                //allowDecimals: false,
+                min: 0,
+                title: {
+                    text: ''
+                }
+            };
+            const tooltip = {
+                formatter: function () {
+                    return '<b>' + this.x + '</b><br/>' +
+                        this.series.name + ': ' + this.y + '<br/>' +
+                        'Total: ' + this.point.stackTotal;
+                }
+            }
+            const plotOptions = {
+                column: {
+                    stacking: 'normal',
+                    cursor: 'pointer'
+                },
+                series: {
+                    pointWidth: 30
+                }
+            };
+            const credits = {
+                enabled: false
+            };
+            let series = dataArray;
+
+            // highchart 색상 데이터 생성.
+            const columnColorList = ['#2066AA', '#DAA30B', '#E7D8B0', '#499D76', '#5F8A69', '#B23B64', '#333333', '#E68421', '#6363AB', '#82B0DC', '#1E8EDC', '#0EB3B6', '#9F856A', '#E5A5C3', '#8D66A7'];
+
+            const json = {};
+            json.chart = chart;
+            json.title = title;
+            json.xAxis = xAxis;
+            json.yAxis = yAxis;
+            json.tooltip = tooltip;
+            json.plotOptions = plotOptions;
+            json.credits = credits;
+            json.series = series;
+            json.colors = columnColorList;
+            $('#_columnContainer').highcharts(json);
+        }
+        // ---------------------------------------------------------------------------------
+
+    </script>
+
+
+
+
+	
+
+<div class="footer">
+	<div class="inner">
+
+		<a href="#skip" class="btn-top"><img src="/resource/portal/images/btn_top.png" alt="상단으로"/></a>
+		<div class="footer_right">
+			<div class="select">
+				<p>관련 사이트 바로가기</p>
+				<div class="select_form">
+					<div><a href="http://www.nogunri.net" target="_blank">노근리국제평화재단</a></div>
+					<div><a href="https://518.org" target="_blank">5·18기념재단</a></div>
+					<div><a href="http://www.pcf.city.hiroshima.jp" target="_blank">히로시마 평화기념공원</a></div>
+					<div><a href="http://www.hiro-tsuitokinenkan.go.jp" target="_blank">국립 히로시마 원폭사망자추도 평화기념관</a></div>
+					<div><a href="http://www.peace-museum.pref.okinawa.jp/" target="_blank">오키나와평화기념자료관</a></div>
+					<div><a href="https://www.228.org.tw/" target="_blank">대만2·28사건기념관</a></div>
+					<div><a href="http://www.demopark.or.kr" target="_blank">부산민주항쟁기념사업회</a></div>
+					<div><a href="http://www.kdemo.or.kr" target="_blank">민주화운동기념사업회</a></div>
+				</div>
+			</div>
+		</div>
+		<div class="logo"><img src="/resource/portal/images/logo_footer.png" alt="제주 4·3 아카이브"/></div>
+		<div class="footer_left">
+			<div class="address">
+				제주특별자치도 제주시 명림로 430 제주 4·3 평화기념관 4층 Tel 064-723-4354,4301 Fax  064-723-4303
+			</div>
+			<p class="copyright">Copyright @ 2021. Jeju 4·3 Archives. All rights reserved.</p>
+		</div>
+	</div>
+</div>
+
+</div>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.search_container .slider').slick({
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				infinite: true,
+				arrows: true,
+				dots: true,
+				autoplay : true,
+				autoplaySpeed : 3000
+			});
+		});
+	</script>
+
+	<!-- 개발 -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	
+
+	<!-- 운영 -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-221415181-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-221415181-1');
+	</script>
+
+	<!-- 복사할 url 설정 및 포커스할 곳 -->
+	<input type="text" id="copyUril" style="display:block; position:absolute; left:-10000px">
+
+</body>
+</html>

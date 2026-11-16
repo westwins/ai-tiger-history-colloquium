@@ -1,0 +1,37 @@
+{
+  "source_id": "jeju43-tablets",
+  "url": "https://online.jeju43peace.or.kr/memorial/tablet.do",
+  "fetched_at": "2026-11-06T08:19:51+00:00",
+  "robots_status": "http_404_no_rules",
+  "status": 200,
+  "final_url": "https://online.jeju43peace.or.kr/memorial/tablet.do",
+  "content_type": "text/html;charset=UTF-8",
+  "etag": null,
+  "last_modified": null,
+  "sha256": "e300658fa18010181bce4c20cbe44722380ee18b0b4aa366ec1075be4d8b2a4e",
+  "byte_count": 11481,
+  "local_path": "raw\\snapshots\\e300658fa18010181bce4c20cbe44722380ee18b0b4aa366ec1075be4d8b2a4e.bin",
+  "title": "43추모관 - 제주특별자치도 4·3 VR 추모관",
+  "links": [
+    {
+      "url": "https://online.jeju43peace.or.kr/images/client/favicon.png",
+      "label": "icon"
+    },
+    {
+      "url": "https://online.jeju43peace.or.kr/css/client/common.css",
+      "label": "stylesheet"
+    },
+    {
+      "url": "https://online.jeju43peace.or.kr/css/client/memorial.css",
+      "label": "stylesheet"
+    },
+    {
+      "url": "https://online.jeju43peace.or.kr/css/font/pretendard/pretendard.css",
+      "label": "stylesheet"
+    },
+    {
+      "url": "https://online.jeju43peace.or.kr/css/font/nanum/nanummyeongjo.css",
+      "label": "stylesheet"
+    }
+  ]
+}

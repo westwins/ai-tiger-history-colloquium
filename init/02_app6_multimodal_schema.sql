@@ -1,0 +1,85 @@
+SET NAMES utf8mb4;
+USE trc_archive;
+
+CREATE TABLE IF NOT EXISTS trc_multimodal_artifacts (
+    artifact_id VARCHAR(50) PRIMARY KEY,
+    country_code VARCHAR(10) NOT NULL,
+    modality VARCHAR(40) NOT NULL,
+    cluster_category VARCHAR(80) NOT NULL,
+    title_ko VARCHAR(200) NOT NULL,
+    archive_institution VARCHAR(150) NOT NULL,
+    creation_year VARCHAR(30),
+    umap_x DECIMAL(5,2) NOT NULL,
+    umap_y DECIMAL(5,2) NOT NULL,
+    visual_features_json JSON NOT NULL,
+    epistemic_layer VARCHAR(40) DEFAULT '1_PRIMARY_FACT',
+    silence_layer VARCHAR(40) DEFAULT '0_DOCUMENTED',
+    provenance_ref VARCHAR(255) NOT NULL,
+    curation_note TEXT NOT NULL
+);
+
+INSERT INTO trc_multimodal_artifacts VALUES
+('MM_KOR_01', 'KOR', 'VISUAL_RELIC', '생존·생활유품',
+ '다랑쉬굴(월랑봉) 출토 깨진 무쇠솥과 고무신·단추', '제주4·3평화기념관 제3전시실', '1948.12 (1992 발굴)',
+ 24.0, 72.0, '["동굴은신", "무쇠솥", "생활도구", "질식사흔적", "비문자증거"]',
+ '1_PRIMARY_FACT', '3_VOICELESS_GROUP', '제주4·3평화기념관 유물번호 J43-1992-01',
+ '중산간 초토화 작전 당시 피난민 11명이 은신하다 질식사한 현장의 생활 유품. 문자 기록을 남길 수 없던 민간인의 절박한 생존 몸부림(신체화된 역사)을 증언함.'),
+('MM_CHL_01', 'CHL', 'VISUAL_TEXTILE', '생존·생활유품',
+ '칠레 실종자 가족 여인들이 삼베와 헌 옷 조각으로 꿰맨 아르피예라(Arpilleras)', '산티아고 기억과 인권 박물관 (Museo de la Memoria)', '1975~1988',
+ 32.0, 66.0, '["삼베자수", "강제실종고발", "안데스산맥배경", "여성공동체", "검열우회도상"]',
+ '1_PRIMARY_FACT', '3_VOICELESS_GROUP', 'Museo de la Memoria Arpilleras Collection #CL-ARP-104',
+ '언론 통제로 문자 고발이 금지되자 실종자 어머니·아내들이 실종된 가족의 옷가지 천을 오려 체포 장면과 빈 식탁을 꿰맨 시각 사료. 다랑쉬굴 유품과 높은 벡터 근접성을 형성.'),
+('MM_KOR_02', 'KOR', 'VISUAL_MONUMENT', '비가시적침묵·백비',
+ '제주 4·3 평화기념관 잠들지 않는 남도 백비(白碑)', '제주4·3평화기념관 제1전시실 입구', '2008',
+ 78.0, 28.0, '["누워있는비석", "무명(無名)", "정명(正名)유보", "침묵의시각화"]',
+ '2_SCHOLAR_INFERENCE', '5_UNDIGITIZED', '제주4·3평화기념관 상설전시 도록 p.14',
+ '아직 역사적 이름을 온전히 새기지 못해 누워 있는 흰 비석. 이동원 소장이 제시한 데이터 부재와 미완의 역사 평가를 조형적으로 육화한 상징물.'),
+('MM_CHL_02', 'CHL', 'VISUAL_RELIC', '법의학·유해수복',
+ '태평양 해양 투기 시신 결박용 철로(Rail) 조각', '산티아고 기억과 인권 박물관 / 킨테로 해안 수습', '1974 (2001 인양)',
+ 68.0, 80.0, '["철로조각", "해양투기증거", "푸마헬기", "물리적은폐파괴"]',
+ '1_PRIMARY_FACT', '4_INTENTIONAL_ERASURE', 'Rettig Follow-up Judicial Inquiry File #2001-Q',
+ '비밀경찰 DINA가 수감자 시신이 바다 위로 떠오르지 못하게 묶어 던진 철로 조각. 국가의 의도적 은폐(침묵 층위 4)가 물질적 증거로 역추적된 사료.'),
+('MM_KOR_03', 'KOR', 'VISUAL_EXHUMATION', '법의학·유해수복',
+ '제주국제공항 남북활주로 암매장 유해 발굴 및 DNA 신원 감식', '제주4·3평화재단 유해발굴단', '2007~2009',
+ 61.0, 75.0, '["유해발굴", "두개골총탄흔", "수형인암매장", "법의학검증"]',
+ '1_PRIMARY_FACT', '0_DOCUMENTED', '제주4·3 유해발굴 보고서 Vol.2',
+ '예비검속 및 불법 군법회의 직후 암매장된 수백 구의 유해를 57년 만에 발굴하여 유전자 감식으로 가족의 품과 이름을 되찾아준 해원의 기록.'),
+('MM_AUD_01', 'KOR', 'AUDIO_PROSODY', '구술운율·망설임',
+ '박구병 강연 & 정지석 동문 Q&A 현장 음성 운율·침묵(2.4s Pause) 파형', '서울대 사학인 포럼 현장 녹취 (이수화 채록)', '2026.10.29',
+ 48.0, 44.0, '["구술사운율", "발화휴지_2.4초", "피치상승_개인별입증", "4+1판단로그_망설임"]',
+ '4_CONTESTED_CLAIM', '0_DOCUMENTED', 'blog.soohwalee.com WP #1130 Audio Track 01:18:40',
+ '정지석 동문이 개인별 입증 반복 관행을 지적할 때의 피치 상승(+38Hz)과 박구병 교수의 응답 전 2.4초 침묵(숙고 구간)을 포착한 구술 음향 데이터.');
+
+CREATE TABLE IF NOT EXISTS trc_public_packages (
+    package_id VARCHAR(40) PRIMARY KEY,
+    target_audience VARCHAR(40) NOT NULL,
+    title_ko VARCHAR(200) NOT NULL,
+    stage1_narrative TEXT NOT NULL,
+    stage2_verified_facts JSON NOT NULL,
+    stage2_contested_views JSON NOT NULL,
+    stage2_reserved_zone TEXT NOT NULL,
+    author_attribution VARCHAR(255) NOT NULL
+);
+
+INSERT INTO trc_public_packages VALUES
+('PKG_PR_01', 'PUBLIC_PR_CARD',
+ '[대국민 홍보 카드뉴스] “늦게 태어난 세대의 은총인가, 함께 건널 성찰의 다리인가?”',
+ '과거사 정리는 과거에 갇히는 일이 아닙니다. 칠레가 진실화해위원회 종료 후에도 35년간 상설 배상과 기억 박물관을 이어가고, 제주 4·3이 수형인 일괄 직권재심으로 무죄를 되찾았듯, 확인된 진실 위에 공동체의 존엄을 세우는 미래지향적 약속입니다.',
+ '["🟢 [1차 사료: 칠레 레티그 보고서 Vol.1, p.125] 사망·실종자 2,398명 공식 확인 및 후속 발레치 위원회 고문 생존자 38,254명 추가 규명", "🟢 [1차 통계 교차검증: 남아공 법무부 DOJ 2000.11.1] 사면 신청 총수 7,112건 중 엄격한 요건 심사를 거쳐 허가와 거절을 분리 집계", "🟢 [1차 사료: 제주 4·3 진상조사보고서 & 직권재심] 불법 군법회의 수형인 2,530명 일괄 직권재심 무죄 판결 진행"]',
+ '["🔵 [박구병 교수 강연 본문] 한시적 기구의 조사 기간 제약 및 군·국정원 비공개 사료 접근 한계가 조사 속도를 제약함 (@cert: 0.85)", "🟠 [정지석 동문 Q&A 반론] 이미 명단이 존재하는 집단 사건조차 고령 유족 개인에게 신청·입증을 반복 요구하는 관행이 병목을 만듦 (@cert: 0.92)"]',
+ '🟣 [임계치 0.60 미달 판정 유보 영역 (@cert: 0.42)]: 일부 중산간 잃어버린 마을(절손 가구)의 일자별 세부 발포 명령 계통 및 미발굴 암매장지 정밀 좌표는 군 기밀문서 추가 공개와 유전자 감식이 완료될 때까지 억지 추측(환각)을 금지하고 검증 대기 상태로 투명하게 구획합니다.',
+ '원저작·학술검수: 박구병(아주대 사학과·진실화해위원) | 현장반론: 정지석 | 소프트웨어 아키텍처: 이수화(서울대)'),
+('PKG_DOCU_02', 'CREATOR_DOCU_SHEET',
+ '[다큐·전시 학예사 공급 패키지] 한반도-안데스 시공간 전황도 & 침묵의 물질사 고증 시트 (bulge 모델)',
+ '1948년 겨울 한라산 다랑쉬굴의 깨진 무쇠솥과 1974년 칠레 산티아고 여성들이 꿰맨 아르피예라 삼베 조각을 교차 편집하여, 국가 폭력이 문자를 지운 자리에 어떻게 물질과 몸의 기억이 살아남았는지 조명합니다.',
+ '["🟢 [MariaDB HGIS 좌표 바인딩] 무등이왓(33.3182, 126.3421) ➔ 큰넓궤(33.3210, 126.3510) ➔ 정방폭포(33.2447, 126.5717) 피난·희생 궤적", "🟢 [MariaDB HGIS 좌표 바인딩] 산티아고 모네다궁(-33.4429, -70.6539) ➔ 칼라마 사막(-22.4544, -68.9292) 죽음의 카라반 헬기 궤적"]',
+ '["🟠 [학예 연출 지침] 토벌대·군부의 작전 화살표가 정복자의 시각으로 소비되지 않도록, 주민 피난 경로와 유해 발굴 수복선(푸른 파동)을 대칭 배치할 것"]',
+ '🟣 [임계치 0.60 미달 판정 유보 영역 (@cert: 0.38)]: 칠레 레티그 DB 내 exact_coordinates = 0 으로 기록된 태평양·안데스 유기 실종 사건은 추정 구역 점선으로만 표시하며 확정 지점 마커와 엄격히 분리합니다.',
+ '고증 DB: 칠레 레티그 아카이브(2,398건) & 제주4·3평화기념관 | 공급 파이프라인: trc.soohwalee.com'),
+('PKG_EDU_03', 'EDU_DEBATE_MODULE',
+ '[대학·고교 서논술 리빙랩 교안] “명단이 있는 국가폭력 사건, 개인이 입증할 것인가 국가가 직권 조사할 것인가?”',
+ '학생들이 직접 App 5의 반사실 슬라이더(초토화 강도·연좌제·개별입증 vs 일괄조사)를 조작해 보고, 왜 공식 기록(Empirical)과 실제 발생 희생(Actual) 사이에 침묵의 간극이 생기는지 데이터로 논증하는 서논술 모듈입니다.',
+ '["🟢 [6개국 개념어 사료] 숙청(épuration) · 복권(reabilitatsiya) · 극복(Vergangenheitsbewältigung) · 대면(enfrentamiento) · 책임인수(asunción del pasado)"]',
+ '["🔵 [토론 논제 A] 법원의 엄격한 개별 증거주의와 진실화해위원회의 구조적 진실규명은 어떻게 역할을 분담해야 하는가?", "🟠 [토론 논제 B] 정지석 동문이 지적한 개별 신청주의의 병목을 해결하기 위해 어떤 아카이브 데이터 연결이 필요한가?"]',
+ '🟣 [2단계 사고 유도 UX (페퍼트 역전 방지)]: 학생에게 처음부터 AI 모범 답안을 주지 않고, 1단계에서는 학생 서논술에서 누락된 반례 사료(예: 절손 가구 침묵 층위 3) 위치만 마킹해 스스로 가설을 수정하게 유도합니다.',
+ '커리큘럼 설계: 이수화 (서울대 『디지털 역사학과 서양사의 이해』 15주 4나선 모델 기반)');

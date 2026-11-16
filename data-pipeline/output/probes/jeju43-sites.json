@@ -1,0 +1,1553 @@
+{
+  "source_id": "jeju43-sites",
+  "url": "https://jeju43peace.or.kr/kor/ruins/list.do",
+  "fetched_at": "2026-11-06T08:19:55+00:00",
+  "robots_status": "fetched",
+  "status": 200,
+  "final_url": "https://jeju43peace.or.kr/kor/ruins/list.do",
+  "content_type": "text/html;charset=UTF-8",
+  "etag": null,
+  "last_modified": null,
+  "sha256": "0a298d11975000886689fc7ae27099459972af426771d53a0b78a0396bd3554c",
+  "byte_count": 80701,
+  "local_path": "raw\\snapshots\\0a298d11975000886689fc7ae27099459972af426771d53a0b78a0396bd3554c.bin",
+  "title": "제주4·3평화재단",
+  "links": [
+    {
+      "url": "https://jeju43peace.or.kr/images/kor/common/favicon.ico",
+      "label": "shortcut icon"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/images/kor/common/favicon.png",
+      "label": "apple-touch-icon"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/css/core/core.css",
+      "label": "stylesheet"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/css/kor/skin.css",
+      "label": "stylesheet"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/css/kor/layout.css",
+      "label": "stylesheet"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/css/kor/content.css?v=20260113_02",
+      "label": "stylesheet"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/css/kor/media.css",
+      "label": "stylesheet"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/css/kor/program.css",
+      "label": "stylesheet"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/",
+      "label": ""
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/ruins/list.do#content",
+      "label": "본문 바로가기"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/ruins/list.do#gnb",
+      "label": "상단메뉴 바로가기"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub14_02.do",
+      "label": "SITEMAP"
+    },
+    {
+      "url": "http://jeju43peace.org/",
+      "label": "ENGLISH"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/ruins/list.do",
+      "label": "검색열기"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/ruins/list.do",
+      "label": "검색닫기"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/ruins/list.do",
+      "label": "전체메뉴"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_01_01.do",
+      "label": "제주4·3"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_01_01.do",
+      "label": "제주4‧3의 역사"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_01_01.do",
+      "label": "제주4·3이란"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_01_02.do",
+      "label": "피해실태"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_01_03.do",
+      "label": "주요사건"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_01_04.do",
+      "label": "사건일지/경과개요"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_02_01.do",
+      "label": "4·3의 진실찾기"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_02_01.do",
+      "label": "진상규명운동사"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_02_02.do",
+      "label": "문화예술언론의 노력"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_02_03.do",
+      "label": "추모‧화해‧상생"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_02_04.do",
+      "label": "4‧3특별법 제정"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_01_01.do",
+      "label": "홍보영상"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_01_01.do",
+      "label": "재단 제작 4·3홍보영상"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_01_01.do",
+      "label": "4·3홍보영상 - 국문판"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_01_02.do",
+      "label": "4·3홍보영상 - 영문판"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_01_03.do",
+      "label": "평화와 인권"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_01_04.do",
+      "label": "애니메이션"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_03.do",
+      "label": "창작오페라 '순이삼촌'"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_05_02.do",
+      "label": "4·3 70주년 홍보영상"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_05_02.do",
+      "label": "단편영화 '식게'"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_05_03.do",
+      "label": "4·3방송광고"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_05_04.do",
+      "label": "4·3릴레이캠페인"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_06_01.do",
+      "label": "제1회 4·3과 평화 영상공모"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_06_01.do",
+      "label": "대상작 - 동백꽃"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_06_02.do",
+      "label": "최우수상 - 동백꽃"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_06_03.do",
+      "label": "최우수상 - 이추룩 살았쥬"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_06_04.do",
+      "label": "최우수상 - 평화를 찾는 여정"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_06_06.do",
+      "label": "우수상 - 4·3발표대회"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_06_07.do",
+      "label": "우수상 - 4·3의 아픔과 앞으로.."
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_06_08.do",
+      "label": "우수상 - 그날의 아픔을 연주.."
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_06_09.do",
+      "label": "우수상 - 동백"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_06_10.do",
+      "label": "우수상 - 제주 고등학생이 들려.."
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_06_11.do",
+      "label": "우수상 - 한라산의편지"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_06_12.do",
+      "label": "장려상 - 4·3은 되풀이되고 있다"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_06_13.do",
+      "label": "장려상 - 4월달"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_06_14.do",
+      "label": "장려상 - 당신은 알고 계신가요"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_06_15.do",
+      "label": "장려상 - 아픈 일기"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_06_16.do",
+      "label": "장려상 - 잃어버린 마을"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_06_17.do",
+      "label": "장려상 - 있어요 없어요"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_06_18.do",
+      "label": "장려상 - 기억속에 잊혀진 그날의 진실"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_06_19.do",
+      "label": "장려상 - 제주4·3이야기"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_06_20.do",
+      "label": "장려상 - 제주도의 아픈 기억"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_07_02.do",
+      "label": "제2회 4·3과 평화 영상공모"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_07_02.do",
+      "label": "최우수상 - 뉴스타임 4·3의 현장으로"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_07_03.do",
+      "label": "최우수상 - 꽃이 피지 않는 나무"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_07_04.do",
+      "label": "우수상 - 동백꽃과 평화..."
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_07_05.do",
+      "label": "우수상 - 평화를 찾는 기록 4·3"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_07_06.do",
+      "label": "우수상 - 만약"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_07_07.do",
+      "label": "우수상 - 섬에 살던 이들"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_07_08.do",
+      "label": "장려상 - 4·3 길을 걷다"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_07_09.do",
+      "label": "장려상 - 제주의 또다른 계절"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_07_10.do",
+      "label": "장려상 - 그날 제주를 듣다"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_07_11.do",
+      "label": "장려상 - 결코 잊지 말아야 할..."
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_07_12.do",
+      "label": "장려상 - 이름을 새겨주세요"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_07_13.do",
+      "label": "장려상 - 제주4·3 여행"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_07_14.do",
+      "label": "장려상 - 기억의 산책"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_07_15.do",
+      "label": "장려상 - 성산일출봉에 얽힌..."
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_07_16.do",
+      "label": "장려상 - 방구석 역사 나들이..."
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_07_17.do",
+      "label": "장려상 - 그해 다시 봄"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_10_01.do",
+      "label": "제3회 4·3과 평화 영상공모"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_10_01.do",
+      "label": "대상 - ‘제주 4.3’ 그날의 새빨간 기록"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_10_02.do",
+      "label": "최우수상 - 제주4·3, 얼마나 알고 계신가요?"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_10_03.do",
+      "label": "최우수상 - 무명천 할머니와 4.3"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_10_04.do",
+      "label": "우수상 - 제주도에서 외치는 평화"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_10_05.do",
+      "label": "우수상 - 제주의 일기"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_10_06.do",
+      "label": "우수상 - 누가 제주의 4월을 붉게 물들였는가?"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_10_07.do",
+      "label": "우수상 - 이름을 빼앗긴 사람들"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_10_08.do",
+      "label": "장려상 - 오해의 씨앗"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_10_09.do",
+      "label": "장려상 - 떨어진 꽃잎"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_10_10.do",
+      "label": "장려상 - 그날의 기억"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_10_12.do",
+      "label": "장려상 - 우리 할아버지"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_10_13.do",
+      "label": "장려상 - 그날을 알리고 싶다"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_10_14.do",
+      "label": "장려상 - 중학생이 바라본 4.3사건"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_10_15.do",
+      "label": "장려상 - 그날의 이야기를 듣다"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_10_16.do",
+      "label": "장려상 - remember 제주 4.3사건"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_10_17.do",
+      "label": "장려상 - ‘제주4.3'을 그리다"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_11_01.do",
+      "label": "제4회 4·3과 평화 영상공모"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_11_01.do",
+      "label": "대상 - 당신에게도 또 다른 제주 4·3이 있지 않을까요"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_11_02.do",
+      "label": "최우수상 - 알고 계신가요?"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_11_03.do",
+      "label": "최우수상 - 너븐숭이"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_11_04.do",
+      "label": "우수상 - 이름없는 4월 3일"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_11_05.do",
+      "label": "우수상 - 잃어버린 마을 곤을동과 동백의 발자취"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_11_06.do",
+      "label": "우수상 - 불의"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_11_07.do",
+      "label": "우수상 - 잃어버린 마을에 피어난 동백꽃"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_11_08.do",
+      "label": "장려상 - 4․3과 평화, 그리고 현재(現在)"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_11_09.do",
+      "label": "장려상 - 방백위령제 제주4·3(끝나지 않은 이야기)"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_11_10.do",
+      "label": "장려상 - 제주의 아픈 4월"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_11_11.do",
+      "label": "장려상 - 붉은 책"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_11_12.do",
+      "label": "장려상 - 그들의 차가웠던 봄, 뜨거웠던 겨울"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_11_13.do",
+      "label": "장려상 - 아름다움속 감춰진 아픔"
+    },
+    {
+      "url": "http://43archives.or.kr/main.do",
+      "label": "4·3아카이브"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_06_01_01.do",
+      "label": "4·3 길"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_06_01_01.do",
+      "label": "4·3길과 올레"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_06_01_01.do",
+      "label": "4·3길 소개"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_06_01_02.do",
+      "label": "제주안덕 동광마을"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_06_01_03.do",
+      "label": "제주남원 의귀마을"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_06_01_04.do",
+      "label": "제주조천 북촌마을"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_06_01_05.do",
+      "label": "제주한림 금악마을"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_06_01_06.do",
+      "label": "제주표선 가시마을"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_06_01_07.do",
+      "label": "제주 오라동"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_06_01_08.do",
+      "label": "제주애월 소길마을"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_06_01_09.do",
+      "label": "제주 아라동"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/ruins/list.do",
+      "label": "4·3유적"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_07.do",
+      "label": "4·3관련법령"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_08.do",
+      "label": "관련단체"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/bbs/BBSMSTR_000000000001/lst.do",
+      "label": "알림/소식"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/bbs/BBSMSTR_000000000001/lst.do",
+      "label": "공지사항"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/bbs/BBSMSTR_000000000032/lst.do",
+      "label": "보도자료"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/bodonews/list.do",
+      "label": "언론보도"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/bbs/BBSMSTR_000000000202/lst.do",
+      "label": "4·3 역사 왜곡 신고센터"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/schedule/list.do",
+      "label": "행사일정"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/organ/list.do",
+      "label": "기관지 [4·3과 평화]"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/organ/list.do",
+      "label": "4·3과 평화"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/paperMember/content.do",
+      "label": "구독 신청/취소"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/newsletter/list.do",
+      "label": "뉴스레터"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/newsletter/list.do",
+      "label": "뉴스레터"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/newsletterMember/content.do",
+      "label": "구독 신청/취소"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/bbs/BBSMSTR_000000000034/lst.do",
+      "label": "묻고 답하기"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/bbs/BBSMSTR_000000000035/lst.do",
+      "label": "클린신고센터"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/bbs/BBSMSTR_000000000113/lst.do",
+      "label": "성희롱·성폭력 신고센터"
+    },
+    {
+      "url": "https://www.clean.go.kr/index.do",
+      "label": "청렴포털서비스"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_01_05.do",
+      "label": "주요사업"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_01_05.do",
+      "label": "추가진상 조사"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_01_05.do",
+      "label": "추가진상조사(2022-현재)"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_01_06.do",
+      "label": "추가진상조사(2012-2021)"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_02_01.do",
+      "label": "추모·유족복지"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_02_01.do",
+      "label": "4·3희생자추념일전야제"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_02_02.do",
+      "label": "4·3유족진료비 지원"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_02_03.do",
+      "label": "4·3희생자며느리진료비 지원"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_02_04.do",
+      "label": "4·3생존희생자지원사업"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_02_05.do",
+      "label": "찾아가는 4·3문화체험교실"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_02_06.do",
+      "label": "4·3생존희생자위로사업"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_02_07.do",
+      "label": "4·3어버이상"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_02_08.do",
+      "label": "장학사업"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_02_09_01.do",
+      "label": "4·3희생자추념식"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_02_09_01.do",
+      "label": "2018년 70주년 추념식"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_02_09_02.do",
+      "label": "2019년 71주년 추념식"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_02_09_03.do",
+      "label": "2020년 72주년 추념식"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_02_09_04.do",
+      "label": "2021년 73주년 추념식"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_02_09_05.do",
+      "label": "2022년 74주년 추념식"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/bbs/BBSMSTR_000000000141/lst.do",
+      "label": "자료실1"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_02_11.do",
+      "label": "4·3유해발굴 및 신원확인"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_02_12.do",
+      "label": "4·3기록물 유네스코 세계기록유산 등재"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_03_01.do",
+      "label": "문화‧학술연구"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_03_01.do",
+      "label": "제주4·3 평화포럼"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_03_02.do",
+      "label": "4·3평화문학상"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_03_03.do",
+      "label": "전국청소년4·3문예공모"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_03_04.do",
+      "label": "학생4·3문예대회"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_03_05.do",
+      "label": "4·3 학술연구사업 공모"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_03_06.do",
+      "label": "제주4·3의 노래"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_03_07.do",
+      "label": "「4·3 70년, 어둠에서 빛으로」"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_03_08.do",
+      "label": "4·3영화제"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_03_09.do",
+      "label": "4·3언론상"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/bbs/BBSMSTR_000000000142/lst.do",
+      "label": "자료실2"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_04_01.do",
+      "label": "평화교육"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_04_01.do",
+      "label": "전국교원4·3직무연수"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_04_03.do",
+      "label": "시민4·3역사문화아카데미"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_04_04_01.do",
+      "label": "전국청소년4·3영어스피치대회"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_04_04_01.do",
+      "label": "대회소개"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_04_04_02.do",
+      "label": "제1회 대회"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_04_04_03.do",
+      "label": "제2회 대회 - 스케치"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_04_04_04.do",
+      "label": "제2회 대회 - 방송촬영"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_04_04_05.do",
+      "label": "제3회 대회 - 방송촬영"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_04_05.do",
+      "label": "전국청소년4·3평화캠프"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_04_08.do",
+      "label": "국내외대학생 4·3평화캠프"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_04_10.do",
+      "label": "4·3동백서포터즈"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/bbs/BBSMSTR_000000000143/lst.do",
+      "label": "자료실3"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_05_01.do",
+      "label": "평화교류"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_05_01.do",
+      "label": "제주4·3평화상"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_05_02.do",
+      "label": "국내외 평화교류"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub03_05_03.do",
+      "label": "2026 제10회 전국민주시민합창축전 in 제주"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/bbs/BBSMSTR_000000000144/lst.do",
+      "label": "자료실4"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub04_01.do",
+      "label": "4·3평화공원"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub04_01.do",
+      "label": "공원소개"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub04_02_01.do",
+      "label": "시설안내"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub04_02_01.do",
+      "label": "시설현황"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub04_02_02.do",
+      "label": "상징조형물"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub04_03.do",
+      "label": "해설영상"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/bbs/BBSMSTR_000000000051/lst.do",
+      "label": "온라인 추모관"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/bbs/BBSMSTR_000000000051/lst.do",
+      "label": "주요 참배객"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/memorial/list.do",
+      "label": "온라인 참배"
+    },
+    {
+      "url": "https://online.jeju43peace.or.kr/memorial/tablet.do",
+      "label": "희생자 검색-위패 찾기"
+    },
+    {
+      "url": "https://online.jeju43peace.or.kr/lost/tablet.do",
+      "label": "희생자 검색-행불인표석 찾기"
+    },
+    {
+      "url": "https://peace43.jeju.go.kr/",
+      "label": "4·3종합정보시스템"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub04_05.do",
+      "label": "찾아오시는 길"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/bbs/BBSMSTR_000000000191/lst.do",
+      "label": "방문후기"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub05_01.do",
+      "label": "4·3평화기념관"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub05_01.do",
+      "label": "기념관 소개"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub05_02_01_01.do",
+      "label": "상설전시"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub05_02_01_01.do",
+      "label": "상설전시실 해설영상"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub05_02_01_01.do",
+      "label": "한국어 영상"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub05_02_01_04.do",
+      "label": "영어 영상"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub05_02_01_05.do",
+      "label": "중국어 영상"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub05_02_01_06.do",
+      "label": "일본어 영상"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub05_02_01_07.do",
+      "label": "수어 영상"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub05_02_02.do",
+      "label": "상설전시실 안내도"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub05_02_03.do",
+      "label": "상설전시실 핸드북"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/display/list.do",
+      "label": "기획전시"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub05_04_01.do",
+      "label": "이용안내"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub05_04_01.do",
+      "label": "관람안내"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub05_04_02.do",
+      "label": "대관안내"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub05_04_04.do",
+      "label": "전시해설안내"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/exhibitexplan/select.do",
+      "label": "전시해설예약"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/exhibitexplan/select.do",
+      "label": "해설예약"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/exhibitexplan/select.do",
+      "label": "예약 조회 및 취소"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub06_01.do",
+      "label": "4·3어린이체험관"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub06_01.do",
+      "label": "체험관 소개"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub06_02_01.do",
+      "label": "체험 프로그램"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub06_02_01.do",
+      "label": "상설 체험 프로그램"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub06_02_02.do",
+      "label": "특별 체험 프로그램"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/kidexperience/1/selectGubun.do",
+      "label": "인터넷 사전예약"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/kidexperience/1/selectGubun.do",
+      "label": "사전예약"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/kidexperience/1/selectGubun.do",
+      "label": "사전예약"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/kidexperience/1/selectGubun.do",
+      "label": "예약조회 및 취소"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/onlineEdu/list.do",
+      "label": "여름방학 4·3어린이 독서 교실"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/onlineEdu/list.do",
+      "label": "프로그램예약"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/onlineEdu/list.do",
+      "label": "예약조회 및 취소"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/bbs/BBSMSTR_000000000041/lst.do",
+      "label": "체험후기"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub06_06.do",
+      "label": "이용안내"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub07_08.do",
+      "label": "제주4·3영화제"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub07_08.do",
+      "label": "제4회 제주 4·3영화제"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub07_09.do",
+      "label": "제주4·3영화제 소개"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/bbs/BBSMSTR_000000000211/lst.do",
+      "label": "영화제 소식"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub07_11_01.do",
+      "label": "영화제 아카이브"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub07_11_01.do",
+      "label": "제3회 제주 4·3영화제"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub07_11_02.do",
+      "label": "제2회 제주 4·3영화제"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub07_11_03.do",
+      "label": "제1회 제주 4·3영화제"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub09_01_01.do",
+      "label": "재단소개"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub09_01_01.do",
+      "label": "이사장소개"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub09_01_01.do",
+      "label": "인사말"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub09_01_02.do",
+      "label": "이사장 소개"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub09_01_03.do",
+      "label": "역대 이사장"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub09_02_01.do",
+      "label": "재단소개"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub09_02_01.do",
+      "label": "소개"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub09_02_02.do",
+      "label": "설립목적‧비전"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub09_02_03.do",
+      "label": "고객과의 약속"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub09_02_04.do",
+      "label": "연혁"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub09_02_05.do",
+      "label": "정관"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub09_02_06.do",
+      "label": "CI"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub09_02_07_01.do",
+      "label": "인권경영"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub09_02_07_01.do",
+      "label": "인권경영헌장"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub09_02_07_02.do",
+      "label": "인권경영규정"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub09_02_07_03.do",
+      "label": "인권경영 추진체계"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub09_02_07_04.do",
+      "label": "인권침해 구제절차"
+    },
+    {
+      "url": "https://www.humanrights.go.kr/base/main/view",
+      "label": "국가인권위원회 바로가기"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/department/ORGNZT_0000000000001/list.do",
+      "label": "조직도"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/donation/info.do",
+      "label": "기탁안내"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/donation/info.do",
+      "label": "기탁안내 및 지정기탁서 온라인 접수"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/bbs/BBSMSTR_000000000062/lst.do",
+      "label": "기탁금 사용내역"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub09_04_04.do",
+      "label": "자료기증"
+    },
+    {
+      "url": "https://www.open.go.kr/",
+      "label": "정보공개/공시"
+    },
+    {
+      "url": "https://www.open.go.kr/",
+      "label": "정보공개"
+    },
+    {
+      "url": "https://www.open.go.kr/",
+      "label": "정보공개청구"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub09_06_01_02.do",
+      "label": "공공데이터개방"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub09_06_02.do",
+      "label": "정보공개안내"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/bbs/BBSMSTR_000000000043/lst.do",
+      "label": "경영공시"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/bbs/BBSMSTR_000000000043/lst.do",
+      "label": "재정현황"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/bbs/BBSMSTR_000000000044/lst.do",
+      "label": "수의계약내역"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/bbs/BBSMSTR_000000000045/lst.do",
+      "label": "업무추진비내역"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/bbs/BBSMSTR_000000000047/lst.do",
+      "label": "경영실적 결과 및 감사 결과"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/bbs/BBSMSTR_000000000111/lst.do",
+      "label": "공무국외여행 결과보고서"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/bbs/BBSMSTR_000000000121/lst.do",
+      "label": "공공기관 임직원 친인척 채용 현황"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/bbs/BBSMSTR_000000000112/lst.do",
+      "label": "일자리 목표 공시"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/bbs/BBSMSTR_000000000145/lst.do",
+      "label": "경영목표 및 운영계획"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/bbs/BBSMSTR_000000000181/lst.do",
+      "label": "전년도 임원 및 인력현황"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/bbs/BBSMSTR_000000000201/lst.do",
+      "label": "인권영향평가"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/bbs/BBSMSTR_000000000221/lst.do",
+      "label": "기관장 직무성과계약"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/bbs/BBSMSTR_000000000231/lst.do",
+      "label": "상품권구매 및 사용내역"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/auth/content.do",
+      "label": "홈페이지 가이드"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/auth/content.do",
+      "label": "본인인증"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub14_02.do",
+      "label": "사이트맵"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub14_03.do",
+      "label": "개인정보취급방침"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub14_04.do",
+      "label": "영상정보처리기기 운영·관리방침"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub14_05.do",
+      "label": "이메일무단수집거부"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub14_06.do",
+      "label": "저작권정책"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_01.do",
+      "label": "제주4‧3의 역사"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_01_01.do",
+      "label": "제주4·3이란"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_01_02.do",
+      "label": "피해실태"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_01_03.do",
+      "label": "주요사건"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_01_04.do",
+      "label": "사건일지/경과개요"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_02.do",
+      "label": "4·3의 진실찾기"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_02_01.do",
+      "label": "진상규명운동사"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_02_02.do",
+      "label": "문화예술언론의 노력"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_02_03.do",
+      "label": "추모‧화해‧상생"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_02_04.do",
+      "label": "4‧3특별법 제정"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_01_01.do",
+      "label": "홍보영상"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_01_01.do",
+      "label": "재단 제작 4·3홍보영상"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_03.do",
+      "label": "창작오페라 '순이삼촌'"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_05_02.do",
+      "label": "4·3 70주년 홍보영상"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_06_01.do",
+      "label": "제1회 4·3과 평화 영상공모"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_07_02.do",
+      "label": "제2회 4·3과 평화 영상공모"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_10_01.do",
+      "label": "제3회 4·3과 평화 영상공모"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_03_11_01.do",
+      "label": "제4회 4·3과 평화 영상공모"
+    },
+    {
+      "url": "http://43archives.or.kr/main.do",
+      "label": "4·3아카이브"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_06_01_01.do",
+      "label": "4·3 길"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_06_01_01.do",
+      "label": "4·3길과 올레"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/ruins/list.do",
+      "label": "4·3유적"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_07.do",
+      "label": "4·3관련법령"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_08.do",
+      "label": "관련단체"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/",
+      "label": "홈"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_01_01.do",
+      "label": "제주4·3"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_06_01_01.do",
+      "label": "4·3 길"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/ruins/list.do",
+      "label": "4·3유적"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/ruins/list.do",
+      "label": "공유열기"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/ruins/list.do",
+      "label": "페이스북"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/ruins/list.do",
+      "label": "트위터"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/ruins/list.do",
+      "label": "블로그"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/ruins/list.do",
+      "label": "닫기"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/ruins/list.do",
+      "label": "print"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000000000996fCVUt&fileSn=0",
+      "label": "다운로드"
+    },
+    {
+      "url": "http://www.jibs.co.kr/tv/regularProgram/viewRegularProgramReplay?channelId=133",
+      "label": "방송 다시보기"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/ruins/list.do#tab01",
+      "label": "제주시"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/ruins/list.do#tab02",
+      "label": "서귀포시"
+    },
+    {
+      "url": "http://43archives.or.kr/events/history/history.do",
+      "label": "구좌읍 function fn_egov_deleteFile(atchFileId, fileSn) { forms = document.getElementsByTagName(\"form\"); for (var i = 0; i < forms.length; i++) { if (typeof(forms[i].atchFileId) != \"undefined\" && typeof(forms[i].fileSn) != \"undefined\" && typeof(forms[i].fileListCnt) != \"undefined\") { form = forms[i]; } } //form = document.forms[0]; form.atchFileId.value = atchFileId; form.fileSn.value = fileSn; form.action = \"/cmm/fms/deleteFileInfs.do\"; form.submit(); } 잃어버린마을 다랑쉬 잃어버린마을 다랑쉬다랑쉬오름을 등지고 있던 지금은 사라져 버려 사람도 집도 없이 황량함만 감도는 잃어버린 마을이다."
+    },
+    {
+      "url": "http://43archives.or.kr/events/history/history.do",
+      "label": "조천읍 function fn_egov_deleteFile(atchFileId, fileSn) { forms = document.getElementsByTagName(\"form\"); for (var i = 0; i < forms.length; i++) { if (typeof(forms[i].atchFileId) != \"undefined\" && typeof(forms[i].fileSn) != \"undefined\" && typeof(forms[i].fileListCnt) != \"undefined\") { form = forms[i]; } } //form = document.forms[0]; form.atchFileId.value = atchFileId; form.fileSn.value = fileSn; form.action = \"/cmm/fms/deleteFileInfs.do\"; form.submit(); } 조천중학원 옛터 조천중학원 옛터1946년 3월 지역유지들과 주민들의 자발적인 노력으로 설립되었으며, 교사들은 대부분 일본 등지에서 공부한 인재들이었다."
+    },
+    {
+      "url": "http://43archives.or.kr/events/history/history.do",
+      "label": "제주시 function fn_egov_deleteFile(atchFileId, fileSn) { forms = document.getElementsByTagName(\"form\"); for (var i = 0; i < forms.length; i++) { if (typeof(forms[i].atchFileId) != \"undefined\" && typeof(forms[i].fileSn) != \"undefined\" && typeof(forms[i].fileListCnt) != \"undefined\") { form = forms[i]; } } //form = document.forms[0]; form.atchFileId.value = atchFileId; form.fileSn.value = fileSn; form.action = \"/cmm/fms/deleteFileInfs.do\"; form.submit(); } 조일구락부 옛터 조일구락부 옛터당시 유일한 극장시설로 1947년 2월 23일, 이곳에서 민주주의민족전선(약칭 민전․民戰)제주도위원회가 결성됐다."
+    },
+    {
+      "url": "http://43archives.or.kr/events/history/history.do",
+      "label": "조천읍 function fn_egov_deleteFile(atchFileId, fileSn) { forms = document.getElementsByTagName(\"form\"); for (var i = 0; i < forms.length; i++) { if (typeof(forms[i].atchFileId) != \"undefined\" && typeof(forms[i].fileSn) != \"undefined\" && typeof(forms[i].fileListCnt) != \"undefined\") { form = forms[i]; } } //form = document.forms[0]; form.atchFileId.value = atchFileId; form.fileSn.value = fileSn; form.action = \"/cmm/fms/deleteFileInfs.do\"; form.submit(); } 선흘 낙선동 성터 선흘 낙선동 성터1948년 11월 20일 선흘리가 초토화작전으로 불타버리자 마을 주민들은 인근 선흘곶의 자연동굴이나 들판에 움막을 짓고 살았다."
+    },
+    {
+      "url": "http://43archives.or.kr/events/history/history.do",
+      "label": "제주시 function fn_egov_deleteFile(atchFileId, fileSn) { forms = document.getElementsByTagName(\"form\"); for (var i = 0; i < forms.length; i++) { if (typeof(forms[i].atchFileId) != \"undefined\" && typeof(forms[i].fileSn) != \"undefined\" && typeof(forms[i].fileListCnt) != \"undefined\") { form = forms[i]; } } //form = document.forms[0]; form.atchFileId.value = atchFileId; form.fileSn.value = fileSn; form.action = \"/cmm/fms/deleteFileInfs.do\"; form.submit(); } 관덕정 관덕정관덕정 광장은 제주 역사의 산 증인이다. 조선시대인 1448년 세워진 이래 제주 역사의 굴곡을 말없이 지켜보며 침묵으로 증언해주는 곳"
+    },
+    {
+      "url": "http://43archives.or.kr/events/history/history.do",
+      "label": "조천읍 function fn_egov_deleteFile(atchFileId, fileSn) { forms = document.getElementsByTagName(\"form\"); for (var i = 0; i < forms.length; i++) { if (typeof(forms[i].atchFileId) != \"undefined\" && typeof(forms[i].fileSn) != \"undefined\" && typeof(forms[i].fileListCnt) != \"undefined\") { form = forms[i]; } } //form = document.forms[0]; form.atchFileId.value = atchFileId; form.fileSn.value = fileSn; form.action = \"/cmm/fms/deleteFileInfs.do\"; form.submit(); } 너븐숭이 4·3기념관 너븐숭이 4·3기념관북촌리는 4·3 당시 450여명의 주민이 토벌대에 학살된, 제주도에서 가장 피해가 큰 마을이다."
+    },
+    {
+      "url": "http://43archives.or.kr/events/history/history.do",
+      "label": "한림읍 function fn_egov_deleteFile(atchFileId, fileSn) { forms = document.getElementsByTagName(\"form\"); for (var i = 0; i < forms.length; i++) { if (typeof(forms[i].atchFileId) != \"undefined\" && typeof(forms[i].fileSn) != \"undefined\" && typeof(forms[i].fileListCnt) != \"undefined\") { form = forms[i]; } } //form = document.forms[0]; form.atchFileId.value = atchFileId; form.fileSn.value = fileSn; form.action = \"/cmm/fms/deleteFileInfs.do\"; form.submit(); } 진아영할머니 삶터 진아영할머니 삶터4·3 당시 총탄에 맞아 한 평생을 턱 없이 살아온 故 진아영 할머니 삶터이다."
+    },
+    {
+      "url": "http://43archives.or.kr/events/history/history.do",
+      "label": "제주시 function fn_egov_deleteFile(atchFileId, fileSn) { forms = document.getElementsByTagName(\"form\"); for (var i = 0; i < forms.length; i++) { if (typeof(forms[i].atchFileId) != \"undefined\" && typeof(forms[i].fileSn) != \"undefined\" && typeof(forms[i].fileListCnt) != \"undefined\") { form = forms[i]; } } //form = document.forms[0]; form.atchFileId.value = atchFileId; form.fileSn.value = fileSn; form.action = \"/cmm/fms/deleteFileInfs.do\"; form.submit(); } 4·3해원방사탑 4·3해원방사탑1998년 4월 3일, 4·3 50주년을 맞아 「제50주년 제주4·3학술·문화사업추진위원회」에서 기념사업의 일환으로 세운 것이다."
+    },
+    {
+      "url": "http://43archives.or.kr/events/history/history.do",
+      "label": "제주시 function fn_egov_deleteFile(atchFileId, fileSn) { forms = document.getElementsByTagName(\"form\"); for (var i = 0; i < forms.length; i++) { if (typeof(forms[i].atchFileId) != \"undefined\" && typeof(forms[i].fileSn) != \"undefined\" && typeof(forms[i].fileListCnt) != \"undefined\") { form = forms[i]; } } //form = document.forms[0]; form.atchFileId.value = atchFileId; form.fileSn.value = fileSn; form.action = \"/cmm/fms/deleteFileInfs.do\"; form.submit(); } 북촌국민학교 북촌국민학교북촌국민학교는 4·3 당시 최대의 피해마을인 북촌리 학살의 상징으로 남아있다."
+    },
+    {
+      "url": "http://43archives.or.kr/events/history/history.do",
+      "label": "제주시 function fn_egov_deleteFile(atchFileId, fileSn) { forms = document.getElementsByTagName(\"form\"); for (var i = 0; i < forms.length; i++) { if (typeof(forms[i].atchFileId) != \"undefined\" && typeof(forms[i].fileSn) != \"undefined\" && typeof(forms[i].fileListCnt) != \"undefined\") { form = forms[i]; } } //form = document.forms[0]; form.atchFileId.value = atchFileId; form.fileSn.value = fileSn; form.action = \"/cmm/fms/deleteFileInfs.do\"; form.submit(); } 제주4·3평화공원 제주4·3평화공원4･3사건 희생자의 넋을 위령하고 유족들의 아픈 마음을 위로하는 위령･추모의 장, 평화･인권･교육의 장"
+    },
+    {
+      "url": "http://43archives.or.kr/events/history/history.do",
+      "label": "제주시 function fn_egov_deleteFile(atchFileId, fileSn) { forms = document.getElementsByTagName(\"form\"); for (var i = 0; i < forms.length; i++) { if (typeof(forms[i].atchFileId) != \"undefined\" && typeof(forms[i].fileSn) != \"undefined\" && typeof(forms[i].fileListCnt) != \"undefined\") { form = forms[i]; } } //form = document.forms[0]; form.atchFileId.value = atchFileId; form.fileSn.value = fileSn; form.action = \"/cmm/fms/deleteFileInfs.do\"; form.submit(); } 주정공장(동척회사) 옛터 주정공장(동척회사) 옛터1934년 일제에 의해 설립된 동양척식주식회사(약칭 동척회사) 제주주정공장은 해방전후 제주도의 주요한 산업시설이었다."
+    },
+    {
+      "url": "http://43archives.or.kr/events/history/history.do",
+      "label": "애월읍 function fn_egov_deleteFile(atchFileId, fileSn) { forms = document.getElementsByTagName(\"form\"); for (var i = 0; i < forms.length; i++) { if (typeof(forms[i].atchFileId) != \"undefined\" && typeof(forms[i].fileSn) != \"undefined\" && typeof(forms[i].fileListCnt) != \"undefined\") { form = forms[i]; } } //form = document.forms[0]; form.atchFileId.value = atchFileId; form.fileSn.value = fileSn; form.action = \"/cmm/fms/deleteFileInfs.do\"; form.submit(); } 잃어버린 마을 자리왓 잃어버린 마을 자리왓제주시 애월읍 봉성리의 자리왓 중앙에는 4·3 당시의 비극과 폐허가 된 대지의 무상함을 전해주듯 건장하게 서 있다."
+    },
+    {
+      "url": "http://43archives.or.kr/events/history/history.do",
+      "label": "제주시 function fn_egov_deleteFile(atchFileId, fileSn) { forms = document.getElementsByTagName(\"form\"); for (var i = 0; i < forms.length; i++) { if (typeof(forms[i].atchFileId) != \"undefined\" && typeof(forms[i].fileSn) != \"undefined\" && typeof(forms[i].fileListCnt) != \"undefined\") { form = forms[i]; } } //form = document.forms[0]; form.atchFileId.value = atchFileId; form.fileSn.value = fileSn; form.action = \"/cmm/fms/deleteFileInfs.do\"; form.submit(); } 제주시 충혼묘지 제주시 충혼묘지4·3과 한국전쟁을 전후한 시기에 희생된 군 전사자와 경찰 전사자들의 유해가 안장되어 있는 곳"
+    },
+    {
+      "url": "http://43archives.or.kr/events/history/history.do",
+      "label": "한림읍 function fn_egov_deleteFile(atchFileId, fileSn) { forms = document.getElementsByTagName(\"form\"); for (var i = 0; i < forms.length; i++) { if (typeof(forms[i].atchFileId) != \"undefined\" && typeof(forms[i].fileSn) != \"undefined\" && typeof(forms[i].fileListCnt) != \"undefined\") { form = forms[i]; } } //form = document.forms[0]; form.atchFileId.value = atchFileId; form.fileSn.value = fileSn; form.action = \"/cmm/fms/deleteFileInfs.do\"; form.submit(); } 만벵듸 공동장지 만벵듸 공동장지1950년 음력 7월 7일 모슬포 섯알오름 탄약고터에서 집단학살된 민간인들을 매장한 곳"
+    },
+    {
+      "url": "http://43archives.or.kr/events/history/history.do",
+      "label": "안덕면 function fn_egov_deleteFile(atchFileId, fileSn) { forms = document.getElementsByTagName(\"form\"); for (var i = 0; i < forms.length; i++) { if (typeof(forms[i].atchFileId) != \"undefined\" && typeof(forms[i].fileSn) != \"undefined\" && typeof(forms[i].fileListCnt) != \"undefined\") { form = forms[i]; } } //form = document.forms[0]; form.atchFileId.value = atchFileId; form.fileSn.value = fileSn; form.action = \"/cmm/fms/deleteFileInfs.do\"; form.submit(); } 삼밭구석 삼밭구석동광리 하동인 삼밧구석은 삼을 재배하던 마을이라 하여 삼밧구석이라고 이름 붙여진 마을이다."
+    },
+    {
+      "url": "http://43archives.or.kr/events/history/history.do",
+      "label": "안덕면 function fn_egov_deleteFile(atchFileId, fileSn) { forms = document.getElementsByTagName(\"form\"); for (var i = 0; i < forms.length; i++) { if (typeof(forms[i].atchFileId) != \"undefined\" && typeof(forms[i].fileSn) != \"undefined\" && typeof(forms[i].fileListCnt) != \"undefined\") { form = forms[i]; } } //form = document.forms[0]; form.atchFileId.value = atchFileId; form.fileSn.value = fileSn; form.action = \"/cmm/fms/deleteFileInfs.do\"; form.submit(); } 큰넓궤 큰넓궤동광리의 큰넓궤와 도엣궤는 동광목장 안에 있는 용암동굴로 1948년 11월 중순 이후 동광 주민들이 2개월 가량 집단적으로 은신생활을 했던 곳"
+    },
+    {
+      "url": "http://43archives.or.kr/events/history/history.do",
+      "label": "서귀포 function fn_egov_deleteFile(atchFileId, fileSn) { forms = document.getElementsByTagName(\"form\"); for (var i = 0; i < forms.length; i++) { if (typeof(forms[i].atchFileId) != \"undefined\" && typeof(forms[i].fileSn) != \"undefined\" && typeof(forms[i].fileListCnt) != \"undefined\") { form = forms[i]; } } //form = document.forms[0]; form.atchFileId.value = atchFileId; form.fileSn.value = fileSn; form.action = \"/cmm/fms/deleteFileInfs.do\"; form.submit(); } 영남동 영남동4·3 때 토벌대의 초토화작전으로 제주도내 많은 중산간 마을들이 피해를 입었고 그 가운데는 없어져 버린 마을 중 하나"
+    },
+    {
+      "url": "http://43archives.or.kr/events/history/history.do",
+      "label": "남원읍 function fn_egov_deleteFile(atchFileId, fileSn) { forms = document.getElementsByTagName(\"form\"); for (var i = 0; i < forms.length; i++) { if (typeof(forms[i].atchFileId) != \"undefined\" && typeof(forms[i].fileSn) != \"undefined\" && typeof(forms[i].fileListCnt) != \"undefined\") { form = forms[i]; } } //form = document.forms[0]; form.atchFileId.value = atchFileId; form.fileSn.value = fileSn; form.action = \"/cmm/fms/deleteFileInfs.do\"; form.submit(); } 송령이골 송령이골1040년 1월 12일 의귀국민학교 교전에서 마당한 무장대의 시신이 집단매장된 곳이다."
+    },
+    {
+      "url": "http://43archives.or.kr/events/history/history.do",
+      "label": "성산읍 function fn_egov_deleteFile(atchFileId, fileSn) { forms = document.getElementsByTagName(\"form\"); for (var i = 0; i < forms.length; i++) { if (typeof(forms[i].atchFileId) != \"undefined\" && typeof(forms[i].fileSn) != \"undefined\" && typeof(forms[i].fileListCnt) != \"undefined\") { form = forms[i]; } } //form = document.forms[0]; form.atchFileId.value = atchFileId; form.fileSn.value = fileSn; form.action = \"/cmm/fms/deleteFileInfs.do\"; form.submit(); } 성산읍 4·3위령공원 성산읍 4·3위령공원성산국민학교에 주둔했던 서청 특별중대에 끌려온 성산면, 구좌면 관내 주민들이 감자공장 창고에 수감되어 고문당하다 총살됐던 학살터"
+    },
+    {
+      "url": "http://43archives.or.kr/events/history/history.do",
+      "label": "표선면 function fn_egov_deleteFile(atchFileId, fileSn) { forms = document.getElementsByTagName(\"form\"); for (var i = 0; i < forms.length; i++) { if (typeof(forms[i].atchFileId) != \"undefined\" && typeof(forms[i].fileSn) != \"undefined\" && typeof(forms[i].fileListCnt) != \"undefined\") { form = forms[i]; } } //form = document.forms[0]; form.atchFileId.value = atchFileId; form.fileSn.value = fileSn; form.action = \"/cmm/fms/deleteFileInfs.do\"; form.submit(); } 학살터 한모살 학살터 한모살한모살은 ‘당캐, 표선 백사장’등으로도 불리는 넓은 모래사장이 펼쳐진 표선면 바닷가를 지칭하는 말이다."
+    },
+    {
+      "url": "http://43archives.or.kr/events/history/history.do",
+      "label": "서귀포 function fn_egov_deleteFile(atchFileId, fileSn) { forms = document.getElementsByTagName(\"form\"); for (var i = 0; i < forms.length; i++) { if (typeof(forms[i].atchFileId) != \"undefined\" && typeof(forms[i].fileSn) != \"undefined\" && typeof(forms[i].fileListCnt) != \"undefined\") { form = forms[i]; } } //form = document.forms[0]; form.atchFileId.value = atchFileId; form.fileSn.value = fileSn; form.action = \"/cmm/fms/deleteFileInfs.do\"; form.submit(); } 현의합장묘역 현의합장묘역현의합장묘는 2003년 9월 옛 묘역에 있던 시신들을 발굴, 옮겨 안장한 곳이다."
+    },
+    {
+      "url": "http://43archives.or.kr/events/history/history.do",
+      "label": "서귀포 function fn_egov_deleteFile(atchFileId, fileSn) { forms = document.getElementsByTagName(\"form\"); for (var i = 0; i < forms.length; i++) { if (typeof(forms[i].atchFileId) != \"undefined\" && typeof(forms[i].fileSn) != \"undefined\" && typeof(forms[i].fileListCnt) != \"undefined\") { form = forms[i]; } } //form = document.forms[0]; form.atchFileId.value = atchFileId; form.fileSn.value = fileSn; form.action = \"/cmm/fms/deleteFileInfs.do\"; form.submit(); } 잃어버린 마을 무등이왓 잃어버린 마을 무등이왓300여 년 전에 설촌된 화전마을로 1948년 11월 초토화작전 이후 뿔뿔이 흩어져 숨어살던 무등이왓 주민들은 하나둘 토벌대에 희생되었다."
+    },
+    {
+      "url": "http://43archives.or.kr/events/history/history.do",
+      "label": "서귀포 function fn_egov_deleteFile(atchFileId, fileSn) { forms = document.getElementsByTagName(\"form\"); for (var i = 0; i < forms.length; i++) { if (typeof(forms[i].atchFileId) != \"undefined\" && typeof(forms[i].fileSn) != \"undefined\" && typeof(forms[i].fileListCnt) != \"undefined\") { form = forms[i]; } } //form = document.forms[0]; form.atchFileId.value = atchFileId; form.fileSn.value = fileSn; form.action = \"/cmm/fms/deleteFileInfs.do\"; form.submit(); } 정방폭포 정방폭포정방폭포 ‘소남머리’는 정보과에서 취조 받은 주민들 중, 즉결처형 대상자들 대부분이 희생당한 곳이다."
+    },
+    {
+      "url": "http://43archives.or.kr/events/history/history.do",
+      "label": "대정읍 function fn_egov_deleteFile(atchFileId, fileSn) { forms = document.getElementsByTagName(\"form\"); for (var i = 0; i < forms.length; i++) { if (typeof(forms[i].atchFileId) != \"undefined\" && typeof(forms[i].fileSn) != \"undefined\" && typeof(forms[i].fileListCnt) != \"undefined\") { form = forms[i]; } } //form = document.forms[0]; form.atchFileId.value = atchFileId; form.fileSn.value = fileSn; form.action = \"/cmm/fms/deleteFileInfs.do\"; form.submit(); } 백조일손지지 백조일손지지섯알오름에서 할살된 132명의 유해가 모셔져 있는 곳"
+    },
+    {
+      "url": "http://43archives.or.kr/events/history/history.do",
+      "label": "대정읍 function fn_egov_deleteFile(atchFileId, fileSn) { forms = document.getElementsByTagName(\"form\"); for (var i = 0; i < forms.length; i++) { if (typeof(forms[i].atchFileId) != \"undefined\" && typeof(forms[i].fileSn) != \"undefined\" && typeof(forms[i].fileListCnt) != \"undefined\") { form = forms[i]; } } //form = document.forms[0]; form.atchFileId.value = atchFileId; form.fileSn.value = fileSn; form.action = \"/cmm/fms/deleteFileInfs.do\"; form.submit(); } 학살터 섯알오름 학살터 섯알오름한국전쟁 발발 직후 모슬포를 중심으로 한 서부지역의 예비검속자들이 집단 학살된 장소"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub01_01_01.do",
+      "label": "제주4·3"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/organ/list.do",
+      "label": "재단기관지"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/newsletter/list.do",
+      "label": "뉴스레터"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/victimSearch/list.do",
+      "label": "온라인추모관"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub14_03.do",
+      "label": "개인정보처리방침"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub14_04.do",
+      "label": "영상정보처리기기 운영·관리방침"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/sub04_05.do",
+      "label": "찾아오시는길"
+    },
+    {
+      "url": "https://jeju43peace.or.kr/kor/ruins/list.do",
+      "label": "관련사이트"
+    },
+    {
+      "url": "http://www.jeju43.com/",
+      "label": "제주4·3희생자유족회"
+    },
+    {
+      "url": "http://www.jeju43.org/",
+      "label": "4·3연구소"
+    },
+    {
+      "url": "http://medi.jeju43peace.or.kr/",
+      "label": "제주4·3진료비지원시스템"
+    },
+    {
+      "url": "http://43archives.or.kr/main.do",
+      "label": "제주4·3아카이브"
+    },
+    {
+      "url": "https://www.mois.go.kr/frt/a01/frtMain.do",
+      "label": "행정안전부"
+    },
+    {
+      "url": "http://www.jeju.go.kr/index.htm",
+      "label": "제주특별자치도"
+    },
+    {
+      "url": "http://www.council.jeju.kr/index.do",
+      "label": "제주특별자치도의회"
+    },
+    {
+      "url": "http://www.jje.go.kr/index.jje",
+      "label": "제주특별자치도교육청"
+    },
+    {
+      "url": "http://www.kdemo.or.kr/",
+      "label": "민주화운동기념사업회"
+    },
+    {
+      "url": "http://www.518.org/",
+      "label": "5·18기념재단"
+    },
+    {
+      "url": "http://www.ohminju.or.kr/",
+      "label": "부산민주항쟁기념사업회"
+    },
+    {
+      "url": "http://yd21.go.kr/nogunri/",
+      "label": "노근리국제평화재단"
+    },
+    {
+      "url": "http://www.228.org.tw/",
+      "label": "228사건기념기금회"
+    },
+    {
+      "url": "https://www.nhrm.gov.tw/",
+      "label": "국가인권박물관주비처"
+    },
+    {
+      "url": "http://www.peace-museum.okinawa.jp/",
+      "label": "오키나와평화기념자료관"
+    },
+    {
+      "url": "http://hpmmuseum.jp/",
+      "label": "히로시마평화기념자료관"
+    },
+    {
+      "url": "https://www.tamna.or.kr/",
+      "label": "제주도 탐라교육원"
+    },
+    {
+      "url": "http://www.jewfri.kr/",
+      "label": "제주여성가족연구원"
+    },
+    {
+      "url": "http://ymca.jejuymca.kr/",
+      "label": "제주YMCA"
+    },
+    {
+      "url": "http://www.much.go.kr/",
+      "label": "대한민국역사박물관"
+    },
+    {
+      "url": "http://www.kncc.or.kr/",
+      "label": "한국기독교교회협의회"
+    },
+    {
+      "url": "https://www.jinsil.go.kr/",
+      "label": "진실·화해를위한과거사 정리위원회"
+    }
+  ]
+}

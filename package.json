@@ -1,6 +1,1 @@
-{
-  "name": "ai-tiger-history-colloquium",
-  "version": "2.2.0",
-  "private": true,
-  "type": "module"
-}
+{"name":"trc-colloquium-workbench","private":true,"type":"module","scripts":{"check":"node tools/check.mjs"}}
