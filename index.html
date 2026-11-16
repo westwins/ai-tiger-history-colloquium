@@ -25,6 +25,38 @@
       box-shadow: 0 0 80px rgba(0, 195, 255, 0.18), 0 0 140px rgba(245, 158, 11, 0.12);
       cursor: pointer;
     }
+
+    #thesis-banner {
+      position: fixed; top: 18px; left: 18px; max-width: 430px;
+      background: rgba(7, 11, 20, 0.84);
+      border: 1px solid rgba(237, 191, 115, 0.42);
+      backdrop-filter: blur(10px);
+      padding: 14px 18px; border-radius: 10px;
+      color: #f8fafc; z-index: 25; line-height: 1.55;
+    }
+    #thesis-banner .kicker {
+      font-size: 10px; letter-spacing: 1.6px; text-transform: uppercase;
+      color: #edbf73; font-weight: 800; display: block; margin-bottom: 4px;
+    }
+    #thesis-banner h1 {
+      font-size: 16px; font-weight: 800; margin-bottom: 6px; color: #fff;
+    }
+    #thesis-banner p {
+      font-size: 12px; color: #cbd5e1;
+    }
+
+    .launch-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 11px; }
+    .launch-btn {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 7px 13px; border-radius: 7px; font-size: 12px; font-weight: 800;
+      text-decoration: none; transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+    .launch-btn:hover { transform: translateY(-1px); opacity: 0.94; }
+    .launch-btn.primary { background: #edbf73; color: #091520; }
+    .launch-btn.secondary { background: rgba(30, 41, 59, 0.92); color: #e2e8f0; border: 1px solid rgba(56, 189, 248, 0.45); }
+
+    #hud { opacity: 0.92; }
+
     #hud {
       position: fixed; bottom: 18px; right: 18px;
       display: flex; gap: 8px; align-items: center;
@@ -50,6 +82,18 @@
   </style>
 </head>
 <body>
+
+  <div id="thesis-banner">
+    <span class="kicker">제136차 서울대 역사연구소 월례집담회 · 짚인간 회로</span>
+    <h1>인문학자의 시선·모델 ↔ 0비용 오토마타 채널</h1>
+    <p><b style="color:#38bdf8">파란선(정방향 지휘)</b>: 머릿속 시선·모델을 오토마타로 육화해 시각화·질의·시뮬레이션·산학화로 <b>확대</b><br>
+       <b style="color:#fbbf24">주황선(역방향 2차 사이버네틱스)</b>: 소프트웨어의 검증 결과를 되돌려 내 시선의 빈틈과 편향을 <b>심화·보정</b></p>
+    <div class="launch-row">
+      <a class="launch-btn primary" href="./workbench.html">🚀 6대 필드 워크벤치 열기 (GitHub Pages)</a>
+      <a class="launch-btn secondary" href="https://trc.soohwalee.com/" target="_blank" rel="noopener">🌐 오라클 실서버 (trc.soohwalee.com) ↗</a>
+    </div>
+  </div>
+
   <div id="stage">
     <canvas id="posterCanvas" width="896" height="1200" onclick="toggleFullscreen()"></canvas>
   </div>
@@ -57,6 +101,7 @@
   <div id="hud">
     <span><i class="legend-dot" style="background:#22d3ee; box-shadow:0 0 8px #22d3ee;"></i>파란선: 지휘(정방향)</span>
     <span style="margin-left:8px;"><i class="legend-dot" style="background:#f59e0b; box-shadow:0 0 8px #f59e0b;"></i>주황선: 2차 사이버네틱스(역방향)</span>
+    <a class="btn" style="text-decoration:none;border-color:#edbf7388;color:#edbf73" href="./workbench.html">워크벤치 열기 ↗</a>
     <button class="btn" onclick="toggleFullscreen()">전체화면</button>
   </div>
 

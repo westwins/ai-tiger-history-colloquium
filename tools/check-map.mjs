@@ -1,0 +1,17 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {filterRecords,recordPoints,clusterPoints,groupRecords,csvRecords} from '../frontend/map-engine.mjs';
+const rows=[{incident_id:'a',event_year:1973,victim_or_site_name:'A',lat_start:1,lng_start:2,coordinate_precision:'exact',places:[{ordinal:1,latitude:1,longitude:2,coordinate_precision:'exact'},{ordinal:2,latitude:2,longitude:3,coordinate_precision:'approximate'}]},{incident_id:'b',event_year:null,victim_or_site_name:'B',lat_start:null,lng_start:null,region_key:'R',places:[{ordinal:2,latitude:1,longitude:2,coordinate_precision:'approximate'}]}];
+const options={allDates:true,includeUnknown:true,locationMode:'first',precision:'all'};
+assert.equal(filterRecords(rows,options).length,2);
+assert.equal(filterRecords(rows,{...options,allDates:false,year:1973,includeUnknown:false}).length,1);
+assert.equal(filterRecords(rows,{...options,allDates:false,year:1974,includeUnknown:false,cumulative:false}).length,0);
+assert.equal(recordPoints(rows[1],options).length,0,'Missing first coordinate must not become 0,0 or another place');
+assert.equal(recordPoints(rows[1],{...options,locationMode:'all'}).length,1);
+const points=rows.flatMap(r=>recordPoints(r,{...options,locationMode:'all'}));
+const bins=clusterPoints(points,p=>({x:p.lng,y:p.lat}),100);
+assert.equal(bins[0].items.length,3);assert.equal(bins[0].records.length,2,'Multiple places for one person are not multiple people');
+assert.equal(groupRecords(rows,{R:{label:'regional reference'}})[0].records.length,1);
+const csv=csvRecords([{...rows[0],victim_or_site_name:'=BAD()',lat_start:-33}]);
+assert.ok(csv.includes("'=BAD()"));assert.ok(csv.includes('"-33"'),'Numeric coordinates must remain numeric values');
+console.log('Map filters, missing coordinates, place selection, cluster deduplication, region grouping and CSV escaping passed.');
