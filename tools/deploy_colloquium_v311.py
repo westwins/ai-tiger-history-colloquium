@@ -6,6 +6,7 @@ Supports --check-only. Refuses to overwrite source changed since review.
 import argparse
 import hashlib
 import json
+import os
 from pathlib import Path
 import shutil
 import subprocess
@@ -62,6 +63,9 @@ def main():
             raise RuntimeError(f'Invalid/missing staged file: {relative}')
         if digest(destination) != expected:
             raise RuntimeError(f'Source changed since review: {relative}; inspect before deploying')
+        writable = destination if destination.exists() else destination.parent
+        if not os.access(writable, os.W_OK):
+            raise RuntimeError(f'Cannot write {relative}; run with the installation owner or sudo before changing any files')
     expected_hashes = {rel: digest(STAGE/rel) for rel in BEFORE}
     if args.check_only:
         print(json.dumps({'preflight':'passed','files':len(BEFORE)}))
