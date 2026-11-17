@@ -1,5 +1,5 @@
-import {escapeHtml as E} from './research-engine.mjs?v=20261117.31';
-import {knownYear,filterRecords,recordPoints,clusterPoints,groupRecords,csvRecords} from './map-engine.mjs?v=20261117.31';
+import {escapeHtml as E} from './research-engine.mjs?v=20261117.311';
+import {knownYear,filterRecords,recordPoints,clusterPoints,groupRecords,csvRecords} from './map-engine.mjs?v=20261117.311';
 
 const $ = s => document.querySelector(s);
 const fmt = n => Number(n || 0).toLocaleString('ko-KR');
@@ -104,7 +104,7 @@ export function archiveRecordHTML(r) {
   return `<div class="source-pill">${E(layerLabel)}</div>
     <h2>${E(r.victim_or_site_name)}</h2>
     ${r.artwork_src ? `<div class="artwork-card"><img src="${E(r.artwork_src)}" alt="고순자 할머니 무지개 그림" onclick="window.openRainbowEpilogue&&window.openRainbowEpilogue()"><div class="artwork-verse">${E(r.artwork_inscription||"")}</div><small style="display:block;margin-top:6px;color:#cbd5e1">클릭하면 〈국토종단 · 무지개 에필로그〉 전체화면이 열립니다 ↗</small></div>` : ""}
-    ${r.victim_count ? `<div style="background:#0c1b2a;color:#67e8f9;padding:10px 13px;border-radius:6px;margin:10px 0;font-size:13px">공식 보고서 확인 인명피해·규모: <strong style="font-size:20px;color:#edbf73">${fmt(r.victim_count)}명</strong></div>` : ''}
+    ${r.victim_count ? `<div style="background:#0c1b2a;color:#67e8f9;padding:10px 13px;border-radius:6px;margin:10px 0;font-size:13px">이 기록의 출처별 집계 규모: <strong style="font-size:20px;color:#edbf73">${fmt(r.victim_count)}명</strong></div>` : ''}
     <dl>
       <dt>출처</dt><dd>${E(r.source_title)}</dd>
       <dt>시기·일자</dt><dd>${E(r.date_display || r.event_date || '미상')}</dd>
@@ -130,7 +130,7 @@ export function archiveMapShell() {
   <div class="hgis-mode-bar" role="region" aria-label="HGIS 시각화 엔진 선택">
     <div class="hgis-mode-tabs">
       <button type="button" data-hgis-mode="heatmap" class="active">🔥 네온 히트맵 (Slide 8 KDE)</button>
-      <button type="button" data-hgis-mode="pillars3d">🧊 3D 시공간 프리즘 (Orbit)</button>
+      <button type="button" data-hgis-mode="pillars3d">🧊 3D 공간 프리즘 (규모 높이)</button>
       <button type="button" data-hgis-mode="arcs">🏹 강제이송·실종 아크</button>
       <button type="button" data-hgis-mode="dual">🖼️ 슬라이드 8 듀얼 비교</button>
       <button type="button" data-hgis-mode="clusters">💠 정밀도 클러스터</button>
@@ -143,14 +143,14 @@ export function archiveMapShell() {
   </div>
   <div class="jeju-layer-bar" id="jeju-layer-bar" hidden>
     <span>제주 4·3 조사 계층:</span>
-    <button type="button" data-jeju-layer="all" class="active">전체 통합</button>
+    <button type="button" data-jeju-layer="all" class="active">전체 계층 (합산 금지)</button>
     <button type="button" data-jeju-layer="massacre_village">주요 학살터·마을 (27곳)</button>
-    <button type="button" data-jeju-layer="eup_myeon_stat">12개 읍·면 통계 (14,028명)</button>
+    <button type="button" data-jeju-layer="eup_myeon_stat">12개 읍·면 입력 집계</button>
     <button type="button" data-jeju-layer="mainland_prison">본토 9대 형무소 이송 (2,530명)</button>
     <button type="button" data-jeju-layer="archive_site">공식 유적 (60곳)</button>
     <button type="button" class="rainbow-chip" data-jeju-layer="memory_sublimation">🌈 선흘리 무지개할망</button>
   </div>
-  <div id="archive-time-controls"></div>
+  <p class="note" id="hgis-reading-note">KDE 반경은 화면 픽셀, 3D 높이는 공간별 규모의 로그값입니다. 전체 계층의 규모는 중복될 수 있어 고유 인원으로 합산하지 않습니다. 이송 아크는 출발·도착 연결이며 실제 이동 경로·속도가 아닙니다. 듀얼 뷰의 색·높이는 국가 간 절대 피해 규모 비교용이 아닙니다.</p><div id="archive-time-controls"></div>
   <div class="archive-map-toolbar">
     <form id="archive-search" class="search-form"><input id="archive-search-input" aria-label="지도 기록 검색" placeholder="이름·마을·학살터·형무소 검색"><button class="btn small" type="submit">검색</button></form>
     <label id="archive-view-wrap">집계 <select id="archive-view" aria-label="지도 표시 방식"></select></label>
@@ -255,7 +255,7 @@ export function mountArchiveMap({ options, getData, getJSON, apiBase, onMap, onS
       <dl>
         <dt>유형별 공식 결정 (2026.04)</dt>
         <dd>사망 ${fmt(10753)} · 행방불명 ${fmt(3796)} · 수형인 ${fmt(445)} · 후유장애 ${fmt(224)}</dd>
-        <dt>가해주체 비율 (2003 보고서 14,028명)</dt>
+        <dt>읍·면 입력값과 보고서 총계</dt><dd>${fmt(data.rows.filter(r=>r.record_layer==='eup_myeon_stat').reduce((n,r)=>n+r.victim_count,0))}명 / ${fmt(s.report_2003_total)}명 · 차이 87명 원인 확인 중</dd><dt>가해주체 비율 (2003 보고서 14,028명)</dt>
         <dd>토벌대 78.1%(공란 제외 86.1%) · 무장대 12.6% · 미상 9.3%</dd>
         <dt>불법 군법회의 수형인 (2,530명)</dt>
         <dd>사형 384 · 옥중사망 310 · 전쟁 직후 본토 형무소 행불 1,763명</dd>
@@ -337,7 +337,7 @@ export function mountArchiveMap({ options, getData, getJSON, apiBase, onMap, onS
         ${!isCHL ? `<button type="button" id="orbit-jeju-focus" class="${!showMainland ? 'active' : ''}">제주 본섬 집중</button><button type="button" id="orbit-mainland-focus" class="${showMainland ? 'active' : ''}">제주→본토 형무소 이송망</button>` : ''}
       </div>
       <canvas id="hgis-3d-canvas"></canvas>
-      <div class="hgis-3d-hint">🖱️ 마우스 드래그: 360° 회전·기울기 조절 · 휠: 확대/축소 · 기둥 클릭: 우측 원자료 상세 보기</div>`;
+      <div class="hgis-3d-hint">🖱️ 마우스 드래그: 360° 회전·기울기 조절 · 휠: 확대/축소 · 기둥 클릭: 원자료 · 높이: log10(규모+1), 연도축 아님</div>`;
     const cvs = $('#hgis-3d-canvas');
     const rect = stage.getBoundingClientRect();
     cvs.width = Math.max(600, Math.floor(rect.width));
@@ -536,7 +536,7 @@ export function mountArchiveMap({ options, getData, getJSON, apiBase, onMap, onS
     stage.innerHTML = `
       <div class="dual-stage">
         <div class="dual-pane"><canvas id="dual-chl"></canvas><div class="dual-pane-head"><strong>칠레 피노체트 정권 희생자 시공간 밀도</strong>Freire 2,398명(좌표 2,109 · 결측 289) · MMDH 3,216명</div></div>
-        <div class="dual-pane"><canvas id="dual-kor"></canvas><div class="dual-pane-head"><strong>제주 4·3 진상조사 피해 밀도 (Slide 8 확장)</strong>2026 공식 결정 15,218명 · 읍면(14,028) · 주요 학살터·본토 형무소(2,530명)</div></div>
+        <div class="dual-pane"><canvas id="dual-kor"></canvas><div class="dual-pane-head"><strong>제주 4·3 진상조사 피해 밀도 (Slide 8 확장)</strong>2026 공식 결정 15,218명 · 읍면 입력합 13,941 (총계와 87 차이) · 주요 학살터·본토 형무소(2,530명)</div></div>
       </div>`;
     const c1 = $('#dual-chl'), c2 = $('#dual-kor');
     const r1 = c1.parentElement.getBoundingClientRect(), r2 = c2.parentElement.getBoundingClientRect();
@@ -567,7 +567,7 @@ export function mountArchiveMap({ options, getData, getJSON, apiBase, onMap, onS
       <div class="xray-stage">
         <div class="eyebrow" style="color:#67e8f9">Missing Data as Historical Evidence · 결측(침묵) 구조 해부</div>
         <h2 style="color:#fff;font-size:22px;margin-bottom:6px">${isKOR ? '제주 4·3 기록의 계층별 공백과 본토 행방불명 구조' : '칠레 레티그·MMDH 사료의 좌표·일자 결측 프로파일'}</h2>
-        <p style="font-size:12.5px;color:#cbd5e1">결측치를 임의 추정으로 메우거나 삭제하지 않고, <b>왜 좌표와 날짜가 비어 있는지(강제실종·수장·연좌제 침묵·초토화)</b> 자체를 계량합니다.</p>
+        <p style="font-size:12.5px;color:#cbd5e1">결측치를 임의 추정으로 메우거나 삭제하지 않고, <b>좌표·날짜의 결측 규모</b>를 표시합니다. 결측 원인은 추가 사료비판의 대상이며 자동으로 판정하지 않습니다.</p>
         <div class="xray-bar">
           <span style="width:${(withCoord / Math.max(1, total) * 100).toFixed(1)}%;background:#06b6d4" title="좌표 확인"></span>
           <span style="width:${(noCoord / Math.max(1, total) * 100).toFixed(1)}%;background:#f43f5e" title="좌표 결측"></span>
@@ -576,13 +576,13 @@ export function mountArchiveMap({ options, getData, getJSON, apiBase, onMap, onS
           ${isKOR ? `
             <div class="xray-card"><strong>3,796명 (24.9%)</strong><span>공식 결정 15,218명 중 행방불명 희생자 (정뜨르·섯알오름·본토 형무소 암매장·해상 수장)</span></div>
             <div class="xray-card"><strong>1,763명 / 2,530명</strong><span>불법 군법회의 수형인 중 한국전쟁 발발 직후 본토 15개 형무소에서 행방불명된 인원 (69.7%)</span></div>
-            <div class="xray-card"><strong>~14,780명 공백</strong><span>정부 추산 최대 피해(30,000명) 대비 2026년 공식 확정(15,218명) 사이의 일가 절멸(절손)·미신고 간극</span></div>
+            <div class="xray-card"><strong>14,782명 산술 차이</strong><span>추정 범위 상단 30,000 − 공식 결정 15,218. 별도로 확인된 미신고자 명단이 아니며 공백의 원인은 추가 검증 대상입니다.</span></div>
             <div class="xray-card"><strong>84개 잃어버린 마을</strong><span>중산간 초토화(1948.11~1949.02)로 가옥 39,285동이 소실되어 끝내 복구되지 못한 자연마을</span></div>
           ` : `
-            <div class="xray-card"><strong>289건 (12.1%)</strong><span>Freire 2,398건 중 첫 사건 위경도 결측 기록 — 비밀 구금·국경 너머 납치·목격자 부재 보존</span></div>
-            <div class="xray-card"><strong>109건 (4.5%)</strong><span>사건 발생 연·월·일 미상 기록 — 강제실종 시점 특정 불가 사례</span></div>
+            <div class="xray-card"><strong>289건 (12.1%)</strong><span>Freire 2,398건 중 첫 사건 위경도 결측 기록. 좌표 결측만으로 비밀 구금·납치 등의 원인을 판정하지 않습니다.</span></div>
+            <div class="xray-card"><strong>109건 (4.5%)</strong><span>사건 발생 연·월·일 미상 기록. 날짜 결측과 강제실종 여부는 서로 다른 속성입니다.</span></div>
             <div class="xray-card"><strong>1,239건 (51.7%)</strong><span>체포 장소(Place 1)와 최종 구금·사망 장소(Place 2)가 분리된 공간 이동·이송 기록</span></div>
-            <div class="xray-card"><strong>818건 범위 차이</strong><span>1991 레티그(2,398건) 이후 후속 CNRR·MMDH 명부(3,216건)에서 추가 확인된 희생자 기록</span></div>
+            <div class="xray-card"><strong>818건 범위 차이</strong><span>Freire 2,398건과 MMDH 3,216건의 규모 차이. 중복·범위 대조 없이 818명의 추가 희생자로 해석하지 않습니다.</span></div>
           `}
         </div>
       </div>`;
@@ -764,7 +764,7 @@ export function mountArchiveMap({ options, getData, getJSON, apiBase, onMap, onS
         })();
     if (!entries.length) { $('#archive-year-chart').innerHTML = ''; return; }
     const max = Math.max(...entries.map(x => x[1]), 1);
-    $('#archive-year-chart').innerHTML = `<div class="archive-mini-timeline"><span>${data.country === 'KOR' ? '제주 4·3 시기별 분포<br><small>눌러서 해당 연도 필터</small>' : '연도별 인물 기록<br><small>눌러서 지도 필터</small>'}</span><div>${entries.map(([year, n]) => `<button type="button" data-archive-year="${year}" title="${year}년 ${fmt(n)}"><i style="height:${Math.max(4, n / max * 62)}px"></i><small>${String(year).slice(2)}</small></button>`).join('')}</div></div>`;
+    $('#archive-year-chart').innerHTML = `<div class="archive-mini-timeline"><span>${data.official_summary?.temporal_phases ? '제주 시기 비율 환산<br><small>개인별 날짜 실측 아님 · 지도는 거점 필터</small>' : '연도별 인물 기록<br><small>눌러서 지도 필터</small>'}</span><div>${entries.map(([year, n]) => `<button type="button" data-archive-year="${year}" title="${year}년 ${fmt(n)}"><i style="height:${Math.max(4, n / max * 62)}px"></i><small>${String(year).slice(2)}</small></button>`).join('')}</div></div>`;
     document.querySelectorAll('[data-archive-year]').forEach(b => b.onclick = () => {
       stop(); options.allDates = false; options.includeUnknown = false; options.cumulative = false; options.year = Number(b.dataset.archiveYear);
       timeControls(); draw();

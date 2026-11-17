@@ -10,7 +10,7 @@
       "record_layer": "memory_sublimation",
       "record_basis": "oral_art_testimony",
       "victim_or_site_name": "🌈 [기억과 승화] 선흘1리 ‘무지개할망’ 고순자 올레미술관 · 〈아빠가 나를 사랑해〉(2024)",
-      "victim_count": 1,
+      "victim_count": null,
       "artwork_src": "assets/gosunja-rainbow-2024.jpg",
       "artwork_inscription": "아빠가 나를 사랑해 / 순자야 열명이쩌 애기보잰허난 / 나 마음이 지꺼지주 / 아빠가 생각하난 / 2024 고순자",
       "source_page": "조천읍 선흘1리 올레미술관 (소셜뮤지엄 · 2024년작 캔버스 아크릴화)",
@@ -5982,14 +5982,14 @@
   "count": 109,
   "truncated": false,
   "source_id": "jeju43-comprehensive",
-  "source": "제주 4·3 · 정부 진상조사·추가조사·평화재단 종합 DB (공식 희생자 15,218명 · 조사거점 108건)",
+  "source": "제주 4·3 · 정부 진상조사·추가조사·평화재단 종합 DB (공식 희생자 15,218명 · 거점·집계 109건)",
   "source_url": "https://jeju43peace.or.kr/kor/sub01_01_02.do",
   "country": "KOR",
   "mode": "points",
   "record_kind": "multi_layer_investigation",
   "record_unit": "조사 거점·집계 기록 (공식 확정 희생자 15,218명)",
   "basis": "official_investigation_reports",
-  "coverage_note": "2026.04 공식 결정 희생자 15,218명(유족 94,262명), 2003 정부보고서 12개 읍·면 집계(14,028명), 2020 추가진상조사보고서 I 최다 피해 마을·50인 이상 집단학살지, 군법회의 수형인 2,530명 본토 9대 형무소 이송망, 공식 유적을 계층별로 통합했습니다(계층 간 중복 합산 금지).",
+  "coverage_note": "2026.04 공식 결정 희생자 15,218명(유족 94,262명), 2003 정부보고서 12개 읍·면 집계(14,028명), 2020 추가진상조사보고서 I 최다 피해 마을·50인 이상 집단학살지, 군법회의 수형인 2,530명 본토 9대 형무소 이송망, 공식 유적을 계층별로 통합했습니다(계층 간 중복 합산 금지). 읍·면 입력합 13,941명은 보고서 총계 14,028명과 87명 차이가 있어 추가 대조 중입니다. 시간 그래프는 시기 비율 환산 요약이며 개인별 사건일 집계가 아닙니다.",
   "official_summary": {
     "as_of": "2026-04",
     "estimated_total_toll": "25,000 ~ 30,000명",
@@ -6153,13 +6153,25 @@
         "title": "군법회의 수형인 2,530명 전국 15개 형무소 이송 조사",
         "url": "https://www.jejunews.com/news/articleView.html?idxno=2223333"
       }
-    ]
+    ],
+    "eup_myeon_reconciliation": {
+      "input_sum": 13941,
+      "report_total": 14028,
+      "difference": 87,
+      "status": "unresolved_source_reconciliation",
+      "note": "지역별 원입력값 보존. 차이를 임의 배분하지 않음."
+    },
+    "temporal_basis": {
+      "kind": "editorial_proportional_estimate",
+      "individual_dates_verified": false,
+      "note": "2026.04 결정 총계의 시기 비율 환산 요약. 개인별 사건일 실측 집계 아님. 비율의 산출 근거는 추가 대조 필요."
+    }
   },
   "coverage": {
     "first_location_mappable": 109,
     "any_location_mappable": 109,
     "transfer_arcs_count": 9,
-    "region_assigned": 108,
+    "region_assigned": 109,
     "layers": {
       "eup_myeon_stat": 12,
       "massacre_village": 27,
@@ -6168,13 +6180,13 @@
       "memory_sublimation": 1
     },
     "date_precision": {
-      "day": 9,
+      "year": 14,
       "month": 26,
-      "year": 13,
+      "day": 9,
       "unknown": 60
     }
   },
-  "snapshot_id": "jeju43-v3.1-20261117",
+  "snapshot_id": "jeju43-v3.1.1-20261117",
   "source_sha256": "a8ec4a0f30e158c7fcd13d79e283ce71fa4aa972cc6d618b0ffe0a64d89df184",
   "fetched_at": "2026-11-17T00:00:00Z",
   "elapsed_ms": 1.1

@@ -1,6 +1,7 @@
-import {archiveMapShell,mountArchiveMap,archiveRecordHTML} from './archive-map.mjs?v=20261117.31';
-import {LEXICON, escapeHtml as E, countLiteral, splitLecture, analyzeText, temporalCounts, paragraphExcerpt} from './research-engine.mjs?v=20261117.31';
-import {SCENARIOS, comparePolicies} from './simulation.mjs?v=20261117.31';
+import {PRESENTATION_CUES,cueTime,presentationShortcut} from './lecture-config.mjs?v=20261117.311';
+import {archiveMapShell,mountArchiveMap,archiveRecordHTML} from './archive-map.mjs?v=20261117.311';
+import {LEXICON, escapeHtml as E, countLiteral, splitLecture, analyzeText, temporalCounts, paragraphExcerpt} from './research-engine.mjs?v=20261117.311';
+import {SCENARIOS, comparePolicies, formatForecastMonth} from './simulation.mjs?v=20261117.311';
 
 const $ = (selector, parent=document) => parent.querySelector(selector);
 const $$ = (selector,parent=document) => [...parent.querySelectorAll(selector)];
@@ -9,7 +10,7 @@ const main = $('#main');
 const SOURCE_URL = 'https://blog.soohwalee.com/2026/10/29/latin-america-trc-transitional-justice-korea/';
 const DATASET_URL = 'https://github.com/danilofreire/pinochet';
 const DOJ_URL = 'https://www.justice.gov.za/trc/amntrans/index.htm';
-const APP_VERSION = '3.1.0';
+const APP_VERSION = '3.1.1';
 const API_BASE = location.pathname.includes('/preview-v2/') ? '/preview-v2/api' : '/api';
 let lecture, photos=[], stats=null, incidentsCache={}, map=null, mapTimer=null, simTimer=null, toastTimer=null;
 let generation=0, mapController=null;
@@ -25,7 +26,7 @@ function nextStep(step,text) { return `<div class="next-section"><p>${text}</p><
 function head(phase,step,title,description,basis='public') {
   const m=STEP_META[step]||{field:'',cue:''};
   const cls=phase==='확대'?'widen':phase==='산학화'?'share':'deepen';
-  return `<div class="step-lens-banner ${cls}"><div><span class="field-chip">${E(m.field)}</span> <b>${phase} 테제:</b> ${E(m.cue)}</div><button class="btn outline small" data-step="0">00 전체 매핑 ↗</button></div><div class="section-head"><div><div class="eyebrow">${phase} / ${String(step).padStart(2,'0')} · ${E(m.field)}</div><h1>${title}</h1><p>${description}</p></div><span class="source-pill ${basis==='model'?'model':basis==='demo'?'demo':''}">${basis==='model'?'가상 집단 · 교육용 모형':basis==='demo'?'연구자 편집 구조도':basis==='dataset'?'연구 데이터 · 실제 집계':'공개 채록본 · 출처 연결'}</span></div>`;
+  return `<div class="step-lens-banner ${cls}"><div><span class="field-chip">${E(m.field)}</span> <b>${phase} 테제:</b> ${E(m.cue)}</div><button class="btn outline small" data-step="0">00 전체 매핑 ↗</button></div><div class="section-head"><div><div class="eyebrow">${phase} / ${String(step).padStart(2,'0')} · ${E(m.field)}</div><h1>${title}</h1><p>${description}</p></div><span class="source-pill ${basis==='model'?'model':basis==='demo'?'demo':''}">${basis==='model'?'가상 집단 · 교육용 모형':basis==='demo'?'연구자 편집 구조도':basis==='dataset'?'출처별 연구 자료 · 집계와 환산 구별':'공개 채록본 · 출처 연결'}</span></div>`;
 }
 function segmented(items,active,name) { return `<div class="segmented" role="group" aria-label="${E(name)}">${items.map(([id,label])=>`<button class="${String(id)===String(active)?'active':''}" data-${name}="${id}" aria-pressed="${String(id)===String(active)}">${label}</button>`).join('')}</div>`; }
 function loading(message='연구 데이터를 불러오고 있습니다…') { return `<div class="loading">${message}</div>`; }
@@ -36,19 +37,19 @@ function download(text,name,type='text/plain;charset=utf-8') { const blob=new Bl
 
 
 const STEP_META = {
-  0: {axis:'총괄 테제', field:'서사 채널 → 오토마타 채널', time:'발표 12:00–12:10 · 12:46–13:00 | 토론 13:00–13:50', slide:'제1막(1–3) · 공론장 진단(11–13) · 결어(14–19)', cue:'인문학은 학자 머릿속의 시선과 모델입니다. 짚인간(AI)으로 서사 단일 채널을 넘어 0비용 오토마타 다중 채널로 직결됩니다.'},
+  0: {axis:'총괄 테제', field:'서사 채널 → 오토마타 채널', time:'발표 12:00–12:10 · 12:45–13:00 | 토론 13:00–13:50', slide:'제1막(1–3) · 공론장 진단(11–13) · 결어(14–19) · 에필로그(20)', cue:'인문학은 학자 머릿속의 시선과 모델입니다. 짚인간(AI)으로 서사 단일 채널을 넘어 0비용 오토마타 다중 채널로 직결됩니다.'},
   1: {axis:'심화', field:'필드 ① 디지털 아카이빙 · 전산문헌학', time:'발표 12:10–12:16 (시연 ②-A)', slide:'제2막 · 슬라이드 4–5 [심화 01]', cue:'[심화·시선 보정] 구술 원문(4개 국어 개념어)은 100% 보존하고, 공식 통계 대조(7,112 신청 vs 849 허가)와 5+5 판단을 스탠드오프로 분리합니다.'},
   2: {axis:'심화', field:'필드 ② 데이터 모델링 · 프로소포그래피', time:'발표 12:16–12:22 (시연 ②-B)', slide:'제2막 · 슬라이드 6 [심화 02]', cue:'[심화·모델 견고화] 강연 본문(자원 제약)과 정지석 동문 반론(개별 입증 병목)을 하나로 뭉개지 않고 병렬 논증 지도로 세웁니다.'},
-  3: {axis:'확대', field:'필드 ③ 계산 텍스트 역사학 (멀리읽기)', time:'발표 12:22–12:27 (시연 ③-A)', slide:'제3막 · 슬라이드 7 [확대 03]', cue:'[확대·오토마타 질의] 본문(198문단) 대 질의응답(18문단) 빈도와 칠레(2,398)·제주 4·3(15,218명) 시계열 분포를 계량하고 원문(p212)으로 회귀합니다.'},
-  4: {axis:'확대', field:'필드 ④ 공간역사학 · 3D HGIS', time:'발표 12:27–12:34 (시연 ③-B)', slide:'제3막 · 슬라이드 8 [확대 04]', cue:'[확대·오토마타 시각화] 네온 KDE 히트맵·3D 시공간 프리즘·본토 형무소 이송 아크로 칠레(2,398·3,216)와 제주 4·3(15,218명·수형 2,530명)을 펼칩니다.'},
-  5: {axis:'확대', field:'필드 ⑤ 실측 튜닝 시뮬레이션 (ABM)', time:'발표 12:34–12:40 (시연 ③-C)', slide:'제3막 · 슬라이드 9 & 11–12 [확대 05]', cue:'[확대·오토마타 실험] 칠레 레티그(2,398명) 반사실 실험과 한국 보안사(370→2,550명 직권조사) 완료 시점을 몬테카를로 신뢰밴드·에러바로 예측합니다.'},
-  6: {axis:'산학화', field:'필드 ⑥ 멀티모달 사료 읽기 · 공공역사', time:'발표 12:40–12:46 (시연 ④)', slide:'제4막 · 슬라이드 10 [산학화 06]', cue:'[산학화·다중 채널 공급] 데이터 침묵 속 선동을 막기 위해 원문 출처·판정 유보가 봉인된 카드·고증시트·리빙랩 교안을 현장에 직접 공급합니다.'}
+  3: {axis:'확대', field:'필드 ③ 계산 텍스트 역사학 (멀리읽기)', time:'발표 12:22–12:27 (시연 ③-A)', slide:'제3막 · 슬라이드 7 [확대 03]', cue:'[확대·오토마타 질의] 본문(198문단) 대 질의응답(18문단) 빈도, 칠레 인물별 날짜 집계, 제주 시기 비율 환산을 살펴보고 원문(p212)으로 회귀합니다.'},
+  4: {axis:'확대', field:'필드 ④ 공간역사학 · 3D HGIS', time:'발표 12:27–12:34 (시연 ③-B)', slide:'제3막 · 슬라이드 8 [확대 04]', cue:'[확대·오토마타 시각화] 네온 KDE 히트맵·3D 공간 프리즘·본토 형무소 이송 아크로 칠레(2,398·3,216)와 제주 4·3(15,218명·수형 2,530명)을 펼칩니다.'},
+  5: {axis:'확대', field:'필드 ⑤ 실측 튜닝 시뮬레이션 (ABM)', time:'발표 12:34–12:40 (시연 ③-C)', slide:'제3막 · 슬라이드 9 & 11–12 [확대 05]', cue:'[확대·오토마타 실험] 칠레·한국 관측 총계에 보정한 규칙을 비교하고, 90% 목표와 반복 결과의 변동 범위를 읽습니다.'},
+  6: {axis:'산학화', field:'필드 ⑥ 멀티모달 사료 읽기 · 공공역사', time:'발표 12:40–12:45 (시연 ④)', slide:'제4막 · 슬라이드 10 [산학화 06]', cue:'[산학화·다중 채널 공급] 데이터 침묵 속 선동을 막기 위해 원문 출처·판정 유보가 봉인된 카드·고증시트·리빙랩 교안을 현장에 직접 공급합니다.'}
 };
 
 const LOG_LEVELS = {
   1: {label:'1단계 · 서사 단독', linear:25, log:6, ratio:'1× 기준 (단일 언어 채널)', desc:'인문학자의 시선과 모델을 논문·단행본·강연이라는 단일 서사 채널로만 전달하는 상태입니다. 사료 대조와 독자 확산에 높은 물리적 마찰이 작동합니다.'},
   2: {label:'2단계 · 심화 (시선 보정)', linear:50, log:22, ratio:'10¹× 도약 (2차 사이버네틱스)', desc:'구술 채록·스탠드오프 사료비판(01)과 병렬 논증 지도(02)로 내 머릿속 모델의 빈틈·통계 착오·침묵 층위를 스스로 재점검하고 견고화합니다.'},
-  3: {label:'3단계 · 확대 (오토마타 서비스)', linear:75, log:55, ratio:'10²× 도약 (질의·지도·실험)', desc:'시선이 살아 움직이는 오토마타가 되어 어휘 동시등장 계량(03), 5,686건 다중 출처 시공간 지도(04), 조사 규칙 시뮬레이션(05)을 즉시 수행합니다.'},
+  3: {label:'3단계 · 확대 (오토마타 서비스)', linear:75, log:55, ratio:'10²× 도약 (질의·지도·실험)', desc:'시선이 살아 움직이는 오토마타가 되어 어휘 동시등장 계량(03), 단위를 구별한 다중 출처 시공간 지도(04), 조사 규칙 시뮬레이션(05)을 즉시 수행합니다.'},
   4: {label:'4단계 · 산학화 & 강심장 리더십', linear:100, log:100, ratio:'10³× 도약 (무한 접속 · 0비용화)', desc:'AI 안경 시대 기능지식 시험이 종언을 고할 때, 출처·판정 유보가 봉인된 다중 채널 패키지(06)로 세상을 직접 이끄는 N+1차원 인문학 지휘자가 됩니다.'}
 };
 
@@ -71,7 +72,7 @@ function renderOverview() {
     ['심화 · 필드 ① 전산문헌학','사료비판','100% 다국어 구술 채록을 보존한 채 공식 통계 대조(7,112 vs 849)와 5+5 판단을 분리합니다.'],
     ['심화 · 필드 ② 프로소포그래피','증거 연결','자원 제약 가설과 정지석 동문의 개별 입증 병목 반론을 병렬 논증 지도로 구조화합니다.'],
     ['확대 · 필드 ③ 계산 텍스트학','멀리읽기','본문과 질의응답의 어휘 연결·칠레 연도 분포를 직접 세고 원문 문단으로 돌아갑니다.'],
-    ['확대 · 필드 ④ 공간역사학·HGIS','시공간 지도','칠레(2,398·3,216건)와 제주 4·3(47·25곳) 기록을 정밀도·결측 그대로 탐색합니다.'],
+    ['확대 · 필드 ④ 공간역사학·HGIS','시공간 지도','칠레(2,398·3,216건)와 제주 종합 109개 거점·집계 기록을 정밀도·결측 그대로 탐색합니다.'],
     ['확대 · 필드 ⑤ 시뮬레이션 역사학','조사 실험','동일한 가상 집단 200건에 개별 신청 대 명단 연계 조사 규칙을 적용해 동학을 시험합니다.'],
     ['산학화 · 필드 ⑥ 멀티모달·공공역사','공공역사 제작','서사 원고를 넘어 출처·판정 유보가 봉인된 카드·고증시트·리빙랩 교안을 직접 공급합니다.']
   ];
@@ -193,7 +194,7 @@ function bindStep2(){ $$('[data-evidence-mode]').forEach(b=>b.onclick=()=>{state
 
 function renderStep3(){
   return head('확대',3,'읽은 인상을 직접 세어봅니다','낱말과 사건을 세고, 숫자에서 다시 원문으로 돌아갑니다.','dataset')+
-    `<div class="toolbar">${segmented([['lecture','강연록의 어휘 관계'],['timeline','칠레 사건의 시간 분포']],state.textMode,'text-mode')}<span class="note">실제 불러온 자료만 집계합니다.</span></div><div id="analysis-workspace">${state.textMode==='lecture'?renderTextAnalysis():loading()}</div>`+
+    `<div class="toolbar">${segmented([['lecture','강연록의 어휘 관계'],['timeline','출처별 시간 분포']],state.textMode,'text-mode')}<span class="note">인물별 날짜 집계와 시기 비율 환산을 구별합니다.</span></div><div id="analysis-workspace">${state.textMode==='lecture'?renderTextAnalysis():loading()}</div>`+
     `<details class="method-details"><summary>기존 ‘국회회의록 78년 분석’은 어디에 있나요?</summary><p>기존 DB의 해당 코퍼스는 원문 수집 결과가 확인되지 않은 구성 예문 9건입니다. 따라서 발언 4,991건, 유사도, ‘26년 침묵’, AI 평가율을 실측 결과로 제시하지 않습니다. 여기서는 공개 강연 채록본의 문자열을 직접 세고, 칠레 연구 데이터의 날짜별 분포를 집계합니다. 새로운 원자료가 연결되면 같은 방법을 확장할 수 있습니다.</p></details>`+nextStep(4,'시간 분포에서 선택한 기록을 지도 위의 장소와 연결합니다.');
 }
 function activeBlocks(){const parts=splitLecture(lecture.blocks);return state.scope==='body'?parts.body:state.scope==='qa'?parts.qa:lecture.blocks;}
@@ -220,7 +221,7 @@ function bindTextAnalysis(){
 function drawText(){$('#analysis-workspace').innerHTML=renderTextAnalysis();bindTextAnalysis();}
 function barsSVG(entries,selected){
   const width=900,height=380,left=55,right=20,top=30,bottom=55,max=Math.max(...entries.map(d=>d.count),1),plotW=width-left-right,plotH=height-top-bottom,slot=plotW/Math.max(entries.length,1);
-  return `<svg viewBox="0 0 ${width} ${height}" aria-label="연도별 인물 기록 수">${[0,.25,.5,.75,1].map(t=>`<line class="chart-grid" x1="${left}" y1="${top+plotH*(1-t)}" x2="${width-right}" y2="${top+plotH*(1-t)}"/><text class="chart-label" x="${left-10}" y="${top+plotH*(1-t)+4}" text-anchor="end">${fmt(Math.round(max*t))}</text>`).join('')}${entries.map((d,i)=>{const x=left+i*slot+slot*.15,y=top+plotH*(1-d.count/max),h=d.count/max*plotH;return `<g data-time-year="${d.year}" role="button" tabindex="0" aria-label="${d.year}년 ${d.count}건"><rect class="chart-bar ${d.year===selected?'selected':''}" x="${x}" y="${y}" width="${slot*.7}" height="${Math.max(h,2)}" rx="2"/><text class="chart-label" x="${x+slot*.35}" y="${height-30}" text-anchor="middle">${String(d.year).slice(2)}</text>${d.count===max?`<text class="chart-annotation" x="${x+slot*.35}" y="${Math.max(y-10,18)}" text-anchor="middle">${fmt(d.count)}</text>`:''}</g>`;}).join('')}<text class="chart-label" x="${width-right}" y="${height-6}" text-anchor="end">연도 (${entries[0]?.year||1973}–${entries.at(-1)?.year||1990})</text></svg>`;
+  return `<svg viewBox="0 0 ${width} ${height}" aria-label="선택한 출처의 시간 분포">${[0,.25,.5,.75,1].map(t=>`<line class="chart-grid" x1="${left}" y1="${top+plotH*(1-t)}" x2="${width-right}" y2="${top+plotH*(1-t)}"/><text class="chart-label" x="${left-10}" y="${top+plotH*(1-t)+4}" text-anchor="end">${fmt(Math.round(max*t))}</text>`).join('')}${entries.map((d,i)=>{const x=left+i*slot+slot*.15,y=top+plotH*(1-d.count/max),h=d.count/max*plotH;return `<g data-time-year="${d.year}" role="button" tabindex="0" aria-label="${d.year}년 ${d.count}건"><rect class="chart-bar ${d.year===selected?'selected':''}" x="${x}" y="${y}" width="${slot*.7}" height="${Math.max(h,2)}" rx="2"/><text class="chart-label" x="${x+slot*.35}" y="${height-30}" text-anchor="middle">${String(d.year).slice(2)}</text>${d.count===max?`<text class="chart-annotation" x="${x+slot*.35}" y="${Math.max(y-10,18)}" text-anchor="middle">${fmt(d.count)}</text>`:''}</g>`;}).join('')}<text class="chart-label" x="${width-right}" y="${height-6}" text-anchor="end">연도 (${entries[0]?.year||1973}–${entries.at(-1)?.year||1990})</text></svg>`;
 }
 async function renderTemporal(){
  const gen=generation,source=state.timelineSource;
@@ -233,14 +234,14 @@ async function renderTemporal(){
  const unknownCount=summary?0:temporalCounts(data.rows).unknown;
  const peak=[...entries].sort((a,b)=>b.count-a.count)[0];if(!entries.some(x=>x.year===state.timeYear))state.timeYear=peak?.year||(country==='KOR'?1948:1973);
  const eupBars=summary?data.rows.filter(r=>r.record_layer==='eup_myeon_stat').sort((a,b)=>b.victim_count-a.victim_count):[];
- $('#analysis-workspace').innerHTML=`<div class="archive-source-row"><label class="archive-source-label">집계할 출처 <select id="timeline-source" aria-label="연도 집계 자료 출처"><option value="chile-pinochet-2019">칠레 · Freire 연구 자료 (2,398명)</option><option value="chile-mmdh-victims">칠레 · MMDH 박물관 명부 (3,216명)</option><option value="jeju43-comprehensive">제주 4·3 · 정부 진상조사 공식 집계 (15,218명)</option></select></label></div>
+ $('#analysis-workspace').innerHTML=`<div class="archive-source-row"><label class="archive-source-label">집계할 출처 <select id="timeline-source" aria-label="연도 집계 자료 출처"><option value="chile-pinochet-2019">칠레 · Freire 연구 자료 (2,398명)</option><option value="chile-mmdh-victims">칠레 · MMDH 박물관 명부 (3,216명)</option><option value="jeju43-comprehensive">제주 4·3 · 시기 비율 환산 / 거점·집계 기록</option></select></label></div>
  ${summary?`<div class="jeju-stat-cards"><div class="jeju-stat-card"><small>2026.04 공식 확정 희생자</small><strong>${fmt(summary.recognized_victims_2026)}명</strong><span class="note" style="display:block">유족 ${fmt(summary.recognized_bereaved_2026)}명</span></div><div class="jeju-stat-card"><small>사망 / 행방불명 / 수형·후유</small><strong>10,753 / 3,796</strong><span class="note" style="display:block">수형 445 · 후유장애 224명</span></div><div class="jeju-stat-card"><small>가해주체 (2003 보고서)</small><strong>토벌대 78.1%</strong><span class="note" style="display:block">공란 제외 86.1% · 무장대 12.6%</span></div><div class="jeju-stat-card"><small>중산간 초토화 · 본토 수형</small><strong>가옥 39,285동</strong><span class="note" style="display:block">잃어버린 마을 84곳 · 군법회의 2,530명</span></div></div>`:''}
- <div class="chart-layout"><div class="viz-panel"><div class="chart-title">${E(data.source)} · 연도별 인명피해·기록 분포</div><p class="note">막대를 누르면 상세 시기 맥락을 확인하고 04 시공간 지도로 즉시 연동합니다.</p><div id="time-chart"></div>
- ${eupBars.length?`<div style="margin-top:20px;border-top:1px solid var(--line);padding-top:14px"><div class="chart-title">2003 정부보고서 12개 읍·면별 확정 인명피해 (14,028명 기준)</div><div class="tornado-list">${eupBars.map(r=>`<div class="tornado-row"><b>${E(r.region_label)}</b><div class="tornado-track"><div class="tornado-bar pos" style="width:${(r.victim_count/3890*100).toFixed(1)}%"></div></div><span class="mono">${fmt(r.victim_count)}명</span></div>`).join('')}</div></div>`:''}
- </div><aside class="panel dark" id="time-detail"></aside></div><p class="note" style="margin-top:16px">기준 규모 ${fmt(totalCount)} · 시기 확인 ${fmt(datedCount)}${unknownCount?` · 연도 미상 ${fmt(unknownCount)}`:''}. <a href="${E(data.source_url)}" target="_blank" rel="noopener">공식 출처 확인 ↗</a></p>`;
+ <div class="chart-layout"><div class="viz-panel"><div class="chart-title">${E(data.source)} · ${summary?'시기 비율 환산 (개인별 날짜 집계 아님)':'개인별 연도 집계'}</div><p class="note">막대를 누르면 상세 시기 맥락을 확인하고 04 시공간 지도로 즉시 연동합니다.</p><div id="time-chart"></div>
+ ${eupBars.length?`<div style="margin-top:20px;border-top:1px solid var(--line);padding-top:14px"><div class="chart-title">12개 읍·면 입력 집계: ${fmt(eupBars.reduce((n,r)=>n+r.victim_count,0))}명 / 보고서 총계 ${fmt(summary.report_2003_total)}명</div><p class="note">차이 ${fmt(summary.report_2003_total-eupBars.reduce((n,r)=>n+r.victim_count,0))}명의 원인은 추가 확인이 필요합니다. 지역별 값을 임의로 보정하지 않았습니다.</p><div class="tornado-list">${eupBars.map(r=>`<div class="tornado-row"><b>${E(r.region_label)}</b><div class="tornado-track"><div class="tornado-bar pos" style="width:${(r.victim_count/3890*100).toFixed(1)}%"></div></div><span class="mono">${fmt(r.victim_count)}명</span></div>`).join('')}</div></div>`:''}
+ </div><aside class="panel dark" id="time-detail"></aside></div><p class="note" style="margin-top:16px">${summary?`공식 결정 총계 ${fmt(totalCount)}명과 별도로 입력한 시기 비율 환산값입니다. 개인별 날짜 확인 여부·날짜 미상 인원을 뜻하지 않습니다. 지도는 ${fmt(data.rows.length)}개 거점·집계 기록을 필터링하므로 막대 인원과 지도 점 수는 다릅니다.`:`기준 규모 ${fmt(totalCount)} · 시기 확인 ${fmt(datedCount)}${unknownCount?` · 연도 미상 ${fmt(unknownCount)}`:''}.`} <a href="${E(data.source_url)}" target="_blank" rel="noopener">공식 출처 확인 ↗</a></p>`;
  $('#timeline-source').value=source;$('#timeline-source').onchange=e=>{state.timelineSource=e.target.value;state.timeYear=null;renderTemporal();};
  const bindYears=()=>$$('[data-time-year]').forEach(b=>{b.onclick=()=>detail(b.dataset.timeYear);b.onkeydown=e=>{if(e.key==='Enter')detail(b.dataset.timeYear);};});
- const detail=year=>{state.timeYear=Number(year);const entry=entries.find(x=>x.year===Number(year))||entries[0];$('#time-detail').innerHTML=`<div class="panel-title"><b>${entry.year}년 집중 분석</b><span>${summary?'정부 보고서 시기 구분':'출처별 실제 집계'}</span></div><div class="stat-display">${fmt(entry.count)}<small style="font-size:16px;margin-left:8px">${summary?'명':'건'}</small></div><p class="stat-caption">${E(entry.phase||data.source)}</p><div class="timeline-insight" style="font-size:16px">${E(entry.note||'같은 시기 기록을 시공간 지도에서 확인합니다.')}</div><button class="btn gold small" id="year-to-map" style="margin-top:22px">${entry.year}년 시공간 지도 열기 ↗</button>`;$('#time-chart').innerHTML=barsSVG(entries,Number(entry.year));bindYears();$('#year-to-map').onclick=()=>{state.mapOptions={source,year:Number(entry.year),allDates:false,includeUnknown:false,cumulative:false,view:'auto',hgisMode:'heatmap'};go(4);};};detail(state.timeYear);
+ const detail=year=>{state.timeYear=Number(year);const entry=entries.find(x=>x.year===Number(year))||entries[0];$('#time-detail').innerHTML=`<div class="panel-title"><b>${entry.year}년 집중 분석</b><span>${summary?'시기 비율 환산값 (실측 날짜 아님)':'출처별 실제 집계'}</span></div><div class="stat-display">${fmt(entry.count)}<small style="font-size:16px;margin-left:8px">${summary?'명':'건'}</small></div><p class="stat-caption">${E(entry.phase||data.source)}</p><div class="timeline-insight" style="font-size:16px">${E(entry.note||'같은 시기 기록을 시공간 지도에서 확인합니다.')}</div><button class="btn gold small" id="year-to-map" style="margin-top:22px">${entry.year}년 시공간 지도 열기 ↗</button>`;$('#time-chart').innerHTML=barsSVG(entries,Number(entry.year));bindYears();$('#year-to-map').onclick=()=>{state.mapOptions={source,year:Number(entry.year),allDates:false,includeUnknown:false,cumulative:false,view:'auto',hgisMode:'heatmap'};go(4);};};detail(state.timeYear);
  }catch(e){if(gen===generation)$('#analysis-workspace').innerHTML=failure(e.message);}
 }
 function bindStep3(){$$('[data-text-mode]').forEach(b=>b.onclick=()=>{state.textMode=b.dataset.textMode;renderCurrent(false);});if(state.textMode==='lecture')bindTextAnalysis();else renderTemporal();}
@@ -266,7 +267,7 @@ function modelChart(){
     return `<g stroke="${color}" stroke-width="1.5" opacity="0.88"><line x1="${x}" y1="${yTop}" x2="${x}" y2="${yBot}"/><line x1="${x-4}" y1="${yTop}" x2="${x+4}" y2="${yTop}"/><line x1="${x-4}" y1="${yBot}" x2="${x+4}" y2="${yBot}"/></g>`;
   }).join('');
   const anc=sc.empiricalAnchor, ancX=xOf(Math.min(maxW,anc.week)), ancY=yOf(anc.count);
-  const statX=xOf(Math.min(maxW,sc.statutoryWeek));
+  const statX=xOf(Math.min(maxW,sc.comparisonWeek));
   const yTicks=[0,0.25,0.5,0.75,1].map(f=>Math.round(maxY*f));
   return `<svg viewBox="0 0 ${w} ${h}" aria-label="몬테카를로 앙상블 시뮬레이션 팬 차트 및 에러바">
     ${yTicks.map(v=>`<line class="chart-grid" x1="${l}" x2="${w-r}" y1="${yOf(v)}" y2="${yOf(v)}"/><text class="chart-label" x="${l-8}" y="${yOf(v)+4}" text-anchor="end">${fmt(v)}</text>`).join('')}
@@ -280,7 +281,7 @@ function modelChart(){
     <path d="${line(sim.alternative,state.week)}" stroke="#0f766e" stroke-width="3.2" fill="none"/>
     ${errBars(sim.baseline,'#b45309')}${errBars(sim.alternative,'#0f766e')}
     <line x1="${statX}" x2="${statX}" y1="${t}" y2="${h-b}" stroke="#e11d48" stroke-width="1.5" stroke-dasharray="5 4"/>
-    <text x="${Math.min(w-r-4,statX+5)}" y="${t+12}" fill="#be123c" font-size="10.5" font-weight="700" text-anchor="${statX>w-180?'end':'start'}">${E(sc.statutoryLabel)}</text>
+    <text x="${Math.min(w-r-4,statX+5)}" y="${t+12}" fill="#be123c" font-size="10.5" font-weight="700" text-anchor="${statX>w-180?'end':'start'}">${E(sc.comparisonLabel)}</text>
     <g transform="translate(${ancX},${ancY})">
       <polygon points="0,-8 8,0 0,8 -8,0" fill="#fbbf24" stroke="#0c1b2a" stroke-width="1.8"/>
       <text x="${ancX>w-220?-11:11}" y="4" fill="#0c1b2a" font-size="11" font-weight="800" text-anchor="${ancX>w-220?'end':'start'}">${E(anc.label)}</text>
@@ -293,13 +294,13 @@ function renderStep5(){
   const sc=SCENARIOS[state.scenario]||SCENARIOS.A;
   if(!state.sim||state.sim.scenario!==state.scenario){
     state.sim=comparePolicies(state.simConfig,state.seed,200,state.scenario,28);
-    state.week=sc.statutoryWeek||39;
+    state.week=sc.comparisonWeek||39;
   }
-  return head('확대',5,'실측 데이터에 튜닝된 양국 반사실·완료예측 시뮬레이터','칠레 직권조사 실측치(2,398명)와 한국 신청주의 실측치(370명)에 보정된 몬테카를로(N=28) 모형으로 반사실 경로와 2,550명 직권조사 완료 시점을 실험합니다.','model')+
+  return head('확대',5,'관측 총계로 보정한 조사 규칙 비교 실험','관측 총계를 기준으로 보정한 가상 집단을 28회 반복 실행합니다. 두 조사 규칙의 결과와 모집단 90% 목표 도달 시점을 같은 가정 아래 비교합니다. 실제 정책 효과나 전원 완료일의 예측은 아닙니다.','model')+
   `<div class="toolbar">${segmented(Object.entries(SCENARIOS).map(([id,s])=>[id,`${id} · ${s.shortName}`]),state.scenario,'scenario')}<button type="button" class="btn outline small" id="sim-reset-tuned">🎯 실측 튜닝값 복원</button></div>
   <div class="abm-calib-banner">
-    <div class="abm-calib-item"><small>실측 기준점 (Empirical Anchor)</small><strong id="abm-anchor-readout">${E(sc.empiricalAnchor.label)}</strong><span>모집단 ${fmt(sc.universe)}명 · <a href="${E(sc.empiricalAnchor.sourceUrl)}" target="_blank" rel="noopener" style="color:#67e8f9">근거 사료 ↗</a></span></div>
-    <div class="abm-calib-item forecast"><small>${state.scenario==='B'?'신청주의 반사실 손실 추정':'직권조사 90%+ 완료 시점 예측'}</small><strong id="abm-forecast-readout" class="ok">—</strong><span id="abm-calib-err">실측 수렴 오차 계산 중</span></div>
+    <div class="abm-calib-item"><small>관측 총계 기준점 (보정용)</small><strong id="abm-anchor-readout">${E(sc.empiricalAnchor.label)}</strong><span>모집단 ${fmt(sc.universe)}명 · <a href="${E(sc.empiricalAnchor.sourceUrl)}" target="_blank" rel="noopener" style="color:#67e8f9">근거 사료 ↗</a></span></div>
+    <div class="abm-calib-item forecast"><small>${state.scenario==='B'?'39모형주 두 경로의 차이':'모집단 90% 목표 도달 (앙상블 평균)'}</small><strong id="abm-forecast-readout" class="ok">—</strong><span id="abm-calib-err">기준 총계와 모형 차이 계산 중</span></div>
     <div><span class="preview-badge">Monte Carlo N=28 · ±1 SD 에러바</span></div>
   </div>
   <div style="margin-bottom:14px"><b>${E(sc.topic)}</b><p class="note">${E(sc.context)}</p></div>
@@ -307,40 +308,39 @@ function renderStep5(){
     <div class="abm-controls">
       <div><label for="sim-excluded">${E(sc.excludedLabel)}<output id="sim-excluded-value">${state.simConfig.excluded}%</output></label><input id="sim-excluded" type="range" min="10" max="95" value="${state.simConfig.excluded}"><small>절손·고령·사찰모름·보복우려로 개별 신청을 못하는 비율</small></div>
       <div><label for="sim-barrier">${E(sc.barrierLabel)}<output id="sim-barrier-value">${state.simConfig.barrier}%</output></label><input id="sim-barrier" type="range" min="10" max="95" value="${state.simConfig.barrier}"><small>자료 은폐·개별 입증 요구로 심의까지 지연되는 강도</small></div>
-      <div><label for="sim-capacity">${E(sc.capacityLabel)}<output id="sim-capacity-value">${state.simConfig.capacity}</output></label><input id="sim-capacity" type="range" min="${sc.capacityMin}" max="${sc.capacityMax}" value="${state.simConfig.capacity}"><small>조사관 정원·심의위원회 주당 처리 건수</small></div>
+      <div><label for="sim-capacity">${E(sc.capacityLabel)}<output id="sim-capacity-value">${state.simConfig.capacity}</output></label><input id="sim-capacity" type="range" min="${sc.capacityMin}" max="${sc.capacityMax}" value="${state.simConfig.capacity}"><small>모형 한 주당 처리 한도 (실제 조사관 생산성 추정치 아님)</small></div>
     </div>
     <div class="sim-visual">
-      <div class="sim-toolbar"><div class="week"><b id="sim-week">${state.week}</b> <span>/ ${sc.horizonWeeks}주</span></div><div class="row-actions"><button type="button" class="btn" id="sim-play" aria-pressed="false">▶ 처음부터 재생</button><button type="button" class="btn outline small" id="sim-end">${sc.statutoryWeek}주 기준점</button><button type="button" class="btn outline small" id="sim-new-cohort">다른 난수 앙상블</button></div></div>
+      <div class="sim-toolbar"><div class="week"><b id="sim-week">${state.week}</b> <span>/ ${sc.horizonWeeks}모형주</span></div><div class="row-actions"><button type="button" class="btn" id="sim-play" aria-pressed="false">▶ 처음부터 재생</button><button type="button" class="btn outline small" id="sim-end">${sc.comparisonWeek}주 기준점</button><button type="button" class="btn outline small" id="sim-new-cohort">다른 난수 앙상블</button></div></div>
       <div class="sim-scrubber-row"><span>주차 탐색</span><input type="range" id="sim-week-slider" min="0" max="${sc.horizonWeeks}" value="${state.week}"><span class="mono" id="sim-calendar-label"></span></div>
-      <div class="sim-pair">${[['baseline',sc.baseline],['alternative',sc.alternative]].map(([id,label])=>`<section class="sim-board ${id==='alternative'?'compare':''}"><div class="sim-board-head"><h2>${E(label)}</h2><span class="source-label" style="color:#a7c6c7">모집단 ${fmt(sc.universe)}명 (200격자 투영)</span></div><div class="sim-count"><span id="${id}-count">0</span><small>명 규명 (95% CI <span id="${id}-ci">—</span>)</small></div><div class="agent-grid" id="${id}-grid" role="img">${Array.from({length:200},(_,i)=>`<i class="agent state-0" data-agent="${i}"></i>`).join('')}</div><div class="sim-legend"><span><i style="background:var(--mint)"></i>규명 <b id="${id}-recorded">0</b></span><span><i style="background:var(--gold)"></i>심의대기 <b id="${id}-waiting">0</b></span><span><i style="background:#4c636c"></i>접수밖 <b id="${id}-outside">0</b></span></div></section>`).join('')}</div>
+      <div class="sim-pair">${[['baseline',sc.baseline],['alternative',sc.alternative]].map(([id,label])=>`<section class="sim-board ${id==='alternative'?'compare':''}"><div class="sim-board-head"><h2>${E(label)}</h2><span class="source-label" style="color:#a7c6c7">모집단 ${fmt(sc.universe)}명 (200격자 투영)</span></div><div class="sim-count"><span id="${id}-count">0</span><small>명 규명 (중앙 90% 범위 <span id="${id}-ci">—</span>)</small></div><div class="agent-grid" id="${id}-grid" role="img">${Array.from({length:200},(_,i)=>`<i class="agent state-0" data-agent="${i}"></i>`).join('')}</div><div class="sim-legend"><span><i style="background:var(--mint)"></i>규명 <b id="${id}-recorded">0</b></span><span><i style="background:var(--gold)"></i>심의대기 <b id="${id}-waiting">0</b></span><span><i style="background:#4c636c"></i>접수밖 <b id="${id}-outside">0</b></span></div></section>`).join('')}</div>
     </div>
   </div>
   <div class="sim-comparison">
     <div class="sim-insight">
-      <div class="eyebrow">제도 설계가 가르는 역사적 규명 격차</div>
+      <div class="eyebrow">같은 가정 아래 두 규칙의 모형 결과 차이</div>
       <strong id="sim-difference"></strong>
       <p id="sim-interpretation"></p>
       <div style="margin-top:16px;border-top:1px solid var(--line);padding-top:12px">
-        <div class="chart-title" style="font-size:12.5px">모수 민감도 분석 (${sc.statutoryWeek}주차 규명 인원 변화 Δ)</div>
+        <div class="chart-title" style="font-size:12.5px">대표 코호트 민감도 (${sc.comparisonWeek}모형주차 변화 Δ)</div>
         <div class="tornado-list" id="sim-tornado"></div>
       </div>
       <button type="button" class="btn outline small" id="sim-export" style="margin-top:14px">보정 모수·앙상블 결과 JSON 저장 ↓</button>
     </div>
     <div class="viz-panel">
-      <div class="chart-title">몬테카를로 28회 앙상블 궤적 (95%·50% 신뢰밴드 · ±1 SD 에러바 · ★ 실측치)</div>
+      <div class="chart-title">몬테카를로 28회 앙상블 궤적 (중앙 90%·50% 변동 범위 · ±1 SD 에러바 · ★ 실측치)</div>
       <div id="sim-chart"></div>
-      <div class="legend" style="margin-top:8px"><span><i style="background:#d97706"></i>${E(sc.baseline)} (평균·신뢰구간)</span><span><i style="background:#0f766e"></i>${E(sc.alternative)} (평균·신뢰구간)</span><span><i style="background:#fbbf24"></i>★ 역사적 실측 기준점</span></div>
+      <div class="legend" style="margin-top:8px"><span><i style="background:#d97706"></i>${E(sc.baseline)} (평균·분위수 범위)</span><span><i style="background:#0f766e"></i>${E(sc.alternative)} (평균·분위수 범위)</span><span><i style="background:#fbbf24"></i>★ 역사적 실측 기준점</span></div>
     </div>
   </div>
-  <details class="method-details"><summary>모수 보정(Calibration) 근거와 해석 유의사항</summary><p>${E(sc.tunedNote)}. 28개 독립 난수 씨앗 코호트(각 200 에이전트 → 실제 모집단 ${fmt(sc.universe)}명 비례 스케일링)를 구동하여 평균, 표준편차(±1 SD 에러바), 50%·95% 분위수 밴드를 산출합니다. 개인의 실제 신원 데이터는 사용하지 않으며, 행정 역량과 입증 책임 구조가 규명 완료 시점에 미치는 거시적 동학을 검증하는 과정 모형입니다. 현재 기준 씨앗: <span id="sim-seed">${state.seed}</span>.</p></details>`+nextStep(6,'사료의 근거와 시뮬레이션 가정을 보존한 채 교육·전시 다중 채널 자료로 옮깁니다.');
+  <details class="method-details"><summary>모수 보정(Calibration) 근거와 해석 유의사항</summary><p>${E(sc.tunedNote)}. 28개 독립 난수 씨앗 코호트(각 200 에이전트 → 시나리오 규모 ${fmt(sc.universe)}명 비례 스케일링)를 구동하여 평균, 표준편차(±1 SD 에러바), 중앙 50%·90% 분위수 밴드를 산출합니다. 개인의 실제 신원 데이터는 사용하지 않으며, 정한 가정 안에서 난수에 따른 변동을 보여줍니다. 관측 총계에 가까워도 예측력·인과 효과가 검증된 것은 아닙니다. 목표는 모집단 90%이며 미도달 시 낮은 목표로 대체하지 않습니다. 토네이도는 대표 코호트의 한 모수씩 비교이며 28회 앙상블 민감도가 아닙니다. 현재 기준 씨앗: <span id="sim-seed">${state.seed}</span>.</p></details>`+nextStep(6,'사료의 근거와 시뮬레이션 가정을 보존한 채 교육·전시 다중 채널 자료로 옮깁니다.');
 }
 function drawSimulation(){
   const sc=SCENARIOS[state.scenario]||SCENARIOS.A, sim=state.sim;
   state.week=Math.max(0,Math.min(sim.weeks,state.week));
   $('#sim-week').textContent=state.week;
   if($('#sim-week-slider'))$('#sim-week-slider').value=state.week;
-  const [y0,m0]=sc.startYearMonth||[2026,11], totM=(y0*12+(m0-1))+Math.round(state.week/4.345);
-  if($('#sim-calendar-label'))$('#sim-calendar-label').textContent=`${Math.floor(totM/12)}.${String((totM%12)+1).padStart(2,'0')} 시점`;
+  if($('#sim-calendar-label'))$('#sim-calendar-label').textContent=sc.startYearMonth ? '가정한 시작월 기준: '+formatForecastMonth(sc.startYearMonth,state.week) : `${state.week}모형주차 · 실제 달력과 대응하지 않음`;
   for(const key of ['baseline','alternative']){
     const snap=sim[key][state.week];
     $(`#${key}-count`).textContent=fmt(snap.realRecorded);
@@ -355,19 +355,15 @@ function drawSimulation(){
   const fEl=$('#abm-forecast-readout'), eEl=$('#abm-calib-err');
   if(state.scenario==='B'){
     const loss39=sim.alternative[39].realRecorded-sim.baseline[39].realRecorded;
-    if(fEl){fEl.textContent=`신청주의 가정 시 39주차 -${fmt(loss39)}명 누락 (${fmt(sim.baseline[39].realRecorded)}명 그침)`;fEl.className='warn';}
+    if(fEl){fEl.textContent=`통합·직권 모형 − 신청 모형: ${fmt(loss39)}명 (39모형주)`;fEl.className='warn';}
   }else{
     if(fEl){
-      fEl.textContent=Number.isFinite(sim.completionWeek)?`${sim.completionLabel} · ${sim.withinStatutory?'법정기한 내 완료 ✅':'법정기한 초과 ⚠️ (연장 필요)'}`:'현재 역량으로 기한 내 90% 도달 불가 ⚠️';
-      fEl.className=sim.withinStatutory?'ok':'warn';
+      fEl.textContent=`${sim.target.label} · 목표 ${fmt(sim.target.count)}명 / ${fmt(sim.universe)}명${sim.target.reached?` · 비교 기준 ${sc.comparisonWeek}모형주 ${sim.target.withinComparison?'이내':'이후'}`:''}`;
+      fEl.className=sim.target.withinComparison?'ok':'warn';
     }
   }
   if(eEl)eEl.textContent=`실측치(${fmt(sim.calibration.empiricalValue)}명) 대비 현재 모형 평균 ${fmt(sim.calibration.modelMean)}±${fmt(sim.calibration.modelSd)}명 (오차 ${sim.calibration.errorPct}%)`;
-  $('#sim-interpretation').textContent=state.scenario==='A'
-    ?`현재 주당 ${state.simConfig.capacity}명 처리 역량 기준, 직권조사 전환 시 ${sim.completionLabel}에 대상자 90% 이상 조사가 마무리됩니다(신청주의 유지 시 ${fmt(bRec)}명 정체).`
-    :state.scenario==='B'
-    ?`칠레가 연대대리구 수작업 DB 통합 없이 개별 신청·입증만 받았다면 39주 뒤 ${fmt(sim.baseline[39].realRecorded)}명만 확인되어 실제(${fmt(sim.alternative[39].realRecorded)}명) 대비 과반이 침묵 속에 남았을 것입니다.`
-    :`개별 유족 신고만으로는 절손·연좌제 장벽 때문에 ${fmt(bRec)}명 수준에서 멈추지만, 마을 전수조사와 직권재심 결합 시 ${fmt(aRec)}명까지 복원됩니다.`;
+  $('#sim-interpretation').textContent=`${state.week}모형주차: 신청 규칙 ${fmt(bRec)}명, 통합·직권 규칙 ${fmt(aRec)}명. 관측 총계와 별개인 두 모형의 조건부 결과입니다. 90% 목표 ${fmt(sim.target.count)}명은 ${sim.target.label}. 보정 오차는 정책 효과나 미래 예측의 검증 지표가 아닙니다.`;
   $('#sim-chart').innerHTML=modelChart();
   const maxSens=Math.max(10,...sim.sensitivity.map(s=>Math.abs(s.delta)));
   if($('#sim-tornado'))$('#sim-tornado').innerHTML=sim.sensitivity.map(s=>`<div class="tornado-row"><span>${E(s.label)}</span><div class="tornado-track"><div class="tornado-bar ${s.delta>=0?'pos':'neg'}" style="width:${(Math.abs(s.delta)/maxSens*100).toFixed(1)}%"></div></div><b class="mono" style="color:${s.delta>=0?'var(--teal)':'var(--rose)'}">${s.delta>=0?'+':''}${fmt(s.delta)}명</b></div>`).join('');
@@ -379,13 +375,13 @@ function bindStep5(){
     stopSimulation(); state.scenario=b.dataset.scenario; const sc=SCENARIOS[state.scenario];
     state.simConfig={excluded:sc.default[0],barrier:sc.default[1],capacity:sc.default[2]};
     state.sim=comparePolicies(state.simConfig,state.seed,200,state.scenario,28);
-    state.week=sc.statutoryWeek||39; renderCurrent(false);
+    state.week=sc.comparisonWeek||39; renderCurrent(false);
   });
   if($('#sim-reset-tuned'))$('#sim-reset-tuned').onclick=()=>{
     stopSimulation(); const sc=SCENARIOS[state.scenario];
     state.simConfig={excluded:sc.default[0],barrier:sc.default[1],capacity:sc.default[2]};
     state.sim=comparePolicies(state.simConfig,state.seed,200,state.scenario,28);
-    state.week=sc.statutoryWeek||39; renderCurrent(false);
+    state.week=sc.comparisonWeek||39; renderCurrent(false);
     toast('실측 데이터 수렴 튜닝 모수로 복원했습니다.');
   };
   for(const key of ['excluded','barrier','capacity'])$(`#sim-${key}`).oninput=e=>{
@@ -400,11 +396,11 @@ function bindStep5(){
     state.week=0;drawSimulation();$('#sim-play').textContent='Ⅱ 재생 멈춤';$('#sim-play').setAttribute('aria-pressed','true');
     simTimer=setInterval(()=>{state.week+=2;if(state.week>=state.sim.weeks){state.week=state.sim.weeks;drawSimulation();stopSimulation();return;}drawSimulation();},95);
   };
-  $('#sim-end').onclick=()=>{stopSimulation();state.week=SCENARIOS[state.scenario].statutoryWeek||state.sim.weeks;drawSimulation();};
+  $('#sim-end').onclick=()=>{stopSimulation();state.week=SCENARIOS[state.scenario].comparisonWeek||state.sim.weeks;drawSimulation();};
   $('#sim-new-cohort').onclick=()=>{stopSimulation();state.seed++;state.sim=comparePolicies(state.simConfig,state.seed,200,state.scenario,28);if($('#sim-seed'))$('#sim-seed').textContent=state.seed;drawSimulation();toast('새 28개 난수 코호트 앙상블로 재검증했습니다.');};
   $('#sim-export').onclick=()=>download(JSON.stringify(simulationRecord(),null,2),'trc-calibrated-abm-v3.json','application/json');
 }
-function simulationRecord(){return {type:'calibrated_monte_carlo_process_abm',version:'3.0.0',scenario:state.scenario,seed:state.seed,ensemble_runs:28,universe:state.sim?.universe,week:state.week,assumptions:state.simConfig,calibration:state.sim?.calibration,completion_forecast:state.sim?.completionLabel,baseline:state.sim?.baseline[state.week],alternative:state.sim?.alternative[state.week]};}
+function simulationRecord(){return {type:'calibrated_monte_carlo_process_abm',version:APP_VERSION,scenario:state.scenario,seed:state.seed,ensemble_runs:state.sim?.runs,universe:state.sim?.universe,week:state.week,assumptions:state.simConfig,calibration:state.sim?.calibration,target:state.sim?.target,uncertainty:state.sim?.uncertainty,time:state.sim?.time,sensitivity:{basis:'one_at_a_time_primary_cohort',results:state.sim?.sensitivity},interpretation:'가정에 따른 모형 비교. 전원 완료일·법정기한·검증된 정책 효과 아님.',baseline:state.sim?.baseline[state.week],alternative:state.sim?.alternative[state.week]};}
 
 const AUDIENCES={
   public:{name:'대국민 카드',headline:'명단은 있는데,\n왜 다시 입증해야 할까?',body:'과거사 조사 지연을 이해하려면 자료의 제약과 조사 방식의 병목을 함께 살펴야 합니다. 현장의 질문이 새로운 연구의 출발점이 됩니다.',format:'카드와 근거 기록'},
@@ -470,7 +466,7 @@ async function exportPNG(){
   }catch(e){toast('PNG를 만들지 못했습니다: '+e.message);}finally{button.disabled=false;}
 }
 
-function showMethods(){openDialog('자료와 방법',`<dl><dt>공개 강연 기록</dt><dd>박구병 교수의 2026.10.29 강연 편집 채록본 ${lecture.blocks.length}개 문단을 불러옵니다. 음원은 연결되어 있지 않습니다. <a href="${SOURCE_URL}" target="_blank" rel="noopener">원문</a></dd><dt>실제 연구 데이터</dt><dd>Freire 외(2019) 인물 기록 2,398건과 MMDH 공개 명부 3,216건, 제주 공식 지역별 유적 47곳과 소개 유적 25곳을 출처별로 읽습니다. 명부와 유적 목록은 서로 겹치므로 합산한 수를 고유 희생자 수로 사용하지 않습니다. 좌표 없는 기록과 날짜 정밀도도 보존합니다. 지도 숫자 원은 화면상 묶음 또는 원문 지역 집계입니다. 지역 대표점·현대 유적 참고 위치를 원자료의 사건 좌표와 구별합니다. <a href="coverage-review.html" target="_blank" rel="noopener">수집 범위 점검</a> <a href="${DATASET_URL}" target="_blank" rel="noopener">자료 설명</a></dd><dt>공식 통계의 대조</dt><dd>남아공 법무부의 2000.11.01 집계에서 신청 총수 7,112건과 허가 849건을 구별합니다. 해당 날짜의 집계이며 모든 시점의 최종 수치를 뜻하지 않습니다. <a href="${DOJ_URL}" target="_blank" rel="noopener">집계표</a></dd><dt>사진</dt><dd>사용자가 제공한 박구병 강연 원본 PPTX에서 사진을 추출했습니다. 슬라이드 번호와 원본 해상도를 표시하며, 사진 관찰과 역사적 해석을 구별합니다.</dd><dt>편집 구조와 모형</dt><dd>논증 지도는 연구자의 편집 구조도입니다. 조사 실험은 가상 기록 200건에 적용한 과정 모형이며 역사적 희생자 수나 정책 효과의 추정치가 아닙니다.</dd><dt>교정한 표시</dt><dd>기존 구성 예문의 발언 건수, 임베딩 좌표, 음성 휴지, 인물별 신뢰도 점수를 실제 분석 결과처럼 표시하지 않습니다. 좌표가 부정확하다고 의도적 은폐로 자동 분류하지 않습니다.</dd><dt>저장과 내보내기</dt><dd>연구자의 분류와 메모는 이 브라우저에 저장합니다. 내려받는 HTML·Markdown·JSON에는 출처, 판단, 모형의 가정이 포함됩니다. 워크벤치 ${APP_VERSION}.</dd></dl>`);}
+function showMethods(){openDialog('자료와 방법',`<dl><dt>공개 강연 기록</dt><dd>박구병 교수의 2026.10.29 강연 편집 채록본 ${lecture.blocks.length}개 문단을 불러옵니다. 음원은 연결되어 있지 않습니다. <a href="${SOURCE_URL}" target="_blank" rel="noopener">원문</a></dd><dt>실제 연구 데이터</dt><dd>Freire 외(2019) 인물 기록 2,398건과 MMDH 공개 명부 3,216건, 제주 공식 지역별 유적 47곳·소개 유적 25곳 및 종합 DB 109개 거점·집계 기록을 출처별로 읽습니다. 제주 시기 분포는 비율 환산값이며 읍·면 입력합 13,941명과 총계 14,028명의 차이는 87명입니다. 명부와 유적 목록은 서로 겹치므로 합산한 수를 고유 희생자 수로 사용하지 않습니다. 좌표 없는 기록과 날짜 정밀도도 보존합니다. 지도 숫자 원은 화면상 묶음 또는 원문 지역 집계입니다. 지역 대표점·현대 유적 참고 위치를 원자료의 사건 좌표와 구별합니다. <a href="coverage-review.html" target="_blank" rel="noopener">수집 범위 점검</a> <a href="${DATASET_URL}" target="_blank" rel="noopener">자료 설명</a></dd><dt>공식 통계의 대조</dt><dd>남아공 법무부의 2000.11.01 집계에서 신청 총수 7,112건과 허가 849건을 구별합니다. 해당 날짜의 집계이며 모든 시점의 최종 수치를 뜻하지 않습니다. <a href="${DOJ_URL}" target="_blank" rel="noopener">집계표</a></dd><dt>사진</dt><dd>사용자가 제공한 박구병 강연 원본 PPTX에서 사진을 추출했습니다. 슬라이드 번호와 원본 해상도를 표시하며, 사진 관찰과 역사적 해석을 구별합니다.</dd><dt>편집 구조와 모형</dt><dd>논증 지도는 연구자의 편집 구조도입니다. 조사 실험은 200개 가상 에이전트를 시나리오 규모로 환산해 28회 반복한 과정 모형입니다. 중앙 90%·50% 분위수 범위와 ±1 SD는 모형 내 변동이며 정책 효과의 검증이나 신뢰구간이 아닙니다. 목표는 모집단 90%로 고정하고 미도달 시 그대로 표시합니다.</dd><dt>교정한 표시</dt><dd>기존 구성 예문의 발언 건수, 임베딩 좌표, 음성 휴지, 인물별 신뢰도 점수를 실제 분석 결과처럼 표시하지 않습니다. 좌표가 부정확하다고 의도적 은폐로 자동 분류하지 않습니다.</dd><dt>저장과 내보내기</dt><dd>연구자의 분류와 메모는 이 브라우저에 저장합니다. 내려받는 HTML·Markdown·JSON에는 출처, 판단, 모형의 가정이 포함됩니다. 워크벤치 ${APP_VERSION}.</dd></dl>`);}
 function showRainbowEpilogue(){
   openDialog('에필로그 · 데이터 너머의 무지개 — 우리가 역사학을 공부하는 진정한 이유',`
     <div class="epilogue-modal-grid">
@@ -512,34 +508,28 @@ function showPosterModal(){
   openDialog('짚인간(AI 에이전트) 양방향 사이버네틱스 포스터 회로',`<iframe class="poster-frame" src="poster-anim.html" title="짚인간 양방향 회로 포스터 애니메이션"></iframe><p class="note"><b>파란선(정방향 지휘):</b> 인문학자 머릿속의 시선·모델을 0비용 소프트웨어(오토마타)로 육화해 시각화·질의·시뮬레이션·산학화로 확장 · <b>주황선(역방향 2차 사이버네틱스):</b> 오토마타 검증 결과를 되돌려 내 시선과 모델을 재점검·보정(심화). <a href="poster-anim.html" target="_blank" rel="noopener">새 창 전체화면으로 열기 ↗</a></p>`);
 }
 function showCueSheet(){
-  const presRows=[
-    ['12:00–12:10 (10분)','제1막 · 인문학 재정의와 채널 혁명 (슬라이드 1–3)','시연 ① 포스터 회로 (P 키)','모교 인사 → 인문학 = 머릿속의 시선과 모델(Slide 2) → 서사 단일 채널에서 짚인간 오토마타 다중 채널로(Slide 3, 양방향 회로 1분 시연)','poster','포스터'],
-    ['12:10–12:22 (12분)','제2막 · 단일 씨앗과 [심화 01·02] (슬라이드 4–6)','시연 ② 01 사료비판 · 02 증거 연결','박구병 강연 216문단 씨앗(Slide 4) → 사면 통계(7,112 대 849) 스탠드오프 분리(Slide 5) → 박구병 가설 대 정지석 반론 병렬 증거망(Slide 6)','1','01 열기'],
-    ['12:22–12:40 (18분)','제3막 · 오토마타 서비스 [확대 03·04·05] (슬라이드 7–9)','시연 ③ 03 멀리읽기 · 04 3D HGIS · 05 실측ABM','어휘·연도 계량(Slide 7) → 네온 KDE 히트맵·3D 프리즘·제주 15,218명/본토 형무소 이송 아크(Slide 8) → 칠레(2,398)·한국(370→2,550) 실측튜닝 몬테카를로 ABM(Slide 9)','4','04 HGIS'],
-    ['12:40–12:46 (6분)','제4막 전반 · [산학화 06] 다중 채널 공급 (슬라이드 10)','시연 ④ 06 공공역사 제작','줄글 원고 납품을 넘어 원문 출처·판정 유보가 봉인된 대국민 카드·학예사 고증 시트·대학 리빙랩 교안 직접 발행','6','06 열기'],
-    ['12:46–12:53 (7분)','제4막 중반 · 국제 비교와 공론장 진단 (슬라이드 11–13)','04 듀얼 비교 · 05 완료시점 예측','칠레 GitHub 오픈 DB·예일 CGDB/LUX(Slide 11) → 한국 2,550명 첫 직권조사 완료 예측과 데이터 침묵(Slide 12) → 선동 방어 나침반(Slide 13)','5','05 실험'],
-    ['12:53–13:00 (7분)','제4막 후반 · 필멸성과 10ⁿ 로그스케일 결어 (슬라이드 14–19)','00 테제 · 하단 로그스케일(10ⁿ)','유한한 인간(필멸성)의 지휘권(Slide 14) → AI 안경 시험 종언(Slide 15) → 10ⁿ 로그스케일(Slide 16) → 바첼레트 질문·강심장 리더십(Slide 17–19)','log','로그스케일']
-  ];
+  const presRows=PRESENTATION_CUES.map(c=>[`${cueTime(c.start)}–${cueTime(c.end)} (${c.end-c.start}분)`,`${c.title} (슬라이드 ${c.slides[0]}${c.slides[0]===c.slides[1]?'':'–'+c.slides[1]})`,c.screen,c.message,c.action,c.button]);
   const qaRows=[
     ['13:00–13:15 (15분 · 기본 전반)','토론 트랙 ① 사료비판의 엄밀성과 AI 환각·번역 통제','01 사료비판 (p048 · 4개국어 개념어) · 02 논증지도','구술 원문 불변 보존 + 스탠드오프 마크업 구조 및 박구병 가설·정지석 반론 병렬 수용 방식 시연','1','01 근거'],
-    ['13:15–13:30 (15분 · 30분 기준선)','토론 트랙 ② 제주 4·3 다층 DB 구축과 중복 배제·결측 해석','04 HGIS (결측 X-Ray · 본토 형무소 아크)','공식 결정 15,218명·읍면 14,028명·수형인 2,530명 계층 분리 원칙 및 결측(Missing Data)의 사료적 의미 응답','4','04 X-Ray'],
-    ['13:30–13:50 (+20분 탄력 확장 · 최대 50분)','토론 트랙 ③ 반사실 시뮬레이션(ABM) 정당성과 과거사 데이터 개방','05 실측튜닝 ABM (민감도·완료예측) · 슬라이드 11–13','실측치(칠레 2,398·한국 370) 수렴 보정 메커니즘 시연 및 보안사 명단 비식별 공개·디지털 공론장 복원 심층 토론','5','05 시연']
+    ['13:15–13:30 (15분 · 30분 기준선)','토론 트랙 ② 제주 4·3 다층 DB 구축과 중복 배제·결측 해석','04 HGIS (결측 X-Ray · 본토 형무소 아크)','공식 결정 15,218명·읍면 입력합 13,941명(보고서 총계와 87명 차이)·수형인 2,530명 계층 분리 원칙 및 결측(Missing Data)의 사료적 의미 응답','4','04 X-Ray'],
+    ['13:30–13:50 (+20분 탄력 확장 · 최대 50분)','토론 트랙 ③ 반사실 시뮬레이션(ABM) 정당성과 과거사 데이터 개방','05 실측튜닝 ABM (민감도·90% 목표) · 슬라이드 11–13','관측 총계(칠레 2,398·한국 370) 보정과 예측 검증의 차이 시연 및 보안사 명단 비식별 공개·디지털 공론장 복원 심층 토론','5','05 시연']
   ];
   openDialog('11월 18일 집담회 큐시트 · 본 발표 60분(12:00–13:00) + 심층 토론 30~50분(13:00–13:50)',
-    `<p class="note">역사학부 월례집담회 진행 방식에 맞춰 <b>제1부 본 발표·라이브 시연 60분(12:00–13:00)</b>과 <b>제2부 심층 질의응답·종합토론 30~50분(13:00–13:30 기본, 토론 활성화 시 13:50까지 탄력 운영)</b>으로 구성했습니다. 단축키 <b>C</b>로 상단 프롬프터 바를 토글하고 <b>0~6</b>·<b>P</b>로 즉시 이동합니다.</p>
+    `<p class="note">역사학부 월례집담회 진행 방식에 맞춰 <b>제1부 본 발표·라이브 시연 60분(12:00–13:00)</b>과 <b>제2부 심층 질의응답·종합토론 30~50분(13:00–13:30 기본, 토론 활성화 시 13:50까지 탄력 운영)</b>으로 구성했습니다. 단축키 <b>C</b>로 상단 프롬프터 바를 토글하고 <b>0~6</b>·<b>P</b>·<b>R</b>로 즉시 이동합니다.</p>
     <span class="cue-part-badge">제1부 · 본 발표 및 오토마타 라이브 시연 (12:00–13:00 · 60분 Full)</span>
-    <table class="cue-table"><thead><tr><th>시간 (60분)</th><th>슬라이드 구간 (19장)</th><th>웹앱 시연 화면</th><th>핵심 전달 포인트</th><th>이동</th></tr></thead><tbody>${presRows.map(([t,s,w,m,act,btn])=>`<tr><td><b>${t}</b></td><td>${s}</td><td>${w}</td><td>${m}</td><td><button type="button" class="btn outline small" data-cue-go="${act}">${btn}</button></td></tr>`).join('')}</tbody></table>
+    <table class="cue-table"><thead><tr><th>시간 (60분)</th><th>슬라이드 구간 (20장)</th><th>웹앱 시연 화면</th><th>핵심 전달 포인트</th><th>이동</th></tr></thead><tbody>${presRows.map(([t,s,w,m,act,btn])=>`<tr><td><b>${t}</b></td><td>${s}</td><td>${w}</td><td>${m}</td><td><button type="button" class="btn outline small" data-cue-go="${act}">${btn}</button></td></tr>`).join('')}</tbody></table>
     <span class="cue-part-badge qa">제2부 · 역사학자 심층 질의응답 및 종합토론 (13:00–13:30 기본 30분 ~ 13:50 최대 50분 · 사회: 허수 교수)</span>
     <table class="cue-table"><thead><tr><th>토론 시간 (30~50분)</th><th>예상 핵심 쟁점 트랙</th><th>즉시 호출 화면</th><th>방어 논거 및 실시간 조작 시연</th><th>호출</th></tr></thead><tbody>${qaRows.map(([t,s,w,m,act,btn])=>`<tr><td><b>${t}</b></td><td>${s}</td><td>${w}</td><td>${m}</td><td><button type="button" class="btn outline small" data-cue-go="${act}">${btn}</button></td></tr>`).join('')}</tbody></table>`);
   $$('[data-cue-go]',$('#dialog-body')).forEach(b=>b.onclick=()=>{
     const act=b.dataset.cueGo;
     $('#detail-dialog').close();
     if(act==='poster'){showPosterModal();return;}
+    if(act==='rainbow'){showRainbowEpilogue();return;}
     if(act==='log'){go(0);setTimeout(()=>$('.ontology-section')?.scrollIntoView({behavior:'smooth'}),80);return;}
     go(Number(act));
   });
 }
-function showAbout(){openDialog('제136차 월례집담회 안내',`<div class="eyebrow">서울대학교 인문학연구원 역사연구소 · 국사학과 BK21 교육연구단</div><h3 style="font-size:27px">AI라는 호랑이 등에 올라타기</h3><p>소프트웨어를 매개로 한 역사연구의 심화·확대·산학화 (워크벤치 v3.0)</p><p><b>발표:</b> 이수화 (서울대 빅데이터혁신융합대학 연구교수)<br><b>사회:</b> 허수 (서울대 역사학부 한국사학전공 교수)</p><p><b>일시:</b> 2026년 11월 18일(수) 12:00–13:30~13:50<br>· 본 발표 및 라이브 시연: <b>12:00–13:00 (60분)</b><br>· 질의응답 및 심층 종합토론: <b>13:00–13:30 ~ 13:50 (30~50분 탄력 운영)</b><br><b>장소:</b> 서울대학교 인문대학 4동 302호</p>`);}
+function showAbout(){openDialog('제136차 월례집담회 안내',`<div class="eyebrow">서울대학교 인문학연구원 역사연구소 · 국사학과 BK21 교육연구단</div><h3 style="font-size:27px">AI라는 호랑이 등에 올라타기</h3><p>소프트웨어를 매개로 한 역사연구의 심화·확대·산학화 (워크벤치 v3.1.1)</p><p><b>발표:</b> 이수화 (서울대 빅데이터혁신융합대학 연구교수)<br><b>사회:</b> 허수 (서울대 역사학부 한국사학전공 교수)</p><p><b>일시:</b> 2026년 11월 18일(수) 12:00–13:30~13:50<br>· 본 발표 및 라이브 시연: <b>12:00–13:00 (60분)</b><br>· 질의응답 및 심층 종합토론: <b>13:00–13:30 ~ 13:50 (30~50분 탄력 운영)</b><br><b>장소:</b> 서울대학교 인문대학 4동 302호</p>`);}
 function cleanup(){stopSimulation();if(mapTimer){clearInterval(mapTimer);mapTimer=null;}if(mapController){mapController.destroy();mapController=null;map=null;}else if(map){map.remove();map=null;}}
 function go(step){const next=Math.max(0,Math.min(6,Number(step)||0));state.step=next;history.replaceState(null,'',`#step-${next}`);renderCurrent(true);}
 function renderCurrent(scroll=true){generation++;cleanup();const renderers=[renderOverview,renderStep1,renderStep2,renderStep3,renderStep4,renderStep5,renderStep6];main.innerHTML=renderers[state.step]();$$('.journey-nav [data-step]').forEach(b=>{const active=Number(b.dataset.step)===state.step;b.classList.toggle('active',active);if(active)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current');});const binders=[()=>{
@@ -561,7 +551,7 @@ $('#dialog-close').onclick=()=>$('#detail-dialog').close();$('#detail-dialog').a
 $('#method-button').onclick=showMethods;$('#about-button').onclick=showAbout;if($('#poster-button'))$('#poster-button').onclick=showPosterModal;if($('#epilogue-button'))$('#epilogue-button').onclick=showRainbowEpilogue;if($('#footer-poster-button'))$('#footer-poster-button').onclick=showPosterModal;if($('#cuesheet-button'))$('#cuesheet-button').onclick=showCueSheet;
 $('#presentation-button').onclick=async()=>{const on=!document.body.classList.contains('presenting');document.body.classList.toggle('presenting',on);$('#presentation-button').setAttribute('aria-pressed',String(on));$('#presentation-button').textContent=on?'⛶ 발표 모드 종료':'⛶ 발표 모드';try{if(on&&!document.fullscreenElement)await document.documentElement.requestFullscreen();else if(!on&&document.fullscreenElement)await document.exitFullscreen();}catch{}renderPresenterBar();map?.invalidateSize();};
 document.addEventListener('fullscreenchange',()=>{if(!document.fullscreenElement){document.body.classList.remove('presenting');$('#presentation-button').setAttribute('aria-pressed','false');$('#presentation-button').textContent='⛶ 발표 모드';renderPresenterBar();}map?.invalidateSize();});
-document.addEventListener('keydown',e=>{if($('#detail-dialog').open||/INPUT|TEXTAREA|SELECT|BUTTON/.test(document.activeElement?.tagName||''))return;if(e.key==='ArrowRight'&&state.step<6){e.preventDefault();go(state.step+1);}if(e.key==='ArrowLeft'&&state.step>0){e.preventDefault();go(state.step-1);}if(/^[0-6]$/.test(e.key)&&!e.metaKey&&!e.ctrlKey&&!e.altKey){e.preventDefault();go(Number(e.key));}if((e.key==='p'||e.key==='P')&&!e.metaKey&&!e.ctrlKey){e.preventDefault();showPosterModal();}if((e.key==='r'||e.key==='R')&&!e.metaKey&&!e.ctrlKey){e.preventDefault();showRainbowEpilogue();}if((e.key==='c'||e.key==='C')&&!e.metaKey&&!e.ctrlKey){e.preventDefault();state.cueOpen=!state.cueOpen;renderPresenterBar();}});
+document.addEventListener('keydown',e=>{if($('#detail-dialog').open)return;const action=presentationShortcut(e,state.step);if(!action)return;e.preventDefault();if(action.kind==='step')go(action.value);if(action.kind==='poster')showPosterModal();if(action.kind==='rainbow')showRainbowEpilogue();if(action.kind==='cue'){state.cueOpen=!state.cueOpen;renderPresenterBar();}});
 window.addEventListener('hashchange',()=>{const m=location.hash.match(/^#step-([0-6])$/);if(m&&Number(m[1])!==state.step){state.step=Number(m[1]);renderCurrent();}});
 window.addEventListener('resize',()=>map?.invalidateSize());
 async function boot(){try{[lecture,photos]=await Promise.all([getJSON('data/lecture.json'),getJSON('data/photos.json')]);photos=photos.filter(p=>/\.(png|jpe?g|webp)$/i.test(p.src));state.photo=Math.max(0,photos.findIndex(p=>p.src.includes('image17.')));state.step=Number(location.hash.match(/^#step-([0-6])$/)?.[1]||0);renderCurrent(false);try{stats=await getJSON(`${API_BASE}/stats`);$('#data-status').innerHTML=`<i class="status-dot online"></i>연구 DB 연결 · 출처별 ${fmt(stats.total_source_records||stats.total_incidents)}개 기록`;}catch{$('#data-status').innerHTML='<i class="status-dot"></i>강연록 연결 · 연구 DB 연결 확인 필요';}}catch(e){main.innerHTML=failure(e.message);$('#data-status').textContent='필수 자료 연결 확인 필요';}}

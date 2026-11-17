@@ -11,7 +11,7 @@ import pymysql
 import pymysql.cursors
 from archive_api import CONFIG as ARCHIVE_CONFIG, DEFAULT as DEFAULT_SOURCE, GEO, source_dataset, source_index
 
-app = FastAPI(title="TRC Historical Research Workbench", version="3.1.0")
+app = FastAPI(title="TRC Historical Research Workbench", version="3.1.1")
 META_PATH = Path(__file__).with_name("source_metadata.json")
 SOURCE_METADATA = json.loads(META_PATH.read_text(encoding="utf-8")) if META_PATH.exists() else {}
 _cache = {"at": 0, "rows": None}

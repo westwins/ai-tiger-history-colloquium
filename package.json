@@ -1,1 +1,8 @@
-{"name":"trc-colloquium-workbench","private":true,"type":"module","scripts":{"check":"node tools/check.mjs"}}
+{
+  "name": "trc-colloquium-workbench",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node tools/check.mjs && node tools/check-map.mjs && node tools/check-v311.mjs"
+  }
+}

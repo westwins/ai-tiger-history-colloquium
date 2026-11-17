@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {countLiteral,analyzeText,splitLecture,temporalCounts} from '../frontend/research-engine.mjs';
-import {makeCohort,runModel,comparePolicies} from '../frontend/simulation.mjs';
+import {SCENARIOS,makeCohort,runModel,comparePolicies} from '../frontend/simulation.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const lecture=JSON.parse(fs.readFileSync(path.join(root,'frontend/data/lecture.json'),'utf8'));
 const photos=JSON.parse(fs.readFileSync(path.join(root,'frontend/data/photos.json'),'utf8'));
@@ -26,14 +26,15 @@ for(const config of [{excluded:25,barrier:55,capacity:6},{excluded:70,barrier:10
     for(const s of model[branch]){
       assert.equal(s.recorded+s.waiting+s.outside,200,'Every record must have exactly one state');
       assert.ok(s.recorded>=previous,'Accepted records must not disappear');
-      assert.ok(s.recorded-previous<=config.capacity,'Weekly capacity must be respected');
+      const scale=SCENARIOS.A.universe/model.count;
+      assert.ok(s.recorded-previous<=Math.ceil(config.capacity/scale),'Capacity in real-scale units must bound synthetic-agent transitions');
       assert.ok(s.states.every((v,i)=>v>=previousStates[i]),'Record transitions must move forward');
       previous=s.recorded;previousStates=s.states;
     }
   }
 }
 const noBarrier=comparePolicies({excluded:0,barrier:0,capacity:20});
-assert.equal(noBarrier.baseline[52].recorded,200);assert.equal(noBarrier.alternative[52].recorded,200);
+assert.equal(noBarrier.baseline.at(-1).recorded,200);assert.equal(noBarrier.alternative.at(-1).recorded,200);
 const exclusion=comparePolicies({excluded:70,barrier:55,capacity:20});
 assert.ok(exclusion.alternative[52].recorded>exclusion.baseline[52].recorded,'Outreach should reach some otherwise excluded synthetic records');
 for(const p of photos)assert.ok(fs.existsSync(path.join(root,'frontend',p.src)),`Missing original photo: ${p.src}`);
