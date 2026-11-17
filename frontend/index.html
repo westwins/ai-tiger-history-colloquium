@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="인문학자 머릿속의 시선과 모델을 서사 채널 너머 소프트웨어(오토마타)로 확장하여 역사연구의 심화·확대·산학화와 디지털 역사학 6대 필드를 실증하는 워크벤치">
+  <meta name="description" content="인문학자 머릿속의 시선과 모델을 서사 채널 너머 소프트웨어(오토마타)로 확장하여 역사연구의 심화·확대·산학화와 디지털 역사학 6대 필드를 실증하는 워크벤치 (v3.1)">
   <meta name="theme-color" content="#0c1b2a">
-  <title>AI라는 호랑이 등에 올라타기 · 인문학의 시선과 오토마타 워크벤치</title>
-  <link rel="stylesheet" href="assets/leaflet.css?v=20261116.22">
-  <link rel="stylesheet" href="workbench.css?v=20261116.22">
-  <link rel="stylesheet" href="archive-map.css?v=20261116.22">
-  <script defer src="assets/leaflet.js?v=20261116.22"></script>
-  <script type="module" src="workbench.js?v=20261116.22"></script>
+  <title>AI라는 호랑이 등에 올라타기 · 인문학의 시선과 오토마타 워크벤치 v3.1</title>
+  <link rel="stylesheet" href="assets/leaflet.css?v=20261117.31">
+  <link rel="stylesheet" href="workbench.css?v=20261117.31">
+  <link rel="stylesheet" href="archive-map.css?v=20261117.31">
+  <script defer src="assets/leaflet.js?v=20261117.31"></script>
+  <script type="module" src="workbench.js?v=20261117.31"></script>
 </head>
 <body>
   <a class="skip" href="#main">본문으로 바로가기</a>
@@ -19,12 +19,13 @@
       <span class="brand-mark">虎</span>
       <span>
         <strong>AI라는 호랑이 등에 올라타기</strong>
-        <small>인문학자의 시선과 모델 · 서사 채널을 넘어 오토마타로 (심화·확대·산학화)</small>
+        <small>인문학자의 시선과 모델 · 서사 채널을 넘어 오토마타로 (심화·확대·산학화 · v3.1)</small>
       </span>
     </button>
     <div class="header-actions">
       <button class="quiet accent-quiet" id="poster-button" title="단축키 P">⚡ 포스터 회로</button>
-      <button class="quiet" id="cuesheet-button" title="12:00-13:00 슬라이드·앱 연동표">🧭 60분 큐시트</button>
+      <button class="quiet rainbow-quiet" id="epilogue-button" title="단축키 R · 고순자 할머니 무지개와 국토종단">🌈 무지개 에필로그</button>
+      <button class="quiet" id="cuesheet-button" title="발표 60분(12:00-13:00) + 질의응답 30~50분(13:00-13:50)">🧭 60분 큐시트</button>
       <button class="quiet" id="about-button">집담회 안내</button>
       <button class="presentation-button" id="presentation-button" aria-pressed="false">⛶ 발표 모드</button>
     </div>
@@ -39,7 +40,7 @@
       </div>
     </div>
     <div class="nav-group widen">
-      <span>확대 <small>오토마타 서비스·시각화·실험 (필드 ③·④·⑤)</small></span>
+      <span>확대 <small>오토마타 서비스·3D HGIS·실측ABM (필드 ③·④·⑤)</small></span>
       <div>
         <button data-step="3"><b>03</b> 멀리읽기</button>
         <button data-step="4"><b>04</b> 시공간 지도</button>
@@ -53,14 +54,14 @@
       </div>
     </div>
   </nav>
-  <main id="main" tabindex="-1"><div class="loading">공개 강연 기록과 6대 디지털 역사학 워크벤치를 불러오고 있습니다…</div></main>
+  <main id="main" tabindex="-1"><div class="loading">공개 강연 기록과 6대 디지털 역사학 워크벤치(v3.1)를 불러오고 있습니다…</div></main>
   <footer class="app-footer">
     <span id="data-status"><i class="status-dot"></i> 자료 연결 확인 중</span>
     <div class="footer-links">
       <button id="footer-poster-button">짚인간 포스터 애니메이션</button>
       <button id="method-button">자료와 방법</button>
     </div>
-    <span>서울대 역사연구소 제136차 월례집담회 <span class="footer-date">2026.11.18 (12:00–13:00)</span></span>
+    <span>서울대 역사연구소 제136차 월례집담회 <span class="footer-date">2026.11.18 · 발표 60분(12:00–13:00) + 토론 30~50분(13:00–13:50)</span></span>
   </footer>
   <div id="toast" role="status" aria-live="polite"></div>
   <dialog id="detail-dialog" aria-labelledby="dialog-title">

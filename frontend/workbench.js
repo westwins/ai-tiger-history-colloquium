@@ -1,6 +1,6 @@
-import {archiveMapShell,mountArchiveMap,archiveRecordHTML} from './archive-map.mjs?v=20261116.22';
-import {LEXICON, escapeHtml as E, countLiteral, splitLecture, analyzeText, temporalCounts, paragraphExcerpt} from './research-engine.mjs?v=20261116.22';
-import {SCENARIOS, comparePolicies} from './simulation.mjs?v=20261116.22';
+import {archiveMapShell,mountArchiveMap,archiveRecordHTML} from './archive-map.mjs?v=20261117.31';
+import {LEXICON, escapeHtml as E, countLiteral, splitLecture, analyzeText, temporalCounts, paragraphExcerpt} from './research-engine.mjs?v=20261117.31';
+import {SCENARIOS, comparePolicies} from './simulation.mjs?v=20261117.31';
 
 const $ = (selector, parent=document) => parent.querySelector(selector);
 const $$ = (selector,parent=document) => [...parent.querySelectorAll(selector)];
@@ -9,11 +9,11 @@ const main = $('#main');
 const SOURCE_URL = 'https://blog.soohwalee.com/2026/10/29/latin-america-trc-transitional-justice-korea/';
 const DATASET_URL = 'https://github.com/danilofreire/pinochet';
 const DOJ_URL = 'https://www.justice.gov.za/trc/amntrans/index.htm';
-const APP_VERSION = '2.2.0';
+const APP_VERSION = '3.1.0';
 const API_BASE = location.pathname.includes('/preview-v2/') ? '/preview-v2/api' : '/api';
 let lecture, photos=[], stats=null, incidentsCache={}, map=null, mapTimer=null, simTimer=null, toastTimer=null;
 let generation=0, mapController=null;
-const state = {mapOptions:{source:'chile-pinochet-2019'}, timelineSource:'chile-pinochet-2019', step:0, case:'amnesty', graph:'all', node:'question', evidenceMode:'graph', term:'조사', scope:'all', textMode:'lecture', mapCountry:'CHL', year:1990, cumulative:true, precision:'all', phase:0, scenario:'A', simConfig:{excluded:25,barrier:55,capacity:6}, seed:20261118, week:0, sim:null, photo:0, audience:'public', logLevel:4, cueOpen:false};
+const state = {mapOptions:{source:'chile-pinochet-2019'}, timelineSource:'chile-pinochet-2019', step:0, case:'amnesty', graph:'all', node:'question', evidenceMode:'graph', term:'조사', scope:'all', textMode:'lecture', mapCountry:'CHL', year:1990, cumulative:true, precision:'all', phase:0, scenario:'A', simConfig:{excluded:87,barrier:78,capacity:28}, seed:20261118, week:0, sim:null, photo:0, audience:'public', logLevel:4, cueOpen:false};
 let annotations={};
 try { annotations=JSON.parse(localStorage.getItem('trc-research-judgements-v2') || '{}'); } catch {}
 
@@ -31,18 +31,18 @@ function segmented(items,active,name) { return `<div class="segmented" role="gro
 function loading(message='연구 데이터를 불러오고 있습니다…') { return `<div class="loading">${message}</div>`; }
 function failure(message) { return `<div class="error-panel"><b>자료를 불러오지 못했습니다</b>${E(message)}<p class="note">예시 데이터로 대신 채우지 않습니다. 연결을 확인한 뒤 새로고침해 주세요.</p></div>`; }
 async function getJSON(url) { const res=await fetch(url,{cache:'no-store'}); if(!res.ok) throw new Error(`자료 서버 응답 ${res.status}`); return res.json(); }
-async function getIncidents(country,source=country==='CHL'?'chile-pinochet-2019':'jeju43-history') { const key=country+':'+source;if(!incidentsCache[key])incidentsCache[key]=getJSON(`${API_BASE}/research/incidents?country=${country}&source=${encodeURIComponent(source)}`).catch(e=>{delete incidentsCache[key];throw e;});return incidentsCache[key]; }
+async function getIncidents(country,source=country==='CHL'?'chile-pinochet-2019':'jeju43-comprehensive') { const key=country+':'+source;if(!incidentsCache[key])incidentsCache[key]=getJSON(`${API_BASE}/research/incidents?country=${country}&source=${encodeURIComponent(source)}`).catch(e=>{delete incidentsCache[key];throw e;});return incidentsCache[key]; }
 function download(text,name,type='text/plain;charset=utf-8') { const blob=new Blob([text],{type}),url=URL.createObjectURL(blob),a=document.createElement('a'); a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),3000);toast(`${name} 파일을 저장했습니다.`); }
 
 
 const STEP_META = {
-  0: {axis:'총괄 테제', field:'서사 채널 → 오토마타 채널', time:'12:00–12:14', slide:'Part 1 (슬라이드 1–5)', cue:'인문학은 학자 머릿속의 시선과 모델입니다. 이제 짚인간(AI)으로 서사 채널을 넘어 오토마타로 직결됩니다.'},
-  1: {axis:'심화', field:'필드 ① 디지털 아카이빙 · 전산문헌학', time:'12:14–12:20', slide:'Part 2-A (슬라이드 6–7)', cue:'[심화·시선 보정] 구술 원문(4개 국어 개념어)은 그대로 보존하고, 공식 통계 대조(7,112 신청 vs 849 허가)와 5+5 판단을 스탠드오프로 분리합니다.'},
-  2: {axis:'심화', field:'필드 ② 데이터 모델링 · 프로소포그래피', time:'12:20–12:25', slide:'Part 2-B (슬라이드 8)', cue:'[심화·모델 견고화] 강연 본문(자원 제약)과 정지석 동문 반론(개별 입증 병목)을 하나로 뭉개지 않고 병렬 논증 지도로 세웁니다.'},
-  3: {axis:'확대', field:'필드 ③ 계산 텍스트 역사학 (멀리읽기)', time:'12:25–12:30', slide:'Part 3-A (슬라이드 9–10)', cue:'[확대·오토마타 질의] 읽은 인상을 본문 대 질의응답 빈도와 칠레 연도 분포로 즉시 계량하고 다시 원문 문단으로 회귀합니다.'},
-  4: {axis:'확대', field:'필드 ④ 공간역사학 · 역사 GIS (HGIS)', time:'12:30–12:36', slide:'Part 3-B (슬라이드 11)', cue:'[확대·오토마타 시각화] 칠레 2,398건·MMDH 3,216건·제주 4·3 유적을 중복 합산 왜곡 없이 좌표 정밀도·결측 그대로 지도 위에 펼칩니다.'},
-  5: {axis:'확대', field:'필드 ⑤ 계량 · 시뮬레이션 역사학', time:'12:36–12:42', slide:'Part 3-C (슬라이드 12)', cue:'[확대·오토마타 실험] 같은 가상 집단 200건에 개별 신청 대 명단 연계 규칙을 적용해 병목이 어디서 생기는지 작동 모형으로 시험합니다.'},
-  6: {axis:'산학화', field:'필드 ⑥ 멀티모달 사료 읽기 · 공공역사', time:'12:42–12:47', slide:'Part 4 (슬라이드 13–16)', cue:'[산학화·다중 채널 공급] 원고 납품을 넘어 사료 출처·판정 유보가 동봉된 카드·고증시트·리빙랩 교안을 현장에 직접 공급합니다.'}
+  0: {axis:'총괄 테제', field:'서사 채널 → 오토마타 채널', time:'발표 12:00–12:10 · 12:46–13:00 | 토론 13:00–13:50', slide:'제1막(1–3) · 공론장 진단(11–13) · 결어(14–19)', cue:'인문학은 학자 머릿속의 시선과 모델입니다. 짚인간(AI)으로 서사 단일 채널을 넘어 0비용 오토마타 다중 채널로 직결됩니다.'},
+  1: {axis:'심화', field:'필드 ① 디지털 아카이빙 · 전산문헌학', time:'발표 12:10–12:16 (시연 ②-A)', slide:'제2막 · 슬라이드 4–5 [심화 01]', cue:'[심화·시선 보정] 구술 원문(4개 국어 개념어)은 100% 보존하고, 공식 통계 대조(7,112 신청 vs 849 허가)와 5+5 판단을 스탠드오프로 분리합니다.'},
+  2: {axis:'심화', field:'필드 ② 데이터 모델링 · 프로소포그래피', time:'발표 12:16–12:22 (시연 ②-B)', slide:'제2막 · 슬라이드 6 [심화 02]', cue:'[심화·모델 견고화] 강연 본문(자원 제약)과 정지석 동문 반론(개별 입증 병목)을 하나로 뭉개지 않고 병렬 논증 지도로 세웁니다.'},
+  3: {axis:'확대', field:'필드 ③ 계산 텍스트 역사학 (멀리읽기)', time:'발표 12:22–12:27 (시연 ③-A)', slide:'제3막 · 슬라이드 7 [확대 03]', cue:'[확대·오토마타 질의] 본문(198문단) 대 질의응답(18문단) 빈도와 칠레(2,398)·제주 4·3(15,218명) 시계열 분포를 계량하고 원문(p212)으로 회귀합니다.'},
+  4: {axis:'확대', field:'필드 ④ 공간역사학 · 3D HGIS', time:'발표 12:27–12:34 (시연 ③-B)', slide:'제3막 · 슬라이드 8 [확대 04]', cue:'[확대·오토마타 시각화] 네온 KDE 히트맵·3D 시공간 프리즘·본토 형무소 이송 아크로 칠레(2,398·3,216)와 제주 4·3(15,218명·수형 2,530명)을 펼칩니다.'},
+  5: {axis:'확대', field:'필드 ⑤ 실측 튜닝 시뮬레이션 (ABM)', time:'발표 12:34–12:40 (시연 ③-C)', slide:'제3막 · 슬라이드 9 & 11–12 [확대 05]', cue:'[확대·오토마타 실험] 칠레 레티그(2,398명) 반사실 실험과 한국 보안사(370→2,550명 직권조사) 완료 시점을 몬테카를로 신뢰밴드·에러바로 예측합니다.'},
+  6: {axis:'산학화', field:'필드 ⑥ 멀티모달 사료 읽기 · 공공역사', time:'발표 12:40–12:46 (시연 ④)', slide:'제4막 · 슬라이드 10 [산학화 06]', cue:'[산학화·다중 채널 공급] 데이터 침묵 속 선동을 막기 위해 원문 출처·판정 유보가 봉인된 카드·고증시트·리빙랩 교안을 현장에 직접 공급합니다.'}
 };
 
 const LOG_LEVELS = {
@@ -59,9 +59,9 @@ function renderPresenterBar() {
   bar.hidden = !on;
   if (!on) return;
   const m = STEP_META[state.step] || STEP_META[0];
-  bar.innerHTML = `<div class="presenter-cue-main"><span class="cue-time">${m.time}</span><span class="cue-slide">${m.slide} · ${m.field}</span><span class="cue-line">${E(m.cue)}</span></div><div class="presenter-jumps"><button class="poster-jump" id="bar-poster-btn">⚡ 포스터</button>${[0,1,2,3,4,5,6].map(n=>`<button data-step="${n}" class="${state.step===n?'active':''}">${n===0?'00 테제':'0'+n}</button>`).join('')}</div>`;
+  bar.innerHTML = `<div class="presenter-cue-main"><span class="cue-time">${m.time}</span><span class="cue-slide">${m.slide} · ${m.field}</span><span class="cue-line">${E(m.cue)}</span></div><div class="presenter-jumps"><button class="poster-jump" id="bar-poster-btn">⚡ 포스터</button><button class="poster-jump" id="bar-epilogue-btn">🌈 무지개</button>${[0,1,2,3,4,5,6].map(n=>`<button data-step="${n}" class="${state.step===n?'active':''}">${n===0?'00 테제':'0'+n}</button>`).join('')}</div>`;
   const pb = $('#bar-poster-btn');
-  if (pb) pb.onclick = showPosterModal;
+  if (pb) pb.onclick = showPosterModal; const eb = $("#bar-epilogue-btn"); if (eb) eb.onclick = showRainbowEpilogue;
 }
 
 function renderOverview() {
@@ -75,7 +75,7 @@ function renderOverview() {
     ['확대 · 필드 ⑤ 시뮬레이션 역사학','조사 실험','동일한 가상 집단 200건에 개별 신청 대 명단 연계 조사 규칙을 적용해 동학을 시험합니다.'],
     ['산학화 · 필드 ⑥ 멀티모달·공공역사','공공역사 제작','서사 원고를 넘어 출처·판정 유보가 봉인된 카드·고증시트·리빙랩 교안을 직접 공급합니다.']
   ];
-  return `<section class="hero"><div class="hero-copy"><div class="eyebrow">서울대 역사연구소 제136차 월례집담회 · 2026.11.18 (12:00–13:00)</div><h1>AI라는 호랑이<br>등에 <em>올라타기</em></h1><div class="hero-thesis-box"><strong>인문학의 정의 — 인문학자들 머릿속의 ‘시선과 모델’</strong><p>인문학은 역사가·문학가·철학자가 세상을 바라보는 고유한 시선과 모델을 만들고 가르치며 세상을 이끄는 학문입니다. 이제 AI 에이전트(짚인간)가 <b>서사 단일 채널</b>을 넘어 <b>0비용·무한 접속의 소프트웨어(오토마타) 채널</b>을 열어줍니다.</p></div><div class="hero-actions"><button class="btn gold" data-step="1">01 심화 · 사료 한 문장에서 시작하기 <span>↗</span></button><button class="btn outline" id="hero-poster-btn">⚡ 짚인간 양방향 회로 포스터</button><button class="btn outline" id="tour-map">6대 필드 매핑 보기</button></div></div><figure class="hero-image">${heroPhoto?`<img src="${heroPhoto.src}" alt="박구병 강연자료에 담긴 칠레 기억과 인권 박물관의 사진 전시">`:''}<figcaption>단일 씨앗(Seed): 박구병 교수 진실·화해 강연 채록본(216문단) &amp; 원본 시각사료<br>라틴아메리카 + 한국 과거사 담론으로 펼친 디지털 역사학 6대 필드</figcaption></figure></section>
+  return `<section class="hero"><div class="hero-copy"><div class="eyebrow">서울대 역사연구소 제136차 월례집담회 · 2026.11.18 · 발표 60분(12:00–13:00) + 토론 30~50분</div><h1>AI라는 호랑이<br>등에 <em>올라타기</em></h1><div class="hero-thesis-box"><strong>인문학의 정의 — 인문학자들 머릿속의 ‘시선과 모델’</strong><p>인문학은 역사가·문학가·철학자가 세상을 바라보는 고유한 시선과 모델을 만들고 가르치며 세상을 이끄는 학문입니다. 이제 AI 에이전트(짚인간)가 <b>서사 단일 채널</b>을 넘어 <b>0비용·무한 접속의 소프트웨어(오토마타) 채널</b>을 열어줍니다.</p></div><div class="hero-actions"><button class="btn gold" data-step="1">01 심화 · 사료 한 문장에서 시작하기 <span>↗</span></button><button class="btn outline" id="hero-poster-btn">⚡ 짚인간 양방향 회로 포스터</button><button class="btn outline" id="hero-epilogue-btn" style="border-color:#fbbf2488;color:#fde68a">🌈 선흘리 무지개 에필로그</button><button class="btn outline" id="tour-map">6대 필드 매핑 보기</button></div></div><figure class="hero-image">${heroPhoto?`<img src="${heroPhoto.src}" alt="박구병 강연자료에 담긴 칠레 기억과 인권 박물관의 사진 전시">`:''}<figcaption>단일 씨앗(Seed): 박구병 교수 진실·화해 강연 채록본(216문단) &amp; 원본 시각사료<br>라틴아메리카 + 한국 과거사 담론으로 펼친 디지털 역사학 6대 필드</figcaption></figure></section>
   <section class="thesis-architecture" aria-label="서사 채널에서 소프트웨어 오토마타 채널로의 전환">
     <article class="channel-card">
       <span class="kicker">기존 인문학의 전달 경로</span>
@@ -224,11 +224,23 @@ function barsSVG(entries,selected){
 }
 async function renderTemporal(){
  const gen=generation,source=state.timelineSource;
- try{const data=await getIncidents('CHL',source);if(gen!==generation||state.textMode!=='timeline'||source!==state.timelineSource)return;const result=temporalCounts(data.rows),peak=[...result.entries].sort((a,b)=>b.count-a.count)[0];if(!result.entries.some(x=>x.year===state.timeYear))state.timeYear=peak?.year||1973;
- $('#analysis-workspace').innerHTML=`<div class="archive-source-row"><label class="archive-source-label">집계할 출처 <select id="timeline-source" aria-label="연도 집계 자료 출처"><option value="chile-pinochet-2019">Freire 연구 자료</option><option value="chile-mmdh-victims">MMDH 박물관 명부</option></select></label><a class="note" href="coverage-review.html" target="_blank" rel="noopener">두 자료의 범위 비교 ↗</a></div><div class="chart-layout"><div class="viz-panel"><div class="chart-title">${E(data.source)} · 연도별 인물 기록</div><p class="note">일·월·연도 중 알려진 범위로 집계합니다. 막대를 누르면 같은 출처와 연도로 지도에 연결됩니다.</p><div id="time-chart"></div></div><aside class="panel dark" id="time-detail"></aside></div><p class="note" style="margin-top:18px">출처 전체 ${fmt(result.total)}건 · 연도 확인 ${fmt(result.dated)}건 · 연도 미상 ${fmt(result.unknown)}건. 좌표 없는 기록도 포함합니다. 두 명부는 겹치므로 더해서 고유 희생자 수로 사용하지 않습니다. <a href="${E(data.source_url)}" target="_blank" rel="noopener">원자료 ↗</a></p>`;
+ const country=source.startsWith('jeju')?'KOR':'CHL';
+ try{const data=await getIncidents(country,source);if(gen!==generation||state.textMode!=='timeline'||source!==state.timelineSource)return;
+ const summary=data.official_summary;
+ const entries=summary?.temporal_phases?summary.temporal_phases.map(p=>({year:p.year,count:p.count,phase:p.phase,note:p.share_note})):temporalCounts(data.rows).entries;
+ const totalCount=summary?summary.recognized_victims_2026:data.count;
+ const datedCount=summary?summary.recognized_victims_2026:temporalCounts(data.rows).dated;
+ const unknownCount=summary?0:temporalCounts(data.rows).unknown;
+ const peak=[...entries].sort((a,b)=>b.count-a.count)[0];if(!entries.some(x=>x.year===state.timeYear))state.timeYear=peak?.year||(country==='KOR'?1948:1973);
+ const eupBars=summary?data.rows.filter(r=>r.record_layer==='eup_myeon_stat').sort((a,b)=>b.victim_count-a.victim_count):[];
+ $('#analysis-workspace').innerHTML=`<div class="archive-source-row"><label class="archive-source-label">집계할 출처 <select id="timeline-source" aria-label="연도 집계 자료 출처"><option value="chile-pinochet-2019">칠레 · Freire 연구 자료 (2,398명)</option><option value="chile-mmdh-victims">칠레 · MMDH 박물관 명부 (3,216명)</option><option value="jeju43-comprehensive">제주 4·3 · 정부 진상조사 공식 집계 (15,218명)</option></select></label></div>
+ ${summary?`<div class="jeju-stat-cards"><div class="jeju-stat-card"><small>2026.04 공식 확정 희생자</small><strong>${fmt(summary.recognized_victims_2026)}명</strong><span class="note" style="display:block">유족 ${fmt(summary.recognized_bereaved_2026)}명</span></div><div class="jeju-stat-card"><small>사망 / 행방불명 / 수형·후유</small><strong>10,753 / 3,796</strong><span class="note" style="display:block">수형 445 · 후유장애 224명</span></div><div class="jeju-stat-card"><small>가해주체 (2003 보고서)</small><strong>토벌대 78.1%</strong><span class="note" style="display:block">공란 제외 86.1% · 무장대 12.6%</span></div><div class="jeju-stat-card"><small>중산간 초토화 · 본토 수형</small><strong>가옥 39,285동</strong><span class="note" style="display:block">잃어버린 마을 84곳 · 군법회의 2,530명</span></div></div>`:''}
+ <div class="chart-layout"><div class="viz-panel"><div class="chart-title">${E(data.source)} · 연도별 인명피해·기록 분포</div><p class="note">막대를 누르면 상세 시기 맥락을 확인하고 04 시공간 지도로 즉시 연동합니다.</p><div id="time-chart"></div>
+ ${eupBars.length?`<div style="margin-top:20px;border-top:1px solid var(--line);padding-top:14px"><div class="chart-title">2003 정부보고서 12개 읍·면별 확정 인명피해 (14,028명 기준)</div><div class="tornado-list">${eupBars.map(r=>`<div class="tornado-row"><b>${E(r.region_label)}</b><div class="tornado-track"><div class="tornado-bar pos" style="width:${(r.victim_count/3890*100).toFixed(1)}%"></div></div><span class="mono">${fmt(r.victim_count)}명</span></div>`).join('')}</div></div>`:''}
+ </div><aside class="panel dark" id="time-detail"></aside></div><p class="note" style="margin-top:16px">기준 규모 ${fmt(totalCount)} · 시기 확인 ${fmt(datedCount)}${unknownCount?` · 연도 미상 ${fmt(unknownCount)}`:''}. <a href="${E(data.source_url)}" target="_blank" rel="noopener">공식 출처 확인 ↗</a></p>`;
  $('#timeline-source').value=source;$('#timeline-source').onchange=e=>{state.timelineSource=e.target.value;state.timeYear=null;renderTemporal();};
  const bindYears=()=>$$('[data-time-year]').forEach(b=>{b.onclick=()=>detail(b.dataset.timeYear);b.onkeydown=e=>{if(e.key==='Enter')detail(b.dataset.timeYear);};});
- const detail=year=>{state.timeYear=Number(year);const rows=data.rows.filter(r=>r.event_year===Number(year));$('#time-detail').innerHTML=`<div class="panel-title"><b>${year}년의 기록</b><span>출처별 실제 집계</span></div><div class="stat-display">${fmt(rows.length)}<small style="font-size:16px;margin-left:8px">건</small></div><p class="stat-caption">${E(data.source)} 안의 인물 기록</p><div class="timeline-insight">같은 기록을<br>지도에서 확인합니다</div><p class="note">개별 사건 수나 새로운 피해자 수로 바꾸어 읽지 않습니다. 날짜와 장소의 정밀도를 함께 확인하세요.</p><button class="btn gold small" id="year-to-map" style="margin-top:25px">${year}년 지도에서 보기 ↗</button>`;$('#time-chart').innerHTML=barsSVG(result.entries,Number(year));bindYears();$('#year-to-map').onclick=()=>{state.mapOptions={source,year:Number(year),allDates:false,includeUnknown:false,cumulative:false,view:'auto'};go(4);};};detail(state.timeYear);
+ const detail=year=>{state.timeYear=Number(year);const entry=entries.find(x=>x.year===Number(year))||entries[0];$('#time-detail').innerHTML=`<div class="panel-title"><b>${entry.year}년 집중 분석</b><span>${summary?'정부 보고서 시기 구분':'출처별 실제 집계'}</span></div><div class="stat-display">${fmt(entry.count)}<small style="font-size:16px;margin-left:8px">${summary?'명':'건'}</small></div><p class="stat-caption">${E(entry.phase||data.source)}</p><div class="timeline-insight" style="font-size:16px">${E(entry.note||'같은 시기 기록을 시공간 지도에서 확인합니다.')}</div><button class="btn gold small" id="year-to-map" style="margin-top:22px">${entry.year}년 시공간 지도 열기 ↗</button>`;$('#time-chart').innerHTML=barsSVG(entries,Number(entry.year));bindYears();$('#year-to-map').onclick=()=>{state.mapOptions={source,year:Number(entry.year),allDates:false,includeUnknown:false,cumulative:false,view:'auto',hgisMode:'heatmap'};go(4);};};detail(state.timeYear);
  }catch(e){if(gen===generation)$('#analysis-workspace').innerHTML=failure(e.message);}
 }
 function bindStep3(){$$('[data-text-mode]').forEach(b=>b.onclick=()=>{state.textMode=b.dataset.textMode;renderCurrent(false);});if(state.textMode==='lecture')bindTextAnalysis();else renderTemporal();}
@@ -238,36 +250,161 @@ function showRecord(r){if(r)openDialog('원자료 기록의 근거',`<div class=
 function renderStep4(){return head('확대',4,'자료의 범위까지 함께 보는 역사 지도','출처를 선택하고, 연도·지역·좌표의 정밀도를 바꾸며 원자료를 확인하세요.','dataset')+archiveMapShell()+nextStep(5,'기록에 남은 분포와 기록 밖으로 빠지는 과정을 함께 질문합니다.');}
 function bindStep4(){mapController=mountArchiveMap({options:state.mapOptions,getData:getIncidents,getJSON,apiBase:API_BASE,onMap:m=>{map=m;},onState:s=>{state.mapEvidence=s;}});}
 
-function renderStep5(){
-  if(!state.sim){state.sim=comparePolicies(state.simConfig,state.seed);state.week=26;}
-  const sc=SCENARIOS[state.scenario];
-  return head('확대',5,'같은 가상 집단에 다른 조사 규칙을 적용합니다','가정을 바꾸고 두 과정을 함께 재생해 보세요. 점 하나는 가상 기록 한 건입니다.','model')+
-  `<div class="toolbar">${segmented(Object.entries(SCENARIOS).map(([id,s])=>[id,`${id} · ${s.name}`]),state.scenario,'scenario')}<span class="note">가상 기록 200건 · 실제 희생자 수 추정 아님</span></div>
-  <div style="margin-bottom:18px"><b>${sc.topic}</b><p class="note">${sc.context}</p></div>
-  <div class="simulation-workspace"><div class="abm-controls"><div><label for="sim-excluded">${sc.excludedLabel}<output id="sim-excluded-value">${state.simConfig.excluded}%</output></label><input id="sim-excluded" type="range" min="0" max="70" value="${state.simConfig.excluded}" aria-label="${sc.excludedLabel}"><small>누가 접수 단계에 들어오기 어려운가</small></div><div><label for="sim-barrier">증거 접근 장벽<output id="sim-barrier-value">${state.simConfig.barrier}%</output></label><input id="sim-barrier" type="range" min="0" max="100" value="${state.simConfig.barrier}" aria-label="증거 접근 장벽"><small>개별 자료 수집에 드는 시간을 달리 가정</small></div><div><label for="sim-capacity">주당 처리 한도<output id="sim-capacity-value">${state.simConfig.capacity}건</output></label><input id="sim-capacity" type="range" min="1" max="20" value="${state.simConfig.capacity}" aria-label="주당 처리 한도"><small>두 조사 방식에 같은 처리 한도를 적용</small></div></div>
-  <div class="sim-visual"><div class="sim-toolbar"><div class="week"><b id="sim-week">${state.week}</b> <span>/ 52주</span></div><div class="row-actions"><button class="btn" id="sim-play" aria-pressed="false">▶ 처음부터 재생</button><button class="btn outline small" id="sim-end">52주 결과</button><button class="btn outline small" id="sim-new-cohort">다른 가상 집단</button></div></div>
-  <div class="sim-pair">${[['baseline',sc.baseline],['alternative',sc.alternative]].map(([id,label])=>`<section class="sim-board ${id==='alternative'?'compare':''}"><div class="sim-board-head"><h2>${label}</h2><span class="source-label" style="color:#a7c6c7">동일한 200건</span></div><div class="sim-count"><span id="${id}-count">0</span><small>건의 기록이 편입됨</small></div><div class="agent-grid" id="${id}-grid" role="img" aria-label="가상 기록의 상태">${Array.from({length:200},(_,i)=>`<i class="agent state-0" data-agent="${i}"></i>`).join('')}</div><div class="sim-legend"><span><i style="background:var(--mint)"></i>편입 <b id="${id}-recorded">0</b></span><span><i style="background:var(--gold)"></i>대기 <b id="${id}-waiting">0</b></span><span><i style="background:#4c636c"></i>접수 밖 <b id="${id}-outside">200</b></span></div></section>`).join('')}</div>
-  </div></div><div class="sim-comparison"><div class="sim-insight"><div class="eyebrow">현재 가정에서의 차이</div><strong id="sim-difference"></strong><p id="sim-interpretation"></p><button class="btn outline small" id="sim-export" style="margin-top:15px">가정과 결과 JSON 저장 ↓</button></div><div class="viz-panel"><div class="chart-title">시간에 따라 기록에 들어오는 과정</div><div id="sim-chart"></div><div class="legend"><span><i style="background:var(--amber)"></i>${sc.baseline}</span><span><i style="background:var(--teal)"></i>${sc.alternative}</span></div></div></div>
-  <details class="method-details"><summary>누가 만든 규칙이며, 무엇을 시험하나요?</summary><p>실제 사람이나 희생자 총수를 입력한 모형이 아닙니다. 고정된 난수 씨앗으로 가상 기록 200건을 만들고, 각 기록에 신청 가능 여부·자료 접근·신청 시점을 부여합니다. 매주 접수, 자료 대기, 한도 내 처리를 순서대로 진행합니다. 대안 방식에서는 명단 연계나 이동 조사가 접수와 증거 수집을 돕는다고 가정합니다. 두 방식의 집단과 주당 처리 한도는 같습니다. 계수는 실증 추정치가 아니며, 가정을 바꾸며 검증할 연구 질문을 찾기 위한 교육용 과정 모형입니다.</p><p>현재 난수 씨앗: <span id="sim-seed">${state.seed}</span>. 결과를 역사적 인과 효과나 실제 조사 성과로 해석할 수 없습니다.</p></details>`+nextStep(6,'사료의 근거와 모형의 가정을 보존한 채 교육·전시 자료로 옮깁니다.');
+function modelChart(){
+  const sc=SCENARIOS[state.scenario]||SCENARIOS.A, sim=state.sim, maxW=sim.weeks, maxY=sim.universe;
+  const w=760,h=300,l=56,r=22,t=24,b=42,pw=w-l-r,ph=h-t-b;
+  const xOf=wk=>l+(wk/maxW)*pw, yOf=val=>t+ph-Math.min(1,Math.max(0,val/maxY))*ph;
+  const band=(arr,lo,hi)=>{
+    const fwd=arr.map(d=>`${xOf(d.week).toFixed(1)},${yOf(d[hi]).toFixed(1)}`).join(' L');
+    const rev=[...arr].reverse().map(d=>`${xOf(d.week).toFixed(1)},${yOf(d[lo]).toFixed(1)}`).join(' L');
+    return `M${fwd} L${rev} Z`;
+  };
+  const line=(arr, upto)=>arr.slice(0,upto+1).map((d,i)=>`${i?'L':'M'}${xOf(d.week).toFixed(1)},${yOf(d.realRecorded).toFixed(1)}`).join(' ');
+  const fullGhost=arr=>arr.map((d,i)=>`${i?'L':'M'}${xOf(d.week).toFixed(1)},${yOf(d.realRecorded).toFixed(1)}`).join(' ');
+  const errBars=(arr,color)=>sc.milestoneWeeks.filter(wk=>wk>0&&wk<=state.week&&arr[wk]).map(wk=>{
+    const d=arr[wk], x=xOf(wk), yTop=yOf(d.mean+d.sd), yBot=yOf(Math.max(0,d.mean-d.sd));
+    return `<g stroke="${color}" stroke-width="1.5" opacity="0.88"><line x1="${x}" y1="${yTop}" x2="${x}" y2="${yBot}"/><line x1="${x-4}" y1="${yTop}" x2="${x+4}" y2="${yTop}"/><line x1="${x-4}" y1="${yBot}" x2="${x+4}" y2="${yBot}"/></g>`;
+  }).join('');
+  const anc=sc.empiricalAnchor, ancX=xOf(Math.min(maxW,anc.week)), ancY=yOf(anc.count);
+  const statX=xOf(Math.min(maxW,sc.statutoryWeek));
+  const yTicks=[0,0.25,0.5,0.75,1].map(f=>Math.round(maxY*f));
+  return `<svg viewBox="0 0 ${w} ${h}" aria-label="몬테카를로 앙상블 시뮬레이션 팬 차트 및 에러바">
+    ${yTicks.map(v=>`<line class="chart-grid" x1="${l}" x2="${w-r}" y1="${yOf(v)}" y2="${yOf(v)}"/><text class="chart-label" x="${l-8}" y="${yOf(v)+4}" text-anchor="end">${fmt(v)}</text>`).join('')}
+    <path d="${band(sim.baseline,'p05','p95')}" fill="#bd7f3018"/>
+    <path d="${band(sim.baseline,'p25','p75')}" fill="#bd7f3030"/>
+    <path d="${band(sim.alternative,'p05','p95')}" fill="#117d761c"/>
+    <path d="${band(sim.alternative,'p25','p75')}" fill="#117d7638"/>
+    <path d="${fullGhost(sim.baseline)}" stroke="#bd7f3055" stroke-width="1.3" stroke-dasharray="4 4" fill="none"/>
+    <path d="${fullGhost(sim.alternative)}" stroke="#117d7655" stroke-width="1.3" stroke-dasharray="4 4" fill="none"/>
+    <path d="${line(sim.baseline,state.week)}" stroke="#d97706" stroke-width="3" fill="none"/>
+    <path d="${line(sim.alternative,state.week)}" stroke="#0f766e" stroke-width="3.2" fill="none"/>
+    ${errBars(sim.baseline,'#b45309')}${errBars(sim.alternative,'#0f766e')}
+    <line x1="${statX}" x2="${statX}" y1="${t}" y2="${h-b}" stroke="#e11d48" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text x="${Math.min(w-r-4,statX+5)}" y="${t+12}" fill="#be123c" font-size="10.5" font-weight="700" text-anchor="${statX>w-180?'end':'start'}">${E(sc.statutoryLabel)}</text>
+    <g transform="translate(${ancX},${ancY})">
+      <polygon points="0,-8 8,0 0,8 -8,0" fill="#fbbf24" stroke="#0c1b2a" stroke-width="1.8"/>
+      <text x="${ancX>w-220?-11:11}" y="4" fill="#0c1b2a" font-size="11" font-weight="800" text-anchor="${ancX>w-220?'end':'start'}">${E(anc.label)}</text>
+    </g>
+    ${sc.milestoneWeeks.map(v=>`<text class="chart-label" x="${xOf(v)}" y="${h-12}" text-anchor="middle">${v}주</text>`).join('')}
+    <line x1="${xOf(state.week)}" x2="${xOf(state.week)}" y1="${t}" y2="${h-b}" stroke="#0c1b2a" stroke-width="1.4" stroke-dasharray="2 3"/>
+  </svg>`;
 }
-function modelChart(){const w=670,h=220,l=32,r=15,t=15,b=35,pw=w-l-r,ph=h-t-b;const path=history=>history.slice(0,state.week+1).map((d,i)=>`${i?'L':'M'}${l+d.week/52*pw},${t+ph-d.recorded/200*ph}`).join(' ');return `<svg viewBox="0 0 ${w} ${h}" aria-label="가상 조사 진행에 따른 기록 편입 수">${[0,100,200].map(v=>`<line class="chart-grid" x1="${l}" x2="${w-r}" y1="${t+ph-v/200*ph}" y2="${t+ph-v/200*ph}"/><text class="chart-label" x="${l-6}" y="${t+ph-v/200*ph+4}" text-anchor="end">${v}</text>`).join('')}<path d="${path(state.sim.baseline)}" stroke="#bd7f30" stroke-width="3" fill="none"/><path d="${path(state.sim.alternative)}" stroke="#117d76" stroke-width="3" fill="none"/>${[0,13,26,39,52].map(v=>`<text class="chart-label" x="${l+v/52*pw}" y="${h-10}" text-anchor="middle">${v}주</text>`).join('')}<line x1="${l+state.week/52*pw}" x2="${l+state.week/52*pw}" y1="${t}" y2="${h-b}" stroke="#708184" stroke-dasharray="3 5"/></svg>`;}
+function renderStep5(){
+  const sc=SCENARIOS[state.scenario]||SCENARIOS.A;
+  if(!state.sim||state.sim.scenario!==state.scenario){
+    state.sim=comparePolicies(state.simConfig,state.seed,200,state.scenario,28);
+    state.week=sc.statutoryWeek||39;
+  }
+  return head('확대',5,'실측 데이터에 튜닝된 양국 반사실·완료예측 시뮬레이터','칠레 직권조사 실측치(2,398명)와 한국 신청주의 실측치(370명)에 보정된 몬테카를로(N=28) 모형으로 반사실 경로와 2,550명 직권조사 완료 시점을 실험합니다.','model')+
+  `<div class="toolbar">${segmented(Object.entries(SCENARIOS).map(([id,s])=>[id,`${id} · ${s.shortName}`]),state.scenario,'scenario')}<button type="button" class="btn outline small" id="sim-reset-tuned">🎯 실측 튜닝값 복원</button></div>
+  <div class="abm-calib-banner">
+    <div class="abm-calib-item"><small>실측 기준점 (Empirical Anchor)</small><strong id="abm-anchor-readout">${E(sc.empiricalAnchor.label)}</strong><span>모집단 ${fmt(sc.universe)}명 · <a href="${E(sc.empiricalAnchor.sourceUrl)}" target="_blank" rel="noopener" style="color:#67e8f9">근거 사료 ↗</a></span></div>
+    <div class="abm-calib-item forecast"><small>${state.scenario==='B'?'신청주의 반사실 손실 추정':'직권조사 90%+ 완료 시점 예측'}</small><strong id="abm-forecast-readout" class="ok">—</strong><span id="abm-calib-err">실측 수렴 오차 계산 중</span></div>
+    <div><span class="preview-badge">Monte Carlo N=28 · ±1 SD 에러바</span></div>
+  </div>
+  <div style="margin-bottom:14px"><b>${E(sc.topic)}</b><p class="note">${E(sc.context)}</p></div>
+  <div class="simulation-workspace">
+    <div class="abm-controls">
+      <div><label for="sim-excluded">${E(sc.excludedLabel)}<output id="sim-excluded-value">${state.simConfig.excluded}%</output></label><input id="sim-excluded" type="range" min="10" max="95" value="${state.simConfig.excluded}"><small>절손·고령·사찰모름·보복우려로 개별 신청을 못하는 비율</small></div>
+      <div><label for="sim-barrier">${E(sc.barrierLabel)}<output id="sim-barrier-value">${state.simConfig.barrier}%</output></label><input id="sim-barrier" type="range" min="10" max="95" value="${state.simConfig.barrier}"><small>자료 은폐·개별 입증 요구로 심의까지 지연되는 강도</small></div>
+      <div><label for="sim-capacity">${E(sc.capacityLabel)}<output id="sim-capacity-value">${state.simConfig.capacity}</output></label><input id="sim-capacity" type="range" min="${sc.capacityMin}" max="${sc.capacityMax}" value="${state.simConfig.capacity}"><small>조사관 정원·심의위원회 주당 처리 건수</small></div>
+    </div>
+    <div class="sim-visual">
+      <div class="sim-toolbar"><div class="week"><b id="sim-week">${state.week}</b> <span>/ ${sc.horizonWeeks}주</span></div><div class="row-actions"><button type="button" class="btn" id="sim-play" aria-pressed="false">▶ 처음부터 재생</button><button type="button" class="btn outline small" id="sim-end">${sc.statutoryWeek}주 기준점</button><button type="button" class="btn outline small" id="sim-new-cohort">다른 난수 앙상블</button></div></div>
+      <div class="sim-scrubber-row"><span>주차 탐색</span><input type="range" id="sim-week-slider" min="0" max="${sc.horizonWeeks}" value="${state.week}"><span class="mono" id="sim-calendar-label"></span></div>
+      <div class="sim-pair">${[['baseline',sc.baseline],['alternative',sc.alternative]].map(([id,label])=>`<section class="sim-board ${id==='alternative'?'compare':''}"><div class="sim-board-head"><h2>${E(label)}</h2><span class="source-label" style="color:#a7c6c7">모집단 ${fmt(sc.universe)}명 (200격자 투영)</span></div><div class="sim-count"><span id="${id}-count">0</span><small>명 규명 (95% CI <span id="${id}-ci">—</span>)</small></div><div class="agent-grid" id="${id}-grid" role="img">${Array.from({length:200},(_,i)=>`<i class="agent state-0" data-agent="${i}"></i>`).join('')}</div><div class="sim-legend"><span><i style="background:var(--mint)"></i>규명 <b id="${id}-recorded">0</b></span><span><i style="background:var(--gold)"></i>심의대기 <b id="${id}-waiting">0</b></span><span><i style="background:#4c636c"></i>접수밖 <b id="${id}-outside">0</b></span></div></section>`).join('')}</div>
+    </div>
+  </div>
+  <div class="sim-comparison">
+    <div class="sim-insight">
+      <div class="eyebrow">제도 설계가 가르는 역사적 규명 격차</div>
+      <strong id="sim-difference"></strong>
+      <p id="sim-interpretation"></p>
+      <div style="margin-top:16px;border-top:1px solid var(--line);padding-top:12px">
+        <div class="chart-title" style="font-size:12.5px">모수 민감도 분석 (${sc.statutoryWeek}주차 규명 인원 변화 Δ)</div>
+        <div class="tornado-list" id="sim-tornado"></div>
+      </div>
+      <button type="button" class="btn outline small" id="sim-export" style="margin-top:14px">보정 모수·앙상블 결과 JSON 저장 ↓</button>
+    </div>
+    <div class="viz-panel">
+      <div class="chart-title">몬테카를로 28회 앙상블 궤적 (95%·50% 신뢰밴드 · ±1 SD 에러바 · ★ 실측치)</div>
+      <div id="sim-chart"></div>
+      <div class="legend" style="margin-top:8px"><span><i style="background:#d97706"></i>${E(sc.baseline)} (평균·신뢰구간)</span><span><i style="background:#0f766e"></i>${E(sc.alternative)} (평균·신뢰구간)</span><span><i style="background:#fbbf24"></i>★ 역사적 실측 기준점</span></div>
+    </div>
+  </div>
+  <details class="method-details"><summary>모수 보정(Calibration) 근거와 해석 유의사항</summary><p>${E(sc.tunedNote)}. 28개 독립 난수 씨앗 코호트(각 200 에이전트 → 실제 모집단 ${fmt(sc.universe)}명 비례 스케일링)를 구동하여 평균, 표준편차(±1 SD 에러바), 50%·95% 분위수 밴드를 산출합니다. 개인의 실제 신원 데이터는 사용하지 않으며, 행정 역량과 입증 책임 구조가 규명 완료 시점에 미치는 거시적 동학을 검증하는 과정 모형입니다. 현재 기준 씨앗: <span id="sim-seed">${state.seed}</span>.</p></details>`+nextStep(6,'사료의 근거와 시뮬레이션 가정을 보존한 채 교육·전시 다중 채널 자료로 옮깁니다.');
+}
 function drawSimulation(){
+  const sc=SCENARIOS[state.scenario]||SCENARIOS.A, sim=state.sim;
+  state.week=Math.max(0,Math.min(sim.weeks,state.week));
   $('#sim-week').textContent=state.week;
-  for(const key of ['baseline','alternative']){const snap=state.sim[key][state.week];$(`#${key}-count`).textContent=snap.recorded;for(const field of ['recorded','waiting','outside'])$(`#${key}-${field}`).textContent=snap[field];$$('.agent',$(`#${key}-grid`)).forEach((dot,i)=>{dot.className=`agent state-${snap.states[i]}`;dot.title=`가상 기록 ${i+1}: ${['접수 밖','조사 대기','기록 편입'][snap.states[i]]}`;});$(`#${key}-grid`).setAttribute('aria-label',`가상 기록 200건 중 편입 ${snap.recorded}, 대기 ${snap.waiting}, 접수 밖 ${snap.outside}`);}
-  const delta=state.sim.alternative[state.week].recorded-state.sim.baseline[state.week].recorded;
-  $('#sim-difference').textContent=`${delta>=0?'+':''}${delta}건 · ${state.week}주차`;
-  $('#sim-interpretation').textContent='이 차이는 현재 가정과 가상 집단에서 계산한 결과입니다. 현장에서는 어떤 명단과 자료, 절차가 이 차이를 만들지 검증해야 합니다.';
+  if($('#sim-week-slider'))$('#sim-week-slider').value=state.week;
+  const [y0,m0]=sc.startYearMonth||[2026,11], totM=(y0*12+(m0-1))+Math.round(state.week/4.345);
+  if($('#sim-calendar-label'))$('#sim-calendar-label').textContent=`${Math.floor(totM/12)}.${String((totM%12)+1).padStart(2,'0')} 시점`;
+  for(const key of ['baseline','alternative']){
+    const snap=sim[key][state.week];
+    $(`#${key}-count`).textContent=fmt(snap.realRecorded);
+    if($(`#${key}-ci`))$(`#${key}-ci`).textContent=`${fmt(snap.p05)}~${fmt(snap.p95)}`;
+    $(`#${key}-recorded`).textContent=fmt(snap.realRecorded);
+    $(`#${key}-waiting`).textContent=fmt(snap.realWaiting);
+    $(`#${key}-outside`).textContent=fmt(snap.realOutside);
+    $$('.agent',$(`#${key}-grid`)).forEach((dot,i)=>{dot.className=`agent state-${snap.states[i]}`;dot.title=`코호트 #${i+1}: ${['접수 밖','심의 대기','규명 완료'][snap.states[i]]}`;});
+  }
+  const bRec=sim.baseline[state.week].realRecorded, aRec=sim.alternative[state.week].realRecorded, delta=aRec-bRec;
+  $('#sim-difference').textContent=`+${fmt(delta)}명 격차 (${state.week}주차)`;
+  const fEl=$('#abm-forecast-readout'), eEl=$('#abm-calib-err');
+  if(state.scenario==='B'){
+    const loss39=sim.alternative[39].realRecorded-sim.baseline[39].realRecorded;
+    if(fEl){fEl.textContent=`신청주의 가정 시 39주차 -${fmt(loss39)}명 누락 (${fmt(sim.baseline[39].realRecorded)}명 그침)`;fEl.className='warn';}
+  }else{
+    if(fEl){
+      fEl.textContent=Number.isFinite(sim.completionWeek)?`${sim.completionLabel} · ${sim.withinStatutory?'법정기한 내 완료 ✅':'법정기한 초과 ⚠️ (연장 필요)'}`:'현재 역량으로 기한 내 90% 도달 불가 ⚠️';
+      fEl.className=sim.withinStatutory?'ok':'warn';
+    }
+  }
+  if(eEl)eEl.textContent=`실측치(${fmt(sim.calibration.empiricalValue)}명) 대비 현재 모형 평균 ${fmt(sim.calibration.modelMean)}±${fmt(sim.calibration.modelSd)}명 (오차 ${sim.calibration.errorPct}%)`;
+  $('#sim-interpretation').textContent=state.scenario==='A'
+    ?`현재 주당 ${state.simConfig.capacity}명 처리 역량 기준, 직권조사 전환 시 ${sim.completionLabel}에 대상자 90% 이상 조사가 마무리됩니다(신청주의 유지 시 ${fmt(bRec)}명 정체).`
+    :state.scenario==='B'
+    ?`칠레가 연대대리구 수작업 DB 통합 없이 개별 신청·입증만 받았다면 39주 뒤 ${fmt(sim.baseline[39].realRecorded)}명만 확인되어 실제(${fmt(sim.alternative[39].realRecorded)}명) 대비 과반이 침묵 속에 남았을 것입니다.`
+    :`개별 유족 신고만으로는 절손·연좌제 장벽 때문에 ${fmt(bRec)}명 수준에서 멈추지만, 마을 전수조사와 직권재심 결합 시 ${fmt(aRec)}명까지 복원됩니다.`;
   $('#sim-chart').innerHTML=modelChart();
+  const maxSens=Math.max(10,...sim.sensitivity.map(s=>Math.abs(s.delta)));
+  if($('#sim-tornado'))$('#sim-tornado').innerHTML=sim.sensitivity.map(s=>`<div class="tornado-row"><span>${E(s.label)}</span><div class="tornado-track"><div class="tornado-bar ${s.delta>=0?'pos':'neg'}" style="width:${(Math.abs(s.delta)/maxSens*100).toFixed(1)}%"></div></div><b class="mono" style="color:${s.delta>=0?'var(--teal)':'var(--rose)'}">${s.delta>=0?'+':''}${fmt(s.delta)}명</b></div>`).join('');
 }
 function stopSimulation(){if(simTimer){clearInterval(simTimer);simTimer=null;}if($('#sim-play')){$('#sim-play').textContent='▶ 처음부터 재생';$('#sim-play').setAttribute('aria-pressed','false');}}
-function bindStep5(){drawSimulation();$$('[data-scenario]').forEach(b=>b.onclick=()=>{state.scenario=b.dataset.scenario;const sc=SCENARIOS[state.scenario];state.simConfig={excluded:sc.default[0],barrier:sc.default[1],capacity:sc.default[2]};state.sim=null;renderCurrent(false);});
-  for(const key of ['excluded','barrier','capacity'])$(`#sim-${key}`).oninput=e=>{stopSimulation();state.simConfig[key]=Number(e.target.value);$(`#sim-${key}-value`).textContent=e.target.value+(key==='capacity'?'건':'%');state.sim=comparePolicies(state.simConfig,state.seed);state.week=26;drawSimulation();};
-  $('#sim-play').onclick=()=>{if(simTimer){stopSimulation();return;}state.week=0;drawSimulation();$('#sim-play').textContent='Ⅱ 재생 멈춤';$('#sim-play').setAttribute('aria-pressed','true');simTimer=setInterval(()=>{state.week++;drawSimulation();if(state.week>=52)stopSimulation();},180);};
-  $('#sim-end').onclick=()=>{stopSimulation();state.week=52;drawSimulation();};
-  $('#sim-new-cohort').onclick=()=>{stopSimulation();state.seed++;state.sim=comparePolicies(state.simConfig,state.seed);state.week=26;$('#sim-seed').textContent=state.seed;drawSimulation();toast('같은 규칙을 다른 가상 집단에 적용했습니다.');};
-  $('#sim-export').onclick=()=>download(JSON.stringify(simulationRecord(),null,2),'trc-investigation-model.json','application/json');
+function bindStep5(){
+  drawSimulation();
+  $$('[data-scenario]').forEach(b=>b.onclick=()=>{
+    stopSimulation(); state.scenario=b.dataset.scenario; const sc=SCENARIOS[state.scenario];
+    state.simConfig={excluded:sc.default[0],barrier:sc.default[1],capacity:sc.default[2]};
+    state.sim=comparePolicies(state.simConfig,state.seed,200,state.scenario,28);
+    state.week=sc.statutoryWeek||39; renderCurrent(false);
+  });
+  if($('#sim-reset-tuned'))$('#sim-reset-tuned').onclick=()=>{
+    stopSimulation(); const sc=SCENARIOS[state.scenario];
+    state.simConfig={excluded:sc.default[0],barrier:sc.default[1],capacity:sc.default[2]};
+    state.sim=comparePolicies(state.simConfig,state.seed,200,state.scenario,28);
+    state.week=sc.statutoryWeek||39; renderCurrent(false);
+    toast('실측 데이터 수렴 튜닝 모수로 복원했습니다.');
+  };
+  for(const key of ['excluded','barrier','capacity'])$(`#sim-${key}`).oninput=e=>{
+    stopSimulation(); state.simConfig[key]=Number(e.target.value);
+    $(`#sim-${key}-value`).textContent=e.target.value+(key==='capacity'?'':'%');
+    state.sim=comparePolicies(state.simConfig,state.seed,200,state.scenario,28);
+    drawSimulation();
+  };
+  if($('#sim-week-slider'))$('#sim-week-slider').oninput=e=>{stopSimulation();state.week=Number(e.target.value);drawSimulation();};
+  $('#sim-play').onclick=()=>{
+    if(simTimer){stopSimulation();return;}
+    state.week=0;drawSimulation();$('#sim-play').textContent='Ⅱ 재생 멈춤';$('#sim-play').setAttribute('aria-pressed','true');
+    simTimer=setInterval(()=>{state.week+=2;if(state.week>=state.sim.weeks){state.week=state.sim.weeks;drawSimulation();stopSimulation();return;}drawSimulation();},95);
+  };
+  $('#sim-end').onclick=()=>{stopSimulation();state.week=SCENARIOS[state.scenario].statutoryWeek||state.sim.weeks;drawSimulation();};
+  $('#sim-new-cohort').onclick=()=>{stopSimulation();state.seed++;state.sim=comparePolicies(state.simConfig,state.seed,200,state.scenario,28);if($('#sim-seed'))$('#sim-seed').textContent=state.seed;drawSimulation();toast('새 28개 난수 코호트 앙상블로 재검증했습니다.');};
+  $('#sim-export').onclick=()=>download(JSON.stringify(simulationRecord(),null,2),'trc-calibrated-abm-v3.json','application/json');
 }
-function simulationRecord(){return {type:'synthetic_educational_process_model',not_historical_estimate:true,scenario:state.scenario,seed:state.seed,cohort_size:200,week:state.week,assumptions:state.simConfig,baseline:state.sim?.baseline[state.week],alternative:state.sim?.alternative[state.week],rules:'주별 접수·자료 대기·동일 처리 한도. 대안의 명단 연계·지원 효과는 가정이며 실증 계수가 아님.'};}
+function simulationRecord(){return {type:'calibrated_monte_carlo_process_abm',version:'3.0.0',scenario:state.scenario,seed:state.seed,ensemble_runs:28,universe:state.sim?.universe,week:state.week,assumptions:state.simConfig,calibration:state.sim?.calibration,completion_forecast:state.sim?.completionLabel,baseline:state.sim?.baseline[state.week],alternative:state.sim?.alternative[state.week]};}
 
 const AUDIENCES={
   public:{name:'대국민 카드',headline:'명단은 있는데,\n왜 다시 입증해야 할까?',body:'과거사 조사 지연을 이해하려면 자료의 제약과 조사 방식의 병목을 함께 살펴야 합니다. 현장의 질문이 새로운 연구의 출발점이 됩니다.',format:'카드와 근거 기록'},
@@ -334,26 +471,80 @@ async function exportPNG(){
 }
 
 function showMethods(){openDialog('자료와 방법',`<dl><dt>공개 강연 기록</dt><dd>박구병 교수의 2026.10.29 강연 편집 채록본 ${lecture.blocks.length}개 문단을 불러옵니다. 음원은 연결되어 있지 않습니다. <a href="${SOURCE_URL}" target="_blank" rel="noopener">원문</a></dd><dt>실제 연구 데이터</dt><dd>Freire 외(2019) 인물 기록 2,398건과 MMDH 공개 명부 3,216건, 제주 공식 지역별 유적 47곳과 소개 유적 25곳을 출처별로 읽습니다. 명부와 유적 목록은 서로 겹치므로 합산한 수를 고유 희생자 수로 사용하지 않습니다. 좌표 없는 기록과 날짜 정밀도도 보존합니다. 지도 숫자 원은 화면상 묶음 또는 원문 지역 집계입니다. 지역 대표점·현대 유적 참고 위치를 원자료의 사건 좌표와 구별합니다. <a href="coverage-review.html" target="_blank" rel="noopener">수집 범위 점검</a> <a href="${DATASET_URL}" target="_blank" rel="noopener">자료 설명</a></dd><dt>공식 통계의 대조</dt><dd>남아공 법무부의 2000.11.01 집계에서 신청 총수 7,112건과 허가 849건을 구별합니다. 해당 날짜의 집계이며 모든 시점의 최종 수치를 뜻하지 않습니다. <a href="${DOJ_URL}" target="_blank" rel="noopener">집계표</a></dd><dt>사진</dt><dd>사용자가 제공한 박구병 강연 원본 PPTX에서 사진을 추출했습니다. 슬라이드 번호와 원본 해상도를 표시하며, 사진 관찰과 역사적 해석을 구별합니다.</dd><dt>편집 구조와 모형</dt><dd>논증 지도는 연구자의 편집 구조도입니다. 조사 실험은 가상 기록 200건에 적용한 과정 모형이며 역사적 희생자 수나 정책 효과의 추정치가 아닙니다.</dd><dt>교정한 표시</dt><dd>기존 구성 예문의 발언 건수, 임베딩 좌표, 음성 휴지, 인물별 신뢰도 점수를 실제 분석 결과처럼 표시하지 않습니다. 좌표가 부정확하다고 의도적 은폐로 자동 분류하지 않습니다.</dd><dt>저장과 내보내기</dt><dd>연구자의 분류와 메모는 이 브라우저에 저장합니다. 내려받는 HTML·Markdown·JSON에는 출처, 판단, 모형의 가정이 포함됩니다. 워크벤치 ${APP_VERSION}.</dd></dl>`);}
+function showRainbowEpilogue(){
+  openDialog('에필로그 · 데이터 너머의 무지개 — 우리가 역사학을 공부하는 진정한 이유',`
+    <div class="epilogue-modal-grid">
+      <div class="epilogue-art-box">
+        <img src="assets/gosunja-rainbow-2024.jpg" alt="선흘1리 무지개할망 고순자 할머니 2024년작 아빠가 나를 사랑해">
+        <div class="epilogue-art-caption"><b>〈아빠가 나를 사랑해〉 (2024, 고순자 · 제주 조천읍 선흘1리 올레미술관)</b><br>“아빠가 나를 사랑해 / 순자야 열명이쩌 애기보잰허난 / 나 마음이 지꺼지주(‘기쁘고 대견하지’) / 아빠가 생각하난 / 2024 고순자”</div>
+      </div>
+      <div class="epilogue-story">
+        <div>
+          <div class="eyebrow" style="color:#fbbf24">Slide 20 · 에필로그 · 선흘리에서 임진강 민통선까지</div>
+          <h3>통계 점 하나 너머에 살아 숨 쉬는 <em>사랑과 승화</em>,<br>그것이 인간이 역사학을 공부하는 이유입니다</h3>
+        </div>
+        <div class="epilogue-quote-box">〈국토종단〉
+어제는 제주도, 오늘은 민통선. 느끼는 바가 많도다.
+나가 8살 때 4·3으루 총 맞아 죽은 애비가 동생 돌본다고 칭찬한 아버지의 그림, 무지개.
+할매가 인자 90살 때 그린 그림. 20년 전 죽은 엄니가 생각나서 엉엉 울었다.
+민통선. 아무 관심 없던 고량포구, 칠중성, 호로고루, 경순왕릉.
+내 비록 무식하다마는 배움은 끝이 없고 무식은 한이 없도다.</div>
+        <div class="epilogue-pillars">
+          <div class="epilogue-pillar"><b>1. 선흘1리 좌표(33.5146°N, 126.6935°E)의 두 얼굴 — 초토화와 무지개</b>낙선동 4·3성과 도틀굴의 비극이 서린 바로 그 마을에서, 여든 넘어 처음 붓을 잡은 고순자 할머니는 8살 때 총살당한 아버지의 다정한 칭찬을 80년 만에 찬란한 무지개로 승화시켰습니다.</div>
+          <div class="epilogue-pillar"><b>2. 제주 중산간에서 임진강 민통선(고량포구·칠중성·호로고루·경순왕릉)까지</b>삼국과 고려의 경계부터 현대 분단의 최전선까지, 이 땅의 지리·풍토·이념의 대결이 남긴 상처를 발로 밟고 보듬는 일은 오토마타가 대신할 수 없는 인간 역사가의 소명입니다.</div>
+        </div>
+        <div class="row-actions" style="justify-content:space-between;margin-top:4px">
+          <a href="https://www.socialmuseum.net/artists/7" target="_blank" rel="noopener" style="color:#67e8f9;font-size:12px">선흘 그림할망 ‘무지개할망 고순자’ 소개 ↗</a>
+          <button type="button" class="btn gold small" id="epilogue-to-map">📍 04 지도에서 선흘1리 올레미술관 위치 열기 ↗</button>
+        </div>
+      </div>
+    </div>`);
+  const btn=$('#epilogue-to-map');
+  if(btn)btn.onclick=()=>{
+    $('#detail-dialog').close();
+    state.mapOptions={source:'jeju43-comprehensive',allDates:true,includeUnknown:true,cumulative:true,search:'고순자',view:'points',hgisMode:'heatmap',jejuLayer:'all'};
+    go(4);
+  };
+}
+window.openRainbowEpilogue=showRainbowEpilogue;
+
 function showPosterModal(){
   openDialog('짚인간(AI 에이전트) 양방향 사이버네틱스 포스터 회로',`<iframe class="poster-frame" src="poster-anim.html" title="짚인간 양방향 회로 포스터 애니메이션"></iframe><p class="note"><b>파란선(정방향 지휘):</b> 인문학자 머릿속의 시선·모델을 0비용 소프트웨어(오토마타)로 육화해 시각화·질의·시뮬레이션·산학화로 확장 · <b>주황선(역방향 2차 사이버네틱스):</b> 오토마타 검증 결과를 되돌려 내 시선과 모델을 재점검·보정(심화). <a href="poster-anim.html" target="_blank" rel="noopener">새 창 전체화면으로 열기 ↗</a></p>`);
 }
 function showCueSheet(){
-  const rows=[
-    ['12:00–12:12 (12분)','Part 1 · 문제제기와 인문학 재정의 (슬라이드 1–5)','00 테제 & 포스터 회로','인문학 = 머릿속의 시선과 모델. 서사 단일 채널에서 0비용 오토마타 채널로의 도약 선언',0],
-    ['12:12–12:22 (10분)','Part 2 · 심화: 시선의 자가 보정 (슬라이드 6–8)','01 사료비판 · 02 증거 연결','박구병 강연 100% 채록 + 남아공 통계(7,112 vs 849) 분리 + 정지석 반론 병렬 그래프 시연',1],
-    ['12:22–12:37 (15분)','Part 3 · 확대: 오토마타 서비스 (슬라이드 9–12)','03 멀리읽기 · 04 지도 · 05 실험','어휘 동시등장 계량 → 칠레·제주 5,686건 시공간 지도 → 200건 조사 규칙 비교 실험 시연',4],
-    ['12:37–12:45 (8분)','Part 4 · 산학화 & 로그스케일 리더십 (슬라이드 13–16)','06 공공역사 제작 & 00 로그스케일','출처·판정유보 동봉 패키지 생성 + 체화된 인지·필멸성·AI 안경 시대 강심장 리더십 결어',6],
-    ['12:45–13:00 (15분)','종합 토론 및 질의응답 (사회: 허수 교수)','질문별 해당 탭 즉시 호출','역사학부 교수진·연구자 질의에 실제 원문 문단(p048, p212 등)과 지도로 즉시 응답',2]
+  const presRows=[
+    ['12:00–12:10 (10분)','제1막 · 인문학 재정의와 채널 혁명 (슬라이드 1–3)','시연 ① 포스터 회로 (P 키)','모교 인사 → 인문학 = 머릿속의 시선과 모델(Slide 2) → 서사 단일 채널에서 짚인간 오토마타 다중 채널로(Slide 3, 양방향 회로 1분 시연)','poster','포스터'],
+    ['12:10–12:22 (12분)','제2막 · 단일 씨앗과 [심화 01·02] (슬라이드 4–6)','시연 ② 01 사료비판 · 02 증거 연결','박구병 강연 216문단 씨앗(Slide 4) → 사면 통계(7,112 대 849) 스탠드오프 분리(Slide 5) → 박구병 가설 대 정지석 반론 병렬 증거망(Slide 6)','1','01 열기'],
+    ['12:22–12:40 (18분)','제3막 · 오토마타 서비스 [확대 03·04·05] (슬라이드 7–9)','시연 ③ 03 멀리읽기 · 04 3D HGIS · 05 실측ABM','어휘·연도 계량(Slide 7) → 네온 KDE 히트맵·3D 프리즘·제주 15,218명/본토 형무소 이송 아크(Slide 8) → 칠레(2,398)·한국(370→2,550) 실측튜닝 몬테카를로 ABM(Slide 9)','4','04 HGIS'],
+    ['12:40–12:46 (6분)','제4막 전반 · [산학화 06] 다중 채널 공급 (슬라이드 10)','시연 ④ 06 공공역사 제작','줄글 원고 납품을 넘어 원문 출처·판정 유보가 봉인된 대국민 카드·학예사 고증 시트·대학 리빙랩 교안 직접 발행','6','06 열기'],
+    ['12:46–12:53 (7분)','제4막 중반 · 국제 비교와 공론장 진단 (슬라이드 11–13)','04 듀얼 비교 · 05 완료시점 예측','칠레 GitHub 오픈 DB·예일 CGDB/LUX(Slide 11) → 한국 2,550명 첫 직권조사 완료 예측과 데이터 침묵(Slide 12) → 선동 방어 나침반(Slide 13)','5','05 실험'],
+    ['12:53–13:00 (7분)','제4막 후반 · 필멸성과 10ⁿ 로그스케일 결어 (슬라이드 14–19)','00 테제 · 하단 로그스케일(10ⁿ)','유한한 인간(필멸성)의 지휘권(Slide 14) → AI 안경 시험 종언(Slide 15) → 10ⁿ 로그스케일(Slide 16) → 바첼레트 질문·강심장 리더십(Slide 17–19)','log','로그스케일']
   ];
-  openDialog('11월 18일(12:00–13:00) 슬라이드 ↔ 웹앱 60분 통합 진행 큐시트',`<p class="note">발표 중 우측 상단 <b>⛶ 발표 모드</b>(또는 단축키 <b>C</b>)를 켜면 상단에 현재 단계의 한 줄 핵심 메시지와 점프 바가 고정됩니다. 숫자키 <b>0~6</b>으로 즉시 화면을 전환할 수 있습니다.</p><table class="cue-table"><thead><tr><th>시간 (60분)</th><th>슬라이드 파트</th><th>웹앱 시연 화면</th><th>청중(역사학부) 핵심 전달 메시지</th><th>이동</th></tr></thead><tbody>${rows.map(([t,s,w,m,step])=>`<tr><td><b>${t}</b></td><td>${s}</td><td>${w}</td><td>${m}</td><td><button class="btn outline small" data-cue-go="${step}">열기</button></td></tr>`).join('')}</tbody></table>`);
-  $$('[data-cue-go]',$('#dialog-body')).forEach(b=>b.onclick=()=>{$('#detail-dialog').close();go(Number(b.dataset.cueGo));});
+  const qaRows=[
+    ['13:00–13:15 (15분 · 기본 전반)','토론 트랙 ① 사료비판의 엄밀성과 AI 환각·번역 통제','01 사료비판 (p048 · 4개국어 개념어) · 02 논증지도','구술 원문 불변 보존 + 스탠드오프 마크업 구조 및 박구병 가설·정지석 반론 병렬 수용 방식 시연','1','01 근거'],
+    ['13:15–13:30 (15분 · 30분 기준선)','토론 트랙 ② 제주 4·3 다층 DB 구축과 중복 배제·결측 해석','04 HGIS (결측 X-Ray · 본토 형무소 아크)','공식 결정 15,218명·읍면 14,028명·수형인 2,530명 계층 분리 원칙 및 결측(Missing Data)의 사료적 의미 응답','4','04 X-Ray'],
+    ['13:30–13:50 (+20분 탄력 확장 · 최대 50분)','토론 트랙 ③ 반사실 시뮬레이션(ABM) 정당성과 과거사 데이터 개방','05 실측튜닝 ABM (민감도·완료예측) · 슬라이드 11–13','실측치(칠레 2,398·한국 370) 수렴 보정 메커니즘 시연 및 보안사 명단 비식별 공개·디지털 공론장 복원 심층 토론','5','05 시연']
+  ];
+  openDialog('11월 18일 집담회 큐시트 · 본 발표 60분(12:00–13:00) + 심층 토론 30~50분(13:00–13:50)',
+    `<p class="note">역사학부 월례집담회 진행 방식에 맞춰 <b>제1부 본 발표·라이브 시연 60분(12:00–13:00)</b>과 <b>제2부 심층 질의응답·종합토론 30~50분(13:00–13:30 기본, 토론 활성화 시 13:50까지 탄력 운영)</b>으로 구성했습니다. 단축키 <b>C</b>로 상단 프롬프터 바를 토글하고 <b>0~6</b>·<b>P</b>로 즉시 이동합니다.</p>
+    <span class="cue-part-badge">제1부 · 본 발표 및 오토마타 라이브 시연 (12:00–13:00 · 60분 Full)</span>
+    <table class="cue-table"><thead><tr><th>시간 (60분)</th><th>슬라이드 구간 (19장)</th><th>웹앱 시연 화면</th><th>핵심 전달 포인트</th><th>이동</th></tr></thead><tbody>${presRows.map(([t,s,w,m,act,btn])=>`<tr><td><b>${t}</b></td><td>${s}</td><td>${w}</td><td>${m}</td><td><button type="button" class="btn outline small" data-cue-go="${act}">${btn}</button></td></tr>`).join('')}</tbody></table>
+    <span class="cue-part-badge qa">제2부 · 역사학자 심층 질의응답 및 종합토론 (13:00–13:30 기본 30분 ~ 13:50 최대 50분 · 사회: 허수 교수)</span>
+    <table class="cue-table"><thead><tr><th>토론 시간 (30~50분)</th><th>예상 핵심 쟁점 트랙</th><th>즉시 호출 화면</th><th>방어 논거 및 실시간 조작 시연</th><th>호출</th></tr></thead><tbody>${qaRows.map(([t,s,w,m,act,btn])=>`<tr><td><b>${t}</b></td><td>${s}</td><td>${w}</td><td>${m}</td><td><button type="button" class="btn outline small" data-cue-go="${act}">${btn}</button></td></tr>`).join('')}</tbody></table>`);
+  $$('[data-cue-go]',$('#dialog-body')).forEach(b=>b.onclick=()=>{
+    const act=b.dataset.cueGo;
+    $('#detail-dialog').close();
+    if(act==='poster'){showPosterModal();return;}
+    if(act==='log'){go(0);setTimeout(()=>$('.ontology-section')?.scrollIntoView({behavior:'smooth'}),80);return;}
+    go(Number(act));
+  });
 }
-function showAbout(){openDialog('제136차 월례집담회',`<div class="eyebrow">인문학연구원 역사연구소 · 국사학과 BK21 교육연구단</div><h3 style="font-size:28px">AI라는 호랑이 등에 올라타기</h3><p>소프트웨어를 매개로 한 역사연구의 심화·확대·산학화</p><p>발표 이수화 (서울대 빅데이터혁신융합대학)<br>사회 허수 (서울대 역사학부 한국사학전공)</p><p>2026년 11월 18일 수요일 오후 12시<br>서울대 인문대학 4동 302호</p><p class="note">이 워크벤치는 강연 기록 하나에서 연구 질문과 제작 자료를 이어가는 발표용 실험 공간입니다.</p>`);}
+function showAbout(){openDialog('제136차 월례집담회 안내',`<div class="eyebrow">서울대학교 인문학연구원 역사연구소 · 국사학과 BK21 교육연구단</div><h3 style="font-size:27px">AI라는 호랑이 등에 올라타기</h3><p>소프트웨어를 매개로 한 역사연구의 심화·확대·산학화 (워크벤치 v3.0)</p><p><b>발표:</b> 이수화 (서울대 빅데이터혁신융합대학 연구교수)<br><b>사회:</b> 허수 (서울대 역사학부 한국사학전공 교수)</p><p><b>일시:</b> 2026년 11월 18일(수) 12:00–13:30~13:50<br>· 본 발표 및 라이브 시연: <b>12:00–13:00 (60분)</b><br>· 질의응답 및 심층 종합토론: <b>13:00–13:30 ~ 13:50 (30~50분 탄력 운영)</b><br><b>장소:</b> 서울대학교 인문대학 4동 302호</p>`);}
 function cleanup(){stopSimulation();if(mapTimer){clearInterval(mapTimer);mapTimer=null;}if(mapController){mapController.destroy();mapController=null;map=null;}else if(map){map.remove();map=null;}}
 function go(step){const next=Math.max(0,Math.min(6,Number(step)||0));state.step=next;history.replaceState(null,'',`#step-${next}`);renderCurrent(true);}
 function renderCurrent(scroll=true){generation++;cleanup();const renderers=[renderOverview,renderStep1,renderStep2,renderStep3,renderStep4,renderStep5,renderStep6];main.innerHTML=renderers[state.step]();$$('.journey-nav [data-step]').forEach(b=>{const active=Number(b.dataset.step)===state.step;b.classList.toggle('active',active);if(active)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current');});const binders=[()=>{
   if($('#tour-map'))$('#tour-map').onclick=()=>$('#overview-journey').scrollIntoView({behavior:'smooth'});
-  if($('#hero-poster-btn'))$('#hero-poster-btn').onclick=showPosterModal;
+  if($('#hero-poster-btn'))$('#hero-poster-btn').onclick=showPosterModal;if($('#hero-epilogue-btn'))$('#hero-epilogue-btn').onclick=showRainbowEpilogue;
   $$('[data-log-level]').forEach(b=>b.onclick=()=>{
     state.logLevel=Number(b.dataset.logLevel);
     const lv=LOG_LEVELS[state.logLevel];
@@ -367,10 +558,10 @@ function renderCurrent(scroll=true){generation++;cleanup();const renderers=[rend
 },bindStep1,bindStep2,bindStep3,bindStep4,bindStep5,bindStep6];binders[state.step]();renderPresenterBar();if(scroll){window.scrollTo({top:0,behavior:'auto'});main.focus({preventScroll:true});}}
 document.addEventListener('click',e=>{const step=e.target.closest('[data-step]'),source=e.target.closest('[data-source]');if(step){go(step.dataset.step);return;}if(source)showSource(source.dataset.source);});
 $('#dialog-close').onclick=()=>$('#detail-dialog').close();$('#detail-dialog').addEventListener('click',e=>{if(e.target===$('#detail-dialog'))$('#detail-dialog').close();});
-$('#method-button').onclick=showMethods;$('#about-button').onclick=showAbout;if($('#poster-button'))$('#poster-button').onclick=showPosterModal;if($('#footer-poster-button'))$('#footer-poster-button').onclick=showPosterModal;if($('#cuesheet-button'))$('#cuesheet-button').onclick=showCueSheet;
+$('#method-button').onclick=showMethods;$('#about-button').onclick=showAbout;if($('#poster-button'))$('#poster-button').onclick=showPosterModal;if($('#epilogue-button'))$('#epilogue-button').onclick=showRainbowEpilogue;if($('#footer-poster-button'))$('#footer-poster-button').onclick=showPosterModal;if($('#cuesheet-button'))$('#cuesheet-button').onclick=showCueSheet;
 $('#presentation-button').onclick=async()=>{const on=!document.body.classList.contains('presenting');document.body.classList.toggle('presenting',on);$('#presentation-button').setAttribute('aria-pressed',String(on));$('#presentation-button').textContent=on?'⛶ 발표 모드 종료':'⛶ 발표 모드';try{if(on&&!document.fullscreenElement)await document.documentElement.requestFullscreen();else if(!on&&document.fullscreenElement)await document.exitFullscreen();}catch{}renderPresenterBar();map?.invalidateSize();};
 document.addEventListener('fullscreenchange',()=>{if(!document.fullscreenElement){document.body.classList.remove('presenting');$('#presentation-button').setAttribute('aria-pressed','false');$('#presentation-button').textContent='⛶ 발표 모드';renderPresenterBar();}map?.invalidateSize();});
-document.addEventListener('keydown',e=>{if($('#detail-dialog').open||/INPUT|TEXTAREA|SELECT|BUTTON/.test(document.activeElement?.tagName||''))return;if(e.key==='ArrowRight'&&state.step<6){e.preventDefault();go(state.step+1);}if(e.key==='ArrowLeft'&&state.step>0){e.preventDefault();go(state.step-1);}if(/^[0-6]$/.test(e.key)&&!e.metaKey&&!e.ctrlKey&&!e.altKey){e.preventDefault();go(Number(e.key));}if((e.key==='p'||e.key==='P')&&!e.metaKey&&!e.ctrlKey){e.preventDefault();showPosterModal();}if((e.key==='c'||e.key==='C')&&!e.metaKey&&!e.ctrlKey){e.preventDefault();state.cueOpen=!state.cueOpen;renderPresenterBar();}});
+document.addEventListener('keydown',e=>{if($('#detail-dialog').open||/INPUT|TEXTAREA|SELECT|BUTTON/.test(document.activeElement?.tagName||''))return;if(e.key==='ArrowRight'&&state.step<6){e.preventDefault();go(state.step+1);}if(e.key==='ArrowLeft'&&state.step>0){e.preventDefault();go(state.step-1);}if(/^[0-6]$/.test(e.key)&&!e.metaKey&&!e.ctrlKey&&!e.altKey){e.preventDefault();go(Number(e.key));}if((e.key==='p'||e.key==='P')&&!e.metaKey&&!e.ctrlKey){e.preventDefault();showPosterModal();}if((e.key==='r'||e.key==='R')&&!e.metaKey&&!e.ctrlKey){e.preventDefault();showRainbowEpilogue();}if((e.key==='c'||e.key==='C')&&!e.metaKey&&!e.ctrlKey){e.preventDefault();state.cueOpen=!state.cueOpen;renderPresenterBar();}});
 window.addEventListener('hashchange',()=>{const m=location.hash.match(/^#step-([0-6])$/);if(m&&Number(m[1])!==state.step){state.step=Number(m[1]);renderCurrent();}});
 window.addEventListener('resize',()=>map?.invalidateSize());
 async function boot(){try{[lecture,photos]=await Promise.all([getJSON('data/lecture.json'),getJSON('data/photos.json')]);photos=photos.filter(p=>/\.(png|jpe?g|webp)$/i.test(p.src));state.photo=Math.max(0,photos.findIndex(p=>p.src.includes('image17.')));state.step=Number(location.hash.match(/^#step-([0-6])$/)?.[1]||0);renderCurrent(false);try{stats=await getJSON(`${API_BASE}/stats`);$('#data-status').innerHTML=`<i class="status-dot online"></i>연구 DB 연결 · 출처별 ${fmt(stats.total_source_records||stats.total_incidents)}개 기록`;}catch{$('#data-status').innerHTML='<i class="status-dot"></i>강연록 연결 · 연구 DB 연결 확인 필요';}}catch(e){main.innerHTML=failure(e.message);$('#data-status').textContent='필수 자료 연결 확인 필요';}}

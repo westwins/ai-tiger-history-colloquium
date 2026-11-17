@@ -83,3 +83,20 @@ https://trc.soohwalee.com/#step-4 에 네 출처 5,686개 출처별 기록을 �
   python3 tools/deploy_colloquium_v22.py
   ```
 
+## 집담회 최종 에디션 업데이트 (v3.0.0 – v3.1.0 · 2026-11-18)
+
+[서울대학교 인문학연구원 역사연구소 제136차 월례집담회](https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178955) 발표용 최종 운영 버전(`v3.1.0`)을 반영했습니다.
+
+- **04 시공간 지도(HGIS) 다중 시각화 엔진 (`v3.0–v3.1`)**:
+  - 슬라이드 8 스타일 **네온 KDE 밀도 히트맵**, **대화형 3D 시공간 프리즘(회전·피치·고도 배율 제어)**, **강제 연행·본토 형무소 이송 아크**, **한·칠레 듀얼 비교 뷰**, **결측(Missing Data) X-Ray** 모드를 지원합니다.
+  - [Freire et al. (2019) 칠레 피노체트 DB](https://github.com/danilofreire/pinochet)(2,398건), [칠레 기억과 인권 박물관(MMDH) 공개 명부](https://interactivos.museodelamemoria.cl/victims/?page_id=7836)(3,216건)와 함께 **제주 4·3 다층 통합 데이터셋(`jeju43_comprehensive.json`, 109개 공간 레코드)**을 계층 분리 원칙으로 연결했습니다.
+  - 제주 4·3 계층은 [제주4·3평화재단 공식 결정 현황(2026.04 기준 희생자 15,218명·유족 94,262명)](https://jeju43peace.or.kr/kor/sub01_01_02.do), [2003 정부 진상조사보고서 12개 읍·면 분포(14,028명)](https://www.jejunews.com/news/articleView.html?idxno=22937), [2020 추가진상조사보고서 Ⅰ 주요 집단학살 마을](https://www.headlinejeju.co.kr/news/articleView.html?idxno=411863), [불법 군법회의 본토 형무소 이송망(2,530명)](https://www.jejunews.com/news/articleView.html?idxno=2223333)을 비합산 독립 레이어로 구분합니다.
+- **05 실측 보정 몬테카를로 ABM 시뮬레이터 (`N=28`)**:
+  - [칠레 레티그 위원회 9개월(39주) 조사](https://www.beyondintractability.org/casestudy/brahm-chilean)(실측 2,398명 → 신청주의 전환 반사실 시뮬레이션)와 [한국 보안사 강제징집 녹화·선도 공작 명부](https://www.incheontoday.com/news/articleView.html?idxno=224040)(개별 신청 인정 약 370명 → [3기 진화위 약 2,550명 직권조사](https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003281570) 완료 주차 예측)를 95%·50% 신뢰구간 밴드, `±1 SD` 에러바, 민감도 토네이도 차트로 검증합니다.
+- **무지개 기억·승화 마커 및 에필로그 모달 (`v3.1.0`)**:
+  - 제주시 조천읍 선흘1리 [올레미술관 ‘무지개할망’ 고순자 작가](https://www.socialmuseum.net/artists/7)([제주의소리 보도](https://www.jejusori.net/news/articleView.html?idxno=433158))의 2024년작 〈아빠가 나를 사랑해〉와 임진강 민통선을 잇는 〈국토종단〉 에필로그를 HGIS 지도(`HEAL-SEONHEUL-RAINBOW`) 및 전체화면 에필로그 모달(단축키 `R`)에 탑재했습니다.
+- **90~110분 집담회 큐시트**: 발표 60분(`12:00–13:00`) + 플로어 심층 질의응답 30~50분(`13:00–13:30 ~ 13:50`) 타임테이블을 연동했습니다.
+- **오라클 서버 무중단 반영 (MariaDB 변경 없음)**:
+  ```sh
+  sudo python3 tools/deploy_colloquium_v31.py
+  ```
